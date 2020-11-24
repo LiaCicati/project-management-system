@@ -1,0 +1,89 @@
+/*Reuse of existing code including sections as header, footer, information and blocks*/
+@import url('../css/page.css');
+
+/*<-- PROJECT PAGE --> @Loredana Cicati*/
+
+.project {
+    margin: 60px auto 90px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1240px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media screen and (max-width: 1020px) {
+.project {
+    padding: 0 30px;
+}
+}
+
+.project__link-container {
+    align-self: flex-start;
+}
+
+.project__link {
+    font-size: 25px;
+    color: #000;
+    text-decoration: none !important;
+    margin-left: 20px;
+}
+
+
+.data__started {
+    color: #b188fa;
+}
+
+.data__approved {
+    color: #f4830f;
+}
+
+.data__ended {
+    color: #66c51e;
+}
+
+.data__rejected {
+    color: #e0465a;
+}
+
+.data__not-started {
+    color: #7e7e7e;
+}
+
+.data__image {
+    width: 330px;
+    height: 220px;
+    margin-top: 30px;
+
+}
+
+.project__data {
+    max-width: 300px;
+    font-weight: 500;
+}
+
+.table {
+    padding: 10px !important;
+    max-width: 980px;
+}
+
+
+@media screen and (max-width: 575px) {
+    .project__data {
+        font-size: 12px;
+    }
+
+    .table {
+        font-size: 14px !important;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .status {
+        display: none;
+    }
+
+}

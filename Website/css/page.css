@@ -1,0 +1,227 @@
+/*This css file includes styles for elements that are reused in all pages @Lia Cicati*/
+
+/*Imported file normalize with general styles that normalizes styles for a wide range of elements and
+corrects bugs and common browser inconsistencies.*/
+@import url('../vendor/normalize.css');
+
+/*Imported font Inter*/
+@import url('../fonts/fonts.css');
+
+/*
+* {
+    border: red solid 1px;
+}
+*/
+
+/*Styles for the whole page*/
+.page {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+/*Header section*/
+.header__nav {
+    background: rgba(49, 196, 233, 0.93);
+}
+
+
+.collapse {
+    justify-content: flex-end !important;
+}
+
+.header__nav-link {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.header__icon {
+    background-image: url('../images/toggle-icon-menu.svg');
+    background-repeat: no-repeat;
+}
+
+
+.header__link {
+    text-decoration: none;
+    color: #000000;
+}
+
+.header__link:hover {
+    opacity: .7;
+}
+
+
+.header__link_active {
+    color: #FFFFFF;
+}
+
+
+/*Repetitive styles for the main title, subtitle and buttons on all pages were classified
+in the following classes */
+.section-title {
+    margin: 0 0 30px;
+    font-size: 40px;
+    font-weight: 900;
+    color: #000000;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+}
+
+
+.section-subtitle {
+    margin: 0;
+    font-weight: 400;
+    font-size: 18px;
+    color: #000;
+    line-height: 1.4;
+    padding-bottom: 20px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity .4s ease-in;
+    outline: none;
+}
+
+.button:hover {
+    opacity: .7;
+}
+
+@media screen and (max-width : 590px) {
+    .section-title {
+        font-size: 30px;
+    }
+}
+
+
+@media screen and (max-width: 575px) {
+    .section-title {
+        padding: 0 20px;
+    }
+
+    .section-subtitle {
+        font-size: 16px;
+    }
+
+}
+
+
+/*Section with contacts, time and navigation*/
+.info {
+    display: flex;
+    background: #1A1919;
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    padding: 40px 110px;
+
+}
+
+
+.info__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.info__link {
+    text-decoration: none !important;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+    color: #FFFFFF !important;
+
+}
+
+.info__link:hover {
+    opacity: .7;
+}
+
+.info__column-items {
+    margin-top: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.info__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.info__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0;
+}
+
+
+.info__form {
+    display: flex;
+    justify-content: center;
+}
+
+.info__button {
+    width: 155px;
+    height: 36px;
+    padding: 0;
+    background: linear-gradient(183.72deg, #0FAABF -12.7%, #0B68F2 114.19%);
+    color: #FFFFFF;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 770px) {
+    .info__container {
+        flex-direction: column;
+    }
+
+    .info__form {
+        display: none;
+    }
+}
+
+/*Footer section*/
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1A1919;
+    min-height: 90px;
+}
+
+.footer__copyright {
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width : 590px) {
+    .footer__copyright {
+        font-size: 16px;
+    }
+}
+
+
+
+
+@media screen and (max-width : 495px) {
+    .info__title {
+        font-size: 20px;
+    }
+
+    .info__link {
+        font-size: 16px;
+    }
+
+    .info {
+        padding: 40px 30px;
+    }
+}

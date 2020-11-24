@@ -6,7 +6,8 @@
 .services {
     display: flex;
     justify-content: space-between;
-    margin: 70px 100px 60px;
+    align-items: center;
+    margin: 70px 0 60px;
 }
 
 .services__information {
@@ -43,4 +44,40 @@
     background-position: center;
     padding: 2px;
     background-repeat: no-repeat;
+}
+
+.services__illustration {
+    display: flex;
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: 920px) {
+    .services {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 992px) {
+
+    .services__information {
+        margin: 0 auto;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .services__title {
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .service__text {
+        font-size: 14px;
+    }
+
+}
+
+.row {
+    align-items: center !important;
 }

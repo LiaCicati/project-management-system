@@ -1,0 +1,180 @@
+/*Reuse of existing code including sections as header, footer, information and blocks
+(section-title, section-subtitle, button)*/
+@import url('../css/page.css');
+
+/*<-- HOME PAGE -->*/
+
+/*Styles for the section called details @Loredana Cicati*/
+.details {
+    margin: 90px auto;
+    max-width: 1240px;
+}
+
+
+.details__paragraph {
+    margin: 0 0 20px;
+    line-height: 1.7;
+    max-width: 650px;
+}
+
+.details__container {
+    max-width: 430px;
+}
+
+.wrapper {
+    padding: 15px;
+    max-width: 460px;
+    margin: 0;
+}
+
+.illustration {
+    opacity: 0.8;
+}
+
+
+.details__button {
+    width: 200px;
+    height: 60px;
+    margin: 40px 0;
+    background: #2F80ED;
+    border-radius: 10px;
+}
+
+
+.details__button-link {
+    font-size: 22px;
+    text-decoration: none !important;
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 992px) {
+    .details {
+        margin: 30px auto 40px;
+    }
+
+    .wrapper {
+        max-width: 80%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+
+    .description__illustration {
+        display: none;
+    }
+
+    .details__button {
+        width: 132px;
+        height: 44px;
+    }
+
+    .details__button-link {
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (max-width: 575px) {
+
+    .details {
+        margin-bottom: 20px;
+    }
+
+    .details__paragraph {
+        padding: 0 20px;
+    }
+
+    .details__button {
+        margin-left: 20px;
+    }
+}
+
+.carousel-indicator {
+    border: black 1px solid !important;
+}
+
+.carousel-item {
+    min-height: 550px;
+}
+
+@media screen and (max-width : 770px) {
+    .carousel-item {
+        min-height: 800px;
+    }
+}
+
+@media screen and (max-width : 500px) {
+    .carousel-item {
+        min-height: 700px;
+    }
+}
+
+@media screen and (max-width: 990px) and (min-width: 769px) {
+    .carousel-item {
+        min-height: 400px;
+    }
+}
+
+.row {
+    align-items: center !important;
+}
+
+/*Styles for the section called description @Loredana Cicati */
+.description {
+    max-width: 1240px;
+    padding: 40px;
+}
+
+.description__container {
+    max-width: 620px;
+}
+
+.description__paragraph {
+    margin: 40px 0 0;
+}
+
+
+
+/*Section video @Lia Cicati*/
+.video {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.video__text {
+    max-width: 500px;
+    text-align: center;
+}
+
+.video__title {
+    text-align: center;
+
+}
+
+.video__subtitle {
+    margin: 0 0 30px;
+}
+
+.video__iframe {
+    border: none;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.video__iframes {
+    padding: 10px;
+}
+
+@media screen and (max-width: 575px) {
+
+    .description {
+        padding: 20px;
+    }
+
+    .video__text {
+        padding: 20px;
+    }
+
+}

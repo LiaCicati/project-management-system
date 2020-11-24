@@ -1,0 +1,66 @@
+/*Reuse of existing code including sections as header, footer, information and blocks*/
+@import url('../css/page.css');
+
+/*<-- PROJECTS PAGE --> @Rickie Nielsen*/
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    margin: 70px 0 90px;
+    align-items: center;
+}
+
+.projects__title {
+    margin: 0;
+}
+
+.company__container {
+    display: flex;
+    margin: 0 0 90px;
+}
+
+.company__container:first-of-type {
+    margin-top: 70px;
+}
+
+.company__container:last-of-type {
+    margin: 0;
+}
+
+.company__information {
+    margin-left: 40px;
+}
+
+.company__img {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.company__title {
+    margin: 0;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.6;
+}
+
+.company__description {
+    margin: 20px 0 30px;
+    max-width: 480px;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.company__button {
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(183.72deg, #0FAABF -12.7%, #0B68F2 114.19%);
+    border-radius: 30px;
+}
+
+.company__button-link {
+    text-decoration: none;
+    color: #fff;
+}
+

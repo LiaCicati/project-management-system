@@ -1,0 +1,59 @@
+/*Reuse of existing code including sections as header, footer, information and blocks*/
+@import url('../css/page.css');
+
+/*<-- OUR TEAM PAGE -->*/
+
+/*Styles for the section called team @Loredana Cicati*/
+.team {
+    display: flex;
+    flex-direction: column;
+    margin: 42px 0 70px;
+    align-items: center;
+}
+
+
+.team__image {
+    border-radius: 10px;
+    -webkit-box-shadow: -1px 3px 12px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 3px 12px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: -1px 3px 12px -3px rgba(0, 0, 0, 0.75);
+    width: 200px;
+    height: 200px;
+    object-position: center;
+    object-fit: cover;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+.icon:hover {
+    opacity: .7;
+}
+
+
+.team__location {
+    margin-bottom: 15px;
+}
+.team__member {
+    margin-bottom: 80px;
+}
+
+@media screen and (max-width : 992px) {
+    .team__member {
+        margin-bottom: 20px;
+    }
+}
+
+
+.team__members {
+    margin-bottom: 30px;
+}
+
+.team-member {
+    display: flex;
+}
+
+.team-member__name {
+    margin-right: 10px;
+}
