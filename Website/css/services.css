@@ -1,0 +1,46 @@
+/*Reuse of existing code including sections as header, footer, information and blocks*/
+@import url('../css/page.css');
+
+/*<-- SERVICES PAGE --> @Siyu Xia*/
+
+.services {
+    display: flex;
+    justify-content: space-between;
+    margin: 70px 100px 60px;
+}
+
+.services__information {
+    max-width: 460px;
+}
+
+.services__title {
+    font-weight: 900;
+    font-size: 35px;
+    line-height: 50px;
+    color: #0B132A;
+    margin: 0 0 25px;
+}
+
+
+.service__text {
+    margin-left: 10px;
+    line-height: 1.4;
+}
+
+.services__list {
+    padding: 0;
+}
+
+.service__item {
+    display: flex;
+    align-items: center;
+}
+
+.service__icon {
+    background-image: url('../images/check-icon.svg');
+    min-width: 24px;
+    min-height: 24px;
+    background-position: center;
+    padding: 2px;
+    background-repeat: no-repeat;
+}
