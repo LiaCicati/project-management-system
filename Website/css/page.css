@@ -7,12 +7,6 @@ corrects bugs and common browser inconsistencies.*/
 /*Imported font Inter*/
 @import url('../fonts/fonts.css');
 
-/*
-* {
-    border: red solid 1px;
-}
-*/
-
 /*Styles for the whole page*/
 .page {
     font-family: Inter, Arial, Helvetica, sans-serif;
@@ -41,6 +35,8 @@ corrects bugs and common browser inconsistencies.*/
 
 
 .header__link {
+    justify-content: center;
+    display: flex;
     text-decoration: none;
     color: #000000;
 }
@@ -186,6 +182,20 @@ in the following classes */
     }
 }
 
+@media screen and (max-width : 495px) {
+    .info__title {
+        font-size: 20px;
+    }
+
+    .info__link {
+        font-size: 16px;
+    }
+
+    .info {
+        padding: 40px 30px;
+    }
+}
+
 /*Footer section*/
 
 .footer {
@@ -206,22 +216,5 @@ in the following classes */
 @media screen and (max-width : 590px) {
     .footer__copyright {
         font-size: 16px;
-    }
-}
-
-
-
-
-@media screen and (max-width : 495px) {
-    .info__title {
-        font-size: 20px;
-    }
-
-    .info__link {
-        font-size: 16px;
-    }
-
-    .info {
-        padding: 40px 30px;
     }
 }

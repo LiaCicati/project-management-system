@@ -15,20 +15,20 @@
 
 
 @media screen and (max-width: 1020px) {
-.project {
-    padding: 0 30px;
-}
+    .project {
+        padding: 0 30px;
+    }
 }
 
 .project__link-container {
     align-self: flex-start;
+    margin-bottom: 20px;
 }
 
 .project__link {
     font-size: 25px;
     color: #000;
     text-decoration: none !important;
-    margin-left: 20px;
 }
 
 
@@ -82,7 +82,7 @@
 }
 
 @media screen and (max-width: 500px) {
-    .status {
+    .type {
         display: none;
     }
 

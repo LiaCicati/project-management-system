@@ -6,12 +6,8 @@
 .projects {
     display: flex;
     flex-direction: column;
-    margin: 70px 0 90px;
+    margin: 90px 0 80px;
     align-items: center;
-}
-
-.projects__title {
-    margin: 0;
 }
 
 .company__container {
@@ -20,15 +16,7 @@
 }
 
 .company__container:first-of-type {
-    margin-top: 70px;
-}
-
-.company__container:last-of-type {
-    margin: 0;
-}
-
-.company__information {
-    margin-left: 40px;
+    margin-top: 40px;
 }
 
 .company__img {
@@ -60,7 +48,52 @@
 }
 
 .company__button-link {
-    text-decoration: none;
-    color: #fff;
+    text-decoration: none !important;
+    color: #fff !important;
 }
 
+
+@media screen and (max-width: 992px) {
+    .projects {
+        margin-top: 50px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .company__container {
+        margin-bottom: 60px;
+    }
+
+    .company__container:first-of-type {
+        margin-top: 0;
+    }
+
+    .projects {
+        margin-bottom: 50px;
+    }
+
+}
+
+
+@media screen and (max-width: 590px) {
+    .company__title {
+        font-size: 24px;
+    }
+
+    .company__description {
+        font-size: 14px;
+    }
+
+    .company__button {
+        width: 128px;
+        height: 42px;
+    }
+
+    .company__button-link {
+        font-size: 14px;
+    }
+
+    .company__container {
+        margin-bottom: 40px;
+    }
+}

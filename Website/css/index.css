@@ -8,6 +8,7 @@
 .details {
     margin: 90px auto;
     max-width: 1240px;
+    padding: 0 20px;
 }
 
 
@@ -49,7 +50,7 @@
 
 @media screen and (max-width: 992px) {
     .details {
-        margin: 30px auto 40px;
+        margin: 50px auto 40px;
     }
 
     .wrapper {
@@ -71,8 +72,15 @@
     .details__button-link {
         font-size: 18px;
     }
+
+    .details__container {
+        margin: 0 auto;
+    }
 }
 
+.row {
+    align-items: center !important;
+}
 
 @media screen and (max-width: 575px) {
 
@@ -115,10 +123,6 @@
     }
 }
 
-.row {
-    align-items: center !important;
-}
-
 /*Styles for the section called description @Loredana Cicati */
 .description {
     max-width: 1240px;
@@ -132,8 +136,6 @@
 .description__paragraph {
     margin: 40px 0 0;
 }
-
-
 
 /*Section video @Lia Cicati*/
 .video {
@@ -154,7 +156,7 @@
 }
 
 .video__subtitle {
-    margin: 0 0 30px;
+    margin: 0 0 20px;
 }
 
 .video__iframe {
@@ -174,7 +176,7 @@
     }
 
     .video__text {
-        padding: 20px;
+        padding: 10px;
     }
 
 }

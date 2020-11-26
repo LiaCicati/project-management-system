@@ -4,10 +4,8 @@
 /*<-- SERVICES PAGE --> @Siyu Xia*/
 
 .services {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 70px 0 60px;
+    max-width: 1280px;
+    margin: 90px auto 60px;
 }
 
 .services__information {
@@ -52,14 +50,10 @@
 }
 
 
-@media screen and (max-width: 920px) {
-    .services {
-        flex-direction: column;
-    }
-}
-
 @media screen and (max-width: 992px) {
-
+    .services {
+        margin-top: 50px;
+    }
     .services__information {
         margin: 0 auto;
     }
@@ -68,7 +62,7 @@
 
 @media screen and (max-width: 600px) {
     .services__title {
-        font-size: 20px;
+        font-size: 22px;
         line-height: 25px;
     }
 
@@ -80,4 +74,8 @@
 
 .row {
     align-items: center !important;
+}
+
+p {
+    margin: 16px 0 16px 10px !important;
 }
