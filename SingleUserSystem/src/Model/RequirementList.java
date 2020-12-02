@@ -78,7 +78,7 @@ public class RequirementList
 
   @Override public String toString()
   {
-    return "Requirements : " + requirements;
+    return "Requirements : " + "\n" + requirements;
   }
 
 }

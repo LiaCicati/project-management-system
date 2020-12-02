@@ -1,7 +1,8 @@
 package Model;
+
 public class ScrumMaster extends TeamMember
 {
-  public ScrumMaster(Name name,int id)
+  public ScrumMaster(Name name, int id)
   {
     super(name, id);
   }

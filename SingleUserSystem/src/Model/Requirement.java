@@ -142,9 +142,9 @@ public class Requirement
   @Override public String toString()
   {
     String s = "";
-    s += "ID: " + ID + ", estimated Time: " + estimatedTime + " hours"
-        + ", responsible Team Member: " + responsibleTeamMember + ", deadline: "
-        + deadline + ", status: " + status;
+    s += "ID: " + ID + "\n" + "estimated Time: " + estimatedTime + " hours"
+        + "\n" + "Responsible Team Member: " + responsibleTeamMember + "\n"
+        + "Deadline: " + deadline + "\n" + "Status: " + status;
     return s;
   }
 

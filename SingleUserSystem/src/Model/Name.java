@@ -5,10 +5,9 @@ public class Name
   private String firstName;
   private String lastName;
 
-  public Name(String firstName,String lastName)
+  public Name(String firstName, String lastName)
   {
-    this.firstName=firstName;
-    this.lastName=lastName;
+    setName(firstName, lastName);
   }
 
   public String getFirstName()
@@ -23,32 +22,32 @@ public class Name
 
   public String getFullName()
   {
-    return firstName + " " +lastName;
+    return firstName + " " + lastName;
   }
 
   public String getFormalName()
   {
-    return lastName + "," + firstName;
+    return lastName + " " + firstName;
   }
 
-  public void setName(String firstName,String lastName)
+  public void setName(String firstName, String lastName)
   {
-    this.firstName=firstName;
-    this.lastName=lastName;
+    this.firstName = firstName;
+    this.lastName = lastName;
   }
 
   public boolean equals(Object obj)
   {
-    if(!(obj instanceof Name))
+    if (!(obj instanceof Name))
     {
       return false;
     }
-    Name other=(Name)obj;
-    return firstName==other.firstName && lastName==other.lastName;
+    Name other = (Name) obj;
+    return firstName.equals(other.firstName) && lastName.equals(other.lastName);
   }
 
-  public String toString()
+  @Override public String toString()
   {
-    return "Full Name:" + getFullName() + ",Formal Name:" + getFormalName();
+    return getFullName();
   }
 }

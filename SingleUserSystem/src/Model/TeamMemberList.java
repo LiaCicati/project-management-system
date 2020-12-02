@@ -8,18 +8,12 @@ public class TeamMemberList
 
   public TeamMemberList()
   {
-    teamMembers = new ArrayList<>();
+    this.teamMembers = new ArrayList<>();
   }
 
-  public ArrayList<TeamMember> getTeamMembers(int index)
+  public ArrayList<TeamMember> getAllTeamMembers()
   {
-    ArrayList a = new ArrayList();
-    for(int i=0;i<teamMembers.size();i++)
-    {
-      a.add(teamMembers.get(i));
-
-    }
-    return a;
+    return teamMembers;
   }
 
   public void addTeamMember(TeamMember teamMember)
@@ -34,9 +28,9 @@ public class TeamMemberList
 
   public TeamMember getTeamMemberByName(Name name)
   {
-    for(int i=0;i<teamMembers.size();i++)
+    for (int i = 0; i < teamMembers.size(); i++)
     {
-      if(teamMembers.get(i).getName().equals(name))
+      if (teamMembers.get(i).getName().equals(name))
       {
         return teamMembers.get(i);
       }
@@ -68,6 +62,6 @@ public class TeamMemberList
 
   public String toString()
   {
-    return  "teamMembers=" + teamMembers;
+    return "Team members: " + teamMembers;
   }
 }
