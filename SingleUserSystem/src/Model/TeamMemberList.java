@@ -36,7 +36,7 @@ public class TeamMemberList
   {
     for(int i=0;i<teamMembers.size();i++)
     {
-      if(teamMembers.get(i).getName()==name)
+      if(teamMembers.get(i).getName().equals(name))
       {
         return teamMembers.get(i);
       }
