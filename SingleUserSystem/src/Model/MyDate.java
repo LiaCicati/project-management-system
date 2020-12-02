@@ -167,4 +167,58 @@ public class MyDate
     s += month + "/" + year;
     return s;
   }
+  
+  public int convertToMonthNumber(String monthName)
+  {
+      int status = 0;
+      if (monthName == "January")
+      {
+        status = 1;
+      }
+      else if (monthName == "February")
+      {
+        status = 2;
+      }
+      else if (monthName == "March")
+      {
+        status = 3;
+      }
+      else if (monthName == "April")
+      {
+        status = 4;
+      }
+      else if (monthName == "May")
+      {
+        status = 5;
+      }
+      else if (monthName == "June")
+      {
+        status = 6;
+      }
+      else if (monthName == "July")
+      {
+        status = 7;
+      }
+      else if (monthName == "Augest")
+      {
+        status = 8;
+      }
+      else if (monthName == "September")
+      {
+        status = 9;
+      }
+      else if (monthName == "October")
+      {
+        status = 10;
+      }
+      else if (monthName == "November")
+      {
+        status = 11;
+      }
+      else
+      {
+        status = 12;
+      }
+      return status;
+    }
 }
