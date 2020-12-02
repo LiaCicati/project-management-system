@@ -28,6 +28,7 @@ public class Test
     RequirementList requirementList = new RequirementList();
     requirementList.addRequirement(requirement1);
     requirementList.addRequirement(requirement2);
+<<<<<<< Updated upstream
 
     Project project1 = new Project("Rental Company", deadline, 22,
         "blabla blabla");
@@ -35,6 +36,8 @@ public class Test
     project1.addTeamMember(productOwner);
     System.out.println(
         "All members for the 1st project: " + project1.getAllTeamMembers());
+=======
+>>>>>>> Stashed changes
     System.out.println(
         "Scrum master of the 1st project: " + project1.getScrumMaster());
     System.out.println(
@@ -57,8 +60,11 @@ public class Test
     System.out.println(
         "Team members that worked on first requirement: " + requirement1
             .getAllTeamMembers());
+<<<<<<< Updated upstream
 
     System.out.println(requirementList);
+=======
+>>>>>>> Stashed changes
 
   }
 }

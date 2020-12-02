@@ -12,7 +12,7 @@ public class Task
   private String status;
   private ArrayList<TeamMember> teamMembers;
   private TeamMember responsibleTeamMember;
-  private Requirement requirement;
+  private Requirement requirementID;
   private MyDate deadline;
   public static final String NOT_STARTED = "Not Started";
   public static final String STARTED = "Started";
@@ -30,7 +30,7 @@ public class Task
     setResponsibleTeamMember(responsibleTeamMember);
     setStatus(status);
     setDeadline(deadline);
-    this.requirement = requirementID;
+    this.requirementID = requirementID;
     this.teamMembers = new ArrayList<>();
 
   }
@@ -147,16 +147,16 @@ public class Task
         .equals(other.description) && estimatedTime == other.estimatedTime
         && timeSpent == other.timeSpent && status.equals(other.status)
         && responsibleTeamMember.equals(other.responsibleTeamMember)
-        && requirement.equals(other.requirement) && deadline
+        && requirementID.equals(other.requirementID) && deadline
         .equals(other.deadline) && teamMembers.equals(other.teamMembers);
   }
 
   @Override public String toString()
   {
-    return "ID:" + ID + "Requirement:" + requirement + "Title:" + title
-        + "Description:" + description + "Responsible team member:"
-        + responsibleTeamMember + "Estimated time:" + estimatedTime
-        + "Time spent:" + timeSpent + "Deadline" + deadline + "Team Members:"
-        + teamMembers + "Status" + status;
+    return "ID:" + ID + "\n"+ "Requirement:" + requirementID+ "\n" + "Title:" + title+ "\n"
+        + "Description:" + description + "\n"+ "Responsible team member:"
+        + responsibleTeamMember + "\n"+ "Estimated time:" + estimatedTime+ "\n"
+        + "Time spent:" + timeSpent+ "\n" + "Deadline" + deadline + "\n"+ "Team Members:"
+        + teamMembers + "\n"+ "Status" + status;
   }
 }
