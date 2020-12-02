@@ -29,6 +29,9 @@ public class Test
 
     System.out.println("Team member: " + teamMember1);
     System.out.println("Requirement: " + requirement1);
+    requirement1.addTeamMember(teamMember1);
+    requirement1.addTeamMember(teamMember2);
+    System.out.println("Team members that worked on first requirement: " + requirement1.getAllTeamMembers());
 
     System.out.println("All requirements: " + requirementList);
   }

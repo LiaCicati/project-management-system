@@ -26,6 +26,8 @@ public class Requirement
     setResponsibleTeamMember(responsibleTeamMember);
     setDeadline(deadline);
     this.status = "Not Started";
+    this.teamMembers = new ArrayList<>();
+    this.tasks = new ArrayList<>();
   }
 
   public int getID()
