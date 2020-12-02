@@ -35,7 +35,7 @@ public class TeamMember
       return false;
     }
     TeamMember other=(TeamMember)obj;
-    return id == other.id && name == other.name;
+    return id == other.id && name.equals(other.name);
   }
 
   public String toString()
