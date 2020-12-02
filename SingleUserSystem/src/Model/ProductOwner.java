@@ -1,13 +1,10 @@
 package Model;
-public class ProductOwner
+public class ProductOwner extends TeamMember
 {
-  private Name name;
-  private int id;
 
   public ProductOwner(Name name,int id)
   {
-    this.name=name;
-    this.id=id;
+   super(name,id);
   }
 
   public String getRole()
