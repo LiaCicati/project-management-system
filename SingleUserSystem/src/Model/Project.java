@@ -10,8 +10,8 @@ public class Project
     private MyDate deadline;
     private String status;
 
-    //private ArrayList<TeamMember> teamMemberList;
-    //private ArrayList<Requirement> requirementList;
+    private ArrayList<TeamMember> teamMemberList;
+    private ArrayList<Requirement> requirementList;
 
     public static String NOT_STARTED = "Not started";
     public static String STARTED = "Started";
@@ -24,10 +24,11 @@ public class Project
         setDeadline(deadline);
         setCustomerID(customerID);
         setDescription(description);
+
         this.status = NOT_STARTED;
 
-        //this.teamMemberList = new ArrayList<>();
-        //this.requirementList = new ArrayList<>();
+        this.teamMemberList = new ArrayList<>();
+        this.requirementList = new ArrayList<>();
     }
 
     public void setTitle(String title)
@@ -70,8 +71,6 @@ public class Project
         return description;
     }
 
-    /* COMMENT SECTION CAN BE REMOVED WHEN "TeamMember" CLASS IS IMPLEMENTED
-
     public void addTeamMember(TeamMember teamMember)
     {
         teamMemberList.add(teamMember);
@@ -79,7 +78,7 @@ public class Project
 
     public void removeTeamMember(TeamMember teamMember)
     {
-        teamMemberList.remove(teamMember)
+        teamMemberList.remove(teamMember);
     }
 
     public int getNumberOfTeamMembers()
@@ -87,47 +86,44 @@ public class Project
         return teamMemberList.size();
     }
 
-    public TeamMember getScrumMaster()  //not sure on this method yet
+    public TeamMember getScrumMaster()
     {
         TeamMember scrum = null;
-        for(int i = 0; i < teamMemberList.size(); i++)
+        for (TeamMember teamMember : teamMemberList)
         {
-            if (teamMember.get(i) instanceof ScrumMaster)
+            if (teamMember instanceof ScrumMaster)
             {
-                scrum = teamMember.get(i);
+                scrum = teamMember;
             }
         }
         return scrum;
     }
 
-    public TeamMember getProductOwner()  //not sure on this method yet
+    public TeamMember getProductOwner()
     {
         TeamMember owner = null;
-        for(int i = 0; i < teamMemberList.size(); i++)
+        for (TeamMember teamMember : teamMemberList)
         {
-            if (teamMember.get(i) instanceof ProductOwner)
+            if (teamMember instanceof ProductOwner)
             {
-                owner = teamMember.get(i);
+                owner = teamMember;
             }
         }
         return owner;
     }
 
-    public ArrayList<TeamMember> getAllTeamMembers() //not sure on this method yet
+    public ArrayList<TeamMember> getAllTeamMembers()
     {
         ArrayList<TeamMember> teamMembers = new ArrayList<>();
-        for(int i = 0; i < teamMemberList.size(); i++)
+        for (TeamMember teamMember : teamMemberList)
         {
-            if (teamMemberList.get(i) instanceof TeamMember)
+            if (teamMember != null)
             {
-                teamMembers.add(teamMemberList.get(i);
+                teamMembers.add(teamMember);
             }
         }
         return teamMembers;
     }
-    */
-
-    /* COMMENT SECTION CAN BE REMOVED WHEN "Requirement" CLASS IS IMPLEMENTED
 
     public void addRequirement(Requirement requirement)
     {
@@ -143,7 +139,6 @@ public class Project
                 requirementList.remove(requirementList.get(i));
             }
         }
-        return null;
     }
 
     public int getNumberOfRequirements()
@@ -155,7 +150,6 @@ public class Project
     {
         return requirementList;
     }
-    */
 
     @Override public boolean equals(Object obj)
     {
