@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class Requirement
 {
   private int ID;
@@ -9,5 +11,11 @@ public class Requirement
   public static final String ENDED = "Ended";
   public static final String APPROVED = "Approved";
   public static final String REJECTED = "Rejected";
+  private TeamMember responsibleTeamMember;
+  private ArrayList<TeamMember> teamMembers;
+  private ArrayList<Task> tasks;
+//  private MyDate deadline;
+
+
 
 }
