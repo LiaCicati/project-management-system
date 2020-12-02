@@ -1,3 +1,4 @@
+package Model;
 public class ProductOwner
 {
   private Name name;

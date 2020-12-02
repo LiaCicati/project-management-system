@@ -1,3 +1,4 @@
+package Model;
 public class ScrumMaster
 {
   private Name name;
