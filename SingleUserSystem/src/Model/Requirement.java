@@ -25,7 +25,7 @@ public class Requirement
     setEstimatedTime(estimatedTime);
     setResponsibleTeamMember(responsibleTeamMember);
     setDeadline(deadline);
-    this.status = "Not Started";
+    this.status = NOT_STARTED;
     this.teamMembers = new ArrayList<>();
     this.tasks = new ArrayList<>();
   }

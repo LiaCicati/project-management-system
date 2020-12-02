@@ -4,169 +4,172 @@ import java.util.ArrayList;
 
 public class Project
 {
-    private String title;
-    private String description;
-    private int customerID;
-    private MyDate deadline;
-    private String status;
+  private String title;
+  private String description;
+  private int customerID;
+  private MyDate deadline;
+  private String status;
 
-    private ArrayList<TeamMember> teamMemberList;
-    private ArrayList<Requirement> requirementList;
+  private ArrayList<TeamMember> teamMemberList;
+  private ArrayList<Requirement> requirementList;
 
-    public static String NOT_STARTED = "Not started";
-    public static String STARTED = "Started";
-    public static String ENDED = "Ended";
+  public static final String NOT_STARTED = "Not started";
+  public static final String STARTED = "Started";
+  public static final String ENDED = "Ended";
 
-    public Project(String title, MyDate deadline, int customerID,
-        String description)
+  public Project(String title, MyDate deadline, int customerID,
+      String description)
+  {
+    setTitle(title);
+    setDeadline(deadline);
+    setCustomerID(customerID);
+    setDescription(description);
+
+    this.status = NOT_STARTED;
+
+    this.teamMemberList = new ArrayList<>();
+    this.requirementList = new ArrayList<>();
+  }
+
+  public void setTitle(String title)
+  {
+    this.title = title;
+  }
+
+  public void setDeadline(MyDate deadline)
+  {
+    this.deadline = deadline.copy();
+  }
+
+  public void setCustomerID(int customerID)
+  {
+    this.customerID = customerID;
+  }
+
+  public void setDescription(String description)
+  {
+    this.description = description;
+  }
+
+  public String getTitle()
+  {
+    return title;
+  }
+
+  public MyDate getDeadline()
+  {
+    return deadline;
+  }
+
+  public int getCustomerID()
+  {
+    return customerID;
+  }
+
+  public String getDescription()
+  {
+    return description;
+  }
+
+  public void addTeamMember(TeamMember teamMember)
+  {
+    teamMemberList.add(teamMember);
+  }
+
+  public void removeTeamMember(TeamMember teamMember)
+  {
+    teamMemberList.remove(teamMember);
+  }
+
+  public int getNumberOfTeamMembers()
+  {
+    return teamMemberList.size();
+  }
+
+// Maybe we shouldn't have getters for scrum Master and Product owner separately but one common for getTeamMember by
+//  smthin(role) and there to have some if statements or something like this?
+  public TeamMember getScrumMaster()
+  {
+    TeamMember scrum = null;
+    for (TeamMember teamMember : teamMemberList)
     {
-        setTitle(title);
-        setDeadline(deadline);
-        setCustomerID(customerID);
-        setDescription(description);
-
-        this.status = NOT_STARTED;
-
-        this.teamMemberList = new ArrayList<>();
-        this.requirementList = new ArrayList<>();
+      if (teamMember instanceof ScrumMaster)
+      {
+        scrum = teamMember;
+      }
     }
+    return scrum;
+  }
 
-    public void setTitle(String title)
+  public TeamMember getProductOwner()
+  {
+    TeamMember owner = null;
+    for (TeamMember teamMember : teamMemberList)
     {
-        this.title = title;
+      if (teamMember instanceof ProductOwner)
+      {
+        owner = teamMember;
+      }
     }
+    return owner;
+  }
 
-    public void setDeadline(MyDate deadline)
+// maybe just to return the teamMemberList because you already created an array list in the constructor?
+  public ArrayList<TeamMember> getAllTeamMembers()
+  {
+    ArrayList<TeamMember> teamMembers = new ArrayList<>();
+    for (TeamMember teamMember : teamMemberList)
     {
-        this.deadline = deadline.copy();
+      if (teamMember != null)
+      {
+        teamMembers.add(teamMember);
+      }
     }
+    return teamMembers;
+  }
 
-    public void setCustomerID(int customerID)
-    {
-        this.customerID = customerID;
-    }
+  public void addRequirement(Requirement requirement)
+  {
+    requirementList.add(requirement);
+  }
 
-    public void setDescription(String description)
+  public void removeRequirement(int requirementID)
+  {
+    for (int i = 0; i < requirementList.size(); i++)
     {
-        this.description = description;
+      if (requirementID == requirementList.get(i).getID())
+      {
+        requirementList.remove(requirementList.get(i));
+      }
     }
+  }
 
-    public String getTitle()
-    {
-        return title;
-    }
+  public int getNumberOfRequirements()
+  {
+    return requirementList.size();
+  }
 
-    public MyDate getDeadline()
-    {
-        return deadline;
-    }
+  public ArrayList<Requirement> getAllRequirements() // it's correct like this
+  {
+    return requirementList;
+  }
 
-    public int getCustomerID()
+  @Override public boolean equals(Object obj)
+  {
+    if (!(obj instanceof Project))
     {
-        return customerID;
+      return false;
     }
+    Project other = (Project) obj;
+    return title.equals(other.title) && description.equals(other.description)
+        && customerID == other.customerID && deadline.equals(other.deadline)
+        && status.equals(other.status);
+  }
 
-    public String getDescription()
-    {
-        return description;
-    }
-
-    public void addTeamMember(TeamMember teamMember)
-    {
-        teamMemberList.add(teamMember);
-    }
-
-    public void removeTeamMember(TeamMember teamMember)
-    {
-        teamMemberList.remove(teamMember);
-    }
-
-    public int getNumberOfTeamMembers()
-    {
-        return teamMemberList.size();
-    }
-
-    public TeamMember getScrumMaster()
-    {
-        TeamMember scrum = null;
-        for (TeamMember teamMember : teamMemberList)
-        {
-            if (teamMember instanceof ScrumMaster)
-            {
-                scrum = teamMember;
-            }
-        }
-        return scrum;
-    }
-
-    public TeamMember getProductOwner()
-    {
-        TeamMember owner = null;
-        for (TeamMember teamMember : teamMemberList)
-        {
-            if (teamMember instanceof ProductOwner)
-            {
-                owner = teamMember;
-            }
-        }
-        return owner;
-    }
-
-    public ArrayList<TeamMember> getAllTeamMembers()
-    {
-        ArrayList<TeamMember> teamMembers = new ArrayList<>();
-        for (TeamMember teamMember : teamMemberList)
-        {
-            if (teamMember != null)
-            {
-                teamMembers.add(teamMember);
-            }
-        }
-        return teamMembers;
-    }
-
-    public void addRequirement(Requirement requirement)
-    {
-        requirementList.add(requirement);
-    }
-
-    public void removeRequirement(int requirementID)
-    {
-        for(int i = 0; i < requirementList.size(); i++)
-        {
-            if(requirementID == requirementList.get(i).getID())
-            {
-                requirementList.remove(requirementList.get(i));
-            }
-        }
-    }
-
-    public int getNumberOfRequirements()
-    {
-        return requirementList.size();
-    }
-
-    public ArrayList<Requirement> getAllRequirements() //I forget if this is how to return an arraylist...
-    {
-        return requirementList;
-    }
-
-    @Override public boolean equals(Object obj)
-    {
-        if (!(obj instanceof Project))
-        {
-            return false;
-        }
-        Project other = (Project) obj;
-        return title.equals(other.title) && description
-            .equals(other.description) && customerID == other.customerID
-            && deadline.equals(other.deadline) && status.equals(other.status);
-    }
-
-    @Override public String toString()
-    {
-        return "Title: " + title + "\n" + "Description: " + description + "\n"
-            + "Customer ID: " + customerID + "\n" + "Deadline: " + deadline
-            + "\n" + "Status: " + status;
-    }
+  @Override public String toString()
+  {
+    return "Title: " + title + "\n" + "Description: " + description + "\n"
+        + "Customer ID: " + customerID + "\n" + "Deadline: " + deadline + "\n"
+        + "Status: " + status;
+  }
 }
