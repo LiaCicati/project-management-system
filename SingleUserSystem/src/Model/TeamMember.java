@@ -1,3 +1,4 @@
+package Model;
 import java.util.Objects;
 
 public class TeamMember
@@ -6,10 +7,11 @@ public class TeamMember
   private String role;
   private Name name;
 
-  public TeamMember(Name name,String role,int id)
+
+
+  public TeamMember(Name name,int id)
   {
     this.name=name;
-    this.role=role;
     this.id=id;
   }
 
@@ -35,13 +37,11 @@ public class TeamMember
       return false;
     }
     TeamMember other=(TeamMember)obj;
-    return id == other.id && name == other.name && role == other.role;
+    return id == other.id && name == other.name;
   }
 
   public String toString()
   {
-    return "TeamMember{" + "id=" + id + ", role='" + role + '\'' + ", name="
-        + name + '}';
+    return "ID:" + id + ",Name:" + name;
   }
-
   }
