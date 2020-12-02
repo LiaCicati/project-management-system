@@ -3,7 +3,6 @@ package Model;
 public class TeamMember
 {
   private int id;
-  private String role;
   private Name name;
 
 
