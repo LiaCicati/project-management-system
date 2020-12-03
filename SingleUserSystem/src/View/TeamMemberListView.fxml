@@ -11,9 +11,9 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" userData="Grade List" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GradListViewController">
    <children>
-      <HBox prefHeight="740.0" prefWidth="790.0">
+      <HBox prefHeight="679.0" prefWidth="700.0">
          <children>
-            <VBox alignment="TOP_CENTER" prefHeight="295.0" prefWidth="129.0" spacing="70.0">
+            <VBox alignment="TOP_CENTER" prefHeight="475.0" prefWidth="134.0" spacing="70.0">
                <children>
                   <Label alignment="CENTER" layoutX="36.0" text="Team" textAlignment="CENTER">
                      <font>
@@ -45,7 +45,7 @@
                   <Insets />
                </opaqueInsets>
                <HBox.margin>
-                  <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
+                  <Insets />
                </HBox.margin>
             </VBox>
             <ScrollPane prefHeight="472.0" prefViewportHeight="160.0" prefViewportWidth="200.0" prefWidth="360.0">
@@ -63,4 +63,7 @@
             <Font size="18.0" />
          </font></Label>
    </children>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
 </VBox>
