@@ -2,6 +2,7 @@ package Model;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.InputMismatchException;
 
 /**
  * @author
@@ -160,12 +161,14 @@ public class RequirementList
      */
     public void reorder(int position, int newPosition)
     {
-        if (position < 0 || position > requirements.size() || newPosition < 0
-            || newPosition > requirements.size())
+        try
         {
-            throw new IndexOutOfBoundsException();
+            Collections.swap(requirements, position, newPosition);
         }
-        Collections.swap(requirements, position, newPosition);
+        catch (IndexOutOfBoundsException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     /**
