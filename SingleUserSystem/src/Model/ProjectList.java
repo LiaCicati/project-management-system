@@ -3,8 +3,8 @@ package Model;
 import java.util.ArrayList;
 
 /**
- * @Author Rickie Nielsen
- * @Version v.1 : 03/12/2020
+ * @author Rickie Nielsen
+ * @version v.1 : 03/12/2020
  */
 public class ProjectList
 {
