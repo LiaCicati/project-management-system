@@ -67,6 +67,7 @@ public class RequirementList
         }
         return null;
     }
+<<<<<<< Updated upstream
 
     /**
      * Getting a requirement by its responsible team member
@@ -177,8 +178,74 @@ public class RequirementList
      * @return a string with all needed information about all requirements
      */
     @Override public String toString()
+=======
+    return byStatus;
+  }
+
+  /**
+   * Changing the status of a specific requirement
+   * @param status the status
+   * @param requirement the requirement
+   */
+  public void changeStatus(String status, Requirement requirement)
+  {
+    requirement.setStatus(status);
+  }
+
+  /**
+   * Getting a requirement from the list at a specific index
+   *
+   * @param index the index of the requirement
+   * @return the requirement at the specified index
+   */
+  public Requirement getRequirement(int index)
+  {
+    return requirements.get(index);
+  }
+
+  /**
+   * Getting the total number of requirements from the list
+   *
+   * @return total number of requirements
+   */
+  public int getSize()
+  {
+    return requirements.size();
+  }
+
+  /**
+   * Reorders positions in the requirement list
+   * @param i position you wish to swap
+   * @param j position you wish to swap to
+   */
+  public void reorder(int i, int j)
+  {
+    if (i < 0 || i > requirements.size() || j < 0 || j > requirements.size())
+>>>>>>> Stashed changes
     {
         return "Requirements : " + "\n" + requirements;
     }
+<<<<<<< Updated upstream
+=======
+    Collections.swap(requirements, i, j);
+  }
+  public boolean hasEndedState() {
+    for(int i = 0; i < requirements.size(); i++) {
+      if(requirements.get(i).isEnded()) {
+        return true;
+      }
+    }
+    return false;
+  }
+  /**
+   * Getting the information about all requirements
+   *
+   * @return a string with all needed information about all requirements
+   */
+  @Override public String toString()
+  {
+    return "Requirements : " + "\n" + requirements;
+  }
+>>>>>>> Stashed changes
 
 }

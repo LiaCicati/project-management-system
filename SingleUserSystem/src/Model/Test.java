@@ -30,10 +30,14 @@ public class Test
     requirementList.addRequirement(requirement1);
     requirementList.addRequirement(requirement2);
 
+    requirement1.setStatus(Requirement.ENDED);
+//    requirement2.setStatus(Requirement.STARTED);
+
     Project project1 = new Project("Rental Company", deadline, 22,
         "blabla blabla");
     project1.addTeamMember(scrumMaster);
     project1.addTeamMember(productOwner);
+    project1.addRequirement(requirement1);
 
     Task task1 = new Task(requirement1, 3, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
 
@@ -70,9 +74,14 @@ public class Test
 
     Requirement functional = new Functional(868, 50.6,teamMember1, deadline2, "Customer", "have access to a website", "I can see the progress of my project");
     System.out.println(functional);
+    System.out.println(requirement1.getStatus());
+    System.out.println("Status of the project: " + project1.getStatus());
+    System.out.println("1: " + requirementList);
+    requirementList.reorder(0, 1);
+    System.out.println("Changed: " + requirementList);
 
-
-
-
+    System.out.println(productOwner);
+    System.out.println(requirement1.isEnded());
+    System.out.println(requirementList.hasEndedState());
   }
 }

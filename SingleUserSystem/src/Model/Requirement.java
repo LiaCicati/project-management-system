@@ -25,10 +25,11 @@ public class Requirement
 
   /**
    * Contructor for the requirement
-   * @param ID the id of the requirement
-   * @param estimatedTime the estimated time per completion of a requirement
+   *
+   * @param ID                    the id of the requirement
+   * @param estimatedTime         the estimated time per completion of a requirement
    * @param responsibleTeamMember the responsible team member for a requirement
-   * @param deadline the deadline for the requirement
+   * @param deadline              the deadline for the requirement
    */
   public Requirement(int ID, double estimatedTime,
       TeamMember responsibleTeamMember, MyDate deadline)
@@ -45,6 +46,7 @@ public class Requirement
 
   /**
    * Getter for the requirement's id
+   *
    * @return the id of the requirement
    */
   public int getID()
@@ -54,6 +56,7 @@ public class Requirement
 
   /**
    * Getter for the responsible team member of a requirement
+   *
    * @return the responsible team member
    */
   public TeamMember getResponsibleTeamMember()
@@ -63,6 +66,7 @@ public class Requirement
 
   /**
    * Getter for the estimated time per completion of a requirement
+   *
    * @return the estimated time
    */
   public double getEstimatedTime()
@@ -72,6 +76,7 @@ public class Requirement
 
   /**
    * Getter for time spent on the requirement
+   *
    * @return the time spent on requirement
    */
   public double getTimeSpent()
@@ -85,6 +90,7 @@ public class Requirement
 
   /**
    * Getter for the requirement status
+   *
    * @return the current status of the requirement
    */
   public String getStatus()
@@ -94,6 +100,7 @@ public class Requirement
 
   /**
    * Getter for the requirement type
+   *
    * @return the type of a specific requirement
    */
   public String getType()
@@ -103,6 +110,7 @@ public class Requirement
 
   /**
    * Getter for the requirement deadline
+   *
    * @return the deadline of a requirement
    */
   public MyDate getDeadline()
@@ -112,6 +120,7 @@ public class Requirement
 
   /**
    * Sets the id of a requirement
+   *
    * @param ID the id
    */
   public void setID(int ID)
@@ -121,6 +130,7 @@ public class Requirement
 
   /**
    * Sets the estimated time per completion of a requirement
+   *
    * @param estimatedTime the estimated time per completion
    */
   public void setEstimatedTime(double estimatedTime)
@@ -130,6 +140,7 @@ public class Requirement
 
   /**
    * Sets the responsible team member of a requirement
+   *
    * @param responsibleTeamMember the responsible team member
    */
   public void setResponsibleTeamMember(TeamMember responsibleTeamMember)
@@ -139,6 +150,7 @@ public class Requirement
 
   /**
    * Sets the deadline for the requirement
+   *
    * @param deadline the deadline
    */
   public void setDeadline(MyDate deadline)
@@ -148,6 +160,7 @@ public class Requirement
 
   /**
    * Sets the status of the requirement
+   *
    * @param status the status
    */
   public void setStatus(String status)
@@ -157,6 +170,7 @@ public class Requirement
 
   /**
    * Adding a task to a specific requirement
+   *
    * @param task the added task
    */
   public void addTask(Task task)
@@ -166,6 +180,7 @@ public class Requirement
 
   /**
    * Removing a task from a specific requirement
+   *
    * @param task the removed task
    */
   public void removeTask(Task task)
@@ -175,6 +190,7 @@ public class Requirement
 
   /**
    * Adding a team member that worked on the requirement
+   *
    * @param teamMember the added team member
    */
   public void addTeamMember(TeamMember teamMember)
@@ -184,6 +200,7 @@ public class Requirement
 
   /**
    * Removing a team member that worked on a specific requirement
+   *
    * @param teamMember the removed team member
    */
   public void removeTeamMember(TeamMember teamMember)
@@ -193,6 +210,7 @@ public class Requirement
 
   /**
    * Getting all team members that worked on a specific requirement
+   *
    * @return an array list of team members that worked on the requirement
    */
   public ArrayList<TeamMember> getAllTeamMembers()
@@ -202,6 +220,7 @@ public class Requirement
 
   /**
    * Getting all the tasks of a requirement
+   *
    * @return an array list of all tasks that represent a requirement
    */
   public ArrayList<Task> getAllTasks()
@@ -211,6 +230,7 @@ public class Requirement
 
   /**
    * Getting the total number of team members that worked on a requirement
+   *
    * @return total number of team members
    */
   public int countTeamMembers()
@@ -220,6 +240,7 @@ public class Requirement
 
   /**
    * Getting the total number of tasks of a requirement
+   *
    * @return total number of tasks
    */
   public int countTasks()
@@ -227,10 +248,16 @@ public class Requirement
     return tasks.size();
   }
 
+  public boolean isEnded()
+  {
+    return status.equals(Requirement.ENDED);
+  }
+
   // somewhere here should be also the method regarding the status
 
   /**
    * Checking if two requirements are the same
+   *
    * @param obj the requirement compared to
    * @return true if the requirements are the same or false if not
    */
@@ -248,6 +275,7 @@ public class Requirement
 
   /**
    * Getting the information about a requirement
+   *
    * @return a string with all needed information about a requirement
    */
   @Override public String toString()
