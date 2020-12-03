@@ -43,8 +43,8 @@ public class Task
     setDescription(description);
     setEstimatedTime(estimatedTime);
     setResponsibleTeamMember(responsibleTeamMember);
-    setStatus(status);
     setDeadline(deadline);
+    this.status = NOT_STARTED;
     this.requirementID = requirementID;
     this.teamMembers = new ArrayList<>();
 
@@ -206,7 +206,7 @@ public class Task
    */
   public void setStatus(String status)
   {
-    this.status = NOT_STARTED;
+    this.status = status;
   }
 
   /**
