@@ -83,7 +83,7 @@ public class Requirement
   {
     for (Task task : tasks)
     {
-      this.timeSpent += task.getTimeSpent();
+      this.timeSpent = timeSpent + task.getTimeSpent();
     }
     return timeSpent;
   }
