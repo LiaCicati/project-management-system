@@ -154,16 +154,16 @@ public class RequirementList
 
   /**
    * Reorders positions in the requirement list
-   * @param i position you wish to swap
-   * @param j position you wish to swap to
+   * @param position position you wish to swap
+   * @param newPosition position you wish to swap to
    */
-  public void reorder(int i, int j)
+  public void reorder(int position, int newPosition)
   {
-    if (i < 0 || i > requirements.size() || j < 0 || j > requirements.size())
+    if (position < 0 || position > requirements.size() || newPosition < 0 || newPosition > requirements.size())
     {
       throw new IndexOutOfBoundsException();
     }
-    Collections.swap(requirements, i, j);
+    Collections.swap(requirements, position, newPosition);
   }
 
   /**
