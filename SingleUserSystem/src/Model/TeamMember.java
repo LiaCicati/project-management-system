@@ -25,6 +25,11 @@ public class TeamMember
   {
     this.id = id;
   }
+  
+  public void setName(Name name)
+  {
+    this.name=name;
+  }
 
   public boolean equals(Object obj)
   {
