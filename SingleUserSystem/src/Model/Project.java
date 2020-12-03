@@ -183,10 +183,10 @@ public class Project
     // maybe just to return the teamMemberList because you already created an array list in the constructor?
 
     /**
-     * Getter for team members
-     * @return the team members
+     * Getter for team members that are not scrum master or product owner
+     * @return the team members that are not scrum master or product owner
      */
-    public ArrayList<TeamMember> getAllTeamMembers()
+    public ArrayList<TeamMember> getOnlyTeamMembers()
     {
         ArrayList<TeamMember> teamMembers = new ArrayList<>();
         for (TeamMember teamMember : teamMemberList)
@@ -198,6 +198,15 @@ public class Project
             }
         }
         return teamMembers;
+    }
+
+    /**
+     * Getter for all team members
+     * @return all team members
+     */
+    public ArrayList<TeamMember> getAllTeamMembers()
+    {
+        return teamMemberList;
     }
 
     /**
@@ -268,8 +277,7 @@ public class Project
                 for (int j = 0; j < requirement.getAllTasks().size(); j++)
                 {
                     if (requirement.getAllTasks().get(j).getStatus()
-                        .equals(ENDED) || requirement.getAllTasks().get(j)
-                        .getStatus().equals(APPROVED))
+                        .equals(ENDED))
                     {
                         taskListCheck.add(requirement.getAllTasks().get(j));
                     }
