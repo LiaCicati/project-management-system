@@ -20,6 +20,7 @@ public class TaskList
 
   /**
    * Adding a task to a list of tasks
+   *
    * @param task the added task
    */
   public void addTask(Task task)
@@ -29,6 +30,7 @@ public class TaskList
 
   /**
    * Removing a task from the list
+   *
    * @param task the removed task
    */
   public void removeTask(Task task)
@@ -38,6 +40,7 @@ public class TaskList
 
   /**
    * Getting a task from the list by its specific id
+   *
    * @param ID the ID of the task
    * @return the task with this specific id or null if nothing is found
    */
@@ -53,6 +56,7 @@ public class TaskList
 
   /**
    * Getting a task from the list by its specific title
+   *
    * @param title the title of the task
    * @return the task with its specific title or null if nothing is found
    */
@@ -68,6 +72,7 @@ public class TaskList
 
   /**
    * Getting a task by its responsible team member
+   *
    * @param responsibleTeamMember the responsible team member for the task
    * @return an array list with all tasks that a specific team member is responsible for
    */
@@ -86,6 +91,7 @@ public class TaskList
 
   /**
    * Getting all tasks
+   *
    * @return an array list of all tasks
    */
   public ArrayList<Task> getAllTasks()
@@ -112,7 +118,26 @@ public class TaskList
   }
 
   /**
-   *  Getting a task from the list at a specific index
+   * Getting all tasks with a specific status from the task's list
+   * @param status the status for the task
+   * @return an array list with all tasks that have a specific status
+   */
+  public ArrayList<Task> getByStatus(String status)
+  {
+    ArrayList<Task> byStatus = new ArrayList<>();
+    for (int i = 0; i < tasks.size(); i++)
+    {
+      if (tasks.get(i).getStatus().equals(status))
+      {
+        byStatus.add(tasks.get(i));
+      }
+    }
+    return byStatus;
+  }
+
+  /**
+   * Getting a task from the list at a specific index
+   *
    * @param index the index of the task
    * @return the task at the specified index
    */
@@ -123,6 +148,7 @@ public class TaskList
 
   /**
    * Getting the total number of tasks from the list
+   *
    * @return total number of tasks
    */
   public int getSize()
@@ -132,6 +158,7 @@ public class TaskList
 
   /**
    * Getting the information about all tasks
+   *
    * @return a string with all needed information about all tasks
    */
   @Override public String toString()

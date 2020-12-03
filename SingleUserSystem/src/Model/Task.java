@@ -176,7 +176,7 @@ public class Task
    */
   public void setTimeSpent(double timeSpent)
   {
-    this.timeSpent = timeSpent;
+    this.timeSpent += timeSpent;
   }
 
   /**
