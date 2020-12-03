@@ -4,8 +4,19 @@
 /*<-- SERVICES PAGE --> @Siyu Xia*/
 
 .services {
+<<<<<<< Updated upstream
     max-width: 1280px;
     margin: 90px auto 60px;
+=======
+    display: flex;
+    justify-content: space-between;
+<<<<<<< Updated upstream
+    align-items: center;
+    margin: 70px 0 60px;
+=======
+    margin: 70px 100px 60px;
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }
 
 .services__information {
@@ -42,6 +53,7 @@
     background-position: center;
     padding: 2px;
     background-repeat: no-repeat;
+<<<<<<< Updated upstream
 }
 
 .services__illustration {
@@ -75,7 +87,13 @@
 .row {
     align-items: center !important;
 }
+<<<<<<< Updated upstream
 
 p {
     margin: 16px 0 16px 10px !important;
 }
+=======
+=======
+}
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
