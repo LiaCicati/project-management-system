@@ -155,9 +155,6 @@ public class Project
         return teamMemberList.size();
     }
 
-    // Maybe we shouldn't have getters for scrum Master and Product owner separately but one common for getTeamMember by
-    //  smthin(role) and there to have some if statements or something like this?
-
     /**
      * Getter for the scrum master
      *
@@ -194,9 +191,7 @@ public class Project
         return owner;
     }
 
-    // maybe just to return the teamMemberList because you already created an array list in the constructor?
-
-    /**
+     /**
      * Getter for team members that are not scrum master or product owner
      *
      * @return the team members that are not scrum master or product owner
