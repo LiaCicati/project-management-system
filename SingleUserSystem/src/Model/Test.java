@@ -14,6 +14,7 @@ public class Test
     TeamMember scrumMaster = new ScrumMaster(name3, 58);
     TeamMember productOwner = new ProductOwner(name2, 444);
 
+
     TeamMemberList teamMemberList = new TeamMemberList();
     teamMemberList.addTeamMember(teamMember1);
     teamMemberList.addTeamMember(teamMember2);
@@ -33,6 +34,12 @@ public class Test
         "blabla blabla");
     project1.addTeamMember(scrumMaster);
     project1.addTeamMember(productOwner);
+
+    Task task1 = new Task(requirement1, 3, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
+
+    teamMember1.registerTime( 40 ,task1);
+
+    System.out.println("Task 1 data: " + task1);
     System.out.println(
         "All members for the 1st project: " + project1.getAllTeamMembers());
 
@@ -60,6 +67,11 @@ public class Test
             .getAllTeamMembers());
 
     System.out.println(requirementList);
+
+    Requirement functional = new Functional(868, 50.6,teamMember1, deadline2, "Customer", "have access to a website", "I can see the progress of my project");
+    System.out.println(functional);
+
+
 
 
   }

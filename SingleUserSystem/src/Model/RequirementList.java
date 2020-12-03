@@ -20,6 +20,7 @@ public class RequirementList
 
   /**
    * Adding a requirement to a list of requirements
+   *
    * @param requirement the added requirement
    */
   public void addRequirement(Requirement requirement)
@@ -29,6 +30,7 @@ public class RequirementList
 
   /**
    * Removing a requirement from the list
+   *
    * @param requirement the removed requirement
    */
   public void removeRequirement(Requirement requirement)
@@ -38,6 +40,7 @@ public class RequirementList
 
   /**
    * Getting all requirements
+   *
    * @return an array list of all requirements
    */
   public ArrayList<Requirement> getRequirements()
@@ -47,6 +50,7 @@ public class RequirementList
 
   /**
    * Getting a requirement from the list by its specific id
+   *
    * @param ID the id of the requirement
    * @return the requirement with this specific id or null if nothing is found
    */
@@ -64,6 +68,7 @@ public class RequirementList
 
   /**
    * Getting a requirement by its responsible team member
+   *
    * @param responsibleTeamMember the responsible team member for the requirement
    * @return an array list with all requirements that a specific team member is responsible for
    */
@@ -84,6 +89,7 @@ public class RequirementList
 
   /**
    * Getting all requirements with a specific deadline from the requirement's list
+   *
    * @param deadline the deadline for the requirement
    * @return an array list with all requirements that correspond to a specific deadline
    */
@@ -101,7 +107,32 @@ public class RequirementList
   }
 
   /**
+   * Getting requirements from the list with a specific status
+   *
+   * @param status the status of the requirement
+   * @return an array list with all requirements that have a specific status
+   */
+  public ArrayList<Requirement> getByStatus(String status)
+  {
+    ArrayList<Requirement> byStatus = new ArrayList<>();
+    for (int i = 0; i < requirements.size(); i++)
+    {
+      if (requirements.get(i).getStatus().equals(status))
+      {
+        byStatus.add(requirements.get(i));
+      }
+    }
+    return byStatus;
+  }
+
+  public void changeStatus(String status, Requirement requirement)
+  {
+    requirement.setStatus(status);
+  }
+
+  /**
    * Getting a requirement from the list at a specific index
+   *
    * @param index the index of the requirement
    * @return the requirement at the specified index
    */
@@ -112,6 +143,7 @@ public class RequirementList
 
   /**
    * Getting the total number of requirements from the list
+   *
    * @return total number of requirements
    */
   public int getSize()
@@ -121,6 +153,7 @@ public class RequirementList
 
   /**
    * Getting the information about all requirements
+   *
    * @return a string with all needed information about all requirements
    */
   @Override public String toString()

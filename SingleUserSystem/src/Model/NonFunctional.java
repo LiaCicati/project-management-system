@@ -15,4 +15,9 @@ public class NonFunctional extends Requirement
   {
     this.what = what;
   }
+
+  @Override public String toString()
+  {
+    return super.toString() + "User story: " + "\n" + " I want to " + what;
+  }
 }
