@@ -2,174 +2,321 @@ package Model;
 
 import java.util.ArrayList;
 
+/**
+ * @Author Rickie Nielsen
+ * @Version v.1 : 03/12/2020
+ */
 public class Project
 {
-  private String title;
-  private String description;
-  private int customerID;
-  private MyDate deadline;
-  private String status;
+    private String title;
+    private String description;
+    private int customerID;
+    private MyDate deadline;
+    private String status;
 
-  private ArrayList<TeamMember> teamMemberList;
-  private ArrayList<Requirement> requirementList;
+    private ArrayList<TeamMember> teamMemberList;
+    private ArrayList<Requirement> requirementList;
 
-  public static final String NOT_STARTED = "Not started";
-  public static final String STARTED = "Started";
-  public static final String ENDED = "Ended";
+    public static final String NOT_STARTED = "Not started";
+    public static final String STARTED = "Started";
+    public static final String ENDED = "Ended";
+    public static final String APPROVED = "Approved";
+    public static final String REJECTED = "Rejected";
 
-  public Project(String title, MyDate deadline, int customerID,
-      String description)
-  {
-    setTitle(title);
-    setDeadline(deadline);
-    setCustomerID(customerID);
-    setDescription(description);
-
-    this.status = NOT_STARTED;
-
-    this.teamMemberList = new ArrayList<>();
-    this.requirementList = new ArrayList<>();
-  }
-
-  public void setTitle(String title)
-  {
-    this.title = title;
-  }
-
-  public void setDeadline(MyDate deadline)
-  {
-    this.deadline = deadline.copy();
-  }
-
-  public void setCustomerID(int customerID)
-  {
-    this.customerID = customerID;
-  }
-
-  public void setDescription(String description)
-  {
-    this.description = description;
-  }
-
-  public String getTitle()
-  {
-    return title;
-  }
-
-  public MyDate getDeadline()
-  {
-    return deadline;
-  }
-
-  public int getCustomerID()
-  {
-    return customerID;
-  }
-
-  public String getDescription()
-  {
-    return description;
-  }
-
-  public void addTeamMember(TeamMember teamMember)
-  {
-    teamMemberList.add(teamMember);
-  }
-
-  public void removeTeamMember(TeamMember teamMember)
-  {
-    teamMemberList.remove(teamMember);
-  }
-
-  public int getNumberOfTeamMembers()
-  {
-    return teamMemberList.size();
-  }
-
-// Maybe we shouldn't have getters for scrum Master and Product owner separately but one common for getTeamMember by
-//  smthin(role) and there to have some if statements or something like this?
-  public TeamMember getScrumMaster()
-  {
-    TeamMember scrum = null;
-    for (TeamMember teamMember : teamMemberList)
+    /**
+     * Constructor for a project
+     * @param title the project title
+     * @param deadline the project deadline
+     * @param customerID an ID for the customer
+     * @param description a description of the project
+     */
+    public Project(String title, MyDate deadline, int customerID,
+        String description)
     {
-      if (teamMember instanceof ScrumMaster)
-      {
-        scrum = teamMember;
-      }
-    }
-    return scrum;
-  }
+        setTitle(title);
+        setDeadline(deadline);
+        setCustomerID(customerID);
+        setDescription(description);
 
-  public TeamMember getProductOwner()
-  {
-    TeamMember owner = null;
-    for (TeamMember teamMember : teamMemberList)
+        this.status = NOT_STARTED;
+
+        this.teamMemberList = new ArrayList<>();
+        this.requirementList = new ArrayList<>();
+    }
+
+    /**
+     * Sets the title
+     * @param title the project title
+     */
+    public void setTitle(String title)
     {
-      if (teamMember instanceof ProductOwner)
-      {
-        owner = teamMember;
-      }
+        this.title = title;
     }
-    return owner;
-  }
 
-// maybe just to return the teamMemberList because you already created an array list in the constructor?
-  public ArrayList<TeamMember> getAllTeamMembers()
-  {
-    ArrayList<TeamMember> teamMembers = new ArrayList<>();
-    for (TeamMember teamMember : teamMemberList)
+    /**
+     * Sets the deadline
+     * @param deadline the project deadline
+     */
+    public void setDeadline(MyDate deadline)
     {
-      if (teamMember != null)
-      {
-        teamMembers.add(teamMember);
-      }
+        this.deadline = deadline.copy();
     }
-    return teamMembers;
-  }
 
-  public void addRequirement(Requirement requirement)
-  {
-    requirementList.add(requirement);
-  }
-
-  public void removeRequirement(int requirementID)
-  {
-    for (int i = 0; i < requirementList.size(); i++)
+    /**
+     * Sets the customerID
+     * @param customerID an ID for the customer
+     */
+    public void setCustomerID(int customerID)
     {
-      if (requirementID == requirementList.get(i).getID())
-      {
-        requirementList.remove(requirementList.get(i));
-      }
+        this.customerID = customerID;
     }
-  }
 
-  public int getNumberOfRequirements()
-  {
-    return requirementList.size();
-  }
-
-  public ArrayList<Requirement> getAllRequirements() // it's correct like this
-  {
-    return requirementList;
-  }
-
-  @Override public boolean equals(Object obj)
-  {
-    if (!(obj instanceof Project))
+    /**
+     * Sets the description
+     * @param description a description of the project
+     */
+    public void setDescription(String description)
     {
-      return false;
+        this.description = description;
     }
-    Project other = (Project) obj;
-    return title.equals(other.title) && description.equals(other.description)
-        && customerID == other.customerID && deadline.equals(other.deadline)
-        && status.equals(other.status);
-  }
 
-  @Override public String toString()
-  {
-    return "Title: " + title + "\n" + "Description: " + description + "\n"
-        + "Customer ID: " + customerID + "\n" + "Deadline: " + deadline + "\n"
-        + "Status: " + status;
-  }
+    /**
+     * Getter for the title
+     * @return the project title
+     */
+    public String getTitle()
+    {
+        return title;
+    }
+
+    /**
+     * Getter for the deadline
+     * @return the project deadline
+     */
+    public MyDate getDeadline()
+    {
+        return deadline;
+    }
+
+    /**
+     * Getter for the customerID
+     * @return the ID of the customer
+     */
+    public int getCustomerID()
+    {
+        return customerID;
+    }
+
+    /**
+     * Getter for the description
+     * @return the description
+     */
+    public String getDescription()
+    {
+        return description;
+    }
+
+    /**
+     * Adds a team member to the project
+     * @param teamMember a team member that will work on the project
+     */
+    public void addTeamMember(TeamMember teamMember)
+    {
+        teamMemberList.add(teamMember);
+    }
+
+    /**
+     * Removes a team member from the project
+     * @param teamMember a team member that works on the project
+     */
+    public void removeTeamMember(TeamMember teamMember)
+    {
+        teamMemberList.remove(teamMember);
+    }
+
+    /**
+     * Getter for the number of team members that works on the project
+     * @return the number of team members that works on the project
+     */
+    public int getNumberOfTeamMembers()
+    {
+        return teamMemberList.size();
+    }
+
+    // Maybe we shouldn't have getters for scrum Master and Product owner separately but one common for getTeamMember by
+    //  smthin(role) and there to have some if statements or something like this?
+
+    /**
+     * Getter for the scrum master
+     * @return the scrum master
+     */
+    public TeamMember getScrumMaster()
+    {
+        TeamMember scrum = null;
+        for (TeamMember teamMember : teamMemberList)
+        {
+            if (teamMember instanceof ScrumMaster)
+            {
+                scrum = teamMember;
+            }
+        }
+        return scrum;
+    }
+
+    /**
+     * Getter for product owner
+     * @return the product owner
+     */
+    public TeamMember getProductOwner()
+    {
+        TeamMember owner = null;
+        for (TeamMember teamMember : teamMemberList)
+        {
+            if (teamMember instanceof ProductOwner)
+            {
+                owner = teamMember;
+            }
+        }
+        return owner;
+    }
+
+    // maybe just to return the teamMemberList because you already created an array list in the constructor?
+
+    /**
+     * Getter for team members
+     * @return the team members
+     */
+    public ArrayList<TeamMember> getAllTeamMembers()
+    {
+        ArrayList<TeamMember> teamMembers = new ArrayList<>();
+        for (TeamMember teamMember : teamMemberList)
+        {
+            if (!(teamMember instanceof ScrumMaster)
+                && !(teamMember instanceof ProductOwner))
+            {
+                teamMembers.add(teamMember);
+            }
+        }
+        return teamMembers;
+    }
+
+    /**
+     * Adds a requirement to the project
+     * @param requirement the requirement to be added
+     */
+    public void addRequirement(Requirement requirement)
+    {
+        requirementList.add(requirement);
+    }
+
+    /**
+     * Removes a requirement from the project
+     * @param requirementID the ID of the requirement to be removed
+     */
+    public void removeRequirement(int requirementID)
+    {
+        for (int i = 0; i < requirementList.size(); i++)
+        {
+            if (requirementID == requirementList.get(i).getID())
+            {
+                requirementList.remove(requirementList.get(i));
+            }
+        }
+    }
+
+    /**
+     * Getter for the number of requirements for the project
+     * @return the number of requirements for the project
+     */
+    public int getNumberOfRequirements()
+    {
+        return requirementList.size();
+    }
+
+    /**
+     * Getter for all the projects requirements
+     * @return all the projects requirements
+     */
+    public ArrayList<Requirement> getAllRequirements()
+    {
+        return requirementList;
+    }
+
+    /**
+     * Sets the status of the project
+     * @param status the project status
+     */
+    public void setStatus(String status)
+    {
+        this.status = status;
+    }
+
+    /**
+     * Getter for the project status, will also check the status of all
+     * requirements and tasks and update where needed
+     * @return the project status
+     */
+    public String getStatus()
+    {
+        ArrayList<Requirement> requirementListCheck = new ArrayList<>();
+        ArrayList<Task> taskListCheck = new ArrayList<>();
+        for (Requirement requirement : requirementList)
+        {
+            if (!(requirement.getStatus().equals(ENDED)) || !(requirement
+                .getStatus().equals(APPROVED)))
+            {
+                for (int j = 0; j < requirement.getAllTasks().size(); j++)
+                {
+                    if (requirement.getAllTasks().get(j).getStatus()
+                        .equals(ENDED) || requirement.getAllTasks().get(j)
+                        .getStatus().equals(APPROVED))
+                    {
+                        taskListCheck.add(requirement.getAllTasks().get(j));
+                    }
+                }
+                if (taskListCheck.equals(requirement.getAllTasks()))
+                {
+                    requirement.setStatus(ENDED);
+                    requirementListCheck.add(requirement);
+                }
+            }
+            else
+            {
+                requirementListCheck.add(requirement);
+            }
+        }
+        if (requirementListCheck.equals(requirementList))
+        {
+            this.status = ENDED;
+        }
+        return status;
+    }
+
+    /**
+     * Equals method
+     * @param obj object to be compared to
+     * @return a boolean indicating if two instances are similar
+     */
+    @Override public boolean equals(Object obj)
+    {
+        if (!(obj instanceof Project))
+        {
+            return false;
+        }
+        Project other = (Project) obj;
+        return title.equals(other.title) && description
+            .equals(other.description) && customerID == other.customerID
+            && deadline.equals(other.deadline) && status.equals(other.status);
+    }
+
+    /**
+     * A toString method
+     * @return the project variables in form of a String
+     */
+    @Override public String toString()
+    {
+        return "Title: " + title + "\n" + "Description: " + description + "\n"
+            + "Customer ID: " + customerID + "\n" + "Deadline: " + deadline
+            + "\n" + "Status: " + status;
+    }
 }
