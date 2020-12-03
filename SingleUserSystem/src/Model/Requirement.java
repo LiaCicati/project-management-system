@@ -12,6 +12,7 @@ public class Requirement
   private double estimatedTime;
   private String status;
   private String type;
+  private double timeSpent;
   public static final String NOT_STARTED = "Not started";
   public static final String STARTED = "Started";
   public static final String ENDED = "Ended";
@@ -36,6 +37,7 @@ public class Requirement
     setEstimatedTime(estimatedTime);
     setResponsibleTeamMember(responsibleTeamMember);
     setDeadline(deadline);
+    this.timeSpent = 0;
     this.status = NOT_STARTED;
     this.teamMembers = new ArrayList<>();
     this.tasks = new ArrayList<>();
@@ -66,6 +68,19 @@ public class Requirement
   public double getEstimatedTime()
   {
     return estimatedTime;
+  }
+
+  /**
+   * Getter for time spent on the requirement
+   * @return the time spent on requirement
+   */
+  public double getTimeSpent()
+  {
+    for (Task task : tasks)
+    {
+      this.timeSpent += task.getTimeSpent();
+    }
+    return timeSpent;
   }
 
   /**
