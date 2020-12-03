@@ -248,6 +248,10 @@ public class Requirement
     return tasks.size();
   }
 
+  /**
+   * Checking if a requirement is in Ended state
+   * @return true if the requirement is ended and false if not
+   */
   public boolean isEnded()
   {
     return status.equals(Requirement.ENDED);

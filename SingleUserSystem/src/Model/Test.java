@@ -31,7 +31,7 @@ public class Test
     requirementList.addRequirement(requirement2);
 
     requirement1.setStatus(Requirement.ENDED);
-//    requirement2.setStatus(Requirement.STARTED);
+    requirement2.setStatus(Requirement.STARTED);
 
     Project project1 = new Project("Rental Company", deadline, 22,
         "blabla blabla");
@@ -80,8 +80,7 @@ public class Test
     requirementList.reorder(0, 1);
     System.out.println("Changed: " + requirementList);
 
-    System.out.println(productOwner);
     System.out.println(requirement1.isEnded());
-    System.out.println(requirementList.hasEndedState());
+    System.out.println(requirementList.isInEndedState());
   }
 }
