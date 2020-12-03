@@ -90,5 +90,6 @@ public class Test
     System.out.println(task1.isEnded());
     System.out.println(task2.isEnded());
     System.out.println(tasks.areInEndedState());
+    System.out.println(project1.getStatus());
   }
 }
