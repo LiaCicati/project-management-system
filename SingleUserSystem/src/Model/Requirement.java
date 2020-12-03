@@ -257,11 +257,8 @@ public class Requirement
     return status.equals(Requirement.ENDED);
   }
 
-  // somewhere here should be also the method regarding the status
-
   /**
    * Checking if two requirements are the same
-   *
    * @param obj the requirement compared to
    * @return true if the requirements are the same or false if not
    */

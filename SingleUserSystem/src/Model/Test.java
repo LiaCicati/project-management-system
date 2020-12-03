@@ -40,7 +40,12 @@ public class Test
     project1.addRequirement(requirement1);
 
     Task task1 = new Task(requirement1, 3, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
-
+    Task task2 = new Task(requirement1, 3, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
+    task2.setStatus(Task.ENDED);
+    task1.setStatus(Task.STARTED);
+    TaskList tasks = new TaskList();
+    tasks.addTask(task1);
+    tasks.addTask(task2);
     teamMember1.registerTime( 40 ,task1);
 
     System.out.println("Task 1 data: " + task1);
@@ -82,5 +87,8 @@ public class Test
 
     System.out.println(requirement1.isEnded());
     System.out.println(requirementList.isInEndedState());
+    System.out.println(task1.isEnded());
+    System.out.println(task2.isEnded());
+    System.out.println(tasks.areInEndedState());
   }
 }
