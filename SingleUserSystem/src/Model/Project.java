@@ -281,21 +281,21 @@ public class Project
                     {
                         taskListCheck.add(requirement.getAllTasks().get(j));
                     }
-                }
-                if (taskListCheck.equals(requirement.getAllTasks()))
-                {
-                    requirement.setStatus(ENDED);
-                    requirementListCheck.add(requirement);
+                    if (taskListCheck.equals(requirement.getAllTasks()))
+                    {
+                        requirement.setStatus(ENDED);
+                        requirementListCheck.add(requirement);
+                    }
                 }
             }
             else
             {
                 requirementListCheck.add(requirement);
             }
-        }
-        if (requirementListCheck.equals(requirementList))
-        {
-            this.status = ENDED;
+            if (requirementListCheck.equals(requirementList))
+            {
+                this.status = ENDED;
+            }
         }
         return status;
     }
