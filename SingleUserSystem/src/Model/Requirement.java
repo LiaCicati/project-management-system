@@ -69,7 +69,7 @@ public class Requirement
   }
 
   /**
-   * Getter for the requirement status of a requirement
+   * Getter for the requirement status
    * @return the current status of the requirement
    */
   public String getStatus()
@@ -150,7 +150,7 @@ public class Requirement
   }
 
   /**
-   * Reving a task from a specific requirement
+   * Removing a task from a specific requirement
    * @param task the removed task
    */
   public void removeTask(Task task)

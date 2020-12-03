@@ -2,30 +2,54 @@ package Model;
 
 import java.util.ArrayList;
 
+/**
+ * @author
+ * @version v.1 3d December 2020
+ */
 public class RequirementList
 {
   private ArrayList<Requirement> requirements;
 
+  /**
+   * Constructor for the requirements
+   */
   public RequirementList()
   {
     this.requirements = new ArrayList<>();
   }
 
+  /**
+   * Adding a requirement to a list of requirements
+   * @param requirement the added requirement
+   */
   public void addRequirement(Requirement requirement)
   {
     requirements.add(requirement);
   }
 
+  /**
+   * Removing a requirement from the list
+   * @param requirement the removed requirement
+   */
   public void removeRequirement(Requirement requirement)
   {
     requirements.remove(requirement);
   }
 
+  /**
+   * Getting all requirements
+   * @return an array list of all requirements
+   */
   public ArrayList<Requirement> getRequirements()
   {
     return requirements;
   }
 
+  /**
+   * Getting a requirement from the list by its specific id
+   * @param ID the id of the requirement
+   * @return the requirement with this specific id or null if nothing is found
+   */
   public Requirement getByID(int ID)
   {
     for (int i = 0; i < requirements.size(); i++)
@@ -38,6 +62,11 @@ public class RequirementList
     return null;
   }
 
+  /**
+   * Getting a requirement by its responsible team member
+   * @param responsibleTeamMember the responsible team member for the requirement
+   * @return an array list with all requirements that a specific team member is responsible for
+   */
   public ArrayList<Requirement> getByResponsibleTeamMember(
       TeamMember responsibleTeamMember)
   {
@@ -53,6 +82,11 @@ public class RequirementList
     return byResponsibleTeamMember;
   }
 
+  /**
+   * Getting all requirements with a specific deadline from the requirement's list
+   * @param deadline the deadline for the requirement
+   * @return an array list with all requirements that correspond to a specific deadline
+   */
   public ArrayList<Requirement> getByDeadline(MyDate deadline)
   {
     ArrayList<Requirement> byDeadline = new ArrayList<>();
@@ -66,16 +100,29 @@ public class RequirementList
     return byDeadline;
   }
 
+  /**
+   * Getting a requirement from the list at a specific index
+   * @param index the index of the requirement
+   * @return the requirement at the specified index
+   */
   public Requirement getRequirement(int index)
   {
     return requirements.get(index);
   }
 
+  /**
+   * Getting the total number of requirements from the list
+   * @return total number of requirements
+   */
   public int getSize()
   {
     return requirements.size();
   }
 
+  /**
+   * Getting the information about all requirements
+   * @return a string with all needed information about all requirements
+   */
   @Override public String toString()
   {
     return "Requirements : " + "\n" + requirements;
