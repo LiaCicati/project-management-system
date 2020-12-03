@@ -172,6 +172,7 @@ public class Task
 
   /**
    * Setting the time spent
+   *
    * @param timeSpent the time spent
    */
   public void setTimeSpent(double timeSpent)
@@ -247,6 +248,16 @@ public class Task
   public int countTeamMembers()
   {
     return teamMembers.size();
+  }
+
+  /**
+   * Checking if a task is in Ended state
+   *
+   * @return return true if the task is Ended and false if not
+   */
+  public boolean isEnded()
+  {
+    return status.equals(Task.ENDED);
   }
 
   /**

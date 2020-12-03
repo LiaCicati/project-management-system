@@ -101,6 +101,7 @@ public class TaskList
 
   /**
    * Getting all tasks with a specific deadline from the task's list
+   *
    * @param deadline the deadline for the task
    * @return an array list with all tasks that correspond to a specific deadline
    */
@@ -119,6 +120,7 @@ public class TaskList
 
   /**
    * Getting all tasks with a specific status from the task's list
+   *
    * @param status the status for the task
    * @return an array list with all tasks that have a specific status
    */
@@ -137,13 +139,29 @@ public class TaskList
 
   /**
    * Changing the status of a specific task
+   *
    * @param status the status
-   * @param task the task whose status has been edited
+   * @param task   the task whose status has been edited
    */
   public void changeStatus(String status, Task task)
   {
     task.setStatus(status);
   }
+
+  /**
+   * Checking if all tasks are in Ended state
+   *
+   * @return true if all tasks are in Ended state and false if not
+   */
+  public boolean areInEndedState()
+  {
+    for (int i = 0; i < tasks.size(); i++)
+    {
+      return tasks.get(i).isEnded();
+    }
+    return false;
+  }
+
   /**
    * Getting a task from the list at a specific index
    *
