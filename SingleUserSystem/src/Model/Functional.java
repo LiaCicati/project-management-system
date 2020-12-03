@@ -30,4 +30,10 @@ public class Functional extends Requirement
   {
     this.why = why;
   }
+
+  @Override public String toString()
+  {
+    return super.toString() + "User story: " + "\n" + "As a " + who
+        + " I want to " + what + " ,so that " + why;
+  }
 }

@@ -10,9 +10,10 @@ public class TeamMember
   private Name name;
 
   /**
-   *Contructor for the teammember
-   * @param name the name of the teammember
-   * @param id the id of the teammember
+   * Contructor for the team member
+   *
+   * @param name the name of the team member
+   * @param id   the id of the team member
    */
   public TeamMember(Name name, int id)
   {
@@ -21,8 +22,9 @@ public class TeamMember
   }
 
   /**
-   *Getter for the teammember's name
-   * @return the name of the teammember
+   * Getter for the team member's name
+   *
+   * @return the name of the team member
    */
   public Name getName()
   {
@@ -30,8 +32,9 @@ public class TeamMember
   }
 
   /**
-   * Getter for the teammember's id
-   * @return the id of the teammember
+   * Getter for the team member's id
+   *
+   * @return the id of the team member
    */
   public int getId()
   {
@@ -39,7 +42,8 @@ public class TeamMember
   }
 
   /**
-   * Sets the id of a teammember
+   * Sets the id of a team member
+   *
    * @param id the id
    */
   public void setId(int id)
@@ -48,18 +52,31 @@ public class TeamMember
   }
 
   /**
-   * Sets the name of a teammember
+   * Sets the name of a team member
+   *
    * @param name the name
    */
   public void setName(Name name)
   {
-    this.name=name;
+    this.name = name;
   }
 
   /**
-   * Checking if two teammembers are the same
-   * @param obj the teammember compared to
-   * @return true if the teammembers are the same or false if not
+   * Register time spent on a specific task
+   *
+   * @param timeSpent the time spent on the task
+   * @param task      the task the time is registered to
+   */
+  public void registerTime(double timeSpent, Task task)
+  {
+    task.setTimeSpent(timeSpent);
+  }
+
+  /**
+   * Checking if two team members are the same
+   *
+   * @param obj the team member compared to
+   * @return true if the team members are the same or false if not
    */
   public boolean equals(Object obj)
   {
@@ -72,8 +89,9 @@ public class TeamMember
   }
 
   /**
-   * Getting the information about a teammember
-   * @return a string with all needed information about a teammember
+   * Getting the information about a team member
+   *
+   * @return a string with all needed information about a team member
    */
   public String toString()
   {

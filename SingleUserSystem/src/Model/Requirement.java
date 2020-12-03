@@ -240,7 +240,7 @@ public class Requirement
     String s = "";
     s += "ID: " + ID + "\n" + "estimated Time: " + estimatedTime + " hours"
         + "\n" + "Responsible Team Member: " + responsibleTeamMember + "\n"
-        + "Deadline: " + deadline + "\n" + "Status: " + status;
+        + "Deadline: " + deadline + "\n" + "Status: " + status + "\n";
     return s;
   }
 

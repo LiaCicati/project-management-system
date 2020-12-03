@@ -39,7 +39,7 @@ public class Task
   {
     setID(ID);
     setTitle(title);
-    //    setTimeSpent(timeSpent, teamMember);
+    setTimeSpent(0);
     setDescription(description);
     setEstimatedTime(estimatedTime);
     setResponsibleTeamMember(responsibleTeamMember);
@@ -170,11 +170,14 @@ public class Task
     this.estimatedTime = estimatedTime;
   }
 
-  //  public void setTimeSpent(double timeSpent, TeamMember teamMember)
-  //  {
-  //    this.timeSpent = timeSpent;
-  //    this.teamMember = teamMember;
-  //  }
+  /**
+   * Setting the time spent
+   * @param timeSpent the time spent
+   */
+  public void setTimeSpent(double timeSpent)
+  {
+    this.timeSpent = timeSpent;
+  }
 
   /**
    * Sets the responsible team member of a requirement
