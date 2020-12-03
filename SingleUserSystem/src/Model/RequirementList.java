@@ -1,6 +1,8 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author
@@ -149,6 +151,20 @@ public class RequirementList
   public int getSize()
   {
     return requirements.size();
+  }
+
+  /**
+   * Reorders positions in the requirement list
+   * @param i position you wish to swap
+   * @param j position you wish to swap to
+   */
+  public void reorder(int i, int j)
+  {
+    if (i < 0 || i > requirements.size() || j < 0 || j > requirements.size())
+    {
+      throw new IndexOutOfBoundsException();
+    }
+    Collections.swap(requirements, i, j);
   }
 
   /**
