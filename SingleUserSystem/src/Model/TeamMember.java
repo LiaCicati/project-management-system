@@ -10,16 +10,10 @@ public class TeamMember
   private Name name;
 
   /**
-   <<<<<<< Updated upstream
    * Contructor for the team member
    *
    * @param name the name of the team member
    * @param id   the id of the team member
-  =======
-   *Contructor for the teammember
-   * @param name the name of the teammember
-   * @param id the id of the teammember
-  >>>>>>> Stashed changes
    */
   public TeamMember(Name name, int id)
   {
@@ -28,14 +22,9 @@ public class TeamMember
   }
 
   /**
-   <<<<<<< Updated upstream
    * Getter for the team member's name
    *
    * @return the name of the team member
-  =======
-   *Getter for the teammember's name
-   * @return the name of the teammember
-  >>>>>>> Stashed changes
    */
   public Name getName()
   {
@@ -43,14 +32,9 @@ public class TeamMember
   }
 
   /**
-   <<<<<<< Updated upstream
    * Getter for the team member's id
    *
    * @return the id of the team member
-  =======
-   * Getter for the teammember's id
-   * @return the id of the teammember
-  >>>>>>> Stashed changes
    */
   public int getId()
   {
@@ -58,12 +42,8 @@ public class TeamMember
   }
 
   /**
-   <<<<<<< Updated upstream
    * Sets the id of a team member
    *
-   =======
-   * Sets the id of a teammember
-   >>>>>>> Stashed changes
    * @param id the id
    */
   public void setId(int id)
@@ -72,12 +52,8 @@ public class TeamMember
   }
 
   /**
-   <<<<<<< Updated upstream
    * Sets the name of a team member
    *
-   =======
-   * Sets the name of a teammember
-   >>>>>>> Stashed changes
    * @param name the name
    */
   public void setName(Name name)
@@ -97,16 +73,10 @@ public class TeamMember
   }
 
   /**
-   <<<<<<< Updated upstream
    * Checking if two team members are the same
    *
    * @param obj the team member compared to
    * @return true if the team members are the same or false if not
-  =======
-   * Checking if two teammembers are the same
-   * @param obj the teammember compared to
-   * @return true if the teammembers are the same or false if not
-  >>>>>>> Stashed changes
    */
   public boolean equals(Object obj)
   {
@@ -119,14 +89,9 @@ public class TeamMember
   }
 
   /**
-   <<<<<<< Updated upstream
    * Getting the information about a team member
    *
    * @return a string with all needed information about a team member
-  =======
-   * Getting the information about a teammember
-   * @return a string with all needed information about a teammember
-  >>>>>>> Stashed changes
    */
   public String toString()
   {
