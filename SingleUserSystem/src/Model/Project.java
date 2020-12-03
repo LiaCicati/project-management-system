@@ -25,9 +25,10 @@ public class Project
 
     /**
      * Constructor for a project
-     * @param title the project title
-     * @param deadline the project deadline
-     * @param customerID an ID for the customer
+     *
+     * @param title       the project title
+     * @param deadline    the project deadline
+     * @param customerID  an ID for the customer
      * @param description a description of the project
      */
     public Project(String title, MyDate deadline, int customerID,
@@ -46,6 +47,7 @@ public class Project
 
     /**
      * Sets the title
+     *
      * @param title the project title
      */
     public void setTitle(String title)
@@ -55,6 +57,7 @@ public class Project
 
     /**
      * Sets the deadline
+     *
      * @param deadline the project deadline
      */
     public void setDeadline(MyDate deadline)
@@ -64,6 +67,7 @@ public class Project
 
     /**
      * Sets the customerID
+     *
      * @param customerID an ID for the customer
      */
     public void setCustomerID(int customerID)
@@ -73,6 +77,7 @@ public class Project
 
     /**
      * Sets the description
+     *
      * @param description a description of the project
      */
     public void setDescription(String description)
@@ -82,6 +87,7 @@ public class Project
 
     /**
      * Getter for the title
+     *
      * @return the project title
      */
     public String getTitle()
@@ -91,6 +97,7 @@ public class Project
 
     /**
      * Getter for the deadline
+     *
      * @return the project deadline
      */
     public MyDate getDeadline()
@@ -100,6 +107,7 @@ public class Project
 
     /**
      * Getter for the customerID
+     *
      * @return the ID of the customer
      */
     public int getCustomerID()
@@ -109,6 +117,7 @@ public class Project
 
     /**
      * Getter for the description
+     *
      * @return the description
      */
     public String getDescription()
@@ -118,6 +127,7 @@ public class Project
 
     /**
      * Adds a team member to the project
+     *
      * @param teamMember a team member that will work on the project
      */
     public void addTeamMember(TeamMember teamMember)
@@ -127,6 +137,7 @@ public class Project
 
     /**
      * Removes a team member from the project
+     *
      * @param teamMember a team member that works on the project
      */
     public void removeTeamMember(TeamMember teamMember)
@@ -136,6 +147,7 @@ public class Project
 
     /**
      * Getter for the number of team members that works on the project
+     *
      * @return the number of team members that works on the project
      */
     public int getNumberOfTeamMembers()
@@ -148,6 +160,7 @@ public class Project
 
     /**
      * Getter for the scrum master
+     *
      * @return the scrum master
      */
     public TeamMember getScrumMaster()
@@ -165,6 +178,7 @@ public class Project
 
     /**
      * Getter for product owner
+     *
      * @return the product owner
      */
     public TeamMember getProductOwner()
@@ -184,6 +198,7 @@ public class Project
 
     /**
      * Getter for team members that are not scrum master or product owner
+     *
      * @return the team members that are not scrum master or product owner
      */
     public ArrayList<TeamMember> getOnlyTeamMembers()
@@ -202,6 +217,7 @@ public class Project
 
     /**
      * Getter for all team members
+     *
      * @return all team members
      */
     public ArrayList<TeamMember> getAllTeamMembers()
@@ -211,6 +227,7 @@ public class Project
 
     /**
      * Adds a requirement to the project
+     *
      * @param requirement the requirement to be added
      */
     public void addRequirement(Requirement requirement)
@@ -220,6 +237,7 @@ public class Project
 
     /**
      * Removes a requirement from the project
+     *
      * @param requirementID the ID of the requirement to be removed
      */
     public void removeRequirement(int requirementID)
@@ -235,6 +253,7 @@ public class Project
 
     /**
      * Getter for the number of requirements for the project
+     *
      * @return the number of requirements for the project
      */
     public int getNumberOfRequirements()
@@ -244,6 +263,7 @@ public class Project
 
     /**
      * Getter for all the projects requirements
+     *
      * @return all the projects requirements
      */
     public ArrayList<Requirement> getAllRequirements()
@@ -253,6 +273,7 @@ public class Project
 
     /**
      * Sets the status of the project
+     *
      * @param status the project status
      */
     public void setStatus(String status)
@@ -263,21 +284,26 @@ public class Project
     /**
      * Getter for the project status, will also check the status of all
      * requirements and tasks and update where needed
+     *
      * @return the project status
      */
     public String getStatus()
     {
         ArrayList<Requirement> requirementListCheck = new ArrayList<>();
         ArrayList<Task> taskListCheck = new ArrayList<>();
+
         for (Requirement requirement : requirementList)
         {
-            if (!(requirement.getStatus().equals(ENDED)) || !(requirement
-                .getStatus().equals(APPROVED)))
+            if (requirement.isEnded() || requirement.getStatus()
+                .equals(APPROVED))
+            {
+                requirementListCheck.add(requirement);
+            }
+            else
             {
                 for (int j = 0; j < requirement.getAllTasks().size(); j++)
                 {
-                    if (requirement.getAllTasks().get(j).getStatus()
-                        .equals(ENDED))
+                    if (requirement.getAllTasks().get(j).isEnded())
                     {
                         taskListCheck.add(requirement.getAllTasks().get(j));
                     }
@@ -287,10 +313,6 @@ public class Project
                         requirementListCheck.add(requirement);
                     }
                 }
-            }
-            else
-            {
-                requirementListCheck.add(requirement);
             }
             if (requirementListCheck.equals(requirementList))
             {
@@ -302,6 +324,7 @@ public class Project
 
     /**
      * Equals method
+     *
      * @param obj object to be compared to
      * @return a boolean indicating if two instances are similar
      */
@@ -319,6 +342,7 @@ public class Project
 
     /**
      * A toString method
+     *
      * @return the project variables in form of a String
      */
     @Override public String toString()
