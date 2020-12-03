@@ -136,6 +136,15 @@ public class TaskList
   }
 
   /**
+   * Changing the status of a specific task
+   * @param status the status
+   * @param task the task whose status has been edited
+   */
+  public void changeStatus(String status, Task task)
+  {
+    task.setStatus(status);
+  }
+  /**
    * Getting a task from the list at a specific index
    *
    * @param index the index of the task
