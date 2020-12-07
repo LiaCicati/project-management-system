@@ -1,5 +1,6 @@
 package Model;
 
+import java.util.InputMismatchException;
 import java.util.Objects;
 
 public class MyDate
@@ -10,9 +11,16 @@ public class MyDate
 
   public MyDate(int day,int month,int year)
   {
-    this.day=day;
-    this.month=month;
-    this.year=year;
+    try
+    {
+      this.day = day;
+      this.month = month;
+      this.year = year;
+    }
+    catch (InputMismatchException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   public int getDay()
