@@ -8,6 +8,7 @@ public class TeamMember
 {
   private int id;
   private Name name;
+  private String role;
 
   /**
    * Contructor for the team member
@@ -19,6 +20,7 @@ public class TeamMember
   {
     this.name = name;
     setId(id);
+    setRole(role);
   }
 
   /**
@@ -29,6 +31,10 @@ public class TeamMember
   public Name getName()
   {
     return name;
+  }
+
+  public String getRole() {
+    return role;
   }
 
   /**
@@ -59,6 +65,10 @@ public class TeamMember
   public void setName(Name name)
   {
     this.name = name;
+  }
+
+  public void setRole(String role) {
+    this.role = "Team member";
   }
 
   /**
@@ -95,6 +105,6 @@ public class TeamMember
    */
   public String toString()
   {
-    return "ID: " + id + ", Full name: " + name;
+    return "ID: " + id + ", Full name: " + name + ", Role: " + getRole();
   }
 }

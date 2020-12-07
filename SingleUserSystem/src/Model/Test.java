@@ -108,5 +108,8 @@ public class Test
 
     System.out.println(requirement1);
     System.out.println(requirement2);
+    System.out.println(teamMember1);
+    System.out.println(productOwner);
+    System.out.println(scrumMaster);
   }
 }
