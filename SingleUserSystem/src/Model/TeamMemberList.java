@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class TeamMemberList
 {
@@ -65,12 +66,19 @@ public class TeamMemberList
    */
   public TeamMember getTeamMemberById(int id)
   {
-    for (int i = 0; i < teamMembers.size(); i++)
+    try
     {
-      if (teamMembers.get(i).getId() == id)
+      for (int i = 0; i < teamMembers.size(); i++)
       {
-        return teamMembers.get(i);
+        if (teamMembers.get(i).getId() == id)
+        {
+          return teamMembers.get(i);
+        }
       }
+    }
+    catch (InputMismatchException e)
+    {
+      e.printStackTrace();
     }
     return null;
   }

@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.InputMismatchException;
+
 /**
  * @author Siyu Xia
  * @version 3/12/2020
@@ -54,7 +56,14 @@ public class TeamMember
    */
   public void setId(int id)
   {
-    this.id = id;
+    try
+    {
+      this.id = id;
+    }
+    catch (InputMismatchException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -75,7 +84,14 @@ public class TeamMember
    */
   public void registerTime(double timeSpent, Task task)
   {
-    task.setTimeSpent(timeSpent);
+    try
+    {
+      task.setTimeSpent(timeSpent);
+    }
+    catch (InputMismatchException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**

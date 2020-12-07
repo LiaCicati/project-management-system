@@ -58,12 +58,19 @@ public class RequirementList
    */
   public Requirement getByID(int ID)
   {
-    for (int i = 0; i < requirements.size(); i++)
+    try
     {
-      if (requirements.get(i).getID() == ID)
+      for (int i = 0; i < requirements.size(); i++)
       {
-        return requirements.get(i);
+        if (requirements.get(i).getID() == ID)
+        {
+          return requirements.get(i);
+        }
       }
+    }
+    catch (InputMismatchException e)
+    {
+      e.printStackTrace();
     }
     return null;
   }

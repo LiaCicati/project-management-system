@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 /**
  * @author Loredana Cicati
@@ -142,7 +143,14 @@ public class Task
    */
   public void setID(int ID)
   {
-    this.ID = ID;
+    try
+    {
+      this.ID = ID;
+    }
+    catch (InputMismatchException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -172,7 +180,14 @@ public class Task
    */
   public void setEstimatedTime(double estimatedTime)
   {
-    this.estimatedTime = estimatedTime;
+    try
+    {
+      this.estimatedTime = estimatedTime;
+    }
+    catch (InputMismatchException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -182,7 +197,14 @@ public class Task
    */
   public void setTimeSpent(double timeSpent)
   {
-    this.timeSpent += timeSpent;
+    try
+    {
+      this.timeSpent = this.timeSpent + timeSpent;
+    }
+    catch (InputMismatchException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
