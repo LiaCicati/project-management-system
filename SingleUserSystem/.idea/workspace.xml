@@ -1,32 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="3" />
-  </component>
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
+    <option name="SCOPE_TYPE" value="4" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="56de11cd-29f9-4029-a882-06c840a7a8d7" name="Default Changelist" comment="" />
-=======
-    <list default="true" id="1416876d-4cef-44fb-89ff-a09b53623255" name="Default Changelist" comment="" />
->>>>>>> Stashed changes
+    <list default="true" id="e910f242-0b45-40fa-b14f-73fb820c668b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/SingleUserSystem/src/View/EditDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SingleUserSystem/src/View/EditDataView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SingleUserSystem/src/View/RegisterDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SingleUserSystem/src/View/RegisterDataView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/bootstrap/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/bootstrap/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/bootstrap/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/bootstrap/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/bootstrap/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Website/bootstrap/bootstrap.min.css" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,18 +23,21 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-<<<<<<< Updated upstream
-  <component name="ProjectId" id="1l6Xywl6RfYRGldlhpQ7rvGIAFX" />
-=======
-  <component name="ProjectId" id="1l6XnIFPiAs1HAlsbTcFNkPOaXF" />
->>>>>>> Stashed changes
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1keRPvj5cMSbMUnpzflptO2ziOT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -55,17 +45,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
-<<<<<<< Updated upstream
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="56de11cd-29f9-4029-a882-06c840a7a8d7" name="Default Changelist" comment="" />
-      <created>1606918772282</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1606918772282</updated>
-=======
   <component name="RunManager">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Model.Test" />
@@ -89,72 +72,74 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1416876d-4cef-44fb-89ff-a09b53623255" name="Default Changelist" comment="" />
-      <created>1606918679472</created>
+      <changelist id="e910f242-0b45-40fa-b14f-73fb820c668b" name="Default Changelist" comment="" />
+      <created>1606059049972</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1606918679472</updated>
->>>>>>> Stashed changes
+      <updated>1606059049972</updated>
     </task>
     <servers />
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="1198" y="258" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606987575240">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="951" y="133" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606987587119">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="1198" y="258" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040@0.0.1920.1040" timestamp="1606987575240" />
-    <state x="1220" y="278" key="FileChooserDialogImpl" timestamp="1606987572026">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="951" y="133" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1606987587119" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1606938396618">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="1220" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1606987572026" />
-    <state width="914" height="281" key="GridCell.Tab.0.bottom" timestamp="1606992282643">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1606938396618" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606937387517">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1606992282643" />
-    <state width="914" height="281" key="GridCell.Tab.0.center" timestamp="1606992282643">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606937387517" />
+    <state width="1493" height="196" key="GridCell.Tab.0.bottom" timestamp="1607277435835">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1606992282643" />
-    <state width="914" height="281" key="GridCell.Tab.0.left" timestamp="1606992282643">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="196" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607277435835" />
+    <state width="1493" height="196" key="GridCell.Tab.0.center" timestamp="1607277435835">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1606992282643" />
-    <state width="914" height="281" key="GridCell.Tab.0.right" timestamp="1606992282643">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1493" height="196" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607277435835" />
+    <state width="1493" height="196" key="GridCell.Tab.0.left" timestamp="1607277435835">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="914" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1606992282643" />
+    <state width="1493" height="196" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607277435835" />
+    <state width="1493" height="196" key="GridCell.Tab.0.right" timestamp="1607277435835">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="196" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607277435835" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1606945445490">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606945445490" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1606945445490">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606945445490" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1606945445489">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606945445489" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1606945445490">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606945445490" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1606986763476">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606986763476" />
+    <state x="618" y="325" key="VCS.ChangelistChooser" timestamp="1606938291922">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="618" y="325" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1606938291922" />
+    <state x="209" y="32" key="new project wizard" timestamp="1606059075867">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="32" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1606059075867" />
+    <state x="469" y="169" key="refactoring.ChangeSignatureDialog" timestamp="1607004847173">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="469" y="169" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1607004847173" />
   </component>
-<<<<<<< Updated upstream
-=======
-  <component name="WindowStateProjectService">
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1606922560672">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606922560672" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1606922560672">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1606922560672" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1606922560672">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1606922560672" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1606922560672">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1606922560672" />
-  </component>
->>>>>>> Stashed changes
 </project>

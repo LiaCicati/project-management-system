@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="Add requirement">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="559.0" prefWidth="639.0">
+         <children>
+            <VBox prefHeight="200.0" prefWidth="350.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Type">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox prefHeight="30.0" prefWidth="90.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="ID">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <TextField prefHeight="30.0" prefWidth="115.0" />
+                              <Label text="Label error" textFill="RED" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Estimate">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0">
+                           <children>
+                              <TextField prefHeight="30.0" prefWidth="150.0" />
+                              <Label text="Label error" textFill="RED" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Hours worked">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="150.0">
+                           <children>
+                              <TextField prefHeight="30.0" prefWidth="150.0" />
+                              <Label text="Label error" textFill="RED" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="320.0" spacing="20.0">
+                     <children>
+                        <Label text="Deadline">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ComboBox prefHeight="30.0" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="350.0">
+               <children>
+                  <HBox prefHeight="103.0" prefWidth="320.0">
+                     <children>
+                        <Label prefHeight="24.0" prefWidth="118.0" text="Userstory">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextArea prefHeight="103.0" prefWidth="253.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Responsible">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox prefHeight="30.0" prefWidth="90.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <Label text="Status">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="10.0">
+                           <children>
+                              <RadioButton mnemonicParsing="false" text="Not Started" />
+                              <RadioButton mnemonicParsing="false" text="Started" />
+                              <RadioButton mnemonicParsing="false" text="Ended" />
+                              <RadioButton mnemonicParsing="false" text="Approaved">
+                                 <VBox.margin>
+                                    <Insets top="20.0" />
+                                 </VBox.margin>
+                              </RadioButton>
+                              <RadioButton mnemonicParsing="false" text="Rejected" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="16.0" prefWidth="639.0" spacing="30.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Save">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Cancel">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Label text="Label error" textFill="RED" />
+   </children>
+   <padding>
+      <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+   </padding>
+</VBox>

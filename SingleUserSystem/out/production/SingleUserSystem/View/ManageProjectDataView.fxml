@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <TabPane prefHeight="610.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Requirements">
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="583.0" prefWidth="700.0">
+                    <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="547.0" prefWidth="700.0">
+                        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="526.0" prefWidth="199.0" spacing="30.0">
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Add">
+                                <font>
+                                    <Font size="19.0" />
+                                </font></Button>
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Remove">
+                                <font>
+                                    <Font size="18.0" />
+                                </font></Button>
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Edit">
+                                <font>
+                                    <Font size="18.0" />
+                                </font></Button>
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Manage Data">
+                                <font>
+                                    <Font size="18.0" />
+                                </font></Button>
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="434.0">
+                            <HBox.margin>
+                                <Insets top="50.0" />
+                            </HBox.margin>
+                            <children>
+                                <ScrollPane prefHeight="501.0" prefWidth="430.0">
+                                    <content>
+                                        <TableView prefHeight="486.0" prefWidth="450.0">
+                                            <columns>
+                                                <TableColumn prefWidth="75.0" text="C1" />
+                                                <TableColumn prefWidth="75.0" text="C2" />
+                                            </columns>
+                                        </TableView>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </VBox>
+                    </HBox>
+                    <Label layoutX="14.0" layoutY="554.0" text="Item not found" textFill="RED" AnchorPane.leftAnchor="30.0">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                </AnchorPane>
+            </Tab>
+            <Tab text="Team">
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="583.0" prefWidth="700.0">
+                    <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="547.0" prefWidth="700.0">
+                        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="526.0" prefWidth="199.0" spacing="30.0">
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Add">
+                                <font>
+                                    <Font size="19.0" />
+                                </font></Button>
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Remove">
+                                <font>
+                                    <Font size="18.0" />
+                                </font></Button>
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Edit">
+                                <font>
+                                    <Font size="18.0" />
+                                </font></Button>
+                            <HBox.margin>
+                                <Insets left="30.0" />
+                            </HBox.margin>
+                        </VBox>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="434.0">
+                            <HBox.margin>
+                                <Insets top="50.0" />
+                            </HBox.margin>
+                            <children>
+                                <ScrollPane prefHeight="501.0" prefWidth="430.0">
+                                    <content>
+                                        <TableView prefHeight="486.0" prefWidth="450.0">
+                                            <columns>
+                                                <TableColumn prefWidth="75.0" text="C1" />
+                                                <TableColumn prefWidth="75.0" text="C2" />
+                                            </columns>
+                                        </TableView>
+                                    </content>
+                                </ScrollPane>
+                            </children>
+                        </VBox>
+                    </HBox>
+                    <Label layoutX="14.0" layoutY="544.0" text="Item not found" textFill="RED">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                </AnchorPane>
+            </Tab>
+        </TabPane>
+        <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Back">
+            <font>
+                <Font size="18.0" />
+            </font>
+            <VBox.margin>
+                <Insets left="30.0" top="15.0" />
+            </VBox.margin>
+        </Button>
+    </children>
+</VBox>
