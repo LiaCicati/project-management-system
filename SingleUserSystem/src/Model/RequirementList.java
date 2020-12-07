@@ -182,7 +182,7 @@ public class RequirementList
    * Checking if requirements are in ended state
    * @return true if all requirements from the list are in ended state and false if not
    */
-  public boolean isInEndedState()
+  public boolean areInEndedState()
   {
     for (int i = 0; i < requirements.size(); i++)
     {

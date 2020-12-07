@@ -101,7 +101,7 @@ public class MyDate
   }
 
   /**
-   * Setting the deadline
+   * Setting the date
    *
    * @param day   the day
    * @param month the month

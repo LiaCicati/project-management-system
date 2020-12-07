@@ -38,8 +38,8 @@ public class Test
     System.out.println("Type of requirement: " + requirement1.getType());
     System.out.println(requirement1.getType());
 
-    requirement1.setStatus(Requirement.APPROVED);
-    requirement2.setStatus(Requirement.STARTED);
+//    requirement1.setStatus(Requirement.APPROVED);
+//    requirement2.setStatus(Requirement.STARTED);
 
     Project project1 = new Project("Rental Company", deadline, 22,
         "blabla blabla");
@@ -51,68 +51,70 @@ public class Test
     Task task1 = new Task(requirement2, 4, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
     Task task2 = new Task(requirement1, 3, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
     task2.setStatus(Task.STARTED);
-    task1.setStatus(Task.ENDED);
+//    task1.setStatus(Task.ENDED);
     requirement1.addTask(task2);
+    requirement1.addTask(task1);
+    System.out.println("STATUS: " + requirement1.getStatus());
     requirement2.addTask(task1);
-
-    TaskList tasks = new TaskList();
-    tasks.addTask(task1);
-    tasks.addTask(task2);
-    teamMember1.registerTime( 40 ,task1);
-
-    System.out.println("Task 1 data: " + task1);
-    System.out.println(
-        "All members for the 1st project: " + project1.getAllTeamMembers());
-
-    System.out.println(
-        "Scrum master of the 1st project: " + project1.getScrumMaster());
-    System.out.println(
-        "Product owner of the 1st project: " + project1.getProductOwner());
-    System.out.println("Project 1 :" + "\n" + project1);
-
-    System.out.println(
-        "Get requirement by ID from the list: " + "\n" + requirementList
-            .getByID(326));
-    System.out.println(
-        "Get requirement by responsible team member : " + "\n" + requirementList
-            .getByResponsibleTeamMember(teamMember1));
-    System.out.println("Get requirement by deadline: " + "\n" + requirementList
-        .getByDeadline(deadline2));
-
-    System.out.println("Team member: " + teamMember1);
-    System.out.println("Requirement: " + requirement1);
-    requirement1.addTeamMember(teamMember1);
-    requirement1.addTeamMember(teamMember2);
-    System.out.println(
-        "Team members that worked on first requirement: " + requirement1
-            .getAllTeamMembers());
-
-    System.out.println(requirementList);
-
-    Requirement functional = new Functional(868, 50.6,teamMember1, deadline2, "I want to add");
-    System.out.println("AAAA" + functional);
-    System.out.println(requirement1.getStatus());
-    System.out.println("Status of the project: " + project1.getStatus());
-    System.out.println("1: " + requirementList);
-    requirementList.reorder(0, 1);
-    System.out.println("Changed: " + requirementList);
-
-    System.out.println(requirement1.isEnded());
-    System.out.println(requirementList.isInEndedState());
-    System.out.println(task1.isEnded());
-    System.out.println(task2.isEnded());
-    System.out.println(tasks.areInEndedState());
-    System.out.println(project1.getStatus());
-//    System.out.println(task1.getRequirementID());
-//    System.out.println(task1);
-
-//    System.out.println(requirement1);
-//    System.out.println(requirement2);
-//    System.out.println(teamMember1);
-//    System.out.println(productOwner);
-//    System.out.println(scrumMaster);
-    System.out.println("STOP!");
-    System.out.println("PROJECT 1: " + project1);
-    System.out.println(project1.getProductOwner());
+//
+//    TaskList tasks = new TaskList();
+//    tasks.addTask(task1);
+//    tasks.addTask(task2);
+//    teamMember1.registerTime( 40 ,task1);
+//
+//    System.out.println("Task 1 data: " + task1);
+//    System.out.println(
+//        "All members for the 1st project: " + project1.getAllTeamMembers());
+//
+//    System.out.println(
+//        "Scrum master of the 1st project: " + project1.getScrumMaster());
+//    System.out.println(
+//        "Product owner of the 1st project: " + project1.getProductOwner());
+//    System.out.println("Project 1 :" + "\n" + project1);
+//
+//    System.out.println(
+//        "Get requirement by ID from the list: " + "\n" + requirementList
+//            .getByID(326));
+//    System.out.println(
+//        "Get requirement by responsible team member : " + "\n" + requirementList
+//            .getByResponsibleTeamMember(teamMember1));
+//    System.out.println("Get requirement by deadline: " + "\n" + requirementList
+//        .getByDeadline(deadline2));
+//
+//    System.out.println("Team member: " + teamMember1);
+//    System.out.println("Requirement: " + requirement1);
+//    requirement1.addTeamMember(teamMember1);
+//    requirement1.addTeamMember(teamMember2);
+//    System.out.println(
+//        "Team members that worked on first requirement: " + requirement1
+//            .getAllTeamMembers());
+//
+//    System.out.println(requirementList);
+//
+//    Requirement functional = new Functional(868, 50.6,teamMember1, deadline2, "I want to add");
+//    System.out.println("AAAA" + functional);
+//    System.out.println(requirement1.getStatus());
+//    System.out.println("Status of the project: " + project1.getStatus());
+//    System.out.println("1: " + requirementList);
+//    requirementList.reorder(0, 1);
+//    System.out.println("Changed: " + requirementList);
+//
+//    System.out.println(requirement1.isEnded());
+//    System.out.println(requirementList.areInEndedState());
+//    System.out.println(task1.isEnded());
+//    System.out.println(task2.isEnded());
+//    System.out.println(tasks.areInEndedState());
+//    System.out.println(project1.getStatus());
+////    System.out.println(task1.getRequirementID());
+////    System.out.println(task1);
+//
+////    System.out.println(requirement1);
+////    System.out.println(requirement2);
+////    System.out.println(teamMember1);
+////    System.out.println(productOwner);
+////    System.out.println(scrumMaster);
+//    System.out.println("STOP!");
+//    System.out.println("PROJECT 1: " + project1);
+//    System.out.println(project1.getProductOwner());
   }
 }

@@ -297,7 +297,7 @@ public class Project
                 {
                     status = STARTED;
                 }
-                if (requirement.getStatus().equals("Approved"))
+                if (requirement.isApproved())
                 {
                     requirementListCheck.add(requirement);
                 }
