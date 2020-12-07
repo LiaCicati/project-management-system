@@ -2,38 +2,33 @@ package Model;
 
 public class Functional extends Requirement
 {
-  private String who;
-  private String what;
-  private String why;
+  private String description;
 
   public Functional(int ID, double estimatedTime,
-      TeamMember responsibleTeamMember, MyDate deadline, String who,
-      String what, String why)
+      TeamMember responsibleTeamMember, MyDate deadline, String description)
   {
     super(ID, estimatedTime, responsibleTeamMember, deadline);
-    setWho(who);
-    setWhat(what);
-    setWhy(why);
+    setDescription(description);
+
   }
 
-  public void setWho(String who)
+  public String getDescription()
   {
-    this.who = who;
+    return description;
   }
 
-  public void setWhat(String what)
+  public void setDescription(String description)
   {
-    this.what = what;
+    this.description = description;
   }
 
-  public void setWhy(String why)
+  public String getType()
   {
-    this.why = why;
+    return "Functional";
   }
 
   @Override public String toString()
   {
-    return super.toString() + "User story: " + "\n" + "As a " + who
-        + " I want to " + what + " ,so that " + why;
+    return super.toString() + "User story: " + description;
   }
 }

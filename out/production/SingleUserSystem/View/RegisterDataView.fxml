@@ -10,79 +10,73 @@
 <?import javafx.scene.text.Font?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0">
          <children>
             <Label text="Register data">
                <font>
-                  <Font size="36.0" />
+                  <Font size="32.0" />
                </font>
             </Label>
-            <HBox alignment="CENTER_LEFT" prefHeight="165.0" prefWidth="630.0" spacing="10.0">
-               <children>
-                  <Label prefHeight="30.0" prefWidth="150.0" text="Team member">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </Label>
-                  <ChoiceBox prefHeight="30.0" prefWidth="90.0">
-                     <HBox.margin>
-                        <Insets left="14.0" />
-                     </HBox.margin>
-                  </ChoiceBox>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <HBox prefHeight="345.0" prefWidth="650.0" spacing="10.0">
-               <children>
-                  <Label prefHeight="27.0" prefWidth="120.0" text="Total hours">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <VBox prefHeight="342.0" prefWidth="390.0">
+      <VBox prefHeight="510.0" prefWidth="655.0">
+         <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="138.0" prefWidth="650.0" spacing="10.0">
                      <children>
-                        <TextField prefHeight="30.0" prefWidth="150.0" text="0">
+                        <Label prefHeight="30.0" prefWidth="150.0" text="Team member">
                            <font>
                               <Font size="20.0" />
                            </font>
-                           <VBox.margin>
-                              <Insets right="196.0" />
-                           </VBox.margin>
-                        </TextField>
-                        <Label text="when registering to a specific task the hours are set to 0">
-                           <VBox.margin>
-                              <Insets top="40.0" />
-                           </VBox.margin>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
                         </Label>
+                        <ChoiceBox prefHeight="36.0" prefWidth="158.0">
+                           <HBox.margin>
+                              <Insets left="14.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
                      </children>
-                     <padding>
-                        <Insets left="44.0" />
-                     </padding>
-                  </VBox>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox prefHeight="345.0" prefWidth="650.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="27.0" prefWidth="120.0" text="Total hours">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <VBox prefHeight="342.0" prefWidth="390.0">
+                           <children>
+                              <TextField editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="32.0" prefWidth="150.0" text="0">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets right="196.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                           <padding>
+                              <Insets left="44.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </HBox>
+         </children>
+      </VBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="36.0">
                <children>
                   <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Save">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
                      <font>
-                        <Font size="20.0" />
+                        <Font size="18.0" />
                      </font>
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Cancel">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="18.0" />
                      </font>
                   </Button>
                </children>
@@ -90,11 +84,12 @@
                   <Insets />
                </VBox.margin>
             </HBox>
-            <Label text="Label error" textFill="RED" />
+            <Label text="Label error" textFill="RED">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
          </children>
          <padding>
-            <Insets bottom="20.0" left="30.0" right="20.0" top="20.0" />
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
          </padding>
       </VBox>
-   </children>
-</VBox>

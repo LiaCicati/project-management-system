@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @author Lia Cicati
  * @version v.1 : 2nd December 2020
  */
-public class Requirement
+public abstract class Requirement
 {
     private int ID;
     private double estimatedTime;
@@ -38,6 +38,7 @@ public class Requirement
         setEstimatedTime(estimatedTime);
         setResponsibleTeamMember(responsibleTeamMember);
         setDeadline(deadline);
+        this.type = getType();
         this.timeSpent = 0;
         this.status = NOT_STARTED;
         this.teamMembers = new ArrayList<>();
@@ -119,15 +120,7 @@ public class Requirement
         return status;
     }
 
-    /**
-     * Getter for the requirement type
-     *
-     * @return the type of a specific requirement
-     */
-    public String getType()
-    {
-        return type;
-    }
+public abstract String getType();
 
     /**
      * Getter for the requirement deadline
@@ -297,18 +290,17 @@ public class Requirement
             && deadline == other.deadline && status.equals(other.status);
     }
 
-    /**
-     * Getting the information about a requirement
-     *
-     * @return a string with all needed information about a requirement
-     */
-    @Override public String toString()
-    {
-        String s = "";
-        s += "ID: " + ID + "\n" + "estimated Time: " + estimatedTime + " hours"
-            + "\n" + "Responsible Team Member: " + responsibleTeamMember + "\n"
-            + "Deadline: " + deadline + "\n" + "Status: " + status + "\n";
-        return s;
-    }
-
+  /**
+   * Getting the information about a requirement
+   *
+   * @return a string with all needed information about a requirement
+   */
+  @Override public String toString()
+  {
+    String s = "";
+    s += "ID: " + ID + "\n" + "estimated Time: " + estimatedTime + " hours"
+        + "\n" + "Responsible Team Member: " + responsibleTeamMember + "\n"
+        + "Deadline: " + deadline + "\n" + "Status: " + status + "\n" + "Type: " + type + "\n";
+    return s;
+  }
 }

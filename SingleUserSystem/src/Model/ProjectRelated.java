@@ -2,22 +2,32 @@ package Model;
 
 public class ProjectRelated extends Requirement
 {
-  private String what;
+  private String description;
 
   public ProjectRelated(int ID, double estimatedTime,
-      TeamMember responsibleTeamMember, MyDate deadline, String what)
+      TeamMember responsibleTeamMember, MyDate deadline, String description)
   {
     super(ID, estimatedTime, responsibleTeamMember, deadline);
-    setWhat(what);
+    setDescription(description);
   }
 
-  public void setWhat(String what)
+  public String getDescription()
   {
-    this.what = what;
+    return description;
+  }
+
+  public void setDescription(String description)
+  {
+    this.description = description;
+  }
+
+  public String getType()
+  {
+    return "Project Related";
   }
 
   @Override public String toString()
   {
-    return super.toString() + "User story: " + "\n" + " I want to " + what;
+    return super.toString() + "User story: " + description;
   }
 }

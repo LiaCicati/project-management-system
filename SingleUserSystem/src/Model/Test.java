@@ -21,14 +21,22 @@ public class Test
     teamMemberList.addTeamMember(productOwner);
     teamMemberList.addTeamMember(scrumMaster);
     System.out.println(teamMemberList);
-    Requirement requirement1 = new Requirement(324, 25.5, teamMember1,
-        deadline);
-    Requirement requirement2 = new Requirement(326, 25.5, teamMember2,
-        deadline2);
+    Requirement requirement1 = new NonFunctional(324, 25.5, teamMember1,
+        deadline, "lalala");
+    Requirement requirement2 = new ProjectRelated(326, 25.5, teamMember2,
+        deadline2, "some text");
+    System.out.println("1st requirement: " + requirement1);
 
     RequirementList requirementList = new RequirementList();
     requirementList.addRequirement(requirement1);
     requirementList.addRequirement(requirement2);
+    System.out.println("Requirement List: " + requirementList);
+
+    System.out.println("Status for 1st requirement: " + requirement1.getStatus());
+    System.out.println(requirement1.countTasks());
+    System.out.println(requirement1.getAllTasks());
+    System.out.println("Type of requirement: " + requirement1.getType());
+    System.out.println(requirement1.getType());
 
     requirement1.setStatus(Requirement.APPROVED);
     requirement2.setStatus(Requirement.STARTED);
@@ -46,6 +54,7 @@ public class Test
     task1.setStatus(Task.ENDED);
     requirement1.addTask(task2);
     requirement2.addTask(task1);
+
     TaskList tasks = new TaskList();
     tasks.addTask(task1);
     tasks.addTask(task2);
@@ -80,8 +89,8 @@ public class Test
 
     System.out.println(requirementList);
 
-    Requirement functional = new Functional(868, 50.6,teamMember1, deadline2, "Customer", "have access to a website", "I can see the progress of my project");
-    System.out.println(functional);
+    Requirement functional = new Functional(868, 50.6,teamMember1, deadline2, "I want to add");
+    System.out.println("AAAA" + functional);
     System.out.println(requirement1.getStatus());
     System.out.println("Status of the project: " + project1.getStatus());
     System.out.println("1: " + requirementList);
@@ -94,5 +103,10 @@ public class Test
     System.out.println(task2.isEnded());
     System.out.println(tasks.areInEndedState());
     System.out.println(project1.getStatus());
+//    System.out.println(task1.getRequirementID());
+//    System.out.println(task1);
+
+    System.out.println(requirement1);
+    System.out.println(requirement2);
   }
 }

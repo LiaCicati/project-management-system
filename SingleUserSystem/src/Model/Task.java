@@ -16,7 +16,7 @@ public class Task
   private String status;
   private ArrayList<TeamMember> teamMembers;
   private TeamMember responsibleTeamMember;
-  private Requirement requirementID;
+  private int requirementID;
   private MyDate deadline;
   public static final String NOT_STARTED = "Not Started";
   public static final String STARTED = "Started";
@@ -45,7 +45,7 @@ public class Task
     setResponsibleTeamMember(responsibleTeamMember);
     setDeadline(deadline);
     this.status = NOT_STARTED;
-    this.requirementID = requirementID;
+    this.requirementID = requirementID.getID();
     this.teamMembers = new ArrayList<>();
 
   }
@@ -118,6 +118,11 @@ public class Task
   public MyDate getDeadline()
   {
     return deadline;
+  }
+
+  public int getRequirementID()
+  {
+    return requirementID;
   }
 
   /**
@@ -220,6 +225,7 @@ public class Task
     teamMembers.add(teamMember);
   }
 
+
   /**
    * Removing a team member that worked on a specific task
    *
@@ -277,7 +283,7 @@ public class Task
         .equals(other.description) && estimatedTime == other.estimatedTime
         && timeSpent == other.timeSpent && status.equals(other.status)
         && responsibleTeamMember.equals(other.responsibleTeamMember)
-        && requirementID.equals(other.requirementID) && deadline
+        && requirementID == other.requirementID && deadline
         .equals(other.deadline) && teamMembers.equals(other.teamMembers);
   }
 
