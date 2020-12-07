@@ -285,7 +285,6 @@ public class Project
     public String getStatus()
     {
         ArrayList<Requirement> requirementListCheck = new ArrayList<>();
-        ArrayList<Task> taskListCheck = new ArrayList<>();
 
         for (Requirement requirement : requirementList)
         {
