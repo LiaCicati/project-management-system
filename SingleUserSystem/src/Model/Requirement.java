@@ -97,21 +97,23 @@ public class Requirement
     {
         ArrayList<Task> taskListCheck = new ArrayList<>();
 
-        for (Task task : tasks)
+        if (!(status.equals(APPROVED) || status.equals(REJECTED)))
         {
-            if (!(task.getStatus().equals(NOT_STARTED)))
+            for (Task task : tasks)
             {
-                status = STARTED;
+                if (!(task.getStatus().equals(NOT_STARTED)))
+                {
+                    status = STARTED;
+                }
+                if (task.getStatus().equals(ENDED))
+                {
+                    taskListCheck.add(task);
+                }
             }
-            if (task.getStatus().equals(ENDED))
+            if (tasks.equals(taskListCheck))
             {
-                taskListCheck.add(task);
+                status = ENDED;
             }
-        }
-        if (tasks.equals(taskListCheck) && !((status.equals(APPROVED)) || status
-            .equals(REJECTED)))
-        {
-            status = ENDED;
         }
         return status;
     }
