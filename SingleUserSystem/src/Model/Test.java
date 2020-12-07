@@ -38,11 +38,14 @@ public class Test
     project1.addTeamMember(scrumMaster);
     project1.addTeamMember(productOwner);
     project1.addRequirement(requirement1);
+    project1.addRequirement(requirement2);
 
-    Task task1 = new Task(requirement1, 3, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
+    Task task1 = new Task(requirement2, 4, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
     Task task2 = new Task(requirement1, 3, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
     task2.setStatus(Task.ENDED);
     task1.setStatus(Task.STARTED);
+    requirement1.addTask(task2);
+    requirement2.addTask(task1);
     TaskList tasks = new TaskList();
     tasks.addTask(task1);
     tasks.addTask(task2);

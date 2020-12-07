@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e910f242-0b45-40fa-b14f-73fb820c668b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/SingleUserSystem/src/View/EditDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SingleUserSystem/src/View/EditDataView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SingleUserSystem/src/View/RegisterDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/SingleUserSystem/src/View/RegisterDataView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/bootstrap/bootstrap-grid.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/bootstrap/bootstrap-grid.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/bootstrap/bootstrap-reboot.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/bootstrap/bootstrap-reboot.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/bootstrap/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Website/bootstrap/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +23,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -79,67 +74,5 @@
       <updated>1606059049972</updated>
     </task>
     <servers />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="951" y="133" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1606987587119">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="951" y="133" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1606987587119" />
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1606938396618">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1606938396618" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1606937387517">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1606937387517" />
-    <state width="1493" height="196" key="GridCell.Tab.0.bottom" timestamp="1607277435835">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="196" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607277435835" />
-    <state width="1493" height="196" key="GridCell.Tab.0.center" timestamp="1607277435835">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="196" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607277435835" />
-    <state width="1493" height="196" key="GridCell.Tab.0.left" timestamp="1607277435835">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="196" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607277435835" />
-    <state width="1493" height="196" key="GridCell.Tab.0.right" timestamp="1607277435835">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="196" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607277435835" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1606945445490">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1606945445490" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1606945445490">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1606945445490" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1606945445489">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1606945445489" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1606945445490">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1606945445490" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1606986763476">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606986763476" />
-    <state x="618" y="325" key="VCS.ChangelistChooser" timestamp="1606938291922">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="618" y="325" key="VCS.ChangelistChooser/0.0.1536.824@0.0.1536.824" timestamp="1606938291922" />
-    <state x="209" y="32" key="new project wizard" timestamp="1606059075867">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="209" y="32" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1606059075867" />
-    <state x="469" y="169" key="refactoring.ChangeSignatureDialog" timestamp="1607004847173">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="469" y="169" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1607004847173" />
   </component>
 </project>

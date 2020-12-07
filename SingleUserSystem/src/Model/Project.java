@@ -289,7 +289,7 @@ public class Project
 
         for (Requirement requirement : requirementList)
         {
-            if (requirement.isEnded() || requirement.getStatus()
+            if (requirement.getStatus().equals(ENDED) || requirement.getStatus()
                 .equals(APPROVED))
             {
                 requirementListCheck.add(requirement);
@@ -298,20 +298,20 @@ public class Project
             {
                 for (int j = 0; j < requirement.getAllTasks().size(); j++)
                 {
-                    if (requirement.getAllTasks().get(j).isEnded())
+                    if (requirement.getAllTasks().get(j).getStatus().equals(ENDED))
                     {
                         taskListCheck.add(requirement.getAllTasks().get(j));
                     }
-                    if (taskListCheck.equals(requirement.getAllTasks()))
-                    {
-                        requirement.setStatus(ENDED);
-                        requirementListCheck.add(requirement);
-                    }
+                }
+                if (taskListCheck.equals(requirement.getAllTasks()))
+                {
+                    requirement.setStatus(ENDED);
+                    requirementListCheck.add(requirement);
                 }
             }
             if (requirementListCheck.equals(requirementList))
             {
-                this.status = ENDED;
+                status = ENDED;
             }
         }
         return status;
