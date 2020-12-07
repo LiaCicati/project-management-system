@@ -89,7 +89,8 @@ public class Requirement
     }
 
     /**
-     * Getter for the requirement status
+     * Getter for the requirement status, will also check the status of all
+     * tasks and update where needed
      *
      * @return the current status of the requirement
      */

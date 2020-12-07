@@ -286,20 +286,23 @@ public class Project
     {
         ArrayList<Requirement> requirementListCheck = new ArrayList<>();
 
-        for (Requirement requirement : requirementList)
+        if (!(status.equals(ENDED)))
         {
-            if (!(requirement.getStatus().equals(NOT_STARTED)))
+            for (Requirement requirement : requirementList)
             {
-                status = STARTED;
+                if (!(requirement.getStatus().equals(NOT_STARTED)))
+                {
+                    status = STARTED;
+                }
+                if (requirement.getStatus().equals(APPROVED))
+                {
+                    requirementListCheck.add(requirement);
+                }
             }
-            if (requirement.getStatus().equals(APPROVED))
+            if (requirementListCheck.equals(requirementList))
             {
-                requirementListCheck.add(requirement);
+                status = ENDED;
             }
-        }
-        if (requirementListCheck.equals(requirementList))
-        {
-            status = ENDED;
         }
         return status;
     }
