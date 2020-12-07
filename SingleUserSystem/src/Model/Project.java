@@ -298,6 +298,10 @@ public class Project
             {
                 for (int j = 0; j < requirement.getAllTasks().size(); j++)
                 {
+                    if (!(requirement.getAllTasks().get(j).getStatus().equals(NOT_STARTED)))
+                    {
+                        status = STARTED;
+                    }
                     if (requirement.getAllTasks().get(j).getStatus().equals(ENDED))
                     {
                         taskListCheck.add(requirement.getAllTasks().get(j));
