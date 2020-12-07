@@ -38,8 +38,8 @@ public class Test
     System.out.println("Type of requirement: " + requirement1.getType());
     System.out.println(requirement1.getType());
 
-    requirement1.setStatus(Requirement.APPROVED);
-    requirement2.setStatus(Requirement.STARTED);
+    requirement1.setStatus(Requirement.ENDED);
+    requirement2.setStatus(Requirement.ENDED);
 
     Project project1 = new Project("Rental Company", deadline, 22,
         "blabla blabla");
@@ -106,10 +106,13 @@ public class Test
 //    System.out.println(task1.getRequirementID());
 //    System.out.println(task1);
 
-    System.out.println(requirement1);
-    System.out.println(requirement2);
-    System.out.println(teamMember1);
-    System.out.println(productOwner);
-    System.out.println(scrumMaster);
+//    System.out.println(requirement1);
+//    System.out.println(requirement2);
+//    System.out.println(teamMember1);
+//    System.out.println(productOwner);
+//    System.out.println(scrumMaster);
+    System.out.println("STOP!");
+    System.out.println("PROJECT 1: " + project1);
+    System.out.println(project1.getProductOwner());
   }
 }

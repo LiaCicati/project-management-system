@@ -11,7 +11,7 @@ public class TeamMember
   private String role;
 
   /**
-   * Contructor for the team member
+   * Constructor for the team member
    *
    * @param name the name of the team member
    * @param id   the id of the team member
@@ -19,8 +19,8 @@ public class TeamMember
   public TeamMember(Name name, int id)
   {
     this.name = name;
+    this.role = "Team member";
     setId(id);
-    setRole(role);
   }
 
   /**
@@ -65,10 +65,6 @@ public class TeamMember
   public void setName(Name name)
   {
     this.name = name;
-  }
-
-  public void setRole(String role) {
-    this.role = "Team member";
   }
 
   /**
