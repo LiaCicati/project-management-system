@@ -30,7 +30,7 @@ public class Test
     requirementList.addRequirement(requirement1);
     requirementList.addRequirement(requirement2);
 
-    requirement1.setStatus(Requirement.ENDED);
+    requirement1.setStatus(Requirement.APPROVED);
     requirement2.setStatus(Requirement.STARTED);
 
     Project project1 = new Project("Rental Company", deadline, 22,
@@ -42,8 +42,8 @@ public class Test
 
     Task task1 = new Task(requirement2, 4, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
     Task task2 = new Task(requirement1, 3, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
-    task2.setStatus(Task.ENDED);
-    task1.setStatus(Task.STARTED);
+    task2.setStatus(Task.STARTED);
+    task1.setStatus(Task.ENDED);
     requirement1.addTask(task2);
     requirement2.addTask(task1);
     TaskList tasks = new TaskList();

@@ -191,7 +191,7 @@ public class Project
         return owner;
     }
 
-     /**
+    /**
      * Getter for team members that are not scrum master or product owner
      *
      * @return the team members that are not scrum master or product owner
@@ -292,8 +292,7 @@ public class Project
             {
                 status = STARTED;
             }
-            if (requirement.getStatus().equals(ENDED) || requirement.getStatus()
-                .equals(APPROVED))
+            if (requirement.getStatus().equals(APPROVED))
             {
                 requirementListCheck.add(requirement);
             }
