@@ -95,6 +95,23 @@ public class Requirement
    */
   public String getStatus()
   {
+    ArrayList<Task> taskListCheck = new ArrayList<>();
+
+    for (Task task : tasks)
+    {
+      if (!(task.getStatus().equals(NOT_STARTED)))
+      {
+        status = STARTED;
+      }
+      if (task.getStatus().equals(ENDED))
+      {
+        taskListCheck.add(task);
+      }
+    }
+    if (tasks.equals(taskListCheck))
+    {
+      status = ENDED;
+    }
     return status;
   }
 

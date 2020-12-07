@@ -289,34 +289,19 @@ public class Project
 
         for (Requirement requirement : requirementList)
         {
+            if (!(requirement.getStatus().equals(NOT_STARTED)))
+            {
+                status = STARTED;
+            }
             if (requirement.getStatus().equals(ENDED) || requirement.getStatus()
                 .equals(APPROVED))
             {
                 requirementListCheck.add(requirement);
             }
-            else
-            {
-                for (int j = 0; j < requirement.getAllTasks().size(); j++)
-                {
-                    if (!(requirement.getAllTasks().get(j).getStatus().equals(NOT_STARTED)))
-                    {
-                        status = STARTED;
-                    }
-                    if (requirement.getAllTasks().get(j).getStatus().equals(ENDED))
-                    {
-                        taskListCheck.add(requirement.getAllTasks().get(j));
-                    }
-                }
-                if (taskListCheck.equals(requirement.getAllTasks()))
-                {
-                    requirement.setStatus(ENDED);
-                    requirementListCheck.add(requirement);
-                }
-            }
-            if (requirementListCheck.equals(requirementList))
-            {
-                status = ENDED;
-            }
+        }
+        if (requirementListCheck.equals(requirementList))
+        {
+            status = ENDED;
         }
         return status;
     }
