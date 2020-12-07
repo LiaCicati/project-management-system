@@ -120,7 +120,10 @@ public abstract class Requirement
         return status;
     }
 
-public abstract String getType();
+    /**
+     * Abstract method for getting the requirement's type
+     */
+    public abstract String getType();
 
     /**
      * Getter for the requirement deadline
@@ -234,7 +237,6 @@ public abstract String getType();
 
     /**
      * Getting all the tasks of a requirement
-     *
      * @return an array list of all tasks that represent a requirement
      */
     public ArrayList<Task> getAllTasks()
@@ -244,7 +246,6 @@ public abstract String getType();
 
     /**
      * Getting the total number of team members that worked on a requirement
-     *
      * @return total number of team members
      */
     public int countTeamMembers()
@@ -254,7 +255,6 @@ public abstract String getType();
 
     /**
      * Getting the total number of tasks of a requirement
-     *
      * @return total number of tasks
      */
     public int countTasks()
@@ -264,7 +264,6 @@ public abstract String getType();
 
     /**
      * Checking if a requirement is in Ended state
-     *
      * @return true if the requirement is ended and false if not
      */
     public boolean isEnded()
@@ -274,7 +273,6 @@ public abstract String getType();
 
     /**
      * Checking if two requirements are the same
-     *
      * @param obj the requirement compared to
      * @return true if the requirements are the same or false if not
      */
@@ -287,12 +285,11 @@ public abstract String getType();
         Requirement other = (Requirement) obj;
         return ID == other.ID && estimatedTime == other.estimatedTime
             && responsibleTeamMember.equals(other.responsibleTeamMember)
-            && deadline == other.deadline && status.equals(other.status);
+            && deadline == other.deadline && status.equals(other.status) && type.equals(other.type);
     }
 
   /**
    * Getting the information about a requirement
-   *
    * @return a string with all needed information about a requirement
    */
   @Override public String toString()
