@@ -38,8 +38,8 @@ public class Test
     System.out.println("Type of requirement: " + requirement1.getType());
     System.out.println(requirement1.getType());
 
-    requirement1.setStatus(Requirement.ENDED);
-    requirement2.setStatus(Requirement.ENDED);
+    requirement1.setStatus(Requirement.APPROVED);
+    requirement2.setStatus(Requirement.STARTED);
 
     Project project1 = new Project("Rental Company", deadline, 22,
         "blabla blabla");

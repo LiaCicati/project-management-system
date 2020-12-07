@@ -21,8 +21,6 @@ public class Project
     public static final String NOT_STARTED = "Not started";
     public static final String STARTED = "Started";
     public static final String ENDED = "Ended";
-    public static final String APPROVED = "Approved";
-    public static final String REJECTED = "Rejected";
 
     /**
      * Constructor for a project
@@ -282,16 +280,6 @@ public class Project
     }
 
     /**
-     * Sets the status of the project
-     *
-     * @param status the project status
-     */
-    public void setStatus(String status)
-    {
-        this.status = status;
-    }
-
-    /**
      * Getter for the project status, will also check the status of all
      * requirements and tasks and update where needed
      *
@@ -309,7 +297,7 @@ public class Project
                 {
                     status = STARTED;
                 }
-                if (requirement.getStatus().equals(APPROVED))
+                if (requirement.getStatus().equals("Approved"))
                 {
                     requirementListCheck.add(requirement);
                 }
