@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 /**
  * @author Rickie Nielsen
@@ -72,7 +73,14 @@ public class Project
      */
     public void setCustomerID(int customerID)
     {
-        this.customerID = customerID;
+        try
+        {
+            this.customerID = customerID;
+        }
+        catch (InputMismatchException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -237,12 +245,19 @@ public class Project
      */
     public void removeRequirement(int requirementID)
     {
-        for (int i = 0; i < requirementList.size(); i++)
+        try
         {
-            if (requirementID == requirementList.get(i).getID())
+            for (int i = 0; i < requirementList.size(); i++)
             {
-                requirementList.remove(requirementList.get(i));
+                if (requirementID == requirementList.get(i).getID())
+                {
+                    requirementList.remove(requirementList.get(i));
+                }
             }
+        }
+        catch (InputMismatchException e)
+        {
+            e.printStackTrace();
         }
     }
 

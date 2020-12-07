@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 /**
  * @author Rickie Nielsen
@@ -115,12 +116,20 @@ public class ProjectList
     public ArrayList<Project> getProjectByCustomerID(int customerID)
     {
         ArrayList<Project> projectCustomerIDCheck = new ArrayList<>();
-        for (Project project : projectList)
+
+        try
         {
-            if (customerID == project.getCustomerID())
+            for (Project project : projectList)
             {
-                projectCustomerIDCheck.add(project);
+                if (customerID == project.getCustomerID())
+                {
+                    projectCustomerIDCheck.add(project);
+                }
             }
+        }
+        catch (InputMismatchException e)
+        {
+            e.printStackTrace();
         }
         return projectCustomerIDCheck;
     }
