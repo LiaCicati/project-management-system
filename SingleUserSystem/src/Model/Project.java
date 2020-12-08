@@ -227,6 +227,40 @@ public class Project
     }
 
     /**
+     * Getter for a team member by name
+     * @param name name of the team member
+     * @return the team member with the specified name
+     */
+    public TeamMember getTeamMemberByName(Name name)
+    {
+        for (TeamMember teamMember : teamMemberList)
+        {
+            if (name.equals(teamMember.getName()))
+            {
+                return teamMember;
+            }
+        }
+        return null;
+    }
+
+    /**
+     * Getter for a team member by ID
+     * @param ID ID of the team member
+     * @return the team member with the specified ID
+     */
+    public TeamMember getTeamMemberByID(int ID)
+    {
+        for (TeamMember teamMember : teamMemberList)
+        {
+            if (ID == teamMember.getId())
+            {
+                return teamMember;
+            }
+        }
+        return null;
+    }
+
+    /**
      * Adds a requirement to the project
      *
      * @param requirement the requirement to be added
