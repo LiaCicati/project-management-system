@@ -16,8 +16,8 @@ public class Project
     private MyDate deadline;
     private String status;
 
-    private ArrayList<TeamMember> teamMemberList;
-    private ArrayList<Requirement> requirementList;
+    private TeamMemberList teamMemberList;
+    private RequirementList requirementList;
 
     public static final String NOT_STARTED = "Not started";
     public static final String STARTED = "Started";
@@ -41,8 +41,8 @@ public class Project
 
         this.status = NOT_STARTED;
 
-        this.teamMemberList = new ArrayList<>();
-        this.requirementList = new ArrayList<>();
+        this.teamMemberList = new TeamMemberList();
+        this.requirementList = new RequirementList();
     }
 
     /**
@@ -139,7 +139,7 @@ public class Project
      */
     public void addTeamMember(TeamMember teamMember)
     {
-        teamMemberList.add(teamMember);
+        teamMemberList.addTeamMember(teamMember);
     }
 
     /**
@@ -149,7 +149,7 @@ public class Project
      */
     public void removeTeamMember(TeamMember teamMember)
     {
-        teamMemberList.remove(teamMember);
+        teamMemberList.removeTeamMember(teamMember);
     }
 
     public TeamMember getTeamMember(TeamMember teamMember)
@@ -171,7 +171,7 @@ public class Project
      */
     public int getNumberOfTeamMembers()
     {
-        return teamMemberList.size();
+        return teamMemberList.getSize();
     }
 
     /**
@@ -182,7 +182,7 @@ public class Project
     public TeamMember getScrumMaster()
     {
         TeamMember scrum = null;
-        for (TeamMember teamMember : teamMemberList)
+        for (TeamMember teamMember : teamMemberList.getAllTeamMembers())
         {
             if (teamMember instanceof ScrumMaster)
             {
@@ -200,7 +200,7 @@ public class Project
     public TeamMember getProductOwner()
     {
         TeamMember owner = null;
-        for (TeamMember teamMember : teamMemberList)
+        for (TeamMember teamMember : teamMemberList.getAllTeamMembers())
         {
             if (teamMember instanceof ProductOwner)
             {
@@ -215,15 +215,15 @@ public class Project
      *
      * @return the team members that are not scrum master or product owner
      */
-    public ArrayList<TeamMember> getOnlyTeamMembers()
+    public TeamMemberList getOnlyTeamMembers()
     {
-        ArrayList<TeamMember> teamMembers = new ArrayList<>();
-        for (TeamMember teamMember : teamMemberList)
+        TeamMemberList teamMembers = new TeamMemberList();
+        for (TeamMember teamMember : teamMemberList.getAllTeamMembers())
         {
             if (!(teamMember instanceof ScrumMaster)
                 && !(teamMember instanceof ProductOwner))
             {
-                teamMembers.add(teamMember);
+                teamMembers.addTeamMember(teamMember);
             }
         }
         return teamMembers;
@@ -234,7 +234,7 @@ public class Project
      *
      * @return all team members
      */
-    public ArrayList<TeamMember> getAllTeamMembers()
+    public TeamMemberList getAllTeamMembers()
     {
         return teamMemberList;
     }
@@ -246,7 +246,7 @@ public class Project
      */
     public TeamMember getTeamMemberByName(Name name)
     {
-        for (TeamMember teamMember : teamMemberList)
+        for (TeamMember teamMember : teamMemberList.getAllTeamMembers())
         {
             if (name.equals(teamMember.getName()))
             {
@@ -265,7 +265,7 @@ public class Project
     {
         try
         {
-            for (TeamMember teamMember : teamMemberList)
+            for (TeamMember teamMember : teamMemberList.getAllTeamMembers())
             {
                 if (ID == teamMember.getId())
                 {
@@ -287,7 +287,7 @@ public class Project
      */
     public void addRequirement(Requirement requirement)
     {
-        requirementList.add(requirement);
+        requirementList.addRequirement(requirement);
     }
 
     /**
@@ -299,12 +299,9 @@ public class Project
     {
         try
         {
-            for (int i = 0; i < requirementList.size(); i++)
+            for (int i = 0; i < requirementList.getSize(); i++)
             {
-                if (requirementID == requirementList.get(i).getID())
-                {
-                    requirementList.remove(requirementList.get(i));
-                }
+                requirementList.getByID(requirementID);
             }
         }
         catch (InputMismatchException e)
@@ -320,7 +317,7 @@ public class Project
      */
     public int getNumberOfRequirements()
     {
-        return requirementList.size();
+        return requirementList.getSize();
     }
 
     /**
@@ -328,7 +325,7 @@ public class Project
      *
      * @return all the projects requirements
      */
-    public ArrayList<Requirement> getAllRequirements()
+    public RequirementList getAllRequirements()
     {
         return requirementList;
     }
@@ -342,7 +339,7 @@ public class Project
     {
         try
         {
-            Collections.swap(requirementList, position, newPosition);
+            Collections.swap(requirementList.getRequirements(), position, newPosition);
         }
         catch (IndexOutOfBoundsException e)
         {
@@ -358,11 +355,11 @@ public class Project
      */
     public String getStatus()
     {
-        ArrayList<Requirement> requirementListCheck = new ArrayList<>();
+       RequirementList requirementListCheck = new RequirementList();
 
         if (!(status.equals(ENDED)))
         {
-            for (Requirement requirement : requirementList)
+            for (Requirement requirement : requirementList.getRequirements())
             {
                 if (!(requirement.getStatus().equals(NOT_STARTED)))
                 {
@@ -370,7 +367,7 @@ public class Project
                 }
                 if (requirement.isApproved())
                 {
-                    requirementListCheck.add(requirement);
+                    requirementListCheck.addRequirement(requirement);
                 }
             }
             if (requirementListCheck.equals(requirementList))

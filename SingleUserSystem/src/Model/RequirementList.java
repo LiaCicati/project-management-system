@@ -40,6 +40,9 @@ public class RequirementList
     requirements.remove(requirement);
   }
 
+  public void removeRequirementById(int requirementID) {
+    requirements.remove(requirementID);
+  }
   /**
    * Getting all requirements
    *

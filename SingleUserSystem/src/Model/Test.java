@@ -1,5 +1,7 @@
 package Model;
 
+import com.sun.security.jgss.GSSUtil;
+
 public class Test
 {
   public static void main(String[] args)
@@ -27,46 +29,80 @@ public class Test
         deadline2, "some text");
     System.out.println("1st requirement: " + requirement1);
 
-    RequirementList requirementList = new RequirementList();
-    requirementList.addRequirement(requirement1);
-    requirementList.addRequirement(requirement2);
-    System.out.println("Requirement List: " + requirementList);
 
-    System.out.println("Status for 1st requirement: " + requirement1.getStatus());
-    System.out.println(requirement1.countTasks());
-    System.out.println(requirement1.getAllTasks());
-    System.out.println("Type of requirement: " + requirement1.getType());
-    System.out.println(requirement1.getType());
+
+
+//
+//    System.out.println("Status for 1st requirement: " + requirement1.getStatus());
+//    System.out.println(requirement1.countTasks());
+//    System.out.println(requirement1.getAllTasks());
+//    System.out.println("Type of requirement: " + requirement1.getType());
+//    System.out.println(requirement1.getType());
 
 //    requirement1.setStatus(Requirement.APPROVED);
 //    requirement2.setStatus(Requirement.STARTED);
+    ProjectList projectList = new ProjectList();
 
     Project project1 = new Project("Rental Company", deadline, 22,
         "blabla blabla");
-    project1.addTeamMember(scrumMaster);
-    project1.addTeamMember(productOwner);
+    Project project2 = new Project("University", deadline, 22,
+        "blabla blabla");
+    Project project3 = new Project("School", deadline, 22,
+        "blabla blabla");
+
+    RequirementList requirementList = new RequirementList();
+   requirementList.addRequirement(requirement1);
+   requirementList.addRequirement(requirement2);
+//    System.out.println("HEEEI" + requirementList.getRequirements());
+//
+//    projectList.addProject(project1);
+//    projectList.addProject(project2);
+//    projectList.addProject(project3);
+//
+//    System.out.println("INFO: " + project1.getAllRequirements());
+//    project1.addTeamMember(scrumMaster);
+//    project1.addTeamMember(productOwner);
+//    project1.addTeamMember(teamMember1);
+//    project1.addTeamMember(teamMember2);
+////    project1.addRequirement(requirement1);
+////    project1.addRequirement(requirement2);
+//
+//
+//    Task task1 = new Task(requirement2, 4, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
+//    Task task2 = new Task(requirement1, 3, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
+//    task2.setStatus(Task.STARTED);
+//    task1.setStatus(Task.ENDED);
+//    requirement1.addTask(task2);
+//    requirement1.addTask(task1);
+//    System.out.println("STATUS: " + requirement1.getStatus());
+//    requirement2.addTask(task1);
+//
+//    TaskList tasks = new TaskList();
+//    tasks.addTask(task1);
+//    tasks.addTask(task2);
+//
+//
+//
+//    tasks.changeStatus("Not Started", task1);
+//    System.out.println(task1);
+//
+//    System.out.println(teamMember1.getName());
+//    System.out.println(teamMemberList.getTeamMemberByName(name1));
+//    System.out.println("BY ID: " + project1.getTeamMemberByID(2));
+//    System.out.println("NOW: " + project1.getAllRequirements());
+//project1.reorderRequirement(1, 0);
+//    System.out.println("CHANGED: " + project1.getAllRequirements());
+//    System.out.println(projectList.getNumberOfProjects());
+    System.out.println("Requirement List: " + requirementList);
+    requirementList.removeRequirement(requirement2);
+    System.out.println("Requirement List: " + requirementList);
+
     project1.addRequirement(requirement1);
     project1.addRequirement(requirement2);
+    System.out.println("!!!! " + project1.getAllRequirements());
+    project1.removeRequirement(324);
+    System.out.println("!!!! " + project1.getAllRequirements());
 
-    Task task1 = new Task(requirement2, 4, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
-    Task task2 = new Task(requirement1, 3, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
-    task2.setStatus(Task.STARTED);
-    task1.setStatus(Task.ENDED);
-    requirement1.addTask(task2);
-    requirement1.addTask(task1);
-    System.out.println("STATUS: " + requirement1.getStatus());
-    requirement2.addTask(task1);
-
-    TaskList tasks = new TaskList();
-    tasks.addTask(task1);
-    tasks.addTask(task2);
-
-
-
-    tasks.changeStatus("Not Started", task1);
-    System.out.println(task1);
-
-    System.out.println(teamMember1.getName());
 //    teamMember1.registerTime( 40 ,task1);
 //
 //    System.out.println("Task 1 data: " + task1);
