@@ -120,19 +120,19 @@ public class ProjectManagementModelManager
     project.reorderRequirement(position,newPosition);
   }
 
-  public int getSizeOfTask(Requirement requirement,Task task)
+  public int getNumberOfTasks(Requirement requirement)
   {
-    return requirement.getAllTasks().size();
+    return requirement.countTasks();
   }
 
-  public int getSizeOfRequirement(Project project,Requirement requirement)
+  public int getNumberOfRequirements(Project project)
   {
-    return project.getAllRequirements().size();
+    return project.getNumberOfRequirements();
   }
 
-  public int getSizeOfProject(Project project)
+  public int getNumberOfProjects()
   {
-    return projectList.getAllProjects().size();
+    return projectList.getNumberOfProjects();
   }
 
   public TeamMember get(Project project,int index)
