@@ -250,12 +250,19 @@ public class Project
      */
     public TeamMember getTeamMemberByID(int ID)
     {
-        for (TeamMember teamMember : teamMemberList)
+        try
         {
-            if (ID == teamMember.getId())
+            for (TeamMember teamMember : teamMemberList)
             {
-                return teamMember;
+                if (ID == teamMember.getId())
+                {
+                    return teamMember;
+                }
             }
+        }
+        catch (InputMismatchException e)
+        {
+            e.printStackTrace();
         }
         return null;
     }
