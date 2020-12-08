@@ -1,6 +1,7 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.InputMismatchException;
 
 /**
@@ -318,6 +319,23 @@ public class Project
     public ArrayList<Requirement> getAllRequirements()
     {
         return requirementList;
+    }
+
+    /**
+     * Reorder priority of requirements
+     * @param position position to be swapped
+     * @param newPosition position to be swapped to
+     */
+    public void reorderRequirement(int position, int newPosition)
+    {
+        try
+        {
+            Collections.swap(requirementList, position, newPosition);
+        }
+        catch (IndexOutOfBoundsException e)
+        {
+            e.printStackTrace();
+        }
     }
 
     /**
