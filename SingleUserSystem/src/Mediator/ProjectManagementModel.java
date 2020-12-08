@@ -8,6 +8,8 @@ public interface ProjectManagementModel
 
   public void addTeamMember(TeamMember teamMember);
 
+  public TeamMember editTeamMember(Name name,String role);
+
   public void removeTeamMember(TeamMember teamMember);
 
   public void addTaskToRequirement(Requirement requirement,Task task);
@@ -34,7 +36,7 @@ public interface ProjectManagementModel
 
   public void reorder(int position, int newPosition);
 
-  public TeamMember addTeamMember(Name name,String role);
+
 
   public int getSizeOfTask(Requirement requirement,Task task);
 
