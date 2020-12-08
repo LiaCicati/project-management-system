@@ -51,15 +51,22 @@ public class Test
     Task task1 = new Task(requirement2, 4, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
     Task task2 = new Task(requirement1, 3, "Add javadoc", "fufudfduf", 30, teamMember1,deadline);
     task2.setStatus(Task.STARTED);
-//    task1.setStatus(Task.ENDED);
+    task1.setStatus(Task.ENDED);
     requirement1.addTask(task2);
     requirement1.addTask(task1);
     System.out.println("STATUS: " + requirement1.getStatus());
     requirement2.addTask(task1);
-//
-//    TaskList tasks = new TaskList();
-//    tasks.addTask(task1);
-//    tasks.addTask(task2);
+
+    TaskList tasks = new TaskList();
+    tasks.addTask(task1);
+    tasks.addTask(task2);
+
+
+
+    tasks.changeStatus("Not Started", task1);
+    System.out.println(task1);
+
+    System.out.println(teamMember1.getName());
 //    teamMember1.registerTime( 40 ,task1);
 //
 //    System.out.println("Task 1 data: " + task1);
@@ -116,5 +123,7 @@ public class Test
 //    System.out.println("STOP!");
 //    System.out.println("PROJECT 1: " + project1);
 //    System.out.println(project1.getProductOwner());
+
+
   }
 }

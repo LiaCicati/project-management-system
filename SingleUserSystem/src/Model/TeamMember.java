@@ -1,10 +1,10 @@
 package Model;
 
-import javax.naming.Name;
+import java.util.InputMismatchException;
 
 /**
  * @author Siyu Xia
- * @version 8/12/2020
+ * @version 3/12/2020
  */
 public class TeamMember
 {
@@ -13,7 +13,7 @@ public class TeamMember
   private String role;
 
   /**
-   * Contructor for the team member
+   * Constructor for the team member
    *
    * @param name the name of the team member
    * @param id   the id of the team member
@@ -21,8 +21,8 @@ public class TeamMember
   public TeamMember(Name name, int id)
   {
     this.name = name;
+    this.role = "Team member";
     setId(id);
-    role=null;
   }
 
   /**
@@ -35,13 +35,7 @@ public class TeamMember
     return name;
   }
 
-  /**
-   * Getter for the team member's role
-   * 
-   * @return the role of the team member
-   */
-  public String getRole()
-  {
+  public String getRole() {
     return role;
   }
 
@@ -62,7 +56,14 @@ public class TeamMember
    */
   public void setId(int id)
   {
-    this.id = id;
+    try
+    {
+      this.id = id;
+    }
+    catch (InputMismatchException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   /**
@@ -83,9 +84,15 @@ public class TeamMember
    */
   public void registerTime(double timeSpent, Task task)
   {
-    task.setTimeSpent(timeSpent);
+    try
+    {
+      task.setTimeSpent(timeSpent);
+    }
+    catch (InputMismatchException e)
+    {
+      e.printStackTrace();
+    }
   }
-
 
   /**
    * Checking if two team members are the same
@@ -110,6 +117,6 @@ public class TeamMember
    */
   public String toString()
   {
-    return "ID: " + id + ", Full name: " + name;
+    return "ID: " + id + ", Full name: " + name + ", Role: " + getRole();
   }
 }
