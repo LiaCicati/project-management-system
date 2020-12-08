@@ -36,11 +36,11 @@ public interface ProjectManagementModel
 
   public void reorderRequirememnts(Project project,int position, int newPosition);
 
-  public int getSizeOfTask(Requirement requirement,Task task);
+  public int getNumberOfTasks(Requirement requirement);
 
-  public int getSizeOfRequirement(Project project,Requirement requirement);
+  public int getNumberOfRequirements(Project project);
 
-  public int getSizeOfProject(Project project);
+  public int getNumberOfProjects();
 
   public TeamMember get(Project project,int index);
 
