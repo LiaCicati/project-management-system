@@ -15,7 +15,7 @@ public class Task
   private double timeSpent;
   private String description;
   private String status;
-  private ArrayList<TeamMember> teamMembers;
+  private TeamMemberList teamMembers;
   private TeamMember responsibleTeamMember;
   private int requirementID;
   private MyDate deadline;
@@ -47,7 +47,7 @@ public class Task
     setDeadline(deadline);
     this.status = NOT_STARTED;
     this.requirementID = requirementID.getID();
-    this.teamMembers = new ArrayList<>();
+    this.teamMembers = new TeamMemberList();
 
   }
 
@@ -244,7 +244,7 @@ public class Task
    */
   public void addTeamMember(TeamMember teamMember)
   {
-    teamMembers.add(teamMember);
+    teamMembers.addTeamMember(teamMember);
   }
 
 
@@ -255,7 +255,7 @@ public class Task
    */
   public void removeTeamMember(TeamMember teamMember)
   {
-    teamMembers.remove(teamMember);
+    teamMembers.removeTeamMember(teamMember);
   }
 
   /**
@@ -263,7 +263,7 @@ public class Task
    *
    * @return an array list of team members that worked on the task
    */
-  public ArrayList<TeamMember> getAllTeamMembers()
+  public TeamMemberList getAllTeamMembers()
   {
     return teamMembers;
   }
@@ -275,7 +275,7 @@ public class Task
    */
   public int countTeamMembers()
   {
-    return teamMembers.size();
+    return teamMembers.getSize();
   }
 
   /**
