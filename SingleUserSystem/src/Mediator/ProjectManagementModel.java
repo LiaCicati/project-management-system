@@ -30,7 +30,7 @@ public interface ProjectManagementModel
 
   RequirementList getAllRequirements(Project project);
 
-  ProjectList getAllProjects(ProjectList projects);
+  ProjectList getAllProjects();
 
   Project getProject(String title);
 
