@@ -26,9 +26,16 @@ public class ProjectManagementModelManager implements ProjectManagementModel
         return teamMemberList.getTeamMemberByName(name);
     }
 
-    @Override public void addTeamMember(TeamMember teamMember)
+    @Override public void addTeamMemberToProject(Project project,
+        TeamMember teamMember)
     {
-        teamMemberList.addTeamMember(teamMember);
+        for (int i = 0; i < projectList.getNumberOfProjects(); i++)
+        {
+            if (projectList.getAllProjects().get(i).equals(project))
+            {
+                projectList.getAllProjects().get(i).addTeamMember(teamMember);
+            }
+        }
     }
 
     @Override public TeamMember editTeamMember(Name name, String role)
@@ -38,6 +45,7 @@ public class ProjectManagementModelManager implements ProjectManagementModel
 
     @Override public void removeTeamMember(TeamMember teamMember)
     {
+        //don't think we need this line anymore???
         teamMemberList.removeTeamMember(teamMember);
 
         for (int i = 0; i < projectList.getAllProjects().size(); i++)
@@ -54,19 +62,39 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     @Override public void addTaskToRequirement(Requirement requirement,
         Task task)
     {
-
+        for (int i = 0; i < projectList.getNumberOfProjects(); i++)
+        {
+            if (projectList.getAllProjects().get(i).getAllRequirements()
+                .contains(requirement))
+            {
+                requirement.addTask(task);
+            }
+        }
     }
 
     @Override public void removeTaskFromRequirement(Requirement requirement,
         Task task)
     {
-
+        for (int i = 0; i < projectList.getNumberOfProjects(); i++)
+        {
+            if (projectList.getAllProjects().get(i).getAllRequirements()
+                .contains(requirement))
+            {
+                requirement.removeTask(task);
+            }
+        }
     }
 
     @Override public void addRequirementToProject(Project project,
         Requirement requirement)
     {
-
+        for (int i = 0; i < projectList.getNumberOfProjects(); i++)
+        {
+            if (projectList.getAllProjects().get(i).equals(project))
+            {
+                projectList.getAllProjects().get(i).addRequirement(requirement);
+            }
+        }
     }
 
     @Override public void removeRequirementFromProject(Project project,
