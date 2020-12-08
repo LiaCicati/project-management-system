@@ -29,11 +29,11 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     @Override public void addTeamMemberToProject(Project project,
         TeamMember teamMember)
     {
-        for (int i = 0; i < projectList.getNumberOfProjects(); i++)
+        for (Project projectTemp : projectList.getAllProjects())
         {
-            if (projectList.getAllProjects().get(i).equals(project))
+            if (projectTemp.equals(project))
             {
-                projectList.getAllProjects().get(i).addTeamMember(teamMember);
+                projectTemp.addTeamMember(teamMember);
             }
         }
     }
@@ -48,13 +48,12 @@ public class ProjectManagementModelManager implements ProjectManagementModel
         //don't think we need this line anymore???
         teamMemberList.removeTeamMember(teamMember);
 
-        for (int i = 0; i < projectList.getAllProjects().size(); i++)
+        for (Project project : projectList.getAllProjects())
         {
-            if (projectList.getAllProjects().get(i).getTeamMember(teamMember)
+            if (project.getTeamMember(teamMember)
                 .equals(teamMember))
             {
-                projectList.getAllProjects().get(i)
-                    .removeTeamMember(teamMember);
+                project.removeTeamMember(teamMember);
             }
         }
     }
@@ -64,7 +63,8 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     {
         for (Project project : projectList.getAllProjects())
         {
-            for (Requirement requirementTest : project.getAllRequirements().getRequirements())
+            for (Requirement requirementTest : project.getAllRequirements()
+                .getRequirements())
             {
                 if (requirementTest.equals(requirement))
                 {
@@ -79,7 +79,8 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     {
         for (Project project : projectList.getAllProjects())
         {
-            for (Requirement requirementTest : project.getAllRequirements().getRequirements())
+            for (Requirement requirementTest : project.getAllRequirements()
+                .getRequirements())
             {
                 if (requirementTest.equals(requirement))
                 {
@@ -92,11 +93,11 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     @Override public void addRequirementToProject(Project project,
         Requirement requirement)
     {
-        for (int i = 0; i < projectList.getNumberOfProjects(); i++)
+        for (Project projectTemp : projectList.getAllProjects())
         {
-            if (projectList.getAllProjects().get(i).equals(project))
+            if (projectTemp.equals(project))
             {
-                projectList.getAllProjects().get(i).addRequirement(requirement);
+                projectTemp.addRequirement(requirement);
             }
         }
     }
