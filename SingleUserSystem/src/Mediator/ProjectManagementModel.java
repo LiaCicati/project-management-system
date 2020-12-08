@@ -18,7 +18,7 @@ public interface ProjectManagementModel
 
   void addRequirementToProject(Project project,Requirement requirement);
 
-  void removeRequirementFromProject( Project project,Requirement requirement);
+  void removeRequirementFromProject( Project project,int requirementID);
 
   void addProject(Project project);
 
@@ -45,4 +45,5 @@ public interface ProjectManagementModel
   TeamMember get(Project project,int index);
 
   TeamMember getTeamMemberById(Project project,int ID);
+
 }
