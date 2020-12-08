@@ -7,170 +7,171 @@ import java.util.Collections;
 
 public class ProjectManagementModelManager implements ProjectManagementModel
 {
-  private ProjectList projectList;
-  private RequirementList requirementList;
-  private TaskList taskList;
-  private TeamMemberList teamMemberList;
-  private ProjectManagementPersistence file;
+    private ProjectList projectList;
+    private ProjectManagementPersistence file;
 
-  public ProjectManagementModelManager()
-  {
-    this.projectList = new ProjectList();
-    this.requirementList = new RequirementList();
-    this.taskList = new TaskList();
-    this.teamMemberList = new TeamMemberList();
-  }
-
-  @Override public TeamMember getTeamMemberByName(Name name)
-  {
-    return teamMemberList.getTeamMemberByName(name);
-  }
-
-  @Override public void addTeamMemberToProject(Project project,
-      TeamMember teamMember)
-  {
-    for (Project projectTemp : projectList.getAllProjects())
+    public ProjectManagementModelManager()
     {
-      if (projectTemp.equals(project))
-      {
-        projectTemp.addTeamMember(teamMember);
-      }
+        this.projectList = new ProjectList();
     }
-  }
 
-  @Override public TeamMember editTeamMember(Name name, String role)
-  {
-    return null;
-  }
-
-  @Override public void removeTeamMember(TeamMember teamMember)
-  {
-    //don't think we need this line anymore???
-    teamMemberList.removeTeamMember(teamMember);
-
-    for (Project project : projectList.getAllProjects())
+    @Override public TeamMember getTeamMemberByName(Name name)
     {
-      if (project.getTeamMember(teamMember)
-          .equals(teamMember))
-      {
-        project.removeTeamMember(teamMember);
-      }
-    }
-  }
-
-  @Override public void addTaskToRequirement(Requirement requirement,
-      Task task)
-  {
-    for (Project project : projectList.getAllProjects())
-    {
-      for (Requirement requirementTest : project.getAllRequirements()
-          .getRequirements())
-      {
-        if (requirementTest.equals(requirement))
+        for (Project project : projectList.getAllProjects())
         {
-          requirementTest.addTask(task);
+            for (TeamMember teamMember : project.getAllTeamMembers()
+                .getAllTeamMembers())
+            {
+                if (teamMember.getName().equals(name))
+                {
+                    return teamMember;
+                }
+            }
         }
-      }
+        return null;
     }
-  }
 
-  @Override public void removeTaskFromRequirement(Requirement requirement,
-      Task task)
-  {
-    for (Project project : projectList.getAllProjects())
+    @Override public void addTeamMemberToProject(Project project,
+        TeamMember teamMember)
     {
-      for (Requirement requirementTest : project.getAllRequirements()
-          .getRequirements())
-      {
-        if (requirementTest.equals(requirement))
+        for (Project projectTemp : projectList.getAllProjects())
         {
-          requirementTest.removeTask(task);
+            if (projectTemp.equals(project))
+            {
+                projectTemp.addTeamMember(teamMember);
+            }
         }
-      }
     }
-  }
 
-  @Override public void addRequirementToProject(Project project,
-      Requirement requirement)
-  {
-    for (Project projectTemp : projectList.getAllProjects())
+    @Override public TeamMember editTeamMember(Name name, String role)
     {
-      if (projectTemp.equals(project))
-      {
-        projectTemp.addRequirement(requirement);
-      }
+        return null;
     }
-  }
 
-  @Override public void removeRequirementFromProject(Project project,
-      Requirement requirement)
-  {
+    @Override public void removeTeamMember(TeamMember teamMember)
+    {
+        for (Project project : projectList.getAllProjects())
+        {
+            if (project.getTeamMember(teamMember).equals(teamMember))
+            {
+                project.removeTeamMember(teamMember);
+            }
+        }
+    }
 
-  }
+    @Override public void addTaskToRequirement(Requirement requirement,
+        Task task)
+    {
+        for (Project project : projectList.getAllProjects())
+        {
+            for (Requirement requirementTest : project.getAllRequirements()
+                .getRequirements())
+            {
+                if (requirementTest.equals(requirement))
+                {
+                    requirementTest.addTask(task);
+                }
+            }
+        }
+    }
 
-  @Override public void addProject(Project project)
-  {
-    projectList.addProject(project);
-  }
+    @Override public void removeTaskFromRequirement(Requirement requirement,
+        Task task)
+    {
+        for (Project project : projectList.getAllProjects())
+        {
+            for (Requirement requirementTest : project.getAllRequirements()
+                .getRequirements())
+            {
+                if (requirementTest.equals(requirement))
+                {
+                    requirementTest.removeTask(task);
+                }
+            }
+        }
+    }
 
-  @Override public void removeProject(Project project)
-  {
-    projectList.removeProject(project);
-  }
+    @Override public void addRequirementToProject(Project project,
+        Requirement requirement)
+    {
+        for (Project projectTemp : projectList.getAllProjects())
+        {
+            if (projectTemp.equals(project))
+            {
+                projectTemp.addRequirement(requirement);
+            }
+        }
+    }
 
-  @Override public TeamMemberList getAllTeamMembers(Project project)
-  {
-    return project.getAllTeamMembers();
-  }
+    @Override public void removeRequirementFromProject(Project project,
+        Requirement requirement)
+    {
 
-  @Override public TaskList getAllTasks(Requirement requirement)
-  {
-    return requirement.getAllTasks();
-  }
+    }
 
-  @Override public RequirementList getAllRequirements(Project project)
-  {
-    return project.getAllRequirements();
-  }
+    @Override public void addProject(Project project)
+    {
+        projectList.addProject(project);
+    }
 
-  @Override public ProjectList getAllProjects()
-  {
-    return projectList;
-  }
+    @Override public void removeProject(Project project)
+    {
+        projectList.removeProject(project);
+    }
 
-  @Override public Project getProject(String title)
-  {
-    return projectList.getProjectByTitle(title);
-  }
+    @Override public TeamMemberList getAllTeamMembers(Project project)
+    {
+        return project.getAllTeamMembers();
+    }
 
-  @Override public void reorderRequirements(Project project, int position,
-      int newPosition)
-  {
-    project.getAllRequirements().reorder(position, newPosition);
-  }
+    @Override public TaskList getAllTasks(Requirement requirement)
+    {
+        return requirement.getAllTasks();
+    }
 
-  @Override public int getNumberOfTasks(Requirement requirement)
-  {
-    return requirement.countTasks();
-  }
+    @Override public RequirementList getAllRequirements(Project project)
+    {
+        return project.getAllRequirements();
+    }
 
-  @Override public int getNumberOfRequirements(Project project)
-  {
-    return project.getNumberOfRequirements();
-  }
+    @Override public ProjectList getAllProjects()
+    {
+        return projectList;
+    }
 
-  @Override public int getNumberOfProjects()
-  {
-    return projectList.getNumberOfProjects();
-  }
+    @Override public Project getProject(String title)
+    {
+        return projectList.getProjectByTitle(title);
+    }
 
-  @Override public TeamMember get(Project project, int index)
-  {
-    return project.getAllTeamMembers().get(index);
-  }
+    @Override public void reorderRequirements(Project project, int position,
+        int newPosition)
+    {
+        project.getAllRequirements().reorder(position, newPosition);
+    }
 
-  @Override public TeamMember getTeamMemberById(Project project, int ID)
-  {
-    return project.getAllTeamMembers().getTeamMemberById(ID);
-  }
+    @Override public int getNumberOfTasks(Requirement requirement)
+    {
+        return requirement.countTasks();
+    }
+
+    @Override public int getNumberOfRequirements(Project project)
+    {
+        return project.getNumberOfRequirements();
+    }
+
+    @Override public int getNumberOfProjects()
+    {
+        return projectList.getNumberOfProjects();
+    }
+
+    @Override public TeamMember get(Project project, int index)
+    {
+        return project.getAllTeamMembers().get(index);
+    }
+
+    @Override public TeamMember getTeamMemberById(Project project, int ID)
+    {
+        return project.getAllTeamMembers().getTeamMemberById(ID);
+    }
 }
