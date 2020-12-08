@@ -4,13 +4,11 @@ import Model.*;
 
 public interface ProjectManagementModel
 {
-  public TeamMemberList getTeamMemberByName(Name name);
+  public TeamMember getTeamMemberByName(Name name);
 
   public void addTeamMember(TeamMember teamMember);
 
   public void removeTeamMember(TeamMember teamMember);
-
-  public void removeTeamMemberFromRequirement(Requirement requirement,TeamMember teamMember);
 
   public void addTaskToRequirement(Requirement requirement,Task task);
 
@@ -24,11 +22,11 @@ public interface ProjectManagementModel
 
   public void removeProject(Project project);
 
-  public TeamMemberList getAllTeamMembers(TeamMemberList teamMembers);
+  public TeamMemberList getAllTeamMembers(Project project);
 
-  public TaskList getAllTasks(TaskList tasks);
+  public TaskList getAllTasks(Requirement requirement);
 
-  public RequirementList getAllRequirements(RequirementList requirements);
+  public RequirementList getAllRequirements(Project project);
 
   public ProjectList getAllProjects(ProjectList projects);
 
@@ -38,8 +36,14 @@ public interface ProjectManagementModel
 
   public TeamMember addTeamMember(Name name,String role);
 
-  public int getSize();
+  public int getSizeOfTask(Requirement requirement,Task task);
 
-  public TeamMember get(int index);
+  public int getSizeOfRequirement(Project project,Requirement requirement);
+
+  public int getSizeOfProject(Project project);
+
+  public TeamMember get(Project project,int index);
+
+  public TeamMember getTeamMemberById(Project project,int ID);
 
 }
