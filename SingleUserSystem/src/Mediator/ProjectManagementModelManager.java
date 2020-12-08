@@ -179,4 +179,18 @@ public class ProjectManagementModelManager implements ProjectManagementModel
   {
     return project.getAllTeamMembers().getTeamMemberById(ID);
   }
+
+  @Override public void editTask(Task task, String title, String description,
+      double estimatedTime, TeamMember responsibleTeamMember, MyDate deadline)
+  {
+    task.editTask(title, description, estimatedTime, responsibleTeamMember,
+        deadline);
+  }
+
+  @Override public void editRequirement(Requirement requirement, int ID,
+      double estimatedTime, TeamMember responsibleTeamMember, MyDate deadline)
+  {
+    requirement
+        .editRequirement(ID, estimatedTime, responsibleTeamMember, deadline);
+  }
 }

@@ -247,7 +247,6 @@ public class Task
     teamMembers.addTeamMember(teamMember);
   }
 
-
   /**
    * Removing a team member that worked on a specific task
    *
@@ -286,6 +285,16 @@ public class Task
   public boolean isEnded()
   {
     return status.equals(Task.ENDED);
+  }
+
+  public void editTask(String title, String description, double estimatedTime,
+      TeamMember responsibleTeamMember, MyDate deadline)
+  {
+    setTitle(title);
+    setDescription(description);
+    setEstimatedTime(estimatedTime);
+    setResponsibleTeamMember(responsibleTeamMember);
+    setDeadline(deadline);
   }
 
   /**
