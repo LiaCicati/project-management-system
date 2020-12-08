@@ -20,8 +20,8 @@ public abstract class Requirement
     public static final String APPROVED = "Approved";
     public static final String REJECTED = "Rejected";
     private TeamMember responsibleTeamMember;
-    private ArrayList<TeamMember> teamMembers;
-    private ArrayList<Task> tasks;
+    private TeamMemberList teamMembers;
+    private TaskList tasks;
     private MyDate deadline;
 
     /**
@@ -42,8 +42,8 @@ public abstract class Requirement
         this.type = getType();
         this.timeSpent = 0;
         this.status = NOT_STARTED;
-        this.teamMembers = new ArrayList<>();
-        this.tasks = new ArrayList<>();
+        this.teamMembers = new TeamMemberList();
+        this.tasks = new TaskList();
     }
 
     /**
@@ -83,7 +83,7 @@ public abstract class Requirement
      */
     public double getTimeSpent()
     {
-        for (Task task : tasks)
+        for (Task task : tasks.getAllTasks())
         {
             this.timeSpent = timeSpent + task.getTimeSpent();
         }
@@ -98,11 +98,11 @@ public abstract class Requirement
      */
     public String getStatus()
     {
-        ArrayList<Task> taskListCheck = new ArrayList<>();
+        TaskList taskListCheck = new TaskList();
 
         if (!(status.equals(APPROVED) || status.equals(REJECTED)))
         {
-            for (Task task : tasks)
+            for (Task task : tasks.getAllTasks())
             {
                 if (!(task.getStatus().equals(NOT_STARTED)))
                 {
@@ -110,7 +110,7 @@ public abstract class Requirement
                 }
                 if (task.isEnded())
                 {
-                    taskListCheck.add(task);
+                    taskListCheck.addTask(task);
                 }
             }
             if (tasks.equals(taskListCheck))
@@ -207,7 +207,7 @@ public abstract class Requirement
      */
     public void addTask(Task task)
     {
-        tasks.add(task);
+        tasks.addTask(task);
     }
 
     /**
@@ -217,7 +217,7 @@ public abstract class Requirement
      */
     public void removeTask(Task task)
     {
-        tasks.remove(task);
+        tasks.removeTask(task);
     }
 
     /**
@@ -227,7 +227,7 @@ public abstract class Requirement
      */
     public void addTeamMember(TeamMember teamMember)
     {
-        teamMembers.add(teamMember);
+        teamMembers.addTeamMember(teamMember);
     }
 
     /**
@@ -237,7 +237,7 @@ public abstract class Requirement
      */
     public void removeTeamMember(TeamMember teamMember)
     {
-        teamMembers.remove(teamMember);
+        teamMembers.removeTeamMember(teamMember);
     }
 
     /**
@@ -247,7 +247,7 @@ public abstract class Requirement
      */
     public ArrayList<TeamMember> getAllTeamMembers()
     {
-        return teamMembers;
+        return teamMembers.getAllTeamMembers();
     }
 
     /**
@@ -257,7 +257,7 @@ public abstract class Requirement
      */
     public ArrayList<Task> getAllTasks()
     {
-        return tasks;
+        return tasks.getAllTasks();
     }
 
     /**
@@ -267,7 +267,7 @@ public abstract class Requirement
      */
     public int countTeamMembers()
     {
-        return teamMembers.size();
+        return teamMembers.getAllTeamMembers().size();
     }
 
     /**
@@ -277,7 +277,7 @@ public abstract class Requirement
      */
     public int countTasks()
     {
-        return tasks.size();
+        return tasks.getAllTasks().size();
     }
 
     /**
