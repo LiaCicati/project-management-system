@@ -152,6 +152,18 @@ public class Project
         teamMemberList.remove(teamMember);
     }
 
+    public TeamMember getTeamMember(TeamMember teamMember)
+    {
+        for (TeamMember member : teamMemberList)
+        {
+            if (member.equals(teamMember))
+            {
+                return teamMember;
+            }
+        }
+        return null;
+    }
+
     /**
      * Getter for the number of team members that works on the project
      *

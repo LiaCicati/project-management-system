@@ -4,46 +4,45 @@ import Model.*;
 
 public interface ProjectManagementModel
 {
-  public TeamMember getTeamMemberByName(Name name);
+  TeamMember getTeamMemberByName(Name name);
 
-  public void addTeamMember(TeamMember teamMember);
+  void addTeamMember(TeamMember teamMember);
 
-  public TeamMember editTeamMember(Name name,String role);
+  TeamMember editTeamMember(Name name,String role);
 
-  public void removeTeamMember(TeamMember teamMember);
+  void removeTeamMember(TeamMember teamMember);
 
-  public void addTaskToRequirement(Requirement requirement,Task task);
+  void addTaskToRequirement(Requirement requirement,Task task);
 
-  public void removeTaskFromRequirement(Requirement requirement,Task task);
+  void removeTaskFromRequirement(Requirement requirement,Task task);
 
-  public void addRequirementToProject(Project project,Requirement requirement);
+  void addRequirementToProject(Project project,Requirement requirement);
 
-  public void removeRequirementFromProject( Project project,Requirement requirement);
+  void removeRequirementFromProject( Project project,Requirement requirement);
 
-  public void addProject(Project project);
+  void addProject(Project project);
 
-  public void removeProject(Project project);
+  void removeProject(Project project);
 
-  public TeamMemberList getAllTeamMembers(Project project);
+  TeamMemberList getAllTeamMembers(Project project);
 
-  public TaskList getAllTasks(Requirement requirement);
+  TaskList getAllTasks(Requirement requirement);
 
-  public RequirementList getAllRequirements(Project project);
+  RequirementList getAllRequirements(Project project);
 
-  public ProjectList getAllProjects(ProjectList projects);
+  ProjectList getAllProjects(ProjectList projects);
 
-  public Project getProject(String title);
+  Project getProject(String title);
 
-  public void reorderRequirememnts(Project project,int position, int newPosition);
+  void reorderRequirements(Project project,int position, int newPosition);
 
-  public int getNumberOfTasks(Requirement requirement);
+  int getNumberOfTasks(Requirement requirement);
 
-  public int getNumberOfRequirements(Project project);
+  int getNumberOfRequirements(Project project);
 
-  public int getNumberOfProjects();
+  int getNumberOfProjects();
 
-  public TeamMember get(Project project,int index);
+  TeamMember get(Project project,int index);
 
-  public TeamMember getTeamMemberById(Project project,int ID);
-
+  TeamMember getTeamMemberById(Project project,int ID);
 }
