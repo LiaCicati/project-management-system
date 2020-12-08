@@ -34,9 +34,7 @@ public interface ProjectManagementModel
 
   public Project getProject(String title);
 
-  public void reorder(int position, int newPosition);
-
-
+  public void reorderRequirememnts(Project project,int position, int newPosition);
 
   public int getSizeOfTask(Requirement requirement,Task task);
 
