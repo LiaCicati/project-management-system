@@ -115,17 +115,10 @@ public class ProjectManagementModelManager
     return projectList.getProjectByTitle(title);
   }
 
-//  public void reorder(int position, int newPosition)
-//  {
-//    try
-//    {
-//      Collections.swap(requirements, position, newPosition);
-//    }
-//    catch (IndexOutOfBoundsException e)
-//    {
-//      e.printStackTrace();
-//    }
-//  }
+  public void reorderRequirememnts(Project project,int position, int newPosition)
+  {
+    project.reorderRequirement(position,newPosition);
+  }
 
   public int getSizeOfTask(Requirement requirement,Task task)
   {
