@@ -154,7 +154,7 @@ public class Project
 
     public TeamMember getTeamMember(TeamMember teamMember)
     {
-        for (TeamMember member : teamMemberList)
+        for (TeamMember member : teamMemberList.getAllTeamMembers())
         {
             if (member.equals(teamMember))
             {

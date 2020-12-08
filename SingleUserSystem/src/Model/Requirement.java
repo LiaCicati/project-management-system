@@ -245,9 +245,9 @@ public abstract class Requirement
      *
      * @return an array list of team members that worked on the requirement
      */
-    public ArrayList<TeamMember> getAllTeamMembers()
+    public TeamMemberList getAllTeamMembers()
     {
-        return teamMembers.getAllTeamMembers();
+        return teamMembers;
     }
 
     /**
@@ -255,9 +255,9 @@ public abstract class Requirement
      *
      * @return an array list of all tasks that represent a requirement
      */
-    public ArrayList<Task> getAllTasks()
+    public TaskList getAllTasks()
     {
-        return tasks.getAllTasks();
+        return tasks;
     }
 
     /**
@@ -267,7 +267,7 @@ public abstract class Requirement
      */
     public int countTeamMembers()
     {
-        return teamMembers.getAllTeamMembers().size();
+        return teamMembers.getSize();
     }
 
     /**
@@ -277,7 +277,7 @@ public abstract class Requirement
      */
     public int countTasks()
     {
-        return tasks.getAllTasks().size();
+        return tasks.getSize();
     }
 
     /**
