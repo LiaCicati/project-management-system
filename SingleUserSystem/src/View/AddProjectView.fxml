@@ -13,9 +13,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0" prefWidth="700.0" userData="Add project" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.EditProjectViewController">
+<VBox prefHeight="700.0" prefWidth="700.0" userData="Add project" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddProjectViewController">
     <children>
-        <Label text="Edit project">
+        <Label text="Add project">
             <font>
                 <Font size="32.0" />
             </font>
@@ -146,7 +146,7 @@
         </HBox>
         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="68.0" prefWidth="699.0" spacing="36.0">
             <children>
-                <Button fx:id="saveProject" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#editProjectSaveButton" prefHeight="46.0" prefWidth="134.0" text="Save">
+                <Button fx:id="saveProject" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#addProjectSaveButton" prefHeight="46.0" prefWidth="134.0" text="Save">
                     <font>
                         <Font size="18.0" />
                     </font>

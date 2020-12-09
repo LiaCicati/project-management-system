@@ -13,26 +13,26 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ManageProjectDataController">
     <children>
         <TabPane prefHeight="610.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
             <Tab text="Requirements">
                 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="583.0" prefWidth="700.0">
                     <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="547.0" prefWidth="700.0">
                         <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="526.0" prefWidth="199.0" spacing="30.0">
-                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Add">
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#addRequirementButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Add">
                                 <font>
                                     <Font size="19.0" />
                                 </font></Button>
-                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Remove">
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#removeRequirementButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Remove">
                                 <font>
                                     <Font size="18.0" />
                                 </font></Button>
-                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Edit">
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#editRequirementButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Edit">
                                 <font>
                                     <Font size="18.0" />
                                 </font></Button>
-                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Manage Data">
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#manageRequirementDataButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Manage Data">
                                 <font>
                                     <Font size="18.0" />
                                 </font></Button>
@@ -58,7 +58,7 @@
                             </children>
                         </VBox>
                     </HBox>
-                    <Label layoutX="14.0" layoutY="554.0" text="Item not found" textFill="RED" AnchorPane.leftAnchor="30.0">
+                    <Label fx:id="errorLabel" layoutX="14.0" layoutY="554.0" text="Item not found" textFill="RED" AnchorPane.leftAnchor="30.0">
                         <font>
                             <Font size="14.0" />
                         </font>
@@ -111,7 +111,7 @@
                 </AnchorPane>
             </Tab>
         </TabPane>
-        <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Back">
+        <Button mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Back">
             <font>
                 <Font size="18.0" />
             </font>

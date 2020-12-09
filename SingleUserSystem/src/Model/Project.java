@@ -143,6 +143,22 @@ public class Project
     }
 
     /**
+     * Change status of a specific project
+     * @param status the status
+     */
+    public void changeStatus(String status)
+    {
+        this.status = status;
+    }
+
+    public void editProject(String title, int customerID, String description, MyDate deadline) {
+        setTitle(title);
+        setCustomerID(customerID);
+        setDescription(description);
+        setDeadline(deadline);
+    }
+
+    /**
      * Removes a team member from the project
      *
      * @param teamMember a team member that works on the project

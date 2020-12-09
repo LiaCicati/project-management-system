@@ -193,4 +193,16 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     requirement
         .editRequirement(ID, estimatedTime, responsibleTeamMember, deadline);
   }
+
+  @Override public void changeStatus(Project project, String status)
+  {
+    project.changeStatus(status);
+  }
+
+  @Override public void editProject(Project project, String title,
+      int customerID, String description, MyDate deadline, String status)
+  {
+    project.editProject(title, customerID, description, deadline);
+    project.changeStatus(status);
+  }
 }
