@@ -17,25 +17,18 @@ public class ProjectListViewModel
     this.model = model;
     this.list = FXCollections.observableArrayList();
     this.viewState = viewState;
-    update();
+//    update();
   }
 
-  //  public void update()
-  //  {
-  //    list.clear();
-  //    for (int i = 0; i < model.getNumberOfProjects(); i++)
-  //    {
-  //      list.add(new ProjectViewModel(model.getProject(i)));
-  //    }
-  //  }
-  public void update()
-  {
-    list.clear();
-    for (Project project : model.getAllProjects().getAllProjects())
+    public void update()
     {
-      list.add(new ProjectViewModel(project));
+      list.clear();
+      for (int i = 0; i < model.getNumberOfProjects(); i++)
+      {
+        list.add(new ProjectViewModel(model.getProject(i)));
+      }
     }
-  }
+
 
   public ObservableList<ProjectViewModel> getList()
   {

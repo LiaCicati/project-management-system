@@ -205,4 +205,9 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     project.editProject(title, customerID, description, deadline);
     project.changeStatus(status);
   }
+
+  public Project getProject(int index)
+  {
+    return projectList.getProject(index);
+  }
 }

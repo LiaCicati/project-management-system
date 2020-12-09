@@ -56,4 +56,6 @@ public interface ProjectManagementModel
 
   void editProject(Project project, String title, int customerID,
       String description, MyDate deadline, String status);
+
+  public Project getProject(int index);
 }
