@@ -49,8 +49,13 @@
                                     <content>
                                         <TableView prefHeight="486.0" prefWidth="450.0">
                                             <columns>
-                                                <TableColumn prefWidth="75.0" text="C1" />
-                                                <TableColumn prefWidth="75.0" text="C2" />
+                                                <TableColumn prefWidth="96.00000154972076" text="Requirement ID" />
+                                                <TableColumn prefWidth="55.99999237060547" text="ID" />
+                                    <TableColumn prefWidth="64.79998779296875" text="Title" />
+                                    <TableColumn prefWidth="85.60000610351562" text="Estimated" />
+                                    <TableColumn prefWidth="75.99993896484375" text="Responsible" />
+                                    <TableColumn prefWidth="74.4000244140625" text="Deadline" />
+                                    <TableColumn prefWidth="75.0" text="Column X" />
                                             </columns>
                                         </TableView>
                                     </content>
@@ -77,8 +82,9 @@
                                     <content>
                                         <TableView prefHeight="469.0" prefWidth="499.0">
                                             <columns>
-                                                <TableColumn prefWidth="75.0" text="C1" />
-                                                <TableColumn prefWidth="75.0" text="C2" />
+                                                <TableColumn prefWidth="195.199955701828" text="Name" />
+                                                <TableColumn prefWidth="106.40003967285156" text="ID" />
+                                    <TableColumn prefWidth="194.39999389648438" text="Role" />
                                             </columns>
                                         </TableView>
                                     </content>

@@ -34,7 +34,6 @@
                   <VBox prefHeight="78.0" prefWidth="164.0">
                      <children>
                         <TextField prefHeight="26.0" prefWidth="115.0" />
-                        <Label text="Label error" textFill="RED" />
                      </children>
                   </VBox>
                </children>

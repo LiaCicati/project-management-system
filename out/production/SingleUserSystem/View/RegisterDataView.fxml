@@ -2,7 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
@@ -28,11 +28,7 @@
                               <Insets />
                            </HBox.margin>
                         </Label>
-                        <ChoiceBox prefHeight="36.0" prefWidth="158.0">
-                           <HBox.margin>
-                              <Insets left="14.0" />
-                           </HBox.margin>
-                        </ChoiceBox>
+                  <ComboBox prefHeight="26.0" prefWidth="178.0" promptText="Choose:" />
                      </children>
                      <VBox.margin>
                         <Insets />

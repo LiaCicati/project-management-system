@@ -57,8 +57,8 @@
                     <content>
                         <TableView prefHeight="490.0" prefWidth="462.0">
                             <columns>
-                                <TableColumn prefWidth="75.0" text="C1" />
-                                <TableColumn prefWidth="75.0" text="C2" />
+                                <TableColumn prefWidth="220.80005490779877" text="Team member" />
+                                <TableColumn prefWidth="236.00003051757812" text="Total hours" />
                             </columns>
                         </TableView>
                     </content>
