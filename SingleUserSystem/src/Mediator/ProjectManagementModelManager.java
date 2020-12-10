@@ -8,6 +8,7 @@ import java.util.Collections;
 public class ProjectManagementModelManager implements ProjectManagementModel
 {
   private ProjectList projectList;
+  private TeamMemberList teamMemberList;
   private ProjectManagementPersistence file;
 
   public ProjectManagementModelManager()
@@ -153,11 +154,11 @@ public class ProjectManagementModelManager implements ProjectManagementModel
   {
     project.getAllRequirements().reorder(position, newPosition);
   }
-  
-  @Override public int getNumberOfTeamMembers()
-  {
-    return teamMemberList.getSize();
-  }
+//
+//  @Override public int getNumberOfTeamMembers()
+//  {
+//    return teamMemberList.getSize();
+//  }
 
   @Override public int getNumberOfTasks(Requirement requirement)
   {
@@ -179,17 +180,17 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     return project.getAllTeamMembers().get(index);
   }
 
-  @Override public TeamMember getTeamMemberById(int ID)
-  {
-    for(int i=0;i<teamMemberList.getSize();i++)
-    {
-      if(teamMemberList.get(i).getId()==ID)
-      {
-        return teamMemberList.get(i);
-      }
-    }
-    return null;
-  }
+//  @Override public TeamMember getTeamMemberById(int ID)
+//  {
+//    for(int i=0;i<teamMemberList.getSize();i++)
+//    {
+//      if(teamMemberList.get(i).getId()==ID)
+//      {
+//        return teamMemberList.get(i);
+//      }
+//    }
+//    return null;
+//  }
 
   @Override public void editTask(Task task, String title, String description,
       double estimatedTime, TeamMember responsibleTeamMember, MyDate deadline)
@@ -230,21 +231,33 @@ public class ProjectManagementModelManager implements ProjectManagementModel
   @Override public Project getProjectByID(int id) {
     return projectList.getProjectById(id);
   }
-  
-   @Override public Requirement getRequirement(int index)
-  {
-    return requirementList.getRequirement(index);
+
+  @Override public TeamMemberList  getTeamMembers() {
+    return teamMemberList;
   }
 
-  @Override public Requirement getRequirementByID(int id)
-  {
-    for(int i=0;i<requirementList.getSize();i++)
-    {
-      if(requirementList.getRequirement(i).getID()==id)
-      {
-        return requirementList.getRequirement(i);
-      }
-    }
-    return null;
+  public  int getNumberOfTeamMembers() {
+    return teamMemberList.getSize();
   }
+
+  public TeamMember getTeamMemberById(int ID) {
+    return teamMemberList.getTeamMemberById(ID);
+  }
+  
+//   @Override public Requirement getRequirement(int index)
+//  {
+//    return requirementList.getRequirement(index);
+//  }
+//
+//  @Override public Requirement getRequirementByID(int id)
+//  {
+//    for(int i=0;i<requirementList.getSize();i++)
+//    {
+//      if(requirementList.getRequirement(i).getID()==id)
+//      {
+//        return requirementList.getRequirement(i);
+//      }
+//    }
+//    return null;
+//  }
 }

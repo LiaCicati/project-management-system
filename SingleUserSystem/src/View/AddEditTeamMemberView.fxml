@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddTeamMemberViewController">
+<VBox prefHeight="700.0" userData="Team details" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddEditTeamMemberViewController">
     <children>
         <Label text="Team member details">
             <font>
@@ -35,7 +35,7 @@
                         </Label>
                         <VBox prefHeight="78.0" prefWidth="164.0">
                             <children>
-                                <TextField fx:id="teammemberNameInput" prefHeight="26.0" prefWidth="115.0" />
+                                <TextField fx:id="teamMemberNameInput" prefHeight="26.0" prefWidth="115.0" />
                             </children>
                         </VBox>
                     </children>
@@ -47,7 +47,7 @@
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <TextField fx:id="teammemberIDInput" prefHeight="26.0" prefWidth="164.0">
+                        <TextField fx:id="teamMemberIDInput" prefHeight="26.0" prefWidth="164.0">
                             <HBox.margin>
                                 <Insets left="40.0" />
                             </HBox.margin>
@@ -101,3 +101,4 @@
         <Insets left="30.0" right="30.0" top="30.0" />
     </padding>
 </VBox>
+
