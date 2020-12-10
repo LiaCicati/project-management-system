@@ -153,6 +153,11 @@ public class ProjectManagementModelManager implements ProjectManagementModel
   {
     project.getAllRequirements().reorder(position, newPosition);
   }
+  
+  @Override public int getNumberOfTeamMembers()
+  {
+    return teamMemberList.getSize();
+  }
 
   @Override public int getNumberOfTasks(Requirement requirement)
   {
