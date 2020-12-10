@@ -64,4 +64,8 @@ public interface ProjectManagementModel
   public Project getProject(int index);
 
   Project getProjectByID(int id);
+  
+  Requirement getRequirement(int index);
+
+  Requirement getRequirementByID(int index);
 }
