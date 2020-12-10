@@ -35,6 +35,8 @@ public interface ProjectManagementModel
   Project getProject(String title);
 
   void reorderRequirements(Project project, int position, int newPosition);
+  
+  int getNumberOfTeamMembers();
 
   int getNumberOfTasks(Requirement requirement);
 
