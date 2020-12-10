@@ -174,9 +174,16 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     return project.getAllTeamMembers().get(index);
   }
 
-  @Override public TeamMember getTeamMemberById(Project project, int ID)
+  @Override public TeamMember getTeamMemberById(int ID)
   {
-    return project.getAllTeamMembers().getTeamMemberById(ID);
+    for(int i=0;i<teamMemberList.getSize();i++)
+    {
+      if(teamMemberList.get(i).getId()==ID)
+      {
+        return teamMemberList.get(i);
+      }
+    }
+    return null;
   }
 
   @Override public void editTask(Task task, String title, String description,
