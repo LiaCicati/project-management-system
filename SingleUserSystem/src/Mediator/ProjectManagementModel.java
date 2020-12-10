@@ -44,7 +44,7 @@ public interface ProjectManagementModel
 
   TeamMember get(Project project, int index);
 
-  TeamMember getTeamMemberById(Project project, int ID);
+  TeamMember getTeamMemberById(int ID);
 
   void editTask(Task task, String title, String description,
       double estimatedTime, TeamMember responsibleTeamMember, MyDate deadline);
