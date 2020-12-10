@@ -141,6 +141,8 @@
                                        <String fx:value="Not Started" />
                                        <String fx:value="Started" />
                                        <String fx:value="Ended" />
+                                       <String fx:value="Approved" />
+                                       <String fx:value="Rejected" />
                                     </FXCollections>
                                  </items>
                               </ChoiceBox>
