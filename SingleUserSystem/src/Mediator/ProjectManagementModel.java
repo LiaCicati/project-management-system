@@ -53,6 +53,8 @@ public interface ProjectManagementModel
       TeamMember responsibleTeamMember, MyDate deadline);
 
   void changeStatus(Project project, String status);
+  
+  void changeRole(TeamMember teamMember,String role);
 
   void editProject(Project project, String title, int customerID,
       String description, MyDate deadline, String status);
