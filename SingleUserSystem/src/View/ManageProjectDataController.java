@@ -65,6 +65,7 @@ public class ManageProjectDataController
 
   @FXML private void backButtonPressed()
   {
+    viewState.setSelectedProject(-1);
     viewHandler.openView("projectList");
   }
 

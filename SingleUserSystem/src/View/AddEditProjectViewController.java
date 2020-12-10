@@ -127,7 +127,8 @@ public class AddEditProjectViewController
       if(viewState.getSelectedProject() > - 1)
       {
 //        model.changeStatus(project, status);
-//        model.editProject(project, title, customerID, description, deadline, status);
+        model.editProject(project, title, customerID, description, deadline, status);
+        model.addProject(project);
       }
 
       else {
@@ -137,6 +138,7 @@ public class AddEditProjectViewController
       //      model.addProject(project);
       System.out.println(project);
       errorLabel.setText("");
+      reset();
       viewHandler.openView("projectList");
       projectListViewModel.update();
     }
