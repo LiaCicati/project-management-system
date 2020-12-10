@@ -6,8 +6,8 @@ public interface ProjectManagementModel
 {
   TeamMember getTeamMemberByName(Name name);
 
-  void addTeamMemberToProject(Project project, TeamMember teamMember);
-
+  void addTeamMember(TeamMember teamMember);
+  
   TeamMember editTeamMember(Name name, String role);
 
   void removeTeamMember(TeamMember teamMember);
