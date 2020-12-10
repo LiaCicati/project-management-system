@@ -198,6 +198,11 @@ public class ProjectManagementModelManager implements ProjectManagementModel
   {
     project.changeStatus(status);
   }
+  
+  @Override  public void changeRole(TeamMember teamMember,String role)
+  {
+    teamMember.changeRole(role);
+  }
 
   @Override public void editProject(Project project, String title,
       int customerID, String description, MyDate deadline, String status)
