@@ -94,6 +94,11 @@ public class TeamMember
       e.printStackTrace();
     }
   }
+  
+  public void changeRole(String role)
+  {
+    this.role = role;
+  }
 
   /**
    * Checking if two team members are the same
