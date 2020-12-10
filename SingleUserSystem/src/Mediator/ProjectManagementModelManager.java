@@ -230,4 +230,21 @@ public class ProjectManagementModelManager implements ProjectManagementModel
   @Override public Project getProjectByID(int id) {
     return projectList.getProjectById(id);
   }
+  
+   @Override public Requirement getRequirement(int index)
+  {
+    return requirementList.getRequirement(index);
+  }
+
+  @Override public Requirement getRequirementByID(int id)
+  {
+    for(int i=0;i<requirementList.getSize();i++)
+    {
+      if(requirementList.getRequirement(i).getID()==id)
+      {
+        return requirementList.getRequirement(i);
+      }
+    }
+    return null;
+  }
 }
