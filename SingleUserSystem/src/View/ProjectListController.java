@@ -73,24 +73,25 @@ public class ProjectListController
 
   @FXML private void addProjectButtonPressed()
   {
-    viewHandler.openView("addProject");
+    viewHandler.openView("addEditProject");
   }
 
   @FXML private void editProjectButtonPressed()
   {
-    // this method is not complete
     try
     {
       ProjectViewModel selectedItem = projectListTable.getSelectionModel()
           .getSelectedItem();
       viewState
-          .setSelectedProject(selectedItem.getCustomerIDProperty().getValue());
-      viewHandler.openView("editProject");
+          .setSelectedProject(selectedItem.getCustomerIDProperty().get());
+      viewHandler.openView("addEditProject");
     }
     catch (Exception e)
     {
       errorLabel.setText("Select a project from the list");
     }
+
+
   }
 
   private boolean confirmation()

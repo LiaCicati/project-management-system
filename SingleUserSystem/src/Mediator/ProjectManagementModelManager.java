@@ -214,4 +214,8 @@ public class ProjectManagementModelManager implements ProjectManagementModel
   {
     return projectList.getProject(index);
   }
+
+  @Override public Project getProjectByID(int id) {
+    return projectList.getProjectById(id);
+  }
 }

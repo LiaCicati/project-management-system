@@ -60,4 +60,6 @@ public interface ProjectManagementModel
       String description, MyDate deadline, String status);
 
   public Project getProject(int index);
+
+  Project getProjectByID(int id);
 }

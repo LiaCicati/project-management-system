@@ -16,8 +16,7 @@ public class ViewHandler
    * Controllers
    */
   private ProjectListController projectListViewController;
-  private AddProjectViewController addProjectViewController;
-  private EditProjectViewController editProjectViewController;
+  private AddEditProjectViewController addEditProjectViewController;
   private ManageProjectDataController manageProjectDataController;
 
   public ViewHandler(ProjectManagementModel model)
@@ -41,11 +40,8 @@ public class ViewHandler
       case "projectList":
         root = loadProjectListView("ProjectListView.fxml", viewState);
         break;
-      case "addProject":
-        root = loadAddProjectView("AddProjectView.fxml", viewState);
-        break;
-      case "editProject":
-        root = loadEditProjectView("EditProjectView.fxml", viewState);
+      case "addEditProject":
+        root = loadAddEditProjectView("AddEditProjectView.fxml", viewState);
         break;
       case "manageProjectData":
         root = loadManageProjectDataView("ManageProjectDataView.fxml",
@@ -95,17 +91,17 @@ public class ViewHandler
     return projectListViewController.getRoot();
   }
 
-  private Region loadAddProjectView(String fxmlFile, ViewState viewState)
+  private Region loadAddEditProjectView(String fxmlFile, ViewState viewState)
   {
-    if (addProjectViewController == null)
+    if (addEditProjectViewController == null)
     {
       try
       {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource(fxmlFile));
         Region root = loader.load();
-        addProjectViewController = loader.getController();
-        addProjectViewController.init(this, model, root, viewState);
+        addEditProjectViewController = loader.getController();
+        addEditProjectViewController.init(this, model, root, viewState);
       }
       catch (Exception e)
       {
@@ -114,34 +110,12 @@ public class ViewHandler
     }
     else
     {
-      addProjectViewController.reset();
+      addEditProjectViewController.reset();
     }
-    return addProjectViewController.getRoot();
+    return addEditProjectViewController.getRoot();
   }
 
-  private Region loadEditProjectView(String fxmlFile, ViewState viewState)
-  {
-    if (editProjectViewController == null)
-    {
-      try
-      {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(fxmlFile));
-        Region root = loader.load();
-        editProjectViewController = loader.getController();
-        editProjectViewController.init(this, model, root, viewState);
-      }
-      catch (Exception e)
-      {
-        e.printStackTrace();
-      }
-    }
-    else
-    {
-      editProjectViewController.reset();
-    }
-    return editProjectViewController.getRoot();
-  }
+
 
   private Region loadManageProjectDataView(String fxmlFile, ViewState viewState)
   {

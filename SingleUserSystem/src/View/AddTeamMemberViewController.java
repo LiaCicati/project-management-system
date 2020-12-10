@@ -64,22 +64,22 @@ public class AddTeamMemberViewController
       TeamMember teamMember = new TeamMember(name,teammemberID); //type problem
       String role = null;
       Object value = rolesInput.getValue();
-      if ("Team Member".equals(value))
-      {
-        role = TeamMember.TEAM_MEMBER;
-      }
-      else if ("Scrum Master".equals(value))
-      {
-        role = TeamMember.SCRUM_MASTER;
-      }
-      else if ("Product Owner".equals(value))
-      {
-        role = TeamMember.PRODUCT_OWNER;
-      }
-      model.changeRole(teamMember, role);
-      model.addTeamMember(teamMember);
-      viewHandler.closeView();
-      viewHandler.openView("TeamMemberView");
+//      if ("Team Member".equals(value))
+//      {
+//        role = TeamMember.TEAM_MEMBER;
+//      }
+//      else if ("Scrum Master".equals(value))
+//      {
+//        role = TeamMember.SCRUM_MASTER;
+//      }
+//      else if ("Product Owner".equals(value))
+//      {
+//        role = TeamMember.PRODUCT_OWNER;
+//      }
+//      model.changeRole(teamMember, role);
+//      model.addTeamMember(teamMember);
+//      viewHandler.closeView();
+//      viewHandler.openView("TeamMemberView");
     }
     catch (Exception e)
     {

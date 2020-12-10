@@ -108,6 +108,17 @@ public class ProjectList
         return projectStatusCheck;
     }
 
+    public Project getProjectById(int id) {
+        for (Project project : projectList)
+        {
+            if (id == project.getCustomerID())
+            {
+                return project;
+            }
+        }
+        return null;
+    }
+
     /**
      * Getter for projects with a given customerID
      * @param customerID ID of the projects customer

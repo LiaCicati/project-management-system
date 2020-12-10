@@ -49,7 +49,7 @@ public class AddEditProjectViewController
   {
     if(viewState.getSelectedProject() > -1)
     {
-      Project project = model.getProject(viewState.getSelectedProject());
+      Project project = model.getAllProjects().getProjectById(viewState.getSelectedProject());
       projectTitleInput.setText(project.getTitle());
       projectCustomerIDInput.setText(project.getCustomerID() + "");
       projectDescriptionInput.setText(project.getDescription());
@@ -126,14 +126,15 @@ public class AddEditProjectViewController
       if(viewState.getSelectedProject() > - 1)
       {
         model.editProject(project, title, customerID, description, deadline, status);
+        model.removeProject(project);
+        model.addProject(project);
       }
 
       else {
-        model.changeStatus(project, status);
         model.addProject(project);
       }
       //      model.addProject(project);
-      //      System.out.println(project);
+      System.out.println(project);
       errorLabel.setText("");
       viewHandler.openView("projectList");
     }
@@ -149,4 +150,5 @@ public class AddEditProjectViewController
     viewHandler.openView("projectList");
   }
 }
+
 
