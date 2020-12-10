@@ -31,14 +31,13 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     return null;
   }
 
-  @Override public void addTeamMemberToProject(Project project,
-      TeamMember teamMember)
+  @Override public void addTeamMember(TeamMember teamMember)
   {
-    for (Project projectTemp : projectList.getAllProjects())
+    for (Project project : projectList.getAllProjects())
     {
-      if (projectTemp.equals(project))
+      if (project.getTeamMember(teamMember).equals(teamMember))
       {
-        projectTemp.addTeamMember(teamMember);
+        project.addTeamMember(teamMember);
       }
     }
   }
