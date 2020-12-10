@@ -25,6 +25,7 @@ public class AddEditProjectViewController
 
   private Region root;
   private ProjectManagementModel model;
+  private ProjectListViewModel projectListViewModel;
   private ViewHandler viewHandler;
   private ViewState viewState;
 
@@ -125,18 +126,19 @@ public class AddEditProjectViewController
 
       if(viewState.getSelectedProject() > - 1)
       {
-        model.editProject(project, title, customerID, description, deadline, status);
-        model.removeProject(project);
-        model.addProject(project);
+//        model.changeStatus(project, status);
+//        model.editProject(project, title, customerID, description, deadline, status);
       }
 
       else {
+//        model.changeStatus(project, status);
         model.addProject(project);
       }
       //      model.addProject(project);
       System.out.println(project);
       errorLabel.setText("");
       viewHandler.openView("projectList");
+      projectListViewModel.update();
     }
     catch (Exception e)
     {
