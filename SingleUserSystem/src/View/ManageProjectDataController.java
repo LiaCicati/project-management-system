@@ -91,7 +91,7 @@ public class ManageProjectDataController
     }
   }
 
-  @FXML private void EditTeamMemberButtonPressed()
+  @FXML private void editTeamMemberButtonPressed()
   {
     try
     {
