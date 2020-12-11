@@ -13,57 +13,65 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0"  prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ManageRequirementDataViewController">
     <children>
         <TabPane prefHeight="610.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
             <Tab text="Tasks">
-                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="583.0" prefWidth="700.0">
-                    <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="547.0" prefWidth="700.0">
-                        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="526.0" prefWidth="199.0" spacing="30.0">
-                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Add">
-                                <font>
-                                    <Font size="19.0" />
-                                </font></Button>
-                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Remove">
-                                <font>
+                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="592.0" prefWidth="693.0">
+                    <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="539.0" prefWidth="682.0" AnchorPane.leftAnchor="10.0">
+                  <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="507.0" prefWidth="642.0">
+                     <children>
+                              <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="639.0">
+                                  <children>
+                                      <ScrollPane prefHeight="408.0" prefWidth="639.0">
+                                          <content>
+                                              <TableView fx:id="taskListTable" prefHeight="398.0" prefWidth="715.0">
+                                                  <columns>
+                                                      <TableColumn fx:id="requirementIDColumn" prefWidth="104.0000057220459" text="Requirement ID" />
+                                          <TableColumn fx:id="taskIDColumn" prefWidth="64.79998779296875" text="ID" />
+                                          <TableColumn fx:id="taskTitleColumn" prefWidth="92.800048828125" text="Title" />
+                                          <TableColumn fx:id="taskDescriptionColumn" prefWidth="84.7999267578125" text="Description" />
+                                          <TableColumn fx:id="taskEstimatedTimeColumn" prefWidth="80.79995727539062" text="Estimated" />
+                                          <TableColumn fx:id="taskResponsibleMemberColumn" prefWidth="77.5999755859375" text="Responsible" />
+                                          <TableColumn fx:id="taskDeadlineColumn" prefWidth="75.0" text="Deadline" />
+                                          <TableColumn fx:id="taskStatusColumn" prefWidth="75.0" text="Status" />
+                                                  </columns>
+                                              </TableView>
+                                          </content>
+                                      </ScrollPane>
+                                  </children>
+                              </VBox>
+                        <HBox alignment="CENTER" prefHeight="62.0" prefWidth="642.0" spacing="20.0">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#addTaskButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Add">
+                                 <font>
                                     <Font size="18.0" />
-                                </font></Button>
-                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Edit">
-                                <font>
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#removeTaskButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Remove">
+                                 <font>
                                     <Font size="18.0" />
-                                </font></Button>
-                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Manage Data">
-                                <font>
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#editTaskButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Edit">
+                                 <font>
                                     <Font size="18.0" />
-                                </font></Button>
-                            <HBox.margin>
-                                <Insets left="30.0" />
-                            </HBox.margin>
-                        </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="434.0">
-                            <HBox.margin>
-                                <Insets top="50.0" />
-                            </HBox.margin>
-                            <children>
-                                <ScrollPane prefHeight="501.0" prefWidth="430.0">
-                                    <content>
-                                        <TableView prefHeight="486.0" prefWidth="450.0">
-                                            <columns>
-                                                <TableColumn prefWidth="96.00000154972076" text="Requirement ID" />
-                                                <TableColumn prefWidth="55.99999237060547" text="ID" />
-                                    <TableColumn prefWidth="64.79998779296875" text="Title" />
-                                    <TableColumn prefWidth="85.60000610351562" text="Estimated" />
-                                    <TableColumn prefWidth="75.99993896484375" text="Responsible" />
-                                    <TableColumn prefWidth="74.4000244140625" text="Deadline" />
-                                    <TableColumn prefWidth="75.0" text="Column X" />
-                                            </columns>
-                                        </TableView>
-                                    </content>
-                                </ScrollPane>
-                            </children>
-                        </VBox>
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#manageDataTaskButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Manage Data">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" right="20.0" top="30.0" />
+                     </HBox.margin>
+                  </VBox>
                     </HBox>
-                    <Label layoutX="14.0" layoutY="554.0" text="Item not found" textFill="RED" AnchorPane.leftAnchor="30.0">
+                    <Label fx:id="errorLabel" layoutX="14.0" layoutY="544.0" prefHeight="26.0" prefWidth="580.0" text="Item not found" textFill="RED" AnchorPane.leftAnchor="30.0">
                         <font>
                             <Font size="14.0" />
                         </font>
@@ -80,11 +88,11 @@
                             <children>
                                 <ScrollPane prefHeight="469.0" prefWidth="518.0">
                                     <content>
-                                        <TableView prefHeight="469.0" prefWidth="499.0">
+                                        <TableView fx:id="teamListTable" prefHeight="469.0" prefWidth="499.0">
                                             <columns>
-                                                <TableColumn prefWidth="195.199955701828" text="Name" />
-                                                <TableColumn prefWidth="106.40003967285156" text="ID" />
-                                    <TableColumn prefWidth="194.39999389648438" text="Role" />
+                                                <TableColumn fx:id="teamNameColumn" prefWidth="195.199955701828" text="Name" />
+                                                <TableColumn fx:id="teamIDColumn" prefWidth="106.40003967285156" text="ID" />
+                                    <TableColumn fx:id="teamRoleColumn" prefWidth="194.39999389648438" text="Role" />
                                             </columns>
                                         </TableView>
                                     </content>
@@ -95,7 +103,7 @@
                 </AnchorPane>
             </Tab>
         </TabPane>
-        <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Back">
+        <Button mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Back">
             <font>
                 <Font size="18.0" />
             </font>

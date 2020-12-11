@@ -78,6 +78,11 @@ public class RequirementList
     return null;
   }
 
+  public boolean contains(Requirement requirement) {
+    return requirements.contains(requirement);
+  }
+
+
   /**
    * Getting a requirement by its responsible team member
    *
@@ -152,6 +157,7 @@ public class RequirementList
   {
     return requirements.get(index);
   }
+
 
   /**
    * Getting the total number of requirements from the list

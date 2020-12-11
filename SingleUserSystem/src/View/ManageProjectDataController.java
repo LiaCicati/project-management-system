@@ -116,7 +116,7 @@ public class ManageProjectDataController
         }
         catch (Exception e)
         {
-            errorLabelTeamMember.setText("Choose a requirement you wish to remove from the list");
+            errorLabelRequirement.setText("Choose a requirement you wish to remove from the list");
         }
     }
 
@@ -126,6 +126,18 @@ public class ManageProjectDataController
 
     @FXML private void manageRequirementDataButtonPressed()
     {
+        try
+        {
+            RequirementViewModel selectedItem = requirementListTable.getSelectionModel()
+                .getSelectedItem();
+            viewState
+                .setSelectedProject(selectedItem.getRequirementIDProperty().getValue());
+            viewHandler.openView("manageRequirementData");
+        }
+        catch (Exception e)
+        {
+            errorLabelRequirement.setText("Select a requirement from the list");
+        }
     }
 
     @FXML private void addRequirementButtonPressed()

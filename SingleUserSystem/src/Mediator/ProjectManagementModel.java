@@ -29,6 +29,7 @@ public interface ProjectManagementModel
   TaskList getAllTasks(Requirement requirement);
 
   RequirementList getAllRequirements(Project project);
+  TaskList getAllTasks(Project project, Requirement requirement);
 
   ProjectList getAllProjects();
 

@@ -162,16 +162,13 @@ public class AddEditRequirementViewController
     }
   }
 
-  @FXML private void cancelButtonPressed()
-  {
-    reset();
-    viewHandler.openView("manageProjectData");
-  }
+
 
 
 
   @FXML private void requirementCancelButtonPressed()
   {
+    reset();
     viewHandler.openView("manageProjectData");
   }
 }

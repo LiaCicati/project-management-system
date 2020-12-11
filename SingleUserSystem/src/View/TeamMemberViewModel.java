@@ -1,5 +1,7 @@
 package View;
 
+import Mediator.ProjectManagementModel;
+import Model.Project;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -19,6 +21,7 @@ public class TeamMemberViewModel
         idProperty = new SimpleIntegerProperty(teamMember.getId());
         roleProperty = new SimpleStringProperty(teamMember.getRole());
     }
+
 
     public StringProperty getNameProperty()
     {

@@ -20,6 +20,7 @@ public class ViewHandler
     private ManageProjectDataController manageProjectDataController;
     private AddEditTeamMemberViewController addEditTeamMemberViewController;
     private AddEditRequirementViewController addEditRequirementViewController;
+    private ManageRequirementDataViewController manageRequirementDataViewController;
 
     public ViewHandler(ProjectManagementModel model)
     {
@@ -57,6 +58,11 @@ public class ViewHandler
                 root = loadAddEditRequirementView("AddEditRequirementView.fxml",
                     viewState);
                 break;
+            case "manageRequirementData":
+                root = loadManageRequirementDataView("ManageRequirementDataView.fxml",
+                    viewState);
+                break;
+
         }
         currentScene.setRoot(root);
         String title = "";
@@ -197,5 +203,29 @@ public class ViewHandler
             addEditRequirementViewController.reset();
         }
         return addEditRequirementViewController.getRoot();
+    }
+
+    private Region loadManageRequirementDataView(String fxmlFile, ViewState viewState)
+    {
+        if (manageRequirementDataViewController == null)
+        {
+            try
+            {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource(fxmlFile));
+                Region root = loader.load();
+                manageRequirementDataViewController = loader.getController();
+                manageRequirementDataViewController.init(this, model, root, viewState);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
+        else
+        {
+            manageRequirementDataViewController.reset();
+        }
+        return manageRequirementDataViewController.getRoot();
     }
 }

@@ -111,12 +111,12 @@ public class ProjectList
     public Project getProjectById(int id) {
         for (Project project : projectList)
         {
-            if (id == project.getCustomerID())
+            if (project.getCustomerID() == id)
             {
                 return project;
             }
         }
-        return null;
+        throw new IllegalArgumentException("Project with the required id was not found");
     }
 
     /**
