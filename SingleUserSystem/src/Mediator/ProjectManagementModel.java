@@ -6,8 +6,8 @@ public interface ProjectManagementModel
 {
   TeamMember getTeamMemberByName(Name name);
 
-  void addTeamMember(TeamMember teamMember);
-  
+  void addTeamMember(int projectID, TeamMember teamMember);
+
   TeamMember editTeamMember(Name name, String role);
 
   void removeTeamMember(TeamMember teamMember);
@@ -35,7 +35,7 @@ public interface ProjectManagementModel
   Project getProject(String title);
 
   void reorderRequirements(Project project, int position, int newPosition);
-  
+
   int getNumberOfTeamMembers();
 
   int getNumberOfTasks(Requirement requirement);
@@ -55,7 +55,7 @@ public interface ProjectManagementModel
       TeamMember responsibleTeamMember, MyDate deadline);
 
   void changeStatus(Project project, String status);
-  
+
   void changeRole(TeamMember teamMember,String role);
 
   void editProject(Project project, String title, int customerID,
@@ -64,10 +64,10 @@ public interface ProjectManagementModel
   public Project getProject(int index);
 
   Project getProjectByID(int id);
-  
-//  Requirement getRequirement(int index);
-//
-//  Requirement getRequirementByID(int index);
+
+  //  Requirement getRequirement(int index);
+  //
+  //  Requirement getRequirementByID(int index);
 
   public TeamMemberList getTeamMembers();
 }

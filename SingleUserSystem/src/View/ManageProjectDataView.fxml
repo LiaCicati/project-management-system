@@ -19,7 +19,7 @@
             <Tab text="Team">
                 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="583.0" prefWidth="700.0">
                     <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="547.0" prefWidth="700.0">
-                        <VBox alignment="CENTER_LEFT"maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="526.0" prefWidth="199.0" spacing="30.0">
+                        <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="526.0" prefWidth="199.0" spacing="30.0">
                             <Button fx:id="addTeamButtonPressed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#addTeamMemberButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Add">
                                 <font>
                                     <Font size="19.0" />
@@ -43,7 +43,7 @@
                             <children>
                                 <ScrollPane prefHeight="501.0" prefWidth="430.0">
                                     <content>
-                                        <TableView fx:id="teamListTable"prefHeight="486.0" prefWidth="450.0">
+                                        <TableView fx:id="teamListTable" prefHeight="486.0" prefWidth="450.0">
                                             <columns>
                                                 <TableColumn  fx:id="teamNameColumn" prefWidth="152.79998171329498" text="Name" />
                                                 <TableColumn  fx:id="teamIDColumn" prefWidth="120.0" text="ID" />

@@ -143,7 +143,7 @@ public class Project
     }
 
     /**
-     * Change status of a specific project
+     * Change status of a specific projectchan
      * @param status the status
      */
     public void changeStatus(String status)

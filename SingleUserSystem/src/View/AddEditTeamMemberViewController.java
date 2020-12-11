@@ -108,20 +108,20 @@ public class AddEditTeamMemberViewController
          */
         //        model.changeStatus(project, status);
         //        model.editProject(project, title, customerID, description, deadline, status);
-        model.addTeamMember(teamMember);
+       // model.addTeamMember(viewState.getSelectedProject(), teamMember);
       }
 
       else {
         //        model.changeStatus(project, status);
 //        model.addTeamMember(teamMember, teamMemberID, viewState.getSelectedProject());
+        model.addTeamMember(viewState.getSelectedProject(), teamMember);
         System.out.println(teamMember);
       }
-      //      model.addProject(project);
       System.out.println(teamMember);
       errorLabel.setText("");
       reset();
       viewHandler.openView("manageProjectData");
-      //      projectListViewModel.update();
+      teamMemberListViewModel.update();
     }
     catch (Exception e)
     {

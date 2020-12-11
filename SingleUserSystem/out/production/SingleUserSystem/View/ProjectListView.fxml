@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="700.0" prefWidth="700.0" userData="Project List" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ProjectListController">
     <children>
         <Label prefHeight="47.0" prefWidth="135.0" text="Projects">
             <font>
@@ -22,39 +24,63 @@
         </Label>
         <HBox prefHeight="524.0" prefWidth="669.0">
             <children>
-                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="218.0">
+                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="174.0">
                     <children>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Add">
+                        <Button fx:id="addProjectButtonPressed" defaultButton="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#addProjectButtonPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: C7EFCF;" text="Add">
                             <font>
                                 <Font size="18.0" />
                             </font>
                             <VBox.margin>
                                 <Insets />
                             </VBox.margin>
+                     <effect>
+                        <DropShadow color="#c5bcbc" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Remove">
+                        <Button mnemonicParsing="false" onAction="#removeProjectButton" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: ff8360;" text="Remove">
                             <font>
                                 <Font size="18.0" />
                             </font>
                             <VBox.margin>
                                 <Insets top="30.0" />
                             </VBox.margin>
+                     <effect>
+                        <DropShadow color="#baabab" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </Button>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Edit">
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#editProjectButtonPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: e8e288;" text="Edit">
                             <font>
                                 <Font size="18.0" />
                             </font>
                             <VBox.margin>
                                 <Insets top="30.0" />
                             </VBox.margin>
+                     <effect>
+                        <DropShadow color="#cdc2c2" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </Button>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Manage Data">
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#manageProjectDataPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: rgba(49, 196, 233, 0.93);" text="Manage Data">
                             <font>
                                 <Font size="18.0" />
                             </font>
                             <VBox.margin>
                                 <Insets top="30.0" />
                             </VBox.margin>
+                     <effect>
+                        <DropShadow color="#bfb3b3" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                         </Button>
                     </children>
                     <padding>
@@ -63,10 +89,13 @@
                 </VBox>
                 <ScrollPane prefHeight="492.0" prefWidth="462.0">
                     <content>
-                        <TableView prefHeight="490.0" prefWidth="421.0">
+                        <TableView fx:id="projectListTable" prefHeight="490.0" prefWidth="462.0">
                             <columns>
-                                <TableColumn prefWidth="75.0" text="C1" />
-                                <TableColumn prefWidth="75.0" text="C2" />
+                                <TableColumn fx:id="projectTitleColumn" prefWidth="119.19994962215424" text="Title" />
+                                <TableColumn fx:id="projectCustomerIdColumn" prefWidth="68.00006866455078" text="ID" />
+                                <TableColumn fx:id="projectDescriptionColumn" prefWidth="104.0" text="Description" />
+                                <TableColumn fx:id="projectDeadlineColumn" prefWidth="74.39996337890625" text="Deadline" />
+                                <TableColumn fx:id="projectStatusColumn" prefWidth="86.39996337890625" text="Status" />
                             </columns>
                         </TableView>
                     </content>
@@ -78,18 +107,18 @@
         </HBox>
         <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="705.0">
             <children>
-                <Label prefHeight="26.0" prefWidth="114.0" text="Item not found" textFill="RED">
+                <Label fx:id="errorLabel" prefHeight="26.0" prefWidth="389.0" text="Item not found" textFill="RED">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
             </children>
             <VBox.margin>
-                <Insets top="30.0" />
+                <Insets top="15.0" />
             </VBox.margin>
         </HBox>
     </children>
-   <padding>
-      <Insets left="30.0" right="30.0" top="30.0" />
-   </padding>
+    <padding>
+        <Insets left="30.0" right="30.0" top="30.0" />
+    </padding>
 </VBox>

@@ -15,6 +15,7 @@ public class ManageProjectDataController
   private ProjectManagementModel model;
   private ViewHandler viewHandler;
   private ViewState viewState;
+  private TeamMemberListViewModel teamMemberListViewModel;
 
   public ManageProjectDataController()
   {
@@ -28,14 +29,18 @@ public class ManageProjectDataController
     this.viewHandler = viewHandler;
     this.viewState = viewState;
     this.root = root;
+    this.teamMemberListViewModel = new TeamMemberListViewModel(model, viewState);
     //    reset();
-        errorLabelTeamMember.setText("");
-        errorLabelRequirement.setText("");
+    errorLabelTeamMember.setText("");
+    errorLabelRequirement.setText("");
   }
 
   public void reset()
   {
+    errorLabelRequirement.setText("");
+    errorLabelRequirement.setText("");
 
+    teamMemberListViewModel.update();
   }
 
   public Region getRoot()
@@ -224,4 +229,3 @@ public class ManageProjectDataController
 //    return (result.isPresent() && (result.get() == ButtonType.OK));
 //  }
 //}
-

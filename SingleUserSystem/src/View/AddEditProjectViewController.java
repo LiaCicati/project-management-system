@@ -126,13 +126,13 @@ public class AddEditProjectViewController
 
       if(viewState.getSelectedProject() > - 1)
       {
-//        model.changeStatus(project, status);
+        //        model.changeStatus(project, status);
         model.editProject(project, title, customerID, description, deadline, status);
         model.addProject(project);
       }
 
       else {
-//        model.changeStatus(project, status);
+        //        model.changeStatus(project, status);
         model.addProject(project);
       }
       //      model.addProject(project);
@@ -154,5 +154,3 @@ public class AddEditProjectViewController
     viewHandler.openView("projectList");
   }
 }
-
-
