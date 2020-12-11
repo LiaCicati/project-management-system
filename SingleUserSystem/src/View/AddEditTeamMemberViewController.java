@@ -98,6 +98,7 @@ public class AddEditTeamMemberViewController
           role = TeamMember.SCRUM_MASTER;
           break;
       }
+      teamMember.changeRole(role);
 
       if(viewState.getSelectedProject() > - 1)
       {

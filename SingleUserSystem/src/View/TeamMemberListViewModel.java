@@ -28,24 +28,29 @@ public class TeamMemberListViewModel
     public void update()
     {
         list.clear();
-        for (int i = 0; i < model.getTeamMemberList(model.getAllProjects().getProjectById(viewState.getSelectedProject())).getSize(); i++)
+        for (int i = 0; i < model.getTeamMemberList(model.getAllProjects()
+            .getProjectById(viewState.getSelectedProject())).getSize(); i++)
         {
-            list.add(new TeamMemberViewModel(model.getTeamMemberList(model.getAllProjects().getProjectById(viewState.getSelectedProject())).get(i)));
+            list.add(new TeamMemberViewModel(model.getTeamMemberList(
+                model.getAllProjects()
+                    .getProjectById(viewState.getSelectedProject())).get(i)));
         }
     }
 
-//      public void remove(TeamMember teamMember)
-//      {
-//        for (int i = 0; i < list.size(); i++)
-//        {
-//          if (list.get(i).getNameProperty().get().equals(teamMember.getName())
-//              && list.get(i).getIdProperty().get() == teamMember.getId() && list.get(i).getRoleProperty().get().equals(teamMember.getRole()))
-//          {
-//            list.remove(i);
-//            break;
-//          }
-//        }
-//      }
+    public void remove(TeamMember teamMember)
+    {
+        for (int i = 0; i < list.size(); i++)
+        {
+            if (list.get(i).getNameProperty().equals(teamMember.getName())
+                && list.get(i).getIdProperty().get() == teamMember.getId()
+                && list.get(i).getRoleProperty().get()
+                .equals(teamMember.getRole()))
+            {
+                list.remove(i);
+                break;
+            }
+        }
+    }
 
     public void add(TeamMember teamMember)
     {

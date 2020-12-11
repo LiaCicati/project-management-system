@@ -24,7 +24,7 @@
                                 <font>
                                     <Font size="19.0" />
                                 </font></Button>
-                            <Button fx:id="removeTeamButtonPressed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Remove">
+                            <Button fx:id="removeTeamButtonPressed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#removeTeamMemberButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Remove">
                                 <font>
                                     <Font size="18.0" />
                                 </font></Button>
@@ -45,8 +45,8 @@
                                     <content>
                                         <TableView fx:id="teamListTable" prefHeight="486.0" prefWidth="450.0">
                                             <columns>
-                                                <TableColumn  fx:id="teamNameColumn" prefWidth="152.79998171329498" text="Name" />
-                                                <TableColumn  fx:id="teamIDColumn" prefWidth="120.0" text="ID" />
+                                                <TableColumn fx:id="teamNameColumn" prefWidth="152.79998171329498" text="Name" />
+                                                <TableColumn fx:id="teamIDColumn" prefWidth="120.0" text="ID" />
                                     <TableColumn fx:id="teamRoleColumn" prefWidth="145.59994506835938" text="Role" />
                                             </columns>
                                         </TableView>

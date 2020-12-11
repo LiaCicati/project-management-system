@@ -65,6 +65,8 @@ public interface ProjectManagementModel
 
   Project getProjectByID(int id);
 
+  TeamMember getTeamMemberAtIndex(int projectID, int index);
+
   //  Requirement getRequirement(int index);
   //
   //  Requirement getRequirementByID(int index);

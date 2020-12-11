@@ -180,6 +180,11 @@ public class Project
         return null;
     }
 
+    public TeamMember getTeamMemberAtIndex(int index)
+    {
+        return teamMemberList.get(index);
+    }
+
     /**
      * Getter for the number of team members that works on the project
      *

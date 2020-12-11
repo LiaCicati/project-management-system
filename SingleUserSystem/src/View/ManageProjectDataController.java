@@ -1,12 +1,14 @@
 package View;
 
 import Mediator.ProjectManagementModel;
+import Model.Project;
+import Model.TeamMember;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.Region;
+
+import java.util.Optional;
 
 public class ManageProjectDataController
 {
@@ -98,7 +100,44 @@ public class ManageProjectDataController
 
     @FXML private void removeTeamMemberButtonPressed()
     {
+        errorLabelTeamMember.setText("");
+        try
+        {
+            TeamMemberViewModel selectedItem = teamListTable.getSelectionModel()
+                .getSelectedItem();
+            boolean remove = confirmation();
+            if (remove)
+            {
+                TeamMember teamMember = model.getAllProjects()
+                    .getProjectById(viewState.getSelectedProject()).getAllTeamMembers().getTeamMemberById(selectedItem.getIdProperty().get());
+//                TeamMember teamMember = model.getTeamMembers().getTeamMemberById(selectedItem.getIdProperty().get());
+                model.getAllProjects().getProjectById(
+                    viewState.getSelectedProject()).removeTeamMember(teamMember);
+                teamMemberListViewModel.remove(teamMember);
+                teamListTable.getSelectionModel().clearSelection();
+            }
+        }
+        catch (Exception e)
+        {
+            errorLabelTeamMember.setText("Choose a team member you wish to remove from the list");
+        }
+    }
 
+    private boolean confirmation()
+    {
+        int index = teamListTable.getSelectionModel().getSelectedIndex();
+        TeamMemberViewModel selectedItem = teamListTable.getItems().get(index);
+        if (index >= teamListTable.getItems().size())
+        {
+            return false;
+        }
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmation");
+        alert.setHeaderText(
+            "Are you sure you wish to remove the following team member: " + selectedItem
+                .getNameProperty().get() + "?");
+        Optional<ButtonType> result = alert.showAndWait();
+        return (result.isPresent() && (result.get() == ButtonType.OK));
     }
 
     @FXML private void editTeamMemberButtonPressed()

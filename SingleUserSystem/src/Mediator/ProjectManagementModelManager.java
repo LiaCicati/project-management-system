@@ -247,9 +247,10 @@ public class ProjectManagementModelManager implements ProjectManagementModel
         return projectList.getProject(index);
     }
 
-    public TeamMember getTeamMemberAtIndex(int index)
+    @Override public TeamMember getTeamMemberAtIndex(int projectID, int index)
     {
-        return teamMemberList.get(index);
+        return projectList.getProjectById(projectID)
+            .getTeamMemberAtIndex(index);
     }
 
     @Override public Project getProjectByID(int id)
@@ -272,7 +273,8 @@ public class ProjectManagementModelManager implements ProjectManagementModel
         return teamMemberList.getTeamMemberById(ID);
     }
 
-    public RequirementList getAllRequirements() {
+    public RequirementList getAllRequirements()
+    {
         return requirementList;
     }
 
