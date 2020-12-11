@@ -16,6 +16,28 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     {
         this.projectList = new ProjectList();
         this.teamMemberList = new TeamMemberList();
+        createDummyData();
+    }
+
+
+    private void createDummyData() {
+        Project project1 = new Project("Rental Company", new MyDate(18,12,2020), 35,"some description");
+        Project project2 = new Project("VIA University", new MyDate(23,12,2020), 38,"some description");
+        projectList.addProject(project1);
+        projectList.addProject(project2);
+
+        Name name1 = new Name("Bob", "Turquoise");
+        Name name2 = new Name("Evan", "Peters");
+        TeamMember teamMember1 = new TeamMember(name1, 244);
+        TeamMember teamMember2 = new TeamMember(name2, 128);
+
+        project1.addTeamMember(teamMember1);
+        project1.addTeamMember(teamMember2);
+        Requirement requirement1 = new Requirement(33, "As a customer I want access to a website", Type.FUNCTIONAL, 25,teamMember1, new MyDate(25, 12, 2020));
+        Requirement requirement2 = new Requirement(46, "As a customer I want access to a website", Type.FUNCTIONAL, 30,teamMember2, new MyDate(28, 12, 2020));
+        project1.addRequirement(requirement1);
+        project1.addRequirement(requirement2);
+
     }
 
     @Override public TeamMember getTeamMemberByName(Name name)
@@ -252,6 +274,10 @@ public class ProjectManagementModelManager implements ProjectManagementModel
 
     public RequirementList getAllRequirements() {
         return requirementList;
+    }
+
+    public TeamMemberList getTeamMemberList(Project project) {
+        return project.getAllTeamMembers();
     }
 
     //   @Override public Requirement getRequirement(int index)

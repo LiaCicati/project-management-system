@@ -71,4 +71,6 @@ public interface ProjectManagementModel
 
   public TeamMemberList getTeamMembers();
   public RequirementList getAllRequirements();
+
+  public TeamMemberList getTeamMemberList(Project project);
 }
