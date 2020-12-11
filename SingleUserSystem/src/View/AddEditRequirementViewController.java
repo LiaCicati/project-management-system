@@ -47,7 +47,7 @@ public class AddEditRequirementViewController
 
   public void reset()
   {
-    if (viewState.getSelectedTeamMember() > -1)
+    if (viewState.getSelectedRequirement() > -1)
     {
       Requirement requirement = model.getAllRequirements()
           .getByID(viewState.getSelectedRequirement());

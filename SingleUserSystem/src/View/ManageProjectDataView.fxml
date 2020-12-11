@@ -36,7 +36,7 @@
                                 <Insets left="30.0" />
                             </HBox.margin>
                         </VBox>
-                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="434.0">
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="451.0" prefWidth="437.0">
                             <HBox.margin>
                                 <Insets top="50.0" />
                             </HBox.margin>
@@ -71,14 +71,15 @@
                                   <children>
                                       <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="346.0" prefWidth="658.0">
                                           <content>
-                                              <TableView prefHeight="345.0" prefWidth="648.0">
+                                              <TableView fx:id="requirementListTable" prefHeight="346.0" prefWidth="714.0">
                                                   <columns>
                                                       <TableColumn fx:id="requirementIDColumn" prefWidth="85.60003471374512" text="ID" />
-                                                      <TableColumn fx:id="userStoryColumn" prefWidth="160.00006866455078" text="User Story" />
-                                          <TableColumn fx:id="typeColumn" prefWidth="93.5999755859375" text="Type" />
-                                          <TableColumn fx:id="estimatedTimeColumn" prefWidth="81.5999755859375" text="Estimated" />
-                                          <TableColumn fx:id="responsibleMemberColumn" prefWidth="120.80001831054688" text="Responsible" />
-                                          <TableColumn fx:id="deadlineColumn" prefWidth="103.99993896484375" text="Deadline" />
+                                                      <TableColumn fx:id="userStoryColumn" prefWidth="128.00006866455078" text="User Story" />
+                                          <TableColumn fx:id="typeColumn" prefWidth="126.39996337890625" text="Type" />
+                                          <TableColumn fx:id="estimatedTimeColumn" prefWidth="76.800048828125" text="Estimated" />
+                                          <TableColumn fx:id="responsibleMemberColumn" prefWidth="107.99990844726562" text="Responsible" />
+                                          <TableColumn fx:id="requirementDeadlineColumn" prefWidth="66.4000244140625" text="Deadline" />
+                                          <TableColumn fx:id="statusColumn" prefWidth="75.0" text="Status" />
                                                   </columns>
                                               </TableView>
                                           </content>

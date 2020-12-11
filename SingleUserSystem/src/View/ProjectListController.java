@@ -24,7 +24,7 @@ public class ProjectListController
   @FXML private TableColumn<ProjectViewModel, String> projectDeadlineColumn;
   @FXML private TableColumn<ProjectViewModel, String> projectStatusColumn;
   @FXML private Label errorLabel;
-  ObservableList<ProjectViewModel> list;
+//  ObservableList<ProjectViewModel> list;
   private Region root;
   private ProjectManagementModel model;
   private ViewHandler viewHandler;

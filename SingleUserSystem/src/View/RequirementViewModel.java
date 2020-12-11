@@ -7,22 +7,28 @@ import javafx.beans.property.*;
 public class RequirementViewModel
 {
   private IntegerProperty requirementIDProperty;
+  private StringProperty userStoryProperty;
+  private StringProperty typeProperty;
   private IntegerProperty estimatedTimeProperty;
   private StringProperty deadlineProperty;
   private StringProperty responsibleTeamMemberProperty;
+  private StringProperty statusProperty;
 
   public RequirementViewModel(Requirement requirement)
   {
-    Double a = requirement.getEstimatedTime();
-    int estimatedTime = Integer.parseInt(String.valueOf(a));
-    // Converts Estimated time of double type to int type
+
+    double estimatedTime = requirement.getEstimatedTime();
 
     requirementIDProperty = new SimpleIntegerProperty(requirement.getID());
-    estimatedTimeProperty = new SimpleIntegerProperty(estimatedTime);
+    userStoryProperty = new SimpleStringProperty(requirement.getUserStory());
+    typeProperty = new SimpleStringProperty(requirement.getType().toString());
+    estimatedTimeProperty = new SimpleIntegerProperty(((int) estimatedTime));
     deadlineProperty = new SimpleStringProperty(
         requirement.getDeadline().toString());
     responsibleTeamMemberProperty = new SimpleStringProperty(
         String.valueOf(requirement.getResponsibleTeamMember().getName()));
+    statusProperty = new SimpleStringProperty(requirement.getStatus());
+
   }
 
   public IntegerProperty getRequirementIDProperty()
@@ -43,5 +49,19 @@ public class RequirementViewModel
   public StringProperty getResponsibleTeamMemberProperty()
   {
     return responsibleTeamMemberProperty;
+  }
+
+  public StringProperty getUserStoryProperty()
+  {
+    return userStoryProperty;
+  }
+
+  public StringProperty getTypeProperty()
+  {
+    return typeProperty;
+  }
+
+  public StringProperty getStatusProperty() {
+    return statusProperty;
   }
 }

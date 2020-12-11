@@ -331,6 +331,10 @@ public class Project
         }
     }
 
+    public void removeRequirement(Requirement requirement) {
+        requirementList.removeRequirement(requirement);
+    }
+
     /**
      * Getter for the number of requirements for the project
      *
