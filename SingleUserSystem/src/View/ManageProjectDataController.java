@@ -4,86 +4,108 @@ import Mediator.ProjectManagementModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.Region;
 
 public class ManageProjectDataController
 {
+    @FXML private Label errorLabelTeamMember;
+    @FXML private Label errorLabelRequirement;
 
-  @FXML private Label errorLabelTeamMember;
-  @FXML private Label errorLabelRequirement;
-  private Region root;
-  private ProjectManagementModel model;
-  private ViewHandler viewHandler;
-  private ViewState viewState;
-  private TeamMemberListViewModel teamMemberListViewModel;
+    @FXML private TableView<TeamMemberViewModel> teamListTable;
+    @FXML private TableColumn<TeamMemberViewModel, String> teamNameColumn;
+    @FXML private TableColumn<TeamMemberViewModel, Number> teamIDColumn;
+    @FXML private TableColumn<TeamMemberViewModel, String> teamRoleColumn;
 
-  public ManageProjectDataController()
-  {
-    // Called by FXMLLoader
-  }
+    private Region root;
+    private ProjectManagementModel model;
+    private ViewHandler viewHandler;
+    private ViewState viewState;
+    private TeamMemberListViewModel teamMemberListViewModel;
 
-  public void init(ViewHandler viewHandler, ProjectManagementModel model,
-      Region root, ViewState viewState)
-  {
-    this.model = model;
-    this.viewHandler = viewHandler;
-    this.viewState = viewState;
-    this.root = root;
-    this.teamMemberListViewModel = new TeamMemberListViewModel(model, viewState);
-    //    reset();
-    errorLabelTeamMember.setText("");
-    errorLabelRequirement.setText("");
-  }
+    public ManageProjectDataController()
+    {
+        // Called by FXMLLoader
+    }
 
-  public void reset()
-  {
-    errorLabelRequirement.setText("");
-    errorLabelRequirement.setText("");
+    public void init(ViewHandler viewHandler, ProjectManagementModel model,
+        Region root, ViewState viewState)
+    {
+        this.model = model;
+        this.viewHandler = viewHandler;
+        this.viewState = viewState;
+        this.root = root;
+        this.teamMemberListViewModel = new TeamMemberListViewModel(model,
+            viewState);
+        //    reset();
 
-    teamMemberListViewModel.update();
-  }
+        teamNameColumn.setCellValueFactory(
+            cellData -> cellData.getValue().getNameProperty());
+        teamIDColumn.setCellValueFactory(
+            cellData -> cellData.getValue().getIdProperty());
+        teamRoleColumn.setCellValueFactory(
+            cellData -> cellData.getValue().getRoleProperty());
 
-  public Region getRoot()
-  {
-    return root;
-  }
+        teamListTable.setItems(teamMemberListViewModel.getList());
 
-  @FXML private void backButtonPressed()
-  {
-    viewState.setSelectedProject(-1);
-    viewHandler.openView("projectList");
-  }
+        errorLabelTeamMember.setText("");
+        errorLabelRequirement.setText("");
+    }
 
-  @FXML private void removeRequirementButtonPressed()
-  {
-  }
+    public void reset()
+    {
+        errorLabelRequirement.setText("");
+        errorLabelRequirement.setText("");
 
-  @FXML private void editRequirementButtonPressed()
-  {
-  }
+        teamMemberListViewModel.update();
+    }
 
-  @FXML private void manageRequirementDataButtonPressed()
-  {
-  }
+    public Region getRoot()
+    {
+        return root;
+    }
 
-  @FXML private void addRequirementButtonPressed()
-  {
-    viewHandler.openView("addEditRequirement");
-  }
+    @FXML private void backButtonPressed()
+    {
+        viewState.setSelectedProject(-1);
+        viewHandler.openView("projectList");
+    }
 
-  @FXML private void addTeamMemberButtonPressed() {
-    //    viewState.setSelectedTeamMember(-1);
-    viewHandler.openView("addEditTeamMember");
+    @FXML private void removeRequirementButtonPressed()
+    {
+    }
 
-  }
+    @FXML private void editRequirementButtonPressed()
+    {
+    }
 
-  @FXML private void removeTeamMemberButtonPressed() {
+    @FXML private void manageRequirementDataButtonPressed()
+    {
+    }
 
-  }
+    @FXML private void addRequirementButtonPressed()
+    {
+        viewHandler.openView("addEditRequirement");
+    }
 
-  @FXML private void editTeamMemberButtonPressed() {
+    @FXML private void addTeamMemberButtonPressed()
+    {
+        //    viewState.setSelectedTeamMember(-1);
+        viewHandler.openView("addEditTeamMember");
 
-  }
+    }
+
+    @FXML private void removeTeamMemberButtonPressed()
+    {
+
+    }
+
+    @FXML private void editTeamMemberButtonPressed()
+    {
+
+    }
+
 }
 
 //Here is old code

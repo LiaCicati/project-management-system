@@ -225,6 +225,11 @@ public class ProjectManagementModelManager implements ProjectManagementModel
         return projectList.getProject(index);
     }
 
+    public TeamMember getTeamMemberAtIndex(int index)
+    {
+        return teamMemberList.get(index);
+    }
+
     @Override public Project getProjectByID(int id)
     {
         return projectList.getProjectById(id);

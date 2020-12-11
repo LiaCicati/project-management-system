@@ -6,16 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e910f242-0b45-40fa-b14f-73fb820c668b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ProjectListView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ProjectListView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Mediator/ProjectManagementModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mediator/ProjectManagementModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageProjectDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageProjectDataView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Mediator/ProjectManagementModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mediator/ProjectManagementModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddEditProjectViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditProjectViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddEditTeamMemberViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditTeamMemberViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/ManageProjectDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ManageProjectDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/ProjectListViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ProjectListViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/TeamMemberListViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/TeamMemberListViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ViewHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/TeamMemberViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/TeamMemberViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,16 +85,5 @@
       <updated>1606059049972</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/View/ManageProjectDataController.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
