@@ -6,40 +6,42 @@ import javafx.beans.property.*;
 
 public class RequirementViewModel
 {
-    private IntegerProperty requirementIDProperty;
-    private IntegerProperty estimatedtimeProperty;
-    private StringProperty deadlineProperty;
-    private StringProperty responsibleteammemberProperty;
+  private IntegerProperty requirementIDProperty;
+  private IntegerProperty estimatedTimeProperty;
+  private StringProperty deadlineProperty;
+  private StringProperty responsibleTeamMemberProperty;
 
-    public RequirementViewModel(Requirement requirement)
-    {
-      Double a = requirement.getEstimatedTime();
-      int b = new Double(a).intValue();
-      // Converts Estimated time of double type to int type
+  public RequirementViewModel(Requirement requirement)
+  {
+    Double a = requirement.getEstimatedTime();
+    int estimatedTime = Integer.parseInt(String.valueOf(a));
+    // Converts Estimated time of double type to int type
 
-      requirementIDProperty = new SimpleIntegerProperty(requirement.getID());
-      estimatedtimeProperty = new SimpleIntegerProperty(b);
-      deadlineProperty = new SimpleStringProperty(requirement.getDeadline().toString());
-      responsibleteammemberProperty = new SimpleStringProperty(String.valueOf(requirement.getResponsibleTeamMember().getName()));
-    }
+    requirementIDProperty = new SimpleIntegerProperty(requirement.getID());
+    estimatedTimeProperty = new SimpleIntegerProperty(estimatedTime);
+    deadlineProperty = new SimpleStringProperty(
+        requirement.getDeadline().toString());
+    responsibleTeamMemberProperty = new SimpleStringProperty(
+        String.valueOf(requirement.getResponsibleTeamMember().getName()));
+  }
 
-    public IntegerProperty getRequirementIDProperty()
-    {
-      return requirementIDProperty;
-    }
+  public IntegerProperty getRequirementIDProperty()
+  {
+    return requirementIDProperty;
+  }
 
-    public IntegerProperty getEstimatedtimeProperty()
-    {
-      return estimatedtimeProperty;
-    }
+  public IntegerProperty getEstimatedTimeProperty()
+  {
+    return estimatedTimeProperty;
+  }
 
-    public StringProperty getDeadlineProperty()
-    {
-      return deadlineProperty;
-    }
+  public StringProperty getDeadlineProperty()
+  {
+    return deadlineProperty;
+  }
 
-    public StringProperty getResponsibleteammemberProperty()
-    {
-      return responsibleteammemberProperty;
-    }
-    }
+  public StringProperty getResponsibleTeamMemberProperty()
+  {
+    return responsibleTeamMemberProperty;
+  }
+}

@@ -9,6 +9,7 @@ public class ProjectManagementModelManager implements ProjectManagementModel
 {
     private ProjectList projectList;
     private TeamMemberList teamMemberList;
+    private RequirementList requirementList;
     private ProjectManagementPersistence file;
 
     public ProjectManagementModelManager()
@@ -242,6 +243,10 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     public TeamMember getTeamMemberById(int ID)
     {
         return teamMemberList.getTeamMemberById(ID);
+    }
+
+    public RequirementList getAllRequirements() {
+        return requirementList;
     }
 
     //   @Override public Requirement getRequirement(int index)

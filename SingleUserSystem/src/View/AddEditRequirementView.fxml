@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0" userData="Requirement details" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="700.0" prefWidth="700.0" userData="Requirement details" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddEditRequirementViewController">
     <children>
         <Label text="Requirements details">
             <font>
@@ -37,7 +37,7 @@
                                 </Label>
                                 <VBox prefHeight="66.0" prefWidth="194.0">
                                     <children>
-                                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="146.0" />
+                                        <TextField fx:id="requirementIdInput" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="30.0" prefWidth="179.0" />
                                     </children>
                                 </VBox>
                             </children>
@@ -56,7 +56,7 @@
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
                                             <String fx:value="Functional" />
-                                            <String fx:value="Non Functional" />
+                                            <String fx:value="Non-functional" />
                                             <String fx:value="Project Related" />
                                         </FXCollections>
                                     </items>
@@ -73,7 +73,7 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <TextArea maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="96.0" prefWidth="218.0" />
+                                <TextArea fx:id="userStoryInput" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="96.0" prefWidth="218.0" />
                             </children>
                             <VBox.margin>
                                 <Insets />
@@ -86,7 +86,7 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <ComboBox prefWidth="150.0" promptText="Select from the list" />
+                                <ComboBox fx:id="responsibleMemberInput" prefWidth="150.0" promptText="Select from the list" />
                             </children>
                             <VBox.margin>
                                 <Insets />
@@ -101,7 +101,7 @@
                                 </Label>
                                 <VBox prefHeight="200.0" prefWidth="100.0">
                                     <children>
-                                        <TextField />
+                                        <TextField fx:id="estimatedTimeInput" />
                                     </children>
                                 </VBox>
                             </children>
@@ -116,7 +116,7 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <TextField editable="false" text="0" />
+                                <TextField fx:id="workedHoursInput" editable="false" text="0" />
                             </children>
                             <VBox.margin>
                                 <Insets />
@@ -157,7 +157,7 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <DatePicker prefHeight="35.0" prefWidth="158.0" />
+                                <DatePicker fx:id="deadlineInput" prefHeight="35.0" prefWidth="158.0" />
                             </children>
                         </HBox>
                     </children></VBox>
@@ -168,19 +168,19 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="62.0" prefWidth="700.0" spacing="36.0">
             <children>
-                <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Save">
+                <Button mnemonicParsing="false" onAction="#requirementSaveButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Save">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Cancel">
+                <Button mnemonicParsing="false" onAction="#requirementCancelButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Cancel">
                     <font>
                         <Font size="18.0" />
                     </font>
                 </Button>
             </children>
         </HBox>
-        <Label text="Label error" textFill="RED">
+        <Label fx:id="errorLabel" text="Label error" textFill="RED">
             <font>
                 <Font size="14.0" />
             </font>

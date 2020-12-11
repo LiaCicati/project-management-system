@@ -68,6 +68,7 @@ public class ManageProjectDataController
 
   @FXML private void addRequirementButtonPressed()
   {
+    viewHandler.openView("addEditRequirement");
   }
 
   @FXML private void addTeamMemberButtonPressed() {

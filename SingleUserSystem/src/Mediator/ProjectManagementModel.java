@@ -70,4 +70,5 @@ public interface ProjectManagementModel
   //  Requirement getRequirementByID(int index);
 
   public TeamMemberList getTeamMembers();
+  public RequirementList getAllRequirements();
 }

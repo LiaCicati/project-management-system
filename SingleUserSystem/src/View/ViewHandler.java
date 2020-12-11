@@ -19,6 +19,7 @@ public class ViewHandler
     private AddEditProjectViewController addEditProjectViewController;
     private ManageProjectDataController manageProjectDataController;
     private AddEditTeamMemberViewController addEditTeamMemberViewController;
+    private AddEditRequirementViewController addEditRequirementViewController;
 
     public ViewHandler(ProjectManagementModel model)
     {
@@ -42,8 +43,7 @@ public class ViewHandler
                 root = loadProjectListView("ProjectListView.fxml", viewState);
                 break;
             case "addEditProject":
-                root = loadAddEditProjectView("AddEditProjectView.fxml",
-                    viewState);
+                root = loadAddEditProjectView("AddEditProjectView.fxml", viewState);
                 break;
             case "manageProjectData":
                 root = loadManageProjectDataView("ManageProjectDataView.fxml",
@@ -51,6 +51,10 @@ public class ViewHandler
                 break;
             case "addEditTeamMember":
                 root = loadAddEditTeamMemberView("AddEditTeamMemberView.fxml",
+                    viewState);
+                break;
+            case "addEditRequirement":
+                root = loadAddEditRequirementView("AddEditRequirementView.fxml",
                     viewState);
                 break;
         }
@@ -121,8 +125,9 @@ public class ViewHandler
         return addEditProjectViewController.getRoot();
     }
 
-    private Region loadManageProjectDataView(String fxmlFile,
-        ViewState viewState)
+
+
+    private Region loadManageProjectDataView(String fxmlFile, ViewState viewState)
     {
         if (manageProjectDataController == null)
         {
@@ -146,8 +151,7 @@ public class ViewHandler
         return manageProjectDataController.getRoot();
     }
 
-    private Region loadAddEditTeamMemberView(String fxmlFile,
-        ViewState viewState)
+    private Region loadAddEditTeamMemberView(String fxmlFile, ViewState viewState)
     {
         if (addEditTeamMemberViewController == null)
         {
@@ -157,8 +161,7 @@ public class ViewHandler
                 loader.setLocation(getClass().getResource(fxmlFile));
                 Region root = loader.load();
                 addEditTeamMemberViewController = loader.getController();
-                addEditTeamMemberViewController
-                    .init(this, model, root, viewState);
+                addEditTeamMemberViewController.init(this, model, root, viewState);
             }
             catch (Exception e)
             {
@@ -170,5 +173,29 @@ public class ViewHandler
             addEditTeamMemberViewController.reset();
         }
         return addEditTeamMemberViewController.getRoot();
+    }
+
+    private Region loadAddEditRequirementView(String fxmlFile, ViewState viewState)
+    {
+        if (addEditRequirementViewController == null)
+        {
+            try
+            {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource(fxmlFile));
+                Region root = loader.load();
+                addEditRequirementViewController = loader.getController();
+                addEditRequirementViewController.init(this, model, root, viewState);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
+        else
+        {
+            addEditRequirementViewController.reset();
+        }
+        return addEditRequirementViewController.getRoot();
     }
 }

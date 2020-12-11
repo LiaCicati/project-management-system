@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0" prefWidth="700.0" userData="Add project" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddEditProjectViewController">
+<VBox prefHeight="700.0" prefWidth="700.0" userData="Project details" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddEditProjectViewController">
     <children>
         <Label text="Project details">
             <font>
