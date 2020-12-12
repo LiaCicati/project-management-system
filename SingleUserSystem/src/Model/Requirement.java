@@ -15,7 +15,7 @@ public class Requirement
   private String userStory;
   private Type type;
   private double timeSpent;
-  public static final String NOT_STARTED = "Not started";
+  public static final String NOT_STARTED = "Not Started";
   public static final String STARTED = "Started";
   public static final String ENDED = "Ended";
   public static final String APPROVED = "Approved";
@@ -85,6 +85,7 @@ public class Requirement
    */
   public double getTimeSpent()
   {
+    timeSpent = 0;
     for (Task task : tasks.getAllTasks())
     {
       this.timeSpent = timeSpent + task.getTimeSpent();
