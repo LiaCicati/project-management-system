@@ -8,7 +8,7 @@ public interface ProjectManagementModel
 
   void addTeamMember(int projectID, TeamMember teamMember);
 
-  TeamMember editTeamMember(Name name, String role);
+  void editTeamMember(int projectID, int ID, Name name, int teamMemberID, String role);
 
   void removeTeamMember(TeamMember teamMember);
 
@@ -59,7 +59,7 @@ public interface ProjectManagementModel
 
   void changeRole(TeamMember teamMember,String role);
 
-  void editProject(Project project, String title, int customerID,
+  void editProject(int projectID, String title, int customerID,
       String description, MyDate deadline, String status);
 
   public Project getProject(int index);

@@ -6,16 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e910f242-0b45-40fa-b14f-73fb820c668b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/AddEditRequirementView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/AddEditRequirementView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageProjectDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageProjectDataView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Mediator/ProjectManagementModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mediator/ProjectManagementModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Mediator/ProjectManagementModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mediator/ProjectManagementModelManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/TeamMember.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TeamMember.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AddEditProjectViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditProjectViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/AddEditTeamMemberViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditTeamMemberViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/ManageProjectDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ManageProjectDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/ManageProjectDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ManageProjectDataView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/TeamMemberListViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/TeamMemberListViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
