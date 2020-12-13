@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -8,6 +9,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -20,18 +22,36 @@
                 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="583.0" prefWidth="700.0">
                     <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="547.0" prefWidth="700.0">
                         <VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="526.0" prefWidth="199.0" spacing="30.0">
-                            <Button fx:id="addTeamButtonPressed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#addTeamMemberButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Add">
+                            <Button fx:id="addTeamButtonPressed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#addTeamMemberButtonPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: C7EFCF;" text="Add">
                                 <font>
                                     <Font size="19.0" />
-                                </font></Button>
-                            <Button fx:id="removeTeamButtonPressed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#removeTeamMemberButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Remove">
+                                </font>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                           <DropShadow color="#c7b7b7" />
+                        </effect></Button>
+                            <Button fx:id="removeTeamButtonPressed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#removeTeamMemberButtonPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: ff8360;" text="Remove">
                                 <font>
                                     <Font size="18.0" />
-                                </font></Button>
-                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#editTeamMemberButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Edit">
+                                </font>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                           <DropShadow color="#baa9a9" />
+                        </effect></Button>
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#editTeamMemberButtonPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: e8e288;" text="Edit">
                                 <font>
                                     <Font size="18.0" />
-                                </font></Button>
+                                </font>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
+                        <effect>
+                           <DropShadow color="#cdbcbc" />
+                        </effect></Button>
                             <HBox.margin>
                                 <Insets left="30.0" />
                             </HBox.margin>
@@ -94,25 +114,49 @@
                               </VBox>
                         <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="115.0" prefWidth="680.0" spacing="20.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#addRequirementButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Add">
+                              <Button mnemonicParsing="false" onAction="#addRequirementButtonPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: C7EFCF;" text="Add">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <effect>
+                                    <DropShadow color="#c7baba" />
+                                 </effect>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#removeRequirementButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Remove">
+                              <Button mnemonicParsing="false" onAction="#removeRequirementButtonPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: ff8360;" text="Remove">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <effect>
+                                    <DropShadow color="#cdbebe" />
+                                 </effect>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#editRequirementButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Edit">
+                              <Button mnemonicParsing="false" onAction="#editRequirementButtonPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: e8e288;" text="Edit">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <effect>
+                                    <DropShadow color="#c2b6b6" />
+                                 </effect>
                               </Button>
-                              <Button mnemonicParsing="false" onAction="#manageRequirementDataButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Manage Data">
+                              <Button mnemonicParsing="false" onAction="#manageRequirementDataButtonPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: rgba(49, 196, 233, 0.93);" text="Manage Data">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <effect>
+                                    <DropShadow color="#c5b9b9" />
+                                 </effect>
                               </Button>
                            </children>
                         </HBox>
@@ -134,6 +178,9 @@
             <VBox.margin>
                 <Insets left="30.0" top="15.0" />
             </VBox.margin>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
         </Button>
     </children>
 </VBox>

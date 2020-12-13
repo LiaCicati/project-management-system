@@ -23,9 +23,9 @@
                      <children>
                               <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="639.0">
                                   <children>
-                                      <ScrollPane prefHeight="408.0" prefWidth="639.0">
+                                      <ScrollPane prefHeight="387.0" prefWidth="639.0">
                                           <content>
-                                              <TableView fx:id="taskListTable" prefHeight="398.0" prefWidth="715.0">
+                                              <TableView fx:id="taskListTable" prefHeight="375.0" prefWidth="686.0">
                                                   <columns>
                                                       <TableColumn fx:id="requirementIDColumn" prefWidth="104.0000057220459" text="Requirement ID" />
                                           <TableColumn fx:id="taskIDColumn" prefWidth="64.79998779296875" text="ID" />
@@ -34,7 +34,7 @@
                                           <TableColumn fx:id="taskEstimatedTimeColumn" prefWidth="80.79995727539062" text="Estimated" />
                                           <TableColumn fx:id="taskResponsibleMemberColumn" prefWidth="77.5999755859375" text="Responsible" />
                                           <TableColumn fx:id="taskDeadlineColumn" prefWidth="75.0" text="Deadline" />
-                                          <TableColumn fx:id="taskStatusColumn" prefWidth="75.0" text="Status" />
+                                          <TableColumn fx:id="taskStatusColumn" prefWidth="86.39990234375" text="Status" />
                                                   </columns>
                                               </TableView>
                                           </content>
