@@ -11,6 +11,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 import javafx.scene.layout.Region;
+
 import java.awt.*;
 
 public class ManageRequirementDataViewController
@@ -50,13 +51,13 @@ public class ManageRequirementDataViewController
     this.viewHandler = viewHandler;
     this.viewState = viewState;
     this.root = root;
-//    this.teamMemberListViewModel = new TeamMemberListViewModel(model,
-//        viewState);
+//        this.teamMemberListViewModel = new TeamMemberListViewModel(model,
+//            viewState);
     this.taskListViewModel = new TaskListViewModel(model, viewState);
-        reset();
-//
-//    requirementIDColumn.setCellValueFactory(
-//        cellData -> cellData.getValue().getRequirementIDProperty());
+    reset();
+    //
+    //    requirementIDColumn.setCellValueFactory(
+    //        cellData -> cellData.getValue().getRequirementIDProperty());
     taskIDColumn.setCellValueFactory(
         cellData -> cellData.getValue().getTaskIDProperty());
     taskTitleColumn.setCellValueFactory(
@@ -80,14 +81,14 @@ public class ManageRequirementDataViewController
     teamRoleColumn
         .setCellValueFactory(cellData -> cellData.getValue().getRoleProperty());
 
-    teamListTable.setItems(teamMemberListViewModel.getList());
+    //    teamListTable.setItems(teamMemberListViewModel.getList());
   }
 
   public void reset()
   {
     errorLabel.setText("");
     taskListViewModel.update();
-    teamMemberListViewModel.update();
+    //    teamMemberListViewModel.update();
   }
 
   public Region getRoot()
@@ -111,7 +112,7 @@ public class ManageRequirementDataViewController
   {
   }
 
- @FXML private void backButtonPressed()
+  @FXML private void backButtonPressed()
   {
     viewState.setSelectedRequirement(-1);
     viewHandler.openView("manageProjectData");

@@ -151,7 +151,7 @@ public class ManageProjectDataController
     {
       RequirementViewModel selectedItem = requirementListTable
           .getSelectionModel().getSelectedItem();
-      viewState.setSelectedProject(
+      viewState.setSelectedRequirement(
           selectedItem.getRequirementIDProperty().getValue());
       viewHandler.openView("manageRequirementData");
     }
