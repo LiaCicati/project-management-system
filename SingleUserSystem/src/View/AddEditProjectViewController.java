@@ -136,7 +136,7 @@ public class AddEditProjectViewController
 
             else
             {
-                model.addProject(project);
+                model.addProject(project, title, customerID);
             }
             errorLabel.setText("");
             reset();

@@ -126,22 +126,11 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     }
   }
 
-  public void addRequirement(int projectID, Requirement requirement)
+  @Override public void addRequirement(int projectID, Requirement requirement)
   {
     projectList.getProjectById(projectID).addRequirement(requirement);
   }
 
-  @Override public void addRequirementToProject(Project project,
-      Requirement requirement)
-  {
-    for (Project projectTemp : projectList.getAllProjects())
-    {
-      if (projectTemp.equals(project))
-      {
-        projectTemp.addRequirement(requirement);
-      }
-    }
-  }
 
   @Override public void removeRequirementFromProject(Project project,
       int requirementID)
@@ -155,8 +144,19 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     }
   }
 
-  @Override public void addProject(Project project)
+  @Override public void addProject(Project project, String title, int ID)
   {
+    for (int i = 0; i < projectList.getNumberOfProjects(); i++)
+      if (projectList.getProject(i).getTitle().equals(title))
+      {
+        throw new IllegalArgumentException(
+            "A project with this title already exists");
+      }
+      else if (projectList.getProject(i).getCustomerID() == ID)
+      {
+        throw new IllegalArgumentException(
+            "A project with this ID already exists");
+      }
     projectList.addProject(project);
   }
 

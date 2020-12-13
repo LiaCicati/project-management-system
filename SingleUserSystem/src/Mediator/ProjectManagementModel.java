@@ -17,7 +17,6 @@ public interface ProjectManagementModel
 
   void removeTaskFromRequirement(Requirement requirement, Task task);
 
-  void addRequirementToProject(Project project, Requirement requirement);
   public void addRequirement(int projectID, Requirement requirement);
 
   public void editRequirement(int projectID, int ID, Requirement requirement,
@@ -25,7 +24,7 @@ public interface ProjectManagementModel
 
   void removeRequirementFromProject(Project project, int requirementID);
 
-  void addProject(Project project);
+  void addProject(Project project, String title, int ID);
 
   void removeProject(Project project);
 
