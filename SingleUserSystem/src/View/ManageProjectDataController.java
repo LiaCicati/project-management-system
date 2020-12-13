@@ -130,6 +130,19 @@ public class ManageProjectDataController
 
   @FXML private void editRequirementButtonPressed()
   {
+    try
+    {
+      RequirementViewModel selectedItem = requirementListTable.getSelectionModel()
+          .getSelectedItem();
+      viewState.setSelectedRequirement(selectedItem.getRequirementIDProperty().getValue());
+      viewHandler.openView("addEditRequirement");
+
+    }
+    catch (Exception e)
+    {
+      errorLabelRequirement.setText("Select a requirement from the list");
+    }
+
   }
 
   @FXML private void manageRequirementDataButtonPressed()
@@ -150,6 +163,7 @@ public class ManageProjectDataController
 
   @FXML private void addRequirementButtonPressed()
   {
+    viewState.setSelectedRequirement(-1);
     viewHandler.openView("addEditRequirement");
   }
 

@@ -126,6 +126,11 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     }
   }
 
+  public void addRequirement(int projectID, Requirement requirement)
+  {
+    projectList.getProjectById(projectID).addRequirement(requirement);
+  }
+
   @Override public void addRequirementToProject(Project project,
       Requirement requirement)
   {
@@ -240,11 +245,15 @@ public class ProjectManagementModelManager implements ProjectManagementModel
         deadline);
   }
 
-  @Override public void editRequirement(Requirement requirement, int ID,
-      double estimatedTime, TeamMember responsibleTeamMember, MyDate deadline)
+  @Override public void editRequirement(int projectID, int ID,
+      Requirement requirement, String status)
   {
-    requirement
-        .editRequirement(ID, estimatedTime, responsibleTeamMember, deadline);
+    projectList.getProjectById(projectID).getAllRequirements().getByID(ID)
+        .editRequirement(requirement.getID(), requirement.getUserStory(),
+            requirement.getType(), requirement.getEstimatedTime(),
+            requirement.getResponsibleTeamMember(), requirement.getDeadline());
+    projectList.getProjectById(projectID).getAllRequirements().getByID(ID)
+        .setStatus(status);
   }
 
   @Override public void changeStatus(Project project, String status)
@@ -290,11 +299,6 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     return teamMemberList.getSize();
   }
 
-  //    public TeamMember getTeamMemberById(int ID)
-  //    {
-  //        return teamMemberList.getTeamMemberById(ID);
-  //    }
-
   public RequirementList getAllRequirements()
   {
     return requirementList;
@@ -305,20 +309,15 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     return project.getAllTeamMembers();
   }
 
-  //   @Override public Requirement getRequirement(int index)
-  //  {
-  //    return requirementList.getRequirement(index);
-  //  }
-  //
-  //  @Override public Requirement getRequirementByID(int id)
-  //  {
-  //    for(int i=0;i<requirementList.getSize();i++)
-  //    {
-  //      if(requirementList.getRequirement(i).getID()==id)
-  //      {
-  //        return requirementList.getRequirement(i);
-  //      }
-  //    }
-  //    return null;
-  //  }
+  @Override public Requirement getRequirementByID(int id)
+  {
+    for (int i = 0; i < requirementList.getSize(); i++)
+    {
+      if (requirementList.getRequirement(i).getID() == id)
+      {
+        return requirementList.getRequirement(i);
+      }
+    }
+    return null;
+  }
 }

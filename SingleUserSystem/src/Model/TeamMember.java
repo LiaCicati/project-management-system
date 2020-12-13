@@ -12,9 +12,6 @@ public class TeamMember
   private int id;
   private Name name;
   private String role;
-  public static final String TEAM_MEMBER = "Team Member";
-  public static final String SCRUM_MASTER = "Scrum Master";
-  public static final String PRODUCT_OWNER = "Product Owner";
 
   /**
    * Constructor for the team member

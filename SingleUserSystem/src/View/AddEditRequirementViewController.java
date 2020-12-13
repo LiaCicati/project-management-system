@@ -49,7 +49,10 @@ public class AddEditRequirementViewController
   {
     if (viewState.getSelectedRequirement() > -1)
     {
-      Requirement requirement = model.getAllRequirements()
+      //      Requirement requirement = model.getAllRequirements()
+      //          .getByID(viewState.getSelectedRequirement());
+      Requirement requirement = model.getAllRequirements(
+          model.getAllProjects().getProjectById(viewState.getSelectedProject()))
           .getByID(viewState.getSelectedRequirement());
       requirementIdInput.setText(requirement.getID() + "");
       typeInput.setAccessibleText(requirement.getType() + "");
@@ -114,17 +117,23 @@ public class AddEditRequirementViewController
           break;
       }
 
-      TeamMember responsibleTeamMember = (TeamMember)responsibleMemberInput.getItems();
+      TeamMember responsibleTeamMember = new TeamMember(
+          new Name("Bob", "Turquoise"), 2);
       double estimatedTime;
       if (estimatedTimeInput.getText().equals(""))
         throw new IllegalArgumentException("Estimated time can not be empty");
       try
       {
-        estimatedTime = Integer.parseInt(estimatedTimeInput.getText());
+        estimatedTime = Double.parseDouble(estimatedTimeInput.getText());
       }
       catch (NumberFormatException e)
       {
-        throw new IllegalArgumentException("Estimated time should be a number");
+        throw new IllegalArgumentException("Estimated time should be a number, indicating the hours");
+      }
+      if (deadlineInput.getValue() == null)
+      {
+        errorLabel.setText("A deadline should be added to the requirement");
+        throw new IllegalStateException(errorLabel.getText());
       }
 
       LocalDate today = LocalDate.now();
@@ -135,18 +144,40 @@ public class AddEditRequirementViewController
       int month = deadlineInput.getValue().getMonthValue();
       int year = deadlineInput.getValue().getYear();
       MyDate deadline = new MyDate(day, month, year);
-
-
-
-      Requirement requirement = new Requirement(requirementID, userStory, type, estimatedTime, responsibleTeamMember, deadline);
-      if (viewState.getSelectedProject() > -1)
+      String status = null;
+      switch (statusInput.getValue())
       {
-        // method that should edit the requirement
+        case "Started":
+          status = Requirement.STARTED;
+          break;
+        case "Ended":
+          status = Requirement.ENDED;
+          break;
+        case "Not Started":
+          status = Requirement.NOT_STARTED;
+          break;
+        case "Approved":
+          status = Requirement.APPROVED;
+          break;
+        case "Rejected":
+          status = Requirement.REJECTED;
+          break;
+      }
+
+      Requirement requirement = new Requirement(requirementID, userStory, type,
+          estimatedTime, responsibleTeamMember, deadline);
+      if (viewState.getSelectedRequirement() > -1)
+      {
+
+        model.editRequirement(viewState.getSelectedProject(),
+            viewState.getSelectedRequirement(),
+            new Requirement(requirementID, userStory, type, estimatedTime,
+                responsibleTeamMember, deadline), status);
       }
 
       else
       {
-        // method that should add the requirement in the list to the selected project
+        model.addRequirement(viewState.getSelectedProject(), requirement);
         System.out.println(requirement);
       }
 
@@ -154,7 +185,7 @@ public class AddEditRequirementViewController
       errorLabel.setText("");
       reset();
       viewHandler.openView("manageProjectData");
-      //      projectListViewModel.update();
+      requirementListViewModel.update();
     }
     catch (Exception e)
     {
@@ -162,13 +193,8 @@ public class AddEditRequirementViewController
     }
   }
 
-
-
-
-
   @FXML private void requirementCancelButtonPressed()
   {
-    reset();
     viewHandler.openView("manageProjectData");
   }
 }

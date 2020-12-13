@@ -243,10 +243,12 @@ public class Requirement
     this.status = status;
   }
 
-  public void editRequirement(int ID, double estimatedTime,
+  public void editRequirement(int ID, String userStory, Type type, double estimatedTime,
       TeamMember responsibleTeamMember, MyDate deadline)
   {
     setID(ID);
+    setUserStory(userStory);
+    setType(type);
     setEstimatedTime(estimatedTime);
     setResponsibleTeamMember(responsibleTeamMember);
     setDeadline(deadline);

@@ -86,7 +86,17 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <ComboBox fx:id="responsibleMemberInput" prefWidth="150.0" promptText="Select from the list" />
+                                <ComboBox fx:id="responsibleMemberInput" prefWidth="150.0" promptText="Select from the list">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Bob Turquoise" />
+                                        <String fx:value="Alan Turing" />
+                                        <String fx:value="Matthew Gubler" />
+                                        <String fx:value="Evan Peters" />
+                                        <String fx:value="Mary Ellen" />
+                                    </FXCollections>
+                                </items>
+                                </ComboBox>
                             </children>
                             <VBox.margin>
                                 <Insets />

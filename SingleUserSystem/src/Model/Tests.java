@@ -114,7 +114,7 @@ public class Tests
     Requirement requirementCheck = new Requirement(23, "some text", Type.FUNCTIONAL,
         35, teamMember2, new MyDate(12, 1, 2021));
     System.out.println("Before editing: " + "\n" + requirement1);
-    requirement1.editRequirement(25, 35, teamMember1, new MyDate(12, 1, 2021));
+    requirement1.editRequirement(39, "some text", Type.NON_FUNCTIONAL, 35, teamMember2, new MyDate(12,1,2021));
     System.out.println("After editing ID and responsible team member: " + "\n" + requirement1);
     assertNotEquals(requirementCheck, requirement1);
   }
@@ -265,8 +265,8 @@ public class Tests
   @Test void changeTeamMemberRoleInAProject()
   {
     project1.addTeamMember(teamMember1);
-    project1.getAllTeamMembers().get(0).changeRole(TeamMember.SCRUM_MASTER);
-    assertEquals("Scrum Master", project1.getAllTeamMembers().get(0).getRole());
+    project1.getAllTeamMembers().get(0).changeRole(productOwner.getRole());
+    assertEquals("Product Owner", project1.getAllTeamMembers().get(0).getRole());
   }
 
   @Test void getInformationOfAProject()

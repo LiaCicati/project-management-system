@@ -91,17 +91,19 @@ public class AddEditTeamMemberViewController
       }
 
       TeamMember teamMember = new TeamMember(name, teamMemberID);
+      TeamMember productOwner = new ProductOwner(name, teamMemberID);
+      TeamMember scrumMaster = new ScrumMaster(name, teamMemberID);
       String role = null;
       switch (rolesInput.getValue())
       {
         case "Team Member":
-          role = TeamMember.TEAM_MEMBER;
+          role = teamMember.getRole();
           break;
         case "Product Owner":
-          role = TeamMember.PRODUCT_OWNER;
+          role = productOwner.getRole();
           break;
         case "Scrum Master":
-          role = TeamMember.SCRUM_MASTER;
+          role = scrumMaster.getRole();
           break;
       }
       teamMember.changeRole(role);
