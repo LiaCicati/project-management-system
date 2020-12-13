@@ -89,7 +89,13 @@ public class Tests
 
   @Test void editProject()
   {
-    // To do
+    // A project with same data as project 1 is created
+    Project projectCheck = new Project("Rental Company", new MyDate(18, 12, 2020), 35, "some description");
+    System.out.println("Before editing data: " + "\n" + project1);
+    project1.editProject("IT Minds", 39, "some description", new MyDate(18, 12, 2020));
+    System.out.println("After editing title and customer ID: " + "\n" + project1);
+    assertNotEquals(projectCheck, project1);
+
   }
 
   @Test void addRequirementsToAProject()
@@ -104,7 +110,13 @@ public class Tests
 
   @Test void editRequirement()
   {
-    //To do
+    // A requirement with same data as requirement 1 is created
+    Requirement requirementCheck = new Requirement(23, "some text", Type.FUNCTIONAL,
+        35, teamMember2, new MyDate(12, 1, 2021));
+    System.out.println("Before editing: " + "\n" + requirement1);
+    requirement1.editRequirement(25, 35, teamMember1, new MyDate(12, 1, 2021));
+    System.out.println("After editing ID and responsible team member: " + "\n" + requirement1);
+    assertNotEquals(requirementCheck, requirement1);
   }
 
   @Test void removeTeamMemberFromAProject()
@@ -123,7 +135,12 @@ public class Tests
 
   @Test void editTeamMember()
   {
-    // To do
+    // A team member with same data as team member 1 is created
+    TeamMember teamMemberCheck = new TeamMember(new Name("Matthew", "Gray"), 2);
+    System.out.println("Before editing: " + teamMember1);
+    teamMember1.editTeamMember(new Name("Matthew", "Gray"), 6);
+    System.out.println("After editing the id: " + teamMember1);
+    assertNotEquals(teamMemberCheck, teamMember1);
   }
 
   @Test void removeRequirementFromAProject()
@@ -193,7 +210,13 @@ public class Tests
 
   @Test void editTask()
   {
-    // To do
+    // Task with same data as task 1 is created
+    Task taskCheck = new Task(requirement1, 26, "Some title", "Some description",
+        25.5, teamMember1, new MyDate(19, 3, 2021));
+    System.out.println("Before editing: " + task1);
+    task1.editTask("Some title", "some description", 35, teamMember2, new MyDate(19, 3, 2021));
+    System.out.println("After editing estimated time and responsible member: " + task1);
+    assertNotEquals(taskCheck, task1);
   }
 
   @Test void registerTimeWorkedOnATask()

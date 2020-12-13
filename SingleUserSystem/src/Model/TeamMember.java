@@ -97,6 +97,17 @@ public class TeamMember
       e.printStackTrace();
     }
   }
+
+  /**
+   * Editing team member's data
+   * @param name the name
+   * @param id the id
+   */
+  public void editTeamMember(Name name, int id)
+  {
+    setName(name);
+    setId(id);
+  }
   
   public void changeRole(String role)
   {
