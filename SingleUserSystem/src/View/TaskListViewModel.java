@@ -26,7 +26,6 @@ public class TaskListViewModel
 
   public void update()
   {
-    //this method is not working, it can't find the project id
     list.clear();
     Project project = model.getAllProjects().getProjectById(viewState.getSelectedProject());
     Requirement requirement = model.getAllRequirements(project).getByID(viewState.getSelectedRequirement());
