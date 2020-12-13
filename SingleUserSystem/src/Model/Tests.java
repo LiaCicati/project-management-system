@@ -290,12 +290,33 @@ public class Tests
 
   @Test void getStatusOfProjectIfAllRequirementsAreApproved()
   {
-    // To do
+    requirement1.setStatus(Requirement.APPROVED);
+    requirement2.setStatus(Requirement.APPROVED);
+    System.out.println("Status of the requirement: " + requirement1.getStatus()); // Approved
+    System.out.println("Status of the requirement: " + requirement2.getStatus()); // Approved
+    project1.addRequirement(requirement1);
+    project1.addRequirement(requirement2);
+    System.out.println(project1.getNumberOfRequirements());
+    System.out.println("Status of the project: " + project1.getStatus()); // should be Ended but returns Started
+    assertEquals("Ended", project1.getStatus());
   }
 
   @Test void getStatusOfRequirementWhenAllTasksAreEnded()
   {
-    // To do
+    project1.addRequirement(requirement1);
+    task1.setStatus(Task.ENDED);
+    task2.setStatus(Task.ENDED);
+    TaskList taskList = new TaskList();
+    taskList.addTask(task1);
+    taskList.addTask(task2);
+    System.out.println("Are all the tasks in the list in ended state: " + taskList.areInEndedState());
+    requirement1.addTask(task1);
+    requirement1.addTask(task2);
+    System.out.println(requirement1.countTasks());
+    System.out.println("Considering that all tasks belonging to the requirement are in ended state, is the requirement ended also? " + requirement1.isEnded()); // should be true
+    System.out.println("Status of the requirement: " + requirement1.getStatus()); // should be in Ended but returns Started
+    assertEquals("Ended", requirement1.getStatus());
+
   }
 
 }
