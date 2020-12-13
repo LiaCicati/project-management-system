@@ -11,7 +11,8 @@ import java.time.LocalDate;
 
 public class AddEditTeamMemberViewController
 {
-    @FXML private TextField teamMemberNameInput;
+    @FXML private TextField firstNameInput;
+    @FXML private TextField lastNameInput;
     @FXML private TextField teamMemberIDInput;
     @FXML private ChoiceBox<String> rolesInput;
     @FXML private Label errorLabel;
@@ -44,16 +45,17 @@ public class AddEditTeamMemberViewController
     {
         if (viewState.getSelectedTeamMember() > -1)
         {
-            TeamMember teamMember = model.getTeamMembers()
-                .getTeamMemberById(viewState.getSelectedTeamMember());
-            teamMemberNameInput.setText(teamMember.getName().toString());
+            TeamMember teamMember = model.getTeamMemberList(model.getAllProjects().getProjectById(viewState.getSelectedProject())).getTeamMemberById(viewState.getSelectedTeamMember());
+            firstNameInput.setText(teamMember.getName().getFirstName());
+            lastNameInput.setText(teamMember.getName().getLastName());
             teamMemberIDInput.setText(teamMember.getId() + "");
             rolesInput.setAccessibleText(teamMember.getRole());
         }
         else
         {
             this.errorLabel.setText("");
-            this.teamMemberNameInput.setText("");
+            this.firstNameInput.setText("");
+            this.lastNameInput.setText("");
             this.teamMemberIDInput.setText("");
             this.rolesInput.getSelectionModel().clearAndSelect(0);
         }
@@ -68,10 +70,10 @@ public class AddEditTeamMemberViewController
     {
         try
         {
-            if (teamMemberNameInput.getText().equals(""))
+            if (firstNameInput.getText().equals("") && lastNameInput.getText().equals(""))
                 throw new IllegalArgumentException("Name cannot be empty");
-            String firstName = teamMemberNameInput.getText();
-            String lastName = teamMemberNameInput.getText();
+            String firstName = firstNameInput.getText();
+            String lastName = lastNameInput.getText();
             Name name = new Name(firstName, lastName);
 
             int teamMemberID;

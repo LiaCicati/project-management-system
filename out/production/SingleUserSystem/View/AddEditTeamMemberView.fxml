@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0" userData="Team details" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddEditTeamMemberViewController">
+<VBox prefHeight="700.0" prefWidth="700.0" userData="Team details" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddEditTeamMemberViewController">
     <children>
         <Label text="Team member details">
             <font>
@@ -28,19 +28,29 @@
             <children>
                 <HBox prefHeight="78.0" prefWidth="418.0" spacing="30.0">
                     <children>
-                        <Label text="Name">
+                        <Label text="First name">
                             <font>
                                 <Font size="20.0" />
                             </font>
                         </Label>
                         <VBox prefHeight="78.0" prefWidth="164.0">
                             <children>
-                                <TextField fx:id="teamMemberNameInput" prefHeight="26.0" prefWidth="115.0" />
+                                <TextField fx:id="firstNameInput" prefHeight="26.0" prefWidth="115.0" />
                             </children>
                         </VBox>
                     </children>
                 </HBox>
-                <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <children>
+                  <Label text="Last Name">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="lastNameInput" prefHeight="26.0" prefWidth="173.0" />
+               </children>
+            </HBox>
+                <HBox prefHeight="100.0" prefWidth="200.0" spacing="65.0">
                     <children>
                         <Label text="ID">
                             <font>
@@ -54,7 +64,7 @@
                         </TextField>
                     </children>
                 </HBox>
-                <HBox prefHeight="100.0" prefWidth="200.0" spacing="45.0">
+                <HBox prefHeight="100.0" prefWidth="200.0" spacing="88.0">
                     <children>
                         <Label text="Role">
                             <font>
@@ -101,4 +111,3 @@
         <Insets left="30.0" right="30.0" top="30.0" />
     </padding>
 </VBox>
-

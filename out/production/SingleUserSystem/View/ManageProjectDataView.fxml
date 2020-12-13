@@ -28,7 +28,7 @@
                                 <font>
                                     <Font size="18.0" />
                                 </font></Button>
-                            <Button fx:id="editTeamButtonPressed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="46.0" prefWidth="134.0" text="Edit">
+                            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#editTeamMemberButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Edit">
                                 <font>
                                     <Font size="18.0" />
                                 </font></Button>

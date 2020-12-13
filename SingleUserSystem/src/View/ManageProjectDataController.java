@@ -213,6 +213,30 @@ public class ManageProjectDataController
 
     @FXML private void editTeamMemberButtonPressed()
     {
+        try
+        {
+            TeamMemberViewModel selectedItem = teamListTable.getSelectionModel()
+                .getSelectedItem();
+//            TeamMember teamMember = model.getAllProjects()
+//                .getProjectById(viewState.getSelectedProject()).getAllTeamMembers().getTeamMemberById(selectedItem.getIdProperty().get());
+//            //                TeamMember teamMember = model.getTeamMembers().getTeamMemberById(selectedItem.getIdProperty().get());
+//            model.getAllProjects().getProjectById(
+//                viewState.getSelectedProject()).removeTeamMember(teamMember);
+//            viewState
+//                .setSelectedProject(selectedItem.getIdProperty().get());
+//            viewHandler.openView("addEditTeamMember");
+
+//            TeamMember teamMember = model.getTeamMemberList(model.getAllProjects().getProjectById(viewState.getSelectedProject()))
+//                .getTeamMemberById(selectedItem.getIdProperty().getValue());
+            viewState.setSelectedTeamMember(selectedItem.getIdProperty().getValue());
+            viewHandler.openView("addEditTeamMember");
+
+
+        }
+        catch (Exception e)
+        {
+            errorLabelTeamMember.setText("Select a team member from the list");
+        }
 
     }
 
