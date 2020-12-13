@@ -8,7 +8,7 @@ public interface ProjectManagementModel
 
   void addTeamMember(int projectID, TeamMember teamMember);
 
-  void editTeamMember(int projectID, int ID, Name name, int teamMemberID, String role);
+  void editTeamMember(int projectID, int ID, TeamMember teamMember, String role);
 
   void removeTeamMember(TeamMember teamMember);
 

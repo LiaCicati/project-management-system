@@ -17,7 +17,7 @@ public class Name
   {
     setName(firstName, lastName);
   }
-  
+
   /**
    * Getter for the first name of a team member
    * @return the first name
