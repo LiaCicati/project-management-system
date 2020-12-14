@@ -162,6 +162,10 @@ public class TaskList
     return false;
   }
 
+  public boolean contains(Task task) {
+    return tasks.contains(task);
+  }
+
   /**
    * Getting a task from the list at a specific index
    *

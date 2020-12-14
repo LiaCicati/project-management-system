@@ -82,5 +82,16 @@ public class ManageTaskDataViewController
 
   @FXML private void registerHoursButtonPressed()
   {
+    try
+    {
+      TeamMemberViewModel selectedItem = teamTable.getSelectionModel()
+          .getSelectedItem();
+      viewState.setSelectedTask(selectedItem.getIdProperty().getValue());
+      viewHandler.openView("registerHours");
+    }
+    catch (Exception e)
+    {
+      errorLabel.setText("Select a member from the list");
+    }
   }
 }

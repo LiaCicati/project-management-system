@@ -13,6 +13,7 @@ public interface ProjectManagementModel
 
   void removeTeamMember(TeamMember teamMember);
   void removeTeamMemberFromTask(Task task, TeamMember teamMember);
+  public TeamMemberList getAllTeam(Project project, Requirement requirement, Task task);
   void addTask(int requirementID, int projectID, Task task);
   void addTaskToRequirement(Requirement requirement, Task task);
 

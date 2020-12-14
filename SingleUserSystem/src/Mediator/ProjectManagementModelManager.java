@@ -201,7 +201,7 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     return project.getAllRequirements();
   }
 
-  public TaskList getAllTasks(Project project, Requirement requirement)
+  @Override public TaskList getAllTasks(Project project, Requirement requirement)
   {
     if (project.getAllRequirements().contains(requirement))
     {
@@ -209,6 +209,16 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     }
     throw new IllegalArgumentException(
         "The specified requirement was not found");
+  }
+
+  @Override public TeamMemberList getAllTeam(Project project, Requirement requirement, Task task)
+  {
+    if (project.getAllRequirements().contains(requirement) || requirement.getAllTasks().contains(task))
+    {
+      return task.getAllTeamMembers();
+    }
+    throw new IllegalArgumentException(
+        "The specified task was not found");
   }
 
   @Override public ProjectList getAllProjects()
@@ -336,7 +346,7 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     return project.getAllTeamMembers();
   }
 
-  @Override public TeamMember getAllTeamMembers(int projectID, int requirementID, int taskID, int teamMemberID)
+  @Override public TeamMember getAllTeamMembers( int projectID, int requirementID, int taskID, int teamMemberID)
   {
     return projectList.getProjectById(projectID).getAllRequirements().getByID(requirementID).getAllTasks().getTaskByID(taskID).getAllTeamMembers().getTeamMemberById(teamMemberID);
   }
