@@ -2,39 +2,43 @@ package View;
 
 import Mediator.ProjectManagementModel;
 import Model.Project;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import Model.Task;
+import javafx.beans.property.*;
 import Model.TeamMember;
 
 public class TeamMemberViewModel
 {
-    private StringProperty nameProperty;
-    private IntegerProperty idProperty;
-    private StringProperty roleProperty;
+  private StringProperty nameProperty;
+  private IntegerProperty idProperty;
+  private StringProperty roleProperty;
+  private DoubleProperty hoursWorkedProperty;
 
-    public TeamMemberViewModel(TeamMember teamMember)
-    {
-        nameProperty = new SimpleStringProperty(
-            String.valueOf(teamMember.getName()));
-        idProperty = new SimpleIntegerProperty(teamMember.getId());
-        roleProperty = new SimpleStringProperty(teamMember.getRole());
-    }
+  public TeamMemberViewModel(TeamMember teamMember)
+  {
+    nameProperty = new SimpleStringProperty(
+        String.valueOf(teamMember.getName()));
+    idProperty = new SimpleIntegerProperty(teamMember.getId());
+    roleProperty = new SimpleStringProperty(teamMember.getRole());
+    hoursWorkedProperty = new SimpleDoubleProperty(teamMember.getHoursWorked());
+  }
 
+  public StringProperty getNameProperty()
+  {
+    return nameProperty;
+  }
 
-    public StringProperty getNameProperty()
-    {
-        return nameProperty;
-    }
+  public IntegerProperty getIdProperty()
+  {
+    return idProperty;
+  }
 
-    public IntegerProperty getIdProperty()
-    {
-        return idProperty;
-    }
+  public StringProperty getRoleProperty()
+  {
+    return roleProperty;
+  }
 
-    public StringProperty getRoleProperty()
-    {
-        return roleProperty;
-    }
+  public DoubleProperty getHoursWorkedProperty()
+  {
+    return hoursWorkedProperty;
+  }
 }

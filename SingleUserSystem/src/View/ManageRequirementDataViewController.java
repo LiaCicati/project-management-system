@@ -164,6 +164,17 @@ public class ManageRequirementDataViewController
 
   @FXML private void manageDataTaskButtonPressed()
   {
+    try
+    {
+      TaskViewModel selectedItem = taskListTable.getSelectionModel()
+          .getSelectedItem();
+      viewState.setSelectedTask(selectedItem.getTaskIDProperty().getValue());
+      viewHandler.openView("manageTaskData");
+    }
+    catch (Exception e)
+    {
+      errorLabel.setText("Select a task from the list");
+    }
   }
 
   @FXML private void backButtonPressed()

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="701.0" prefWidth="753.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ManageTaskDataViewController">
     <children>
         <Label prefHeight="47.0" prefWidth="135.0" text="Team">
             <font>
@@ -75,10 +75,10 @@
                 </VBox>
                 <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="457.0" prefWidth="470.0">
                     <content>
-                        <TableView prefHeight="490.0" prefWidth="462.0">
+                        <TableView fx:id="teamTable" prefHeight="490.0" prefWidth="462.0">
                             <columns>
-                                <TableColumn prefWidth="220.80005490779877" text="Team member" />
-                                <TableColumn prefWidth="236.00003051757812" text="Total hours" />
+                                <TableColumn fx:id="teamMemberNameColumn" prefWidth="220.80005490779877" text="Team member" />
+                                <TableColumn fx:id="hoursWorkedColumn" prefWidth="236.00003051757812" text="Total hours" />
                             </columns>
                         </TableView>
                     </content>
@@ -93,7 +93,7 @@
                 <Insets top="30.0" />
             </VBox.margin>
             <children>
-                <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Back">
+                <Button mnemonicParsing="false" onAction="#backButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Back">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -103,7 +103,7 @@
                 </Button>
             </children>
         </HBox>
-        <Label text="Item not found" textFill="RED">
+        <Label fx:id="errorLabel" text="Item not found" textFill="RED">
             <font>
                 <Font size="14.0" />
             </font>
