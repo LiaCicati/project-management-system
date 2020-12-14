@@ -9,12 +9,13 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.AddEditTaskViewController">
     <children>
         <Label text="Task details">
             <font>
@@ -24,7 +25,7 @@
                 <Insets left="30.0" top="30.0" />
             </VBox.margin>
         </Label>
-        <HBox prefHeight="506.0" prefWidth="700.0" spacing="20.0">
+        <HBox prefHeight="486.0" prefWidth="700.0" spacing="20.0">
             <children>
                 <VBox maxHeight="-Infinity" prefHeight="431.0" prefWidth="471.0" spacing="40.0">
                     <children>
@@ -35,7 +36,7 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <TextField editable="false" prefHeight="32.0" prefWidth="170.0" />
+                                <TextField fx:id="requirementIDInput" editable="false" prefHeight="32.0" prefWidth="170.0" />
                             </children>
                             <VBox.margin>
                                 <Insets left="30.0" />
@@ -50,7 +51,7 @@
                                 </Label>
                                 <VBox prefHeight="66.0" prefWidth="194.0">
                                     <children>
-                                        <TextField prefHeight="32.0" prefWidth="177.0" />
+                                        <TextField fx:id="taskIDInput" prefHeight="32.0" prefWidth="177.0" />
                                     </children>
                                 </VBox>
                             </children>
@@ -65,7 +66,7 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <TextField prefHeight="32.0" prefWidth="150.0" />
+                                <TextField fx:id="taskTitleInput" prefHeight="32.0" prefWidth="150.0" />
                             </children>
                             <VBox.margin>
                                 <Insets left="30.0" />
@@ -78,23 +79,23 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <ComboBox prefWidth="150.0" />
+                                <ComboBox fx:id="taskResponsibleMemberInput" prefWidth="150.0" />
                             </children>
                             <VBox.margin>
                                 <Insets left="30.0" />
                             </VBox.margin>
                         </HBox>
-                        <HBox prefHeight="57.0" prefWidth="306.0" spacing="55.0">
+                        <HBox prefHeight="86.0" prefWidth="358.0" spacing="28.0">
                             <children>
-                                <Label text="Estimate">
+                                <Label text="Description">
                                     <font>
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
                                 <VBox prefHeight="200.0" prefWidth="100.0">
-                                    <children>
-                                        <TextField promptText="ex: 10 (hours)" />
-                                    </children>
+                           <children>
+                              <TextArea fx:id="taskDescriptionInput" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="195.0" />
+                           </children>
                                 </VBox>
                             </children>
                             <VBox.margin>
@@ -105,7 +106,7 @@
                 </VBox>
                 <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="473.0" prefWidth="376.0" spacing="40.0">
                     <children>
-                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                        <HBox prefHeight="100.0" prefWidth="200.0" spacing="42.0">
                             <children>
                                 <Label text="Status">
                                     <font>
@@ -114,7 +115,7 @@
                                 </Label>
                                 <VBox prefHeight="100.0" prefWidth="146.0" spacing="20.0">
                                     <children>
-                                        <ChoiceBox fx:id="statusInput" prefWidth="150.0" value="Not Started">
+                                        <ChoiceBox fx:id="taskStatusInput" prefWidth="150.0" value="Not Started">
                                             <items>
                                                 <FXCollections fx:factory="observableArrayList">
                                                     <String fx:value="Not Started" />
@@ -134,9 +135,19 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <DatePicker prefHeight="35.0" prefWidth="174.0" />
+                                <DatePicker fx:id="taskDeadlineInput" prefHeight="35.0" prefWidth="174.0" />
                             </children>
                         </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" spacing="25.0">
+                     <children>
+                        <Label text="Estimate">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="taskEstimatedTimeInput" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="32.0" prefWidth="150.0" />
+                     </children>
+                  </HBox>
                     </children></VBox>
             </children>
             <VBox.margin>
@@ -145,7 +156,7 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="62.0" prefWidth="700.0" spacing="36.0">
             <children>
-                <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Save">
+                <Button mnemonicParsing="false" onAction="#saveTaskButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Save">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -153,7 +164,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Cancel">
+                <Button mnemonicParsing="false" onAction="#cancelTaskButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Cancel">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -163,7 +174,7 @@
                 </Button>
             </children>
         </HBox>
-        <Label text="Label error" textFill="RED">
+        <Label fx:id="taskErrorLabel" text="Label error" textFill="RED">
             <font>
                 <Font size="14.0" />
             </font>

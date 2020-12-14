@@ -242,6 +242,7 @@ public class Tests
   {
     System.out
         .println("Status of the requirement: " + requirement1.getStatus());
+    System.out.println(requirement1.countTasks());
     requirement1.getStatus();
     assertEquals("Not Started", requirement1.getStatus());
   }

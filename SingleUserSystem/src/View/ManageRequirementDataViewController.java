@@ -6,13 +6,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import Model.Task;
 import Model.TeamMember;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 
+import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
 
 import java.awt.*;
+import java.util.Optional;
 
 public class ManageRequirementDataViewController
 {
@@ -98,14 +98,67 @@ public class ManageRequirementDataViewController
 
   @FXML private void addTaskButtonPressed()
   {
+    viewState.setSelectedTask(-1);
+    viewHandler.openView("addEditTask");
   }
+
+  private boolean confirmation()
+  {
+    int index = taskListTable.getSelectionModel().getSelectedIndex();
+    TaskViewModel selectedItem = taskListTable.getItems().get(index);
+    if (index >= taskListTable.getItems().size())
+    {
+      return false;
+    }
+    Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+    alert.setTitle("Confirmation");
+    alert.setHeaderText(
+        "Are you sure you wish to remove the following task: "
+            + selectedItem.getTaskIDProperty().get() + "?");
+    Optional<ButtonType> result = alert.showAndWait();
+    return (result.isPresent() && (result.get() == ButtonType.OK));
+  }
+
 
   @FXML private void removeTaskButtonPressed()
   {
+    errorLabel.setText("");
+    try
+    {
+      TaskViewModel selectedItem = taskListTable.getSelectionModel()
+          .getSelectedItem();
+      boolean remove = confirmation();
+      if (remove)
+      {
+        Project project = model.getAllProjects().getProjectById(viewState.getSelectedProject());
+        Requirement requirement = model.getAllRequirements(project).getByID(viewState.getSelectedRequirement());
+        Task task = model.getAllTasks(project, requirement).getTaskByID(selectedItem.getTaskIDProperty().get());
+        model.removeTaskFromRequirement(requirement, task);
+        taskListViewModel.remove(task);
+        taskListTable.getSelectionModel().clearSelection();
+      }
+    }
+    catch (Exception e)
+    {
+      errorLabel
+          .setText("Choose a task you wish to remove from the list");
+    }
   }
 
   @FXML private void editTaskButtonPressed()
   {
+    try
+    {
+      TaskViewModel selectedItem = taskListTable.getSelectionModel()
+          .getSelectedItem();
+      viewState.setSelectedTask(selectedItem.getTaskIDProperty().getValue());
+      viewHandler.openView("addEditTask");
+
+    }
+    catch (Exception e)
+    {
+      errorLabel.setText("Select a task from the list");
+    }
   }
 
   @FXML private void manageDataTaskButtonPressed()
