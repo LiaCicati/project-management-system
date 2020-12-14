@@ -3,6 +3,7 @@
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
@@ -86,7 +87,17 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <ComboBox fx:id="responsibleMemberInput" prefWidth="150.0" promptText="Select from the list" />
+                                <ComboBox fx:id="responsibleMemberInput" prefWidth="150.0" promptText="Select from the list">
+                                <items>
+                                    <FXCollections fx:factory="observableArrayList">
+                                        <String fx:value="Bob Turquoise" />
+                                        <String fx:value="Alan Turing" />
+                                        <String fx:value="Matthew Gubler" />
+                                        <String fx:value="Evan Peters" />
+                                        <String fx:value="Mary Ellen" />
+                                    </FXCollections>
+                                </items>
+                                </ComboBox>
                             </children>
                             <VBox.margin>
                                 <Insets />
@@ -172,11 +183,17 @@
                     <font>
                         <Font size="18.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
                 <Button mnemonicParsing="false" onAction="#requirementCancelButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Cancel">
                     <font>
                         <Font size="18.0" />
                     </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
                 </Button>
             </children>
         </HBox>

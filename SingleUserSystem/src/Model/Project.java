@@ -144,6 +144,7 @@ public class Project
 
     /**
      * Change status of a specific projectchan
+     *
      * @param status the status
      */
     public void changeStatus(String status)
@@ -151,7 +152,9 @@ public class Project
         this.status = status;
     }
 
-    public void editProject(String title, int customerID, String description, MyDate deadline) {
+    public void editProject(String title, int customerID, String description,
+        MyDate deadline)
+    {
         setTitle(title);
         setCustomerID(customerID);
         setDescription(description);
@@ -262,6 +265,7 @@ public class Project
 
     /**
      * Getter for a team member by name
+     *
      * @param name name of the team member
      * @return the team member with the specified name
      */
@@ -279,6 +283,7 @@ public class Project
 
     /**
      * Getter for a team member by ID
+     *
      * @param ID ID of the team member
      * @return the team member with the specified ID
      */
@@ -331,7 +336,8 @@ public class Project
         }
     }
 
-    public void removeRequirement(Requirement requirement) {
+    public void removeRequirement(Requirement requirement)
+    {
         requirementList.removeRequirement(requirement);
     }
 
@@ -357,14 +363,16 @@ public class Project
 
     /**
      * Reorder priority of requirements
-     * @param position position to be swapped
+     *
+     * @param position    position to be swapped
      * @param newPosition position to be swapped to
      */
     public void reorderRequirement(int position, int newPosition)
     {
         try
         {
-            Collections.swap(requirementList.getRequirements(), position, newPosition);
+            Collections
+                .swap(requirementList.getRequirements(), position, newPosition);
         }
         catch (IndexOutOfBoundsException e)
         {
@@ -380,7 +388,7 @@ public class Project
      */
     public String getStatus()
     {
-       RequirementList requirementListCheck = new RequirementList();
+        RequirementList requirementListCheck = new RequirementList();
 
         if (!(status.equals(ENDED)))
         {
@@ -395,7 +403,8 @@ public class Project
                     requirementListCheck.addRequirement(requirement);
                 }
             }
-            if (requirementListCheck.equals(requirementList))
+            if (requirementList.getRequirements()
+                .containsAll(requirementListCheck.getRequirements()))
             {
                 status = ENDED;
             }

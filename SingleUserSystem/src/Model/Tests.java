@@ -341,5 +341,4 @@ public class Tests
     assertEquals("Ended", requirement1.getStatus());
 
   }
-
 }
