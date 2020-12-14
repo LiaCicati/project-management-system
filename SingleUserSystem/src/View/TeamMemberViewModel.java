@@ -19,7 +19,7 @@ public class TeamMemberViewModel
         String.valueOf(teamMember.getName()));
     idProperty = new SimpleIntegerProperty(teamMember.getId());
     roleProperty = new SimpleStringProperty(teamMember.getRole());
-    hoursWorkedProperty = new SimpleDoubleProperty(teamMember.getHoursWorked());
+
   }
 
   public StringProperty getNameProperty()
@@ -37,8 +37,4 @@ public class TeamMemberViewModel
     return roleProperty;
   }
 
-  public DoubleProperty getHoursWorkedProperty()
-  {
-    return hoursWorkedProperty;
-  }
 }

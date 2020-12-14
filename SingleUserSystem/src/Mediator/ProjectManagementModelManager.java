@@ -47,6 +47,7 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     requirement1.addTask(task1);
     requirement1.addTeamMember(teamMember1);
     requirement1.addTeamMember(teamMember2);
+    teamMember1.registerTime(25, task1);
 
   }
 

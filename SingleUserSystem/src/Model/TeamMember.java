@@ -12,7 +12,7 @@ public class TeamMember
   private int id;
   private Name name;
   private String role;
-  private double hoursWorked;
+
 
   /**
    * Constructor for the team member
@@ -25,7 +25,6 @@ public class TeamMember
     this.name = name;
     this.role = "Team member";
     setId(id);
-    this.hoursWorked = 0;
   }
 
   /**
@@ -54,10 +53,7 @@ public class TeamMember
   }
 
 
-  public double getHoursWorked()
-  {
-    return hoursWorked;
-  }
+
   /**
    * Sets the id of a team member
    *

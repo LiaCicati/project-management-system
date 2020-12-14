@@ -101,6 +101,7 @@ public class Task
     return timeSpent;
   }
 
+
   /**
    * Getter for the responsible team member of a task
    *

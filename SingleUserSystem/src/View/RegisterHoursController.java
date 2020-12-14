@@ -33,7 +33,8 @@ public class RegisterHoursController
   {
     this.model = model;
     this.viewHandler = viewHandler;
-    this.teamMemberListViewModel = new TeamMemberListViewModel(model, viewState);
+    this.teamMemberListViewModel = new TeamMemberListViewModel(model,
+        viewState);
     this.viewState = viewState;
     this.root = root;
     reset();
@@ -51,9 +52,9 @@ public class RegisterHoursController
         requirement).getTaskByID(viewState.getSelectedTask());
     // should try to fix this part, so when register button is pressed the name of the team member will appear in the text field
 
-//  TeamMember teamMember = model.getAllTeam(project, requirement, task).getTeamMemberById(viewState.getSelectedTeamMember());
-//    this.teamMemberInput.setText(teamMember.getName() + "");
-        teamMemberListViewModel.update();
+    //  TeamMember teamMember = model.getAllTeam(project, requirement, task).getTeamMemberById(viewState.getSelectedTeamMember());
+    //    this.teamMemberInput.setText(teamMember.getName() + "");
+    teamMemberListViewModel.update();
 
   }
 
@@ -79,7 +80,7 @@ public class RegisterHoursController
         throw new IllegalArgumentException(
             "Estimated time should be a number, indicating the hours, ex : 25.5");
       }
-
+      // here should be a method from the model that will edit the data from the table
       errorLabel.setText("");
       reset();
       viewHandler.openView("manageTaskData");
