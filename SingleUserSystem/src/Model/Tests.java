@@ -320,8 +320,8 @@ public class Tests
     System.out.println("Status of the requirement: " + requirement2.getStatus()); // Approved
     project1.addRequirement(requirement1);
     project1.addRequirement(requirement2);
-    System.out.println(project1.getNumberOfRequirements());
-    System.out.println("Status of the project: " + project1.getStatus()); // should be Ended but returns Started
+    System.out.println("Number of requirements in the project: " + project1.getNumberOfRequirements());
+    System.out.println("Status of the project: " + project1.getStatus()); // Ended
     assertEquals("Ended", project1.getStatus());
   }
 
@@ -338,7 +338,7 @@ public class Tests
     requirement1.addTask(task2);
     System.out.println(requirement1.countTasks());
     System.out.println("Considering that all tasks belonging to the requirement are in ended state, is the requirement ended also? " + requirement1.isEnded()); // should be true
-    System.out.println("Status of the requirement: " + requirement1.getStatus()); // should be in Ended but returns Started
+    System.out.println("Status of the requirement: " + requirement1.getStatus()); // Ended
     assertEquals("Ended", requirement1.getStatus());
 
   }

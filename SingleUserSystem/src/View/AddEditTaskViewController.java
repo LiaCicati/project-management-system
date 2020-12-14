@@ -10,6 +10,8 @@ import javafx.scene.layout.Region;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 
+import java.time.LocalDate;
+
 public class AddEditTaskViewController
 {
   @FXML private TextField requirementIDInput;
@@ -90,7 +92,98 @@ public class AddEditTaskViewController
 
   @FXML private void saveTaskButtonPressed()
   {
-    
+    try
+    {
+      if (taskTitleInput.getText().equals(""))
+        throw new IllegalArgumentException("Title cannot be empty");
+      String taskTitle = taskTitleInput.getText();
+
+      int taskID;
+      if (taskIDInput.getText().equals(""))
+        throw new IllegalArgumentException("Task ID can not be empty");
+      try
+      {
+        taskID = Integer.parseInt(taskIDInput.getText());
+      }
+      catch (NumberFormatException e)
+      {
+        throw new IllegalArgumentException("Task ID should be a number");
+      }
+
+      if (taskDescriptionInput.getText().equals(""))
+        throw new IllegalArgumentException("Description cannot be empty");
+      String taskDescription = taskDescriptionInput.getText();
+
+      TeamMember responsibleTeamMember = new TeamMember(
+          new Name("Bob", "Turquoise"), 2);
+      double estimatedTime;
+      if (taskEstimatedTimeInput.getText().equals(""))
+        throw new IllegalArgumentException("Estimated time can not be empty");
+      try
+      {
+        estimatedTime = Double.parseDouble(taskEstimatedTimeInput.getText());
+      }
+      catch (NumberFormatException e)
+      {
+        throw new IllegalArgumentException(
+            "Estimated time should be a number, indicating the hours, ex : 25.5");
+      }
+      if (taskDeadlineInput.getValue() == null)
+      {
+        taskErrorLabel.setText("A deadline should be added to the task");
+        throw new IllegalStateException(taskErrorLabel.getText());
+      }
+
+      LocalDate today = LocalDate.now();
+      if (taskDeadlineInput.getValue().isBefore(today))
+        throw new IllegalArgumentException(
+            "Deadline can not be set in the past");
+      int day = taskDeadlineInput.getValue().getDayOfMonth();
+      int month = taskDeadlineInput.getValue().getMonthValue();
+      int year = taskDeadlineInput.getValue().getYear();
+      MyDate deadline = new MyDate(day, month, year);
+
+      String status = null;
+      switch (taskStatusInput.getValue())
+      {
+        case "Started":
+          status = Requirement.STARTED;
+          break;
+        case "Ended":
+          status = Requirement.ENDED;
+          break;
+        case "Not Started":
+          status = Requirement.NOT_STARTED;
+          break;
+      }
+      Requirement requirementID = model.getAllProjects()
+          .getProjectById(viewState.getSelectedProject()).getAllRequirements()
+          .getByID(viewState.getSelectedRequirement());
+      Task task = new Task(requirementID, taskID, taskTitle, taskDescription,
+          estimatedTime, responsibleTeamMember, deadline);
+      if (viewState.getSelectedTask() > -1)
+      {
+        //
+      }
+
+      else
+      {
+
+        model.addTask(viewState.getSelectedRequirement(),
+            viewState.getSelectedProject(), task);
+        System.out.println(task);
+      }
+
+      System.out.println(task);
+      taskErrorLabel.setText("");
+      reset();
+      viewHandler.openView("manageRequirementData");
+      taskListViewModel.update();
+    }
+    catch (Exception e)
+    {
+      taskErrorLabel.setText(e.getMessage());
+    }
   }
 
   @FXML private void cancelTaskButtonPressed()

@@ -79,7 +79,17 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <ComboBox fx:id="taskResponsibleMemberInput" prefWidth="150.0" />
+                                <ComboBox fx:id="taskResponsibleMemberInput" prefWidth="150.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="Bob Turquoise" />
+                                            <String fx:value="Alan Turing" />
+                                            <String fx:value="Matthew Gubler" />
+                                            <String fx:value="Evan Peters" />
+                                            <String fx:value="Mary Ellen" />
+                                        </FXCollections>
+                                    </items>
+                                </ComboBox>
                             </children>
                             <VBox.margin>
                                 <Insets left="30.0" />

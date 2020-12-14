@@ -47,8 +47,6 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     requirement1.addTask(task1);
     requirement1.addTeamMember(teamMember1);
     requirement1.addTeamMember(teamMember2);
-    projectList.getProject(0).getAllRequirements().getRequirement(0)
-        .addTask(task1);
 
   }
 
@@ -66,6 +64,12 @@ public class ProjectManagementModelManager implements ProjectManagementModel
       }
     }
     return null;
+  }
+
+  @Override public void addTask( int requirementID, int projectID, Task task)
+  {
+    projectList.getProjectById(projectID).getAllRequirements().getByID(requirementID).addTask(task);
+
   }
 
   @Override public void addTeamMember(int projectID, TeamMember teamMember)
