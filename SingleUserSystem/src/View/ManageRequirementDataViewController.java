@@ -51,13 +51,13 @@ public class ManageRequirementDataViewController
     this.viewHandler = viewHandler;
     this.viewState = viewState;
     this.root = root;
-        this.teamMemberListViewModel = new TeamMemberListViewModel(model,
-            viewState);
+    this.teamMemberListViewModel = new TeamMemberListViewModel(model,
+        viewState);
     this.taskListViewModel = new TaskListViewModel(model, viewState);
     reset();
 
-        requirementIDColumn.setCellValueFactory(
-            cellData -> cellData.getValue().getRequirementIDProperty());
+    requirementIDColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getRequirementIDProperty());
     taskIDColumn.setCellValueFactory(
         cellData -> cellData.getValue().getTaskIDProperty());
     taskTitleColumn.setCellValueFactory(
@@ -81,14 +81,14 @@ public class ManageRequirementDataViewController
     teamRoleColumn
         .setCellValueFactory(cellData -> cellData.getValue().getRoleProperty());
 
-        teamListTable.setItems(teamMemberListViewModel.getList());
+    teamListTable.setItems(teamMemberListViewModel.getList());
   }
 
   public void reset()
   {
     errorLabel.setText("");
     taskListViewModel.update();
-        teamMemberListViewModel.update();
+    teamMemberListViewModel.update();
   }
 
   public Region getRoot()
@@ -113,12 +113,11 @@ public class ManageRequirementDataViewController
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     alert.setTitle("Confirmation");
     alert.setHeaderText(
-        "Are you sure you wish to remove the following task: "
-            + selectedItem.getTaskIDProperty().get() + "?");
+        "Are you sure you wish to remove the following task: " + selectedItem
+            .getTaskIDProperty().get() + "?");
     Optional<ButtonType> result = alert.showAndWait();
     return (result.isPresent() && (result.get() == ButtonType.OK));
   }
-
 
   @FXML private void removeTaskButtonPressed()
   {
@@ -130,9 +129,12 @@ public class ManageRequirementDataViewController
       boolean remove = confirmation();
       if (remove)
       {
-        Project project = model.getAllProjects().getProjectById(viewState.getSelectedProject());
-        Requirement requirement = model.getAllRequirements(project).getByID(viewState.getSelectedRequirement());
-        Task task = model.getAllTasks(project, requirement).getTaskByID(selectedItem.getTaskIDProperty().get());
+        Project project = model.getAllProjects()
+            .getProjectById(viewState.getSelectedProject());
+        Requirement requirement = model.getAllRequirements(project)
+            .getByID(viewState.getSelectedRequirement());
+        Task task = model.getAllTasks(project, requirement)
+            .getTaskByID(selectedItem.getTaskIDProperty().get());
         model.removeTaskFromRequirement(requirement, task);
         taskListViewModel.remove(task);
         taskListTable.getSelectionModel().clearSelection();
@@ -140,8 +142,7 @@ public class ManageRequirementDataViewController
     }
     catch (Exception e)
     {
-      errorLabel
-          .setText("Choose a task you wish to remove from the list");
+      errorLabel.setText("Choose a task you wish to remove from the list");
     }
   }
 

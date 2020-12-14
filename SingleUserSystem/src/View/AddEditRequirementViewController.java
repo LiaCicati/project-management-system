@@ -128,7 +128,8 @@ public class AddEditRequirementViewController
       }
       catch (NumberFormatException e)
       {
-        throw new IllegalArgumentException("Estimated time should be a number, indicating the hours");
+        throw new IllegalArgumentException(
+            "Estimated time should be a number, indicating the hours");
       }
       if (deadlineInput.getValue() == null)
       {

@@ -66,9 +66,10 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     return null;
   }
 
-  @Override public void addTask( int requirementID, int projectID, Task task)
+  @Override public void addTask(int requirementID, int projectID, Task task)
   {
-    projectList.getProjectById(projectID).getAllRequirements().getByID(requirementID).addTask(task);
+    projectList.getProjectById(projectID).getAllRequirements()
+        .getByID(requirementID).addTask(task);
 
   }
 
@@ -98,7 +99,6 @@ public class ProjectManagementModelManager implements ProjectManagementModel
       }
     }
   }
-
 
   @Override public void addTaskToRequirement(Requirement requirement, Task task)
   {
@@ -135,7 +135,6 @@ public class ProjectManagementModelManager implements ProjectManagementModel
   {
     projectList.getProjectById(projectID).addRequirement(requirement);
   }
-
 
   @Override public void removeRequirementFromProject(Project project,
       int requirementID)
@@ -243,11 +242,17 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     return null;
   }
 
-  @Override public void editTask(Task task, String title, String description,
-      double estimatedTime, TeamMember responsibleTeamMember, MyDate deadline)
+  @Override public void editTask(Task task, int taskID, int projectID,
+      int requirementID, String status)
   {
-    task.editTask(title, description, estimatedTime, responsibleTeamMember,
-        deadline);
+    projectList.getProjectById(projectID).getAllRequirements()
+        .getByID(requirementID).getAllTasks().getTaskByID(taskID)
+        .editTask(task.getTitle(), task.getDescription(),
+            task.getEstimatedTime(), task.getResponsibleTeamMember(),
+            task.getDeadline());
+    projectList.getProjectById(projectID).getAllRequirements()
+        .getByID(requirementID).getAllTasks().getTaskByID(taskID)
+        .setStatus(status);
   }
 
   @Override public void editRequirement(int projectID, int ID,

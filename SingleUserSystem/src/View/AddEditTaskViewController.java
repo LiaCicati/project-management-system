@@ -48,19 +48,15 @@ public class AddEditTaskViewController
 
   public void reset()
   {
+    Project project = model.getAllProjects()
+        .getProjectById(viewState.getSelectedProject());
+    Requirement requirement = model.getAllRequirements(project)
+        .getByID(viewState.getSelectedRequirement());
+    Task task = model.getAllTasks(
+        model.getAllProjects().getProjectById(viewState.getSelectedProject()),
+        requirement).getTaskByID(viewState.getSelectedTask());
     if (viewState.getSelectedTask() > -1)
     {
-      //      Task task = model.getAllTasks(
-      //          model.getAllProjects().getProjectById(viewState.getSelectedProject())
-      //              .getAllRequirements().getByID(viewState.getSelectedRequirement()))
-      //          .getTaskByID(viewState.getSelectedTask());
-      Project project = model.getAllProjects()
-          .getProjectById(viewState.getSelectedProject());
-      Requirement requirement = model.getAllRequirements(project)
-          .getByID(viewState.getSelectedRequirement());
-      Task task = model.getAllTasks(
-          model.getAllProjects().getProjectById(viewState.getSelectedProject()),
-          requirement).getTaskByID(viewState.getSelectedTask());
       requirementIDInput.setText(task.getRequirementID() + "");
       taskIDInput.setText(task.getID() + "");
       taskTitleInput.setText(task.getTitle());
@@ -74,8 +70,8 @@ public class AddEditTaskViewController
     else
     {
       this.taskErrorLabel.setText("");
-      //      this.requirementIDInput.setText("");
       this.taskIDInput.setText("");
+      this.requirementIDInput.setText(requirement.getID() + "");
       this.taskTitleInput.setText("");
       this.taskDescriptionInput.setText("");
       this.taskResponsibleMemberInput.getEditor().setText("");
@@ -163,7 +159,9 @@ public class AddEditTaskViewController
           estimatedTime, responsibleTeamMember, deadline);
       if (viewState.getSelectedTask() > -1)
       {
-        //
+
+        model.editTask(task, taskID, viewState.getSelectedProject(),
+            viewState.getSelectedRequirement(), status);
       }
 
       else

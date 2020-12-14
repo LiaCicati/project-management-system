@@ -132,9 +132,10 @@ public class ManageProjectDataController
   {
     try
     {
-      RequirementViewModel selectedItem = requirementListTable.getSelectionModel()
-          .getSelectedItem();
-      viewState.setSelectedRequirement(selectedItem.getRequirementIDProperty().getValue());
+      RequirementViewModel selectedItem = requirementListTable
+          .getSelectionModel().getSelectedItem();
+      viewState.setSelectedRequirement(
+          selectedItem.getRequirementIDProperty().getValue());
       viewHandler.openView("addEditRequirement");
 
     }
