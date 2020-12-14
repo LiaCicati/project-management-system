@@ -40,7 +40,7 @@
                         <DropShadow color="#cdbfbf" />
                      </effect>
                         </Button>
-                        <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: ff8360;" text="Remove">
+                        <Button mnemonicParsing="false" onAction="#removeTeamMemberButtonPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: ff8360;" text="Remove">
                             <font>
                                 <Font size="18.0" />
                             </font>

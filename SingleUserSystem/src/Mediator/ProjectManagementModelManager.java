@@ -131,6 +131,23 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     }
   }
 
+  @Override public void removeTeamMemberFromTask(Task task, TeamMember teamMember)
+  {
+    for (Project project : projectList.getAllProjects())
+    {
+      for (Requirement requirement : project.getAllRequirements().getRequirements())
+      {
+        for(Task taskTest: requirement.getAllTasks().getAllTasks())
+        {
+          if (taskTest.equals(task))
+          {
+            taskTest.removeTeamMember(teamMember);
+          }
+        }
+      }
+    }
+  }
+
   @Override public void addRequirement(int projectID, Requirement requirement)
   {
     projectList.getProjectById(projectID).addRequirement(requirement);
@@ -317,6 +334,11 @@ public class ProjectManagementModelManager implements ProjectManagementModel
   public TeamMemberList getTeamMemberList(Project project)
   {
     return project.getAllTeamMembers();
+  }
+
+  @Override public TeamMember getAllTeamMembers(int projectID, int requirementID, int taskID, int teamMemberID)
+  {
+    return projectList.getProjectById(projectID).getAllRequirements().getByID(requirementID).getAllTasks().getTaskByID(taskID).getAllTeamMembers().getTeamMemberById(teamMemberID);
   }
 
   @Override public Requirement getRequirementByID(int id)

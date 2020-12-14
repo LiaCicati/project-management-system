@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.RegisterEditDataViewController">
     <children>
         <Label text="Register data">
             <font>
@@ -63,7 +63,7 @@
         </VBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="36.0">
             <children>
-                <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Save">
+                <Button mnemonicParsing="false" onAction="#saveDataButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Save">
                     <HBox.margin>
                         <Insets />
                     </HBox.margin>
@@ -74,7 +74,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                 </Button>
-                <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" text="Cancel">
+                <Button mnemonicParsing="false" onAction="#cancelDataButtonPressed" prefHeight="46.0" prefWidth="134.0" text="Cancel">
                     <font>
                         <Font size="18.0" />
                     </font>
@@ -87,7 +87,7 @@
                 <Insets />
             </VBox.margin>
         </HBox>
-        <Label text="Label error" textFill="RED">
+        <Label fx:id="errorLabel" text="Label error" textFill="RED">
             <font>
                 <Font size="14.0" />
             </font></Label>

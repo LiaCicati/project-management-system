@@ -148,7 +148,7 @@ public class AddEditProjectViewController
 
   @FXML private void cancelButtonPressed()
   {
-    reset();
+
     viewHandler.openView("projectList");
   }
 }

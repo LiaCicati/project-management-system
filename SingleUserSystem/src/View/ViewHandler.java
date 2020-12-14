@@ -23,6 +23,7 @@ public class ViewHandler
     private ManageRequirementDataViewController manageRequirementDataViewController;
     private AddEditTaskViewController addEditTaskViewController;
     private ManageTaskDataViewController manageTaskDataViewController;
+    private RegisterEditDataViewController registerEditDataViewController;
 
     public ViewHandler(ProjectManagementModel model)
     {
@@ -70,6 +71,10 @@ public class ViewHandler
                 break;
             case "manageTaskData":
                 root = loadManageTaskDataView("ManageTaskDataView.fxml",
+                    viewState);
+                break;
+            case "registerEditData":
+                root = loadRegisterEditDataView("RegisterEditDataView.fxml",
                     viewState);
                 break;
 
@@ -285,5 +290,30 @@ public class ViewHandler
             manageTaskDataViewController.reset();
         }
         return manageTaskDataViewController.getRoot();
+    }
+
+
+    private Region loadRegisterEditDataView(String fxmlFile, ViewState viewState)
+    {
+        if (registerEditDataViewController == null)
+        {
+            try
+            {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource(fxmlFile));
+                Region root = loader.load();
+                registerEditDataViewController = loader.getController();
+                registerEditDataViewController.init(this, model, root, viewState);
+            }
+            catch (Exception e)
+            {
+                e.printStackTrace();
+            }
+        }
+        else
+        {
+            registerEditDataViewController.reset();
+        }
+        return registerEditDataViewController.getRoot();
     }
 }

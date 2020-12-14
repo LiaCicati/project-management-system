@@ -12,6 +12,7 @@ public interface ProjectManagementModel
       String role);
 
   void removeTeamMember(TeamMember teamMember);
+  void removeTeamMemberFromTask(Task task, TeamMember teamMember);
   void addTask(int requirementID, int projectID, Task task);
   void addTaskToRequirement(Requirement requirement, Task task);
 
@@ -20,6 +21,7 @@ public interface ProjectManagementModel
   public void addRequirement(int projectID, Requirement requirement);
   void editTask(Task task, int taskID, int projectID, int requirementID,
       String status);
+ TeamMember getAllTeamMembers(int projectID, int requirementID, int taskID, int teamMemberID);
 
   public void editRequirement(int projectID, int ID, Requirement requirement,
       String status);
