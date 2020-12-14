@@ -136,7 +136,8 @@ public class Requirement
                     taskListCheck.addTask(task);
                 }
             }
-            if (tasks.getAllTasks().containsAll(taskListCheck.getAllTasks()))
+            if (tasks.getAllTasks().containsAll(taskListCheck.getAllTasks())
+                && tasks.getSize() != 0)
             {
                 status = ENDED;
             }

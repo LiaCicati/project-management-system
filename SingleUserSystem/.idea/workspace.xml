@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Project.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Requirement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Requirement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AddEditTeamMemberViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditTeamMemberViewController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +47,7 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="JUnit.Tests.getStatusOfRequirementWhenAllTasksAreEnded">
-    <configuration name="Tests.getInformationOfAProject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests.getInformationAboutTeamMember" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SingleUserSystem" />
       <extension name="coverage">
         <pattern>
@@ -57,39 +57,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Model" />
       <option name="MAIN_CLASS_NAME" value="Model.Tests" />
-      <option name="METHOD_NAME" value="getInformationOfAProject" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests.getStatusOfARequirement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SingleUserSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Model" />
-      <option name="MAIN_CLASS_NAME" value="Model.Tests" />
-      <option name="METHOD_NAME" value="getStatusOfARequirement" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Tests.getStatusOfATask" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SingleUserSystem" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Model.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Model" />
-      <option name="MAIN_CLASS_NAME" value="Model.Tests" />
-      <option name="METHOD_NAME" value="getStatusOfATask" />
+      <option name="METHOD_NAME" value="getInformationAboutTeamMember" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -127,13 +95,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Tests.getTimeSpentOnARequirement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SingleUserSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.Tests" />
+      <option name="METHOD_NAME" value="getTimeSpentOnARequirement" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tests.setCustomerIDForProject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SingleUserSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Model" />
+      <option name="MAIN_CLASS_NAME" value="Model.Tests" />
+      <option name="METHOD_NAME" value="setCustomerIDForProject" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.Tests.getStatusOfRequirementWhenAllTasksAreEnded" />
         <item itemvalue="JUnit.Tests.getStatusOfProjectIfAllRequirementsAreApproved" />
-        <item itemvalue="JUnit.Tests.getInformationOfAProject" />
-        <item itemvalue="JUnit.Tests.getStatusOfATask" />
-        <item itemvalue="JUnit.Tests.getStatusOfARequirement" />
+        <item itemvalue="JUnit.Tests.getInformationAboutTeamMember" />
+        <item itemvalue="JUnit.Tests.setCustomerIDForProject" />
+        <item itemvalue="JUnit.Tests.getTimeSpentOnARequirement" />
       </list>
     </recent_temporary>
   </component>

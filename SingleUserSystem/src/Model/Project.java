@@ -404,7 +404,8 @@ public class Project
                 }
             }
             if (requirementList.getRequirements()
-                .containsAll(requirementListCheck.getRequirements()))
+                .containsAll(requirementListCheck.getRequirements())
+                && requirementList.getSize() != 0)
             {
                 status = ENDED;
             }
