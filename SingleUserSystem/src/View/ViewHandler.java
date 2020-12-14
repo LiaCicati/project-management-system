@@ -23,7 +23,7 @@ public class ViewHandler
     private ManageRequirementDataViewController manageRequirementDataViewController;
     private AddEditTaskViewController addEditTaskViewController;
     private ManageTaskDataViewController manageTaskDataViewController;
-    private RegisterEditDataViewController registerEditDataViewController;
+    private RegisterHoursController registerHoursController;
 
     public ViewHandler(ProjectManagementModel model)
     {
@@ -73,8 +73,8 @@ public class ViewHandler
                 root = loadManageTaskDataView("ManageTaskDataView.fxml",
                     viewState);
                 break;
-            case "registerEditData":
-                root = loadRegisterEditDataView("RegisterEditDataView.fxml",
+            case "registerHours":
+                root = loadRegisterHoursView("RegisterHoursView.fxml",
                     viewState);
                 break;
 
@@ -293,17 +293,17 @@ public class ViewHandler
     }
 
 
-    private Region loadRegisterEditDataView(String fxmlFile, ViewState viewState)
+    private Region loadRegisterHoursView(String fxmlFile, ViewState viewState)
     {
-        if (registerEditDataViewController == null)
+        if (registerHoursController == null)
         {
             try
             {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource(fxmlFile));
                 Region root = loader.load();
-                registerEditDataViewController = loader.getController();
-                registerEditDataViewController.init(this, model, root, viewState);
+                registerHoursController = loader.getController();
+                registerHoursController.init(this, model, root, viewState);
             }
             catch (Exception e)
             {
@@ -312,8 +312,8 @@ public class ViewHandler
         }
         else
         {
-            registerEditDataViewController.reset();
+            registerHoursController.reset();
         }
-        return registerEditDataViewController.getRoot();
+        return registerHoursController.getRoot();
     }
 }

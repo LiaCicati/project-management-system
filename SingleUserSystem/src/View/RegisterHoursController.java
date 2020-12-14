@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 
-public class RegisterEditDataViewController
+public class RegisterHoursController
 {
   @FXML private ComboBox<String> teamMembers;
   @FXML TextField hoursWorked;
@@ -20,7 +20,7 @@ public class RegisterEditDataViewController
   private ViewHandler viewHandler;
   private ViewState viewState;
 
-  public RegisterEditDataViewController()
+  public RegisterHoursController()
   {
     // Called by FXMLLoader
   }

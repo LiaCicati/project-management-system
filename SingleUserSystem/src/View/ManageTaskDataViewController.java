@@ -3,6 +3,7 @@ package View;
 import Mediator.ProjectManagementModel;
 import Model.*;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
@@ -72,41 +73,14 @@ public class ManageTaskDataViewController
     return (result.isPresent() && (result.get() == ButtonType.OK));
   }
 
-  @FXML private void removeTeamMemberButtonPressed()
-  {
-    errorLabel.setText("");
-    try
-    {
-      TeamMemberViewModel selectedItem = teamTable.getSelectionModel()
-          .getSelectedItem();
-      boolean remove = confirmation();
-      if (remove)
-      {
-        Project project = model.getAllProjects()
-            .getProjectById(viewState.getSelectedProject());
-        Requirement requirement = model.getAllRequirements(project)
-            .getByID(viewState.getSelectedRequirement());
-        Task task = model.getAllTasks(project, requirement)
-            .getTaskByID(viewState.getSelectedTask());
-        TeamMember teamMember = model
-            .getAllTeamMembers(viewState.getSelectedProject(),
-                viewState.getSelectedRequirement(), viewState.getSelectedTask(),
-                selectedItem.getIdProperty().get());
-        model.removeTeamMemberFromTask(task, teamMember);
-        teamMemberListViewModel.remove(teamMember);
-        teamTable.getSelectionModel().clearSelection();
-      }
-    }
-    catch (Exception e)
-    {
-      errorLabel
-          .setText("Choose a team member you wish to remove from the list");
-    }
-  }
 
   @FXML private void backButtonPressed()
   {
     viewState.setSelectedTask(-1);
     viewHandler.openView("manageRequirementData");
+  }
+
+  @FXML private void registerHoursButtonPressed()
+  {
   }
 }

@@ -22,63 +22,14 @@
                 <Insets />
             </VBox.margin>
         </Label>
-        <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="700.0">
+        <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="700.0">
             <children>
-                <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="493.0" prefWidth="218.0" spacing="30.0">
-                    <children>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: C7EFCF;" text="Register">
-                            <font>
-                                <Font size="18.0" />
-                            </font>
-                            <VBox.margin>
-                                <Insets />
-                            </VBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <effect>
-                        <DropShadow color="#cdbfbf" />
-                     </effect>
-                        </Button>
-                        <Button mnemonicParsing="false" onAction="#removeTeamMemberButtonPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: ff8360;" text="Remove">
-                            <font>
-                                <Font size="18.0" />
-                            </font>
-                            <VBox.margin>
-                                <Insets />
-                            </VBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <effect>
-                        <DropShadow color="#c2b4b4" />
-                     </effect>
-                        </Button>
-                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: e8e288;" text="Edit">
-                            <font>
-                                <Font size="18.0" />
-                            </font>
-                            <VBox.margin>
-                                <Insets />
-                            </VBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                     <effect>
-                        <DropShadow color="#c2b5b5" />
-                     </effect>
-                        </Button>
-                    </children>
-                    <padding>
-                        <Insets top="110.0" />
-                    </padding>
-                </VBox>
-                <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="457.0" prefWidth="470.0">
+                <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="343.0" prefWidth="640.0">
                     <content>
-                        <TableView fx:id="teamTable" prefHeight="490.0" prefWidth="462.0">
+                        <TableView fx:id="teamTable" prefHeight="343.0" prefWidth="634.0">
                             <columns>
-                                <TableColumn fx:id="teamMemberNameColumn" prefWidth="220.80005490779877" text="Team member" />
-                                <TableColumn fx:id="hoursWorkedColumn" prefWidth="236.00003051757812" text="Total hours" />
+                                <TableColumn fx:id="teamMemberNameColumn" prefWidth="317.6000007390976" text="Team member" />
+                                <TableColumn fx:id="hoursWorkedColumn" prefWidth="307.199951171875" text="Total hours" />
                             </columns>
                         </TableView>
                     </content>
@@ -88,7 +39,22 @@
                 </ScrollPane>
             </children>
         </HBox>
-        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="56.0" prefWidth="700.0">
+      <HBox alignment="CENTER" prefHeight="102.0" prefWidth="693.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#registerHoursButtonPressed" prefHeight="46.0" prefWidth="134.0" style="-fx-background-color: C7EFCF;" text="Register">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow color="#bdb0b0" />
+               </effect>
+            </Button>
+         </children>
+      </HBox>
+        <HBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="71.0" prefWidth="700.0">
             <VBox.margin>
                 <Insets top="30.0" />
             </VBox.margin>
@@ -108,7 +74,7 @@
                 <Font size="14.0" />
             </font>
             <VBox.margin>
-                <Insets top="15.0" />
+                <Insets bottom="20.0" top="15.0" />
             </VBox.margin>
         </Label>
     </children>
