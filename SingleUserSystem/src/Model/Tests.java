@@ -52,6 +52,85 @@ public class Tests
 
   }
 
+  @Test void getStatusOfProjectCase2()
+  {
+    System.out.println(project3.getNumberOfRequirements()); // 0
+    System.out.println(project3
+        .getStatus()); // Not Started because there are no requirements added to it yet
+    System.out.println(requirement1.getStatus()); // Not Started
+    project3.addRequirement(requirement1);
+    System.out.println("Status: " + project3
+        .getStatus()); // Started because a requirement has been added to the project
+    assertEquals("Started", project3.getStatus()); // Success !
+  }
+
+  @Test void getStatusOfProjectCase3()
+  {
+    System.out.println(project3.getStatus()); // Not Started because empty
+    System.out.println(requirement1.getStatus()); // Not Started
+    project3.addRequirement(requirement1);
+    System.out.println(project3
+        .getStatus()); // Should return Started because a requirement was added to the project
+    System.out.println(requirement1
+        .getStatus()); // Should return Not Started because there are no tasks added to the requirement yet
+    requirement1.addTask(task1);
+    System.out.println(task1
+        .getStatus()); // Not Started because by default it's set to that (can change if edit)
+    System.out.println(requirement1
+        .getStatus()); // Should return Started because a task has been added to the requirement
+    task1.setStatus(Task.ENDED); // change the status to end when editing
+    System.out.println(task1.getStatus()); // Ended
+    System.out.println(requirement1.countTasks()); // 1
+    System.out.println(requirement1
+        .getStatus()); // Should return Ended because all tasks are in Ended state
+    requirement1.setStatus(Requirement.APPROVED); // Approve task
+    System.out.println(requirement1.getStatus()); // Approved
+    System.out.println(project3.getNumberOfRequirements()); // 1
+    System.out.println(project3
+        .getStatus()); // Should return Ended because all requirements belonging to this specific project are Approved
+    assertEquals("Ended", project3.getStatus()); // Success !!
+  }
+
+  @Test void getStatusOfRequirementCase2()
+  {
+    System.out.println(requirement1.getStatus()); // Not Started because empty
+    task1.setStatus(Task.STARTED);
+    task2.setStatus(Task.NOT_STARTED);
+    TaskList taskList = new TaskList();
+    taskList.addTask(task1);
+    taskList.addTask(task2);
+    System.out.println(
+        "Are all the tasks in the list in ended state: " + taskList
+            .areInEndedState()); // false
+    requirement1.addTask(task1);
+    requirement1.addTask(task2);
+    System.out.println(requirement1.countTasks()); // 2
+    System.out.println("Status of the requirement: " + requirement1
+        .getStatus()); // Should be Started
+    assertEquals("Started", requirement1.getStatus());
+
+  }
+
+  @Test void getStatusOfRequirementCase3()
+  {
+    System.out.println(requirement1.getStatus()); // Not Started because empty
+    task1.setStatus(Task.STARTED);
+    task2.setStatus(Task.ENDED);
+    TaskList taskList = new TaskList();
+    taskList.addTask(task1);
+    taskList.addTask(task2);
+    System.out.println(
+        "Are all the tasks in the list in ended state: " + taskList
+            .areInEndedState());
+    requirement1.addTask(task1);
+    requirement1.addTask(task2);
+    System.out.println(requirement1.countTasks()); // 2
+    System.out.println("Status of the requirement: " + requirement1
+        .getStatus()); // Should be Started
+    assertEquals("Started", requirement1.getStatus());
+
+  }
+
   @Test void removeProject()
   {
     // Two array lists are created
@@ -90,10 +169,13 @@ public class Tests
   @Test void editProject()
   {
     // A project with same data as project 1 is created
-    Project projectCheck = new Project("Rental Company", new MyDate(18, 12, 2020), 35, "some description");
+    Project projectCheck = new Project("Rental Company",
+        new MyDate(18, 12, 2020), 35, "some description");
     System.out.println("Before editing data: " + "\n" + project1);
-    project1.editProject("IT Minds", 39, "some description", new MyDate(18, 12, 2020));
-    System.out.println("After editing title and customer ID: " + "\n" + project1);
+    project1.editProject("IT Minds", 39, "some description",
+        new MyDate(18, 12, 2020));
+    System.out
+        .println("After editing title and customer ID: " + "\n" + project1);
     assertNotEquals(projectCheck, project1);
 
   }
@@ -111,11 +193,14 @@ public class Tests
   @Test void editRequirement()
   {
     // A requirement with same data as requirement 1 is created
-    Requirement requirementCheck = new Requirement(23, "some text", Type.FUNCTIONAL,
-        35, teamMember2, new MyDate(12, 1, 2021));
+    Requirement requirementCheck = new Requirement(23, "some text",
+        Type.FUNCTIONAL, 35, teamMember2, new MyDate(12, 1, 2021));
     System.out.println("Before editing: " + "\n" + requirement1);
-    requirement1.editRequirement(39, "some text", Type.NON_FUNCTIONAL, 35, teamMember2, new MyDate(12,1,2021));
-    System.out.println("After editing ID and responsible team member: " + "\n" + requirement1);
+    requirement1
+        .editRequirement(39, "some text", Type.NON_FUNCTIONAL, 35, teamMember2,
+            new MyDate(12, 1, 2021));
+    System.out.println(
+        "After editing ID and responsible team member: " + "\n" + requirement1);
     assertNotEquals(requirementCheck, requirement1);
   }
 
@@ -211,11 +296,13 @@ public class Tests
   @Test void editTask()
   {
     // Task with same data as task 1 is created
-    Task taskCheck = new Task(requirement1, 26, "Some title", "Some description",
-        25.5, teamMember1, new MyDate(19, 3, 2021));
+    Task taskCheck = new Task(requirement1, 26, "Some title",
+        "Some description", 25.5, teamMember1, new MyDate(19, 3, 2021));
     System.out.println("Before editing: " + task1);
-    task1.editTask("Some title", "some description", 35, teamMember2, new MyDate(19, 3, 2021));
-    System.out.println("After editing estimated time and responsible member: " + task1);
+    task1.editTask("Some title", "some description", 35, teamMember2,
+        new MyDate(19, 3, 2021));
+    System.out.println(
+        "After editing estimated time and responsible member: " + task1);
     assertNotEquals(taskCheck, task1);
   }
 
@@ -226,16 +313,6 @@ public class Tests
     System.out
         .println("Time spent on the task : " + task1.getTimeSpent()); // 43.5
     assertEquals(43.5, task1.getTimeSpent());
-  }
-
-  @Test void setStatusOfAProject()
-  {
-    System.out.println(
-        "Status of the project before changes: " + project1.getStatus());
-    project1.changeStatus(Project.STARTED);
-    System.out.println(
-        "Status of the project after changes: " + project1.getStatus());
-    assertEquals("Started", project1.getStatus());
   }
 
   @Test void getStatusOfARequirement()
@@ -267,7 +344,8 @@ public class Tests
   {
     project1.addTeamMember(teamMember1);
     project1.getAllTeamMembers().get(0).changeRole(productOwner.getRole());
-    assertEquals("Product Owner", project1.getAllTeamMembers().get(0).getRole());
+    assertEquals("Product Owner",
+        project1.getAllTeamMembers().get(0).getRole());
   }
 
   @Test void getInformationOfAProject()
@@ -314,31 +392,44 @@ public class Tests
 
   @Test void getStatusOfProjectIfAllRequirementsAreApproved()
   {
-    requirement1.setStatus(Requirement.APPROVED);
-    requirement2.setStatus(Requirement.APPROVED);
-    System.out.println("Status of the requirement: " + requirement1.getStatus()); // Approved
-    System.out.println("Status of the requirement: " + requirement2.getStatus()); // Approved
+    task1.setStatus(Task.ENDED);
+    requirement1.addTask(task1);
+    requirement2.addTask(task2);
     project1.addRequirement(requirement1);
     project1.addRequirement(requirement2);
-    System.out.println("Number of requirements in the project: " + project1.getNumberOfRequirements());
-    System.out.println("Status of the project: " + project1.getStatus()); // Ended
+    requirement1.setStatus(Requirement.APPROVED);
+    requirement2.setStatus(Requirement.APPROVED);
+    System.out.println(
+        "Status of the requirement: " + requirement1.getStatus()); // Approved
+    System.out.println(
+        "Status of the requirement: " + requirement2.getStatus()); // Approved
+    System.out.println("Number of requirements in the project: " + project1
+        .getNumberOfRequirements());
+    System.out
+        .println("Status of the project: " + project1.getStatus()); // Ended
     assertEquals("Ended", project1.getStatus());
   }
 
   @Test void getStatusOfRequirementWhenAllTasksAreEnded()
   {
+    System.out.println(requirement1.getStatus());
     project1.addRequirement(requirement1);
     task1.setStatus(Task.ENDED);
     task2.setStatus(Task.ENDED);
     TaskList taskList = new TaskList();
     taskList.addTask(task1);
     taskList.addTask(task2);
-    System.out.println("Are all the tasks in the list in ended state: " + taskList.areInEndedState());
+    System.out.println(
+        "Are all the tasks in the list in ended state: " + taskList
+            .areInEndedState());
     requirement1.addTask(task1);
     requirement1.addTask(task2);
     System.out.println(requirement1.countTasks());
-    System.out.println("Considering that all tasks belonging to the requirement are in ended state, is the requirement ended also? " + requirement1.isEnded()); // should be true
-    System.out.println("Status of the requirement: " + requirement1.getStatus()); // Ended
+    System.out.println(
+        "Considering that all tasks belonging to the requirement are in ended state, is the requirement ended also? "
+            + requirement1.isEnded());
+    System.out.println(
+        "Status of the requirement: " + requirement1.getStatus()); // Ended
     assertEquals("Ended", requirement1.getStatus());
 
   }

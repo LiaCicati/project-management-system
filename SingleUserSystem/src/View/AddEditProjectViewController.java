@@ -55,7 +55,7 @@ public class AddEditProjectViewController
       projectTitleInput.setText(project.getTitle());
       projectCustomerIDInput.setText(project.getCustomerID() + "");
       projectDescriptionInput.setText(project.getDescription());
-      deadlineInput.setAccessibleText(project.getDeadline() + "");
+      deadlineInput.getEditor().setText(project.getDeadline() + "");
       statusInput.setAccessibleText(project.getStatus());
     }
     else
@@ -64,7 +64,7 @@ public class AddEditProjectViewController
       this.projectTitleInput.setText("");
       this.projectCustomerIDInput.setText("");
       this.projectDescriptionInput.setText("");
-      this.deadlineInput.getEditor().clear();
+      this.deadlineInput.setAccessibleText("");
       this.statusInput.getSelectionModel().clearAndSelect(0);
     }
   }
@@ -112,7 +112,7 @@ public class AddEditProjectViewController
       MyDate deadline = new MyDate(day, month, year);
 
       Project project = new Project(title, deadline, customerID, description);
-      String status = null;
+      String status = statusInput.getValue();
       switch (statusInput.getValue())
       {
         case "Started":
@@ -133,6 +133,7 @@ public class AddEditProjectViewController
 
       else
       {
+        model.changeStatus(project, status);
         model.addProject(project, title, customerID);
       }
       errorLabel.setText("");

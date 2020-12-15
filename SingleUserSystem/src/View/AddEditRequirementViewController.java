@@ -15,7 +15,7 @@ public class AddEditRequirementViewController
   @FXML private TextField requirementIdInput;
   @FXML private ChoiceBox<String> typeInput;
   @FXML private TextArea userStoryInput;
-  @FXML private ComboBox<String> responsibleMemberInput;
+  @FXML private ComboBox<TeamMemberViewModel> responsibleMemberInput;
   @FXML private TextField estimatedTimeInput;
   @FXML private TextField workedHoursInput;
   @FXML private ChoiceBox<String> statusInput;
@@ -25,6 +25,7 @@ public class AddEditRequirementViewController
   private Region root;
   private ProjectManagementModel model;
   private RequirementListViewModel requirementListViewModel;
+  private TeamMemberListViewModel teamMemberListViewModel;
   private ViewHandler viewHandler;
   private ViewState viewState;
 
@@ -119,6 +120,7 @@ public class AddEditRequirementViewController
 
       TeamMember responsibleTeamMember = new TeamMember(
           new Name("Bob", "Turquoise"), 2);
+      responsibleMemberInput.setItems(teamMemberListViewModel.getList());
       double estimatedTime;
       if (estimatedTimeInput.getText().equals(""))
         throw new IllegalArgumentException("Estimated time can not be empty");

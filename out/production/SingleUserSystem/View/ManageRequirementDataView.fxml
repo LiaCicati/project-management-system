@@ -25,9 +25,9 @@
                      <children>
                               <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="639.0">
                                   <children>
-                                      <ScrollPane prefHeight="387.0" prefWidth="639.0">
+                                      <ScrollPane prefHeight="394.0" prefWidth="639.0">
                                           <content>
-                                              <TableView fx:id="taskListTable" prefHeight="375.0" prefWidth="686.0">
+                                              <TableView fx:id="taskListTable" prefHeight="380.0" prefWidth="686.0">
                                                   <columns>
                                                       <TableColumn fx:id="requirementIDColumn" prefWidth="104.0000057220459" text="Requirement ID" />
                                           <TableColumn fx:id="taskIDColumn" prefWidth="64.79998779296875" text="ID" />
