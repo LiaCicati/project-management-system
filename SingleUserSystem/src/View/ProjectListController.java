@@ -2,14 +2,12 @@ package View;
 
 import Mediator.ProjectManagementModel;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.Region;
 import Model.*;
 
-import java.awt.event.MouseEvent;
 import java.util.Optional;
 
 /**
@@ -24,7 +22,7 @@ public class ProjectListController
   @FXML private TableColumn<ProjectViewModel, String> projectDeadlineColumn;
   @FXML private TableColumn<ProjectViewModel, String> projectStatusColumn;
   @FXML private Label errorLabel;
-//  ObservableList<ProjectViewModel> list;
+
   private Region root;
   private ProjectManagementModel model;
   private ViewHandler viewHandler;
@@ -72,13 +70,11 @@ public class ProjectListController
     return root;
   }
 
-
   @FXML private void addProjectButtonPressed()
   {
     viewState.setSelectedProject(-1);
     viewHandler.openView("addEditProject");
   }
-
 
   @FXML private void editProjectButtonPressed()
   {
@@ -86,15 +82,13 @@ public class ProjectListController
     {
       ProjectViewModel selectedItem = projectListTable.getSelectionModel()
           .getSelectedItem();
-      viewState
-          .setSelectedProject(selectedItem.getCustomerIDProperty().get());
+      viewState.setSelectedProject(selectedItem.getCustomerIDProperty().get());
       viewHandler.openView("addEditProject");
     }
     catch (Exception e)
     {
       errorLabel.setText("Select a project from the list");
     }
-
 
   }
 

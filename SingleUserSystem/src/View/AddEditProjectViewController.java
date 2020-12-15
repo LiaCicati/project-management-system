@@ -42,7 +42,6 @@ public class AddEditProjectViewController
     this.viewState = viewState;
     this.root = root;
     reset();
-    //    saveProject.setDisable(true);
     errorLabel.setText("");
   }
 

@@ -101,7 +101,6 @@ public class Task
     return timeSpent;
   }
 
-
   /**
    * Getter for the responsible team member of a task
    *
@@ -331,6 +330,6 @@ public class Task
         + "Responsible team member:" + responsibleTeamMember + "\n"
         + "Estimated time:" + estimatedTime + "\n" + "Time spent:" + timeSpent
         + "\n" + "Deadline" + deadline + "\n" + "Team Members:" + teamMembers
-        + "\n" + "Status" + status;
+        + "\n" + "Status: " + status;
   }
 }

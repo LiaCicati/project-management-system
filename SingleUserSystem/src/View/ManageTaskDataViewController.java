@@ -2,8 +2,6 @@ package View;
 
 import Mediator.ProjectManagementModel;
 import Model.*;
-
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
@@ -40,8 +38,6 @@ public class ManageTaskDataViewController
     reset();
     teamMemberNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
-//    hoursWorkedColumn.setCellValueFactory(
-//        cellData -> cellData.getValue().);
     teamTable.setItems(teamMemberListViewModel.getList());
   }
 
@@ -72,7 +68,6 @@ public class ManageTaskDataViewController
     Optional<ButtonType> result = alert.showAndWait();
     return (result.isPresent() && (result.get() == ButtonType.OK));
   }
-
 
   @FXML private void backButtonPressed()
   {

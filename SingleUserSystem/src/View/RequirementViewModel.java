@@ -64,9 +64,11 @@ public class RequirementViewModel
     return typeProperty;
   }
 
-  public StringProperty getStatusProperty() {
+  public StringProperty getStatusProperty()
+  {
     return statusProperty;
   }
+
   public IntegerProperty getHoursWorkedProperty()
   {
     return hoursWorkedProperty;

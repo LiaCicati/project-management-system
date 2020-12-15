@@ -131,7 +131,6 @@ public class Tests
 
   }
 
-
   @Test void removeProject()
   {
     // Two array lists are created

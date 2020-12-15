@@ -33,8 +33,7 @@ public class TaskViewModel
     taskDeadlineProperty = new SimpleStringProperty(
         task.getDeadline().toString());
     taskStatusProperty = new SimpleStringProperty(task.getStatus());
-    hoursWorkedProperty = new SimpleIntegerProperty(
-        ((int) hoursWorked));
+    hoursWorkedProperty = new SimpleIntegerProperty(((int) hoursWorked));
 
   }
 

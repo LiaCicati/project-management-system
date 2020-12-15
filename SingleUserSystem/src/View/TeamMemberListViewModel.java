@@ -38,8 +38,6 @@ public class TeamMemberListViewModel
     }
   }
 
-
-
   public void remove(TeamMember teamMember)
   {
     for (int i = 0; i < list.size(); i++)

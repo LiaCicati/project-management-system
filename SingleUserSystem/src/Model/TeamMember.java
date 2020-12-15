@@ -13,7 +13,6 @@ public class TeamMember
   private Name name;
   private String role;
 
-
   /**
    * Constructor for the team member
    *
@@ -37,8 +36,8 @@ public class TeamMember
     return name;
   }
 
-
-  public String getRole() {
+  public String getRole()
+  {
     return role;
   }
 
@@ -51,7 +50,6 @@ public class TeamMember
   {
     return id;
   }
-
 
   /**
    * Sets the id of a team member
@@ -100,15 +98,16 @@ public class TeamMember
 
   /**
    * Editing team member's data
+   *
    * @param name the name
-   * @param id the id
+   * @param id   the id
    */
   public void editTeamMember(Name name, int id)
   {
     setName(name);
     setId(id);
   }
-  
+
   public void changeRole(String role)
   {
     this.role = role;

@@ -38,31 +38,14 @@ public class RequirementListViewModel
     }
   }
 
-  //  public void remove(Requirement requirement)
-  //  {
-  //    for (int i = 0; i < list.size(); i++)
-  //    {
-  //      if (list.get(i).getRequirementIDProperty().get() == requirement.getID()
-  //          && list.get(i).getDeadlineProperty().get()
-  //          .equals(requirement.getDeadline()) && list.get(i)
-  //          .getResponsibleTeamMemberProperty().get().equals(requirement
-  //              .getResponsibleTeamMember()))// && list.get(i).getEstimatedtimeProperty()== requirement.getEstimatedTime())
-  //      {
-  //        list.remove(i);
-  //        break;
-  //      }
-  //    }
-  //  }
-
   public void remove(Requirement requirement)
   {
     for (int i = 0; i < list.size(); i++)
     {
-      if (list.get(i).getRequirementIDProperty().getValue() == (requirement.getID())
-          && list.get(i).getUserStoryProperty().getValue()
-          .equals(requirement.getUserStory()) && list.get(i)
-          .getStatusProperty().getValue()
-          .equals(requirement.getStatus()) && list.get(i)
+      if (list.get(i).getRequirementIDProperty().getValue() == (requirement
+          .getID()) && list.get(i).getUserStoryProperty().getValue()
+          .equals(requirement.getUserStory()) && list.get(i).getStatusProperty()
+          .getValue().equals(requirement.getStatus()) && list.get(i)
           .getDeadlineProperty().getValue()
           .equals(requirement.getDeadline().toString()))
       {

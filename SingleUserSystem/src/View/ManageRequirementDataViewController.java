@@ -5,13 +5,11 @@ import Model.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import Model.Task;
-import Model.TeamMember;
 import javafx.scene.control.*;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
 
-import java.awt.*;
 import java.util.Optional;
 
 public class ManageRequirementDataViewController

@@ -51,7 +51,7 @@ public class TaskList
       if (tasks.get(i).getID() == ID)
         return tasks.get(i);
     }
-    throw new IllegalArgumentException("The task with this id could not be found");
+    return null;
   }
 
   /**
@@ -162,7 +162,14 @@ public class TaskList
     return false;
   }
 
-  public boolean contains(Task task) {
+  /**
+   * Checks if a specified task is part of the list
+   *
+   * @param task the specified task
+   * @return true if the task was found in the list and false if not
+   */
+  public boolean contains(Task task)
+  {
     return tasks.contains(task);
   }
 

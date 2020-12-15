@@ -1,8 +1,5 @@
 package View;
 
-import Mediator.ProjectManagementModel;
-import Model.Project;
-import Model.Task;
 import javafx.beans.property.*;
 import Model.TeamMember;
 

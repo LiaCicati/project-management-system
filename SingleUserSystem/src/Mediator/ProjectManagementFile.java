@@ -8,6 +8,6 @@ public class ProjectManagementFile
 
   public ProjectManagementFile(String fileName)
   {
-    fileName=file.getName();
+    fileName = file.getName();
   }
 }

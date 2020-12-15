@@ -13,18 +13,20 @@ public interface ProjectManagementModel
 
   void removeTeamMember(TeamMember teamMember);
   void removeTeamMemberFromTask(Task task, TeamMember teamMember);
-  public TeamMemberList getAllTeam(Project project, Requirement requirement, Task task);
+  TeamMemberList getAllTeam(Project project, Requirement requirement,
+      Task task);
   void addTask(int requirementID, int projectID, Task task);
   void addTaskToRequirement(Requirement requirement, Task task);
 
   void removeTaskFromRequirement(Requirement requirement, Task task);
 
-  public void addRequirement(int projectID, Requirement requirement);
+  void addRequirement(int projectID, Requirement requirement);
   void editTask(Task task, int taskID, int projectID, int requirementID,
       String status);
- TeamMember getAllTeamMembers(int projectID, int requirementID, int taskID, int teamMemberID);
+  TeamMember getAllTeamMembers(int projectID, int requirementID, int taskID,
+      int teamMemberID);
 
-  public void editRequirement(int projectID, int ID, Requirement requirement,
+  void editRequirement(int projectID, int ID, Requirement requirement,
       String status);
 
   void removeRequirementFromProject(Project project, int requirementID);
@@ -36,7 +38,6 @@ public interface ProjectManagementModel
   TeamMemberList getAllTeamMembers(Project project);
 
   TaskList getAllTasks(Requirement requirement);
-
 
   RequirementList getAllRequirements(Project project);
   TaskList getAllTasks(Project project, Requirement requirement);
@@ -59,28 +60,17 @@ public interface ProjectManagementModel
 
   TeamMember getTeamMemberById(int ID);
 
-  //  void editTask(Task task, String title, String description,
-  //      double estimatedTime, TeamMember responsibleTeamMember, MyDate deadline);
-
-  //  void editRequirement(Requirement requirement, int ID, double estimatedTime,
-  //      TeamMember responsibleTeamMember, MyDate deadline);
-
   void changeStatus(Project project, String status);
 
   void changeRole(TeamMember teamMember, String role);
 
   void editProject(int projectID, String title, int customerID,
       String description, MyDate deadline, String status);
-
-  public Project getProject(int index);
+  Project getProject(int index);
 
   Project getProjectByID(int id);
 
   TeamMember getTeamMemberAtIndex(int projectID, int index);
-
-  //  Requirement getRequirement(int index);
-  //
-  //  Requirement getRequirementByID(int index);
 
   public TeamMemberList getTeamMembers();
 
@@ -90,6 +80,6 @@ public interface ProjectManagementModel
 
   public Requirement getRequirementByID(int id);
 
-  void addHours(int projectID, int requirementID, int taskID,
-        int teamMemberID, double hours);
+  void addHours(int projectID, int requirementID, int taskID, int teamMemberID,
+      double hours);
 }

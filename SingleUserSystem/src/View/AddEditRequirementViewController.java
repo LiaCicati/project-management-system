@@ -42,7 +42,6 @@ public class AddEditRequirementViewController
     this.viewState = viewState;
     this.root = root;
     reset();
-    //    saveProject.setDisable(true);
     errorLabel.setText("");
   }
 
@@ -50,8 +49,6 @@ public class AddEditRequirementViewController
   {
     if (viewState.getSelectedRequirement() > -1)
     {
-      //      Requirement requirement = model.getAllRequirements()
-      //          .getByID(viewState.getSelectedRequirement());
       Requirement requirement = model.getAllRequirements(
           model.getAllProjects().getProjectById(viewState.getSelectedProject()))
           .getByID(viewState.getSelectedRequirement());
@@ -63,16 +60,17 @@ public class AddEditRequirementViewController
           .setAccessibleText(requirement.getResponsibleTeamMember() + "");
       estimatedTimeInput.setText(requirement.getEstimatedTime() + "");
       statusInput.setAccessibleText(requirement.getStatus());
-      deadlineInput.setAccessibleText(requirement.getDeadline() + "");
+      deadlineInput.getEditor().setText(requirement.getDeadline() + "");
     }
     else
     {
       this.errorLabel.setText("");
       this.requirementIdInput.setText("");
+      this.requirementIdInput.setEditable(true);
       this.typeInput.getSelectionModel().clearAndSelect(0);
       this.userStoryInput.setText("");
       this.responsibleMemberInput.getSelectionModel().clearAndSelect(0);
-
+      this.estimatedTimeInput.setText("");
       this.statusInput.getSelectionModel().clearAndSelect(0);
       this.deadlineInput.getEditor().setText("");
     }
@@ -119,7 +117,7 @@ public class AddEditRequirementViewController
 
       TeamMember responsibleTeamMember = new TeamMember(
           new Name("Bob", "Turquoise"), 2);
-//      responsibleMemberInput.setItems(teamMemberListViewModel.getList());
+      //      responsibleMemberInput.setItems(teamMemberListViewModel.getList());
       double estimatedTime;
       if (estimatedTimeInput.getText().equals(""))
         throw new IllegalArgumentException("Estimated time can not be empty");
@@ -180,10 +178,8 @@ public class AddEditRequirementViewController
       else
       {
         model.addRequirement(viewState.getSelectedProject(), requirement);
-        System.out.println(requirement);
       }
 
-      System.out.println(requirement);
       errorLabel.setText("");
       reset();
       viewHandler.openView("manageProjectData");

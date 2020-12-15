@@ -1,6 +1,5 @@
 package Model;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.InputMismatchException;
 
@@ -139,11 +138,17 @@ public class Project
    */
   public void addTeamMember(TeamMember teamMember)
   {
+    for (int i = 0; i < teamMemberList.getSize(); i++)
+      if (teamMemberList.get(i).getId() == teamMember.getId())
+      {
+        throw new IllegalArgumentException(
+            "A team member with this ID already exists");
+      }
     teamMemberList.addTeamMember(teamMember);
   }
 
   /**
-   * Change status of a specific projectchan
+   * Change status of a specific project
    *
    * @param status the status
    */
@@ -171,6 +176,12 @@ public class Project
     teamMemberList.removeTeamMember(teamMember);
   }
 
+  /**
+   * Gets a team member from the list
+   *
+   * @param teamMember the specified team member
+   * @return the team member if it finds it in the list or null if not
+   */
   public TeamMember getTeamMember(TeamMember teamMember)
   {
     for (TeamMember member : teamMemberList.getAllTeamMembers())
@@ -183,6 +194,12 @@ public class Project
     return null;
   }
 
+  /**
+   * Gets a team member at a specified index from the list
+   *
+   * @param index the specified index
+   * @return the team member
+   */
   public TeamMember getTeamMemberAtIndex(int index)
   {
     return teamMemberList.get(index);
@@ -313,6 +330,13 @@ public class Project
    */
   public void addRequirement(Requirement requirement)
   {
+    for (int i = 0; i < requirementList.getSize(); i++)
+      if (requirementList.getRequirement(i).getID() == requirement.getID())
+      {
+        throw new IllegalArgumentException(
+            "A requirement with this ID already exists");
+      }
+
     requirementList.addRequirement(requirement);
   }
 
@@ -386,7 +410,7 @@ public class Project
    *
    * @return the project status
    */
-  public String getStatus() // updated
+  public String getStatus()
   {
     if (requirementList.getSize() != 0) // if requirement list is not empty
     {
@@ -418,7 +442,8 @@ public class Project
         for (int i = 0; i < requirementList
             .getSize(); i++) // loop through all requirement list
         {
-          if (!requirementList.getRequirement(i).isApproved()) // if none is Approved go to next statement
+          if (!requirementList.getRequirement(i)
+              .isApproved()) // if none is Approved go to next statement
           {
             check = false;
             break;
@@ -441,33 +466,6 @@ public class Project
     }
     return status;
   }
-// Previous
-//  public String getStatus()
-//  {
-//    RequirementList requirementListCheck = new RequirementList();
-//
-//    if (!(status.equals(ENDED)))
-//    {
-//      for (Requirement requirement : requirementList.getRequirements())
-//      {
-//        if (!(requirement.getStatus().equals(NOT_STARTED)))
-//        {
-//          status = STARTED;
-//        }
-//        if (requirement.isApproved())
-//        {
-//          requirementListCheck.addRequirement(requirement);
-//        }
-//      }
-//      if (requirementList.getRequirements()
-//          .containsAll(requirementListCheck.getRequirements())
-//          && requirementList.getSize() != 0)
-//      {
-//        status = ENDED;
-//      }
-//    }
-//    return status;
-//  }
 
   /**
    * Equals method

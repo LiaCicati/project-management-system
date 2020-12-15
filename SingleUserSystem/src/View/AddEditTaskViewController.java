@@ -66,7 +66,7 @@ public class AddEditTaskViewController
           .setAccessibleText(task.getResponsibleTeamMember() + "");
       taskEstimatedTimeInput.setText(task.getEstimatedTime() + "");
       taskStatusInput.setAccessibleText(task.getStatus());
-      taskDeadlineInput.setAccessibleText(task.getDeadline() + "");
+      taskDeadlineInput.getEditor().setText(requirement.getDeadline() + "");
     }
     else
     {
@@ -161,7 +161,6 @@ public class AddEditTaskViewController
           estimatedTime, responsibleTeamMember, deadline);
       if (viewState.getSelectedTask() > -1)
       {
-        System.out.println(viewState.getSelectedTask());
         model.editTask(task, taskID, viewState.getSelectedProject(),
             viewState.getSelectedRequirement(), status);
       }
@@ -171,10 +170,8 @@ public class AddEditTaskViewController
 
         model.addTask(viewState.getSelectedRequirement(),
             viewState.getSelectedProject(), task);
-        System.out.println(task);
       }
 
-      System.out.println(task);
       taskErrorLabel.setText("");
       reset();
       viewHandler.openView("manageRequirementData");

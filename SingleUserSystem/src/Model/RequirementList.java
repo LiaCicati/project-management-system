@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.InputMismatchException;
 
 /**
- * @author
+ * @author Lia Cicati
  * @version v.1 3d December 2020
  */
 public class RequirementList
@@ -40,9 +40,11 @@ public class RequirementList
     requirements.remove(requirement);
   }
 
-  public void removeRequirementById(int requirementID) {
+  public void removeRequirementById(int requirementID)
+  {
     requirements.remove(requirementID);
   }
+
   /**
    * Getting all requirements
    *
@@ -78,10 +80,16 @@ public class RequirementList
     return null;
   }
 
-  public boolean contains(Requirement requirement) {
+  /**
+   * Checks if the list contains a specified requirement
+   *
+   * @param requirement the specified requirement
+   * @return true if the requirement was found in the list and false if not
+   */
+  public boolean contains(Requirement requirement)
+  {
     return requirements.contains(requirement);
   }
-
 
   /**
    * Getting a requirement by its responsible team member
@@ -158,7 +166,6 @@ public class RequirementList
     return requirements.get(index);
   }
 
-
   /**
    * Getting the total number of requirements from the list
    *
@@ -189,6 +196,7 @@ public class RequirementList
 
   /**
    * Checking if requirements are in ended state
+   *
    * @return true if all requirements from the list are in ended state and false if not
    */
   public boolean areInEndedState()

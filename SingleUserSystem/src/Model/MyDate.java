@@ -1,8 +1,6 @@
 package Model;
 
 import java.util.InputMismatchException;
-import java.util.Objects;
-
 
 /**
  * @version v.2 7th December 2020
@@ -213,16 +211,17 @@ public class MyDate
 
   /**
    * Creating a new instance of the class of current object
+   *
    * @return the new instance of MyDate object
    */
   public MyDate copy()
   {
-    MyDate other = new MyDate(day, month, year);
-    return other;
+    return new MyDate(day, month, year);
   }
 
   /**
    * Checking if two dates are the same
+   *
    * @param obj object to be compared to
    * @return a boolean indicating if two instances are similar
    */
@@ -238,6 +237,7 @@ public class MyDate
 
   /**
    * Getting all the needed information about the created date
+   *
    * @return a string containing the date
    */
   public String toString()

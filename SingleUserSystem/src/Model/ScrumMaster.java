@@ -7,8 +7,9 @@ public class ScrumMaster extends TeamMember
 {
   /**
    * Constructor for the scrum master member
+   *
    * @param name the name of the scrum master
-   * @param id the id of the scrum master
+   * @param id   the id of the scrum master
    */
   public ScrumMaster(Name name, int id)
   {
@@ -17,6 +18,7 @@ public class ScrumMaster extends TeamMember
 
   /**
    * Getter for the role of the team member
+   *
    * @return the role
    */
   public String getRole()

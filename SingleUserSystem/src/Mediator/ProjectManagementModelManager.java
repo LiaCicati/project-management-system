@@ -77,7 +77,6 @@ public class ProjectManagementModelManager implements ProjectManagementModel
 
   @Override public void addTeamMember(int projectID, TeamMember teamMember)
   {
-    System.out.println(projectList.getProjectById(projectID));
     projectList.getProjectById(projectID).addTeamMember(teamMember);
   }
 
@@ -171,17 +170,6 @@ public class ProjectManagementModelManager implements ProjectManagementModel
 
   @Override public void addProject(Project project, String title, int ID)
   {
-    for (int i = 0; i < projectList.getNumberOfProjects(); i++)
-      if (projectList.getProject(i).getTitle().equals(title))
-      {
-        throw new IllegalArgumentException(
-            "A project with this title already exists");
-      }
-      else if (projectList.getProject(i).getCustomerID() == ID)
-      {
-        throw new IllegalArgumentException(
-            "A project with this ID already exists");
-      }
     projectList.addProject(project);
   }
 
@@ -213,7 +201,7 @@ public class ProjectManagementModelManager implements ProjectManagementModel
       return requirement.getAllTasks();
     }
     throw new IllegalArgumentException(
-        "The specified requirement was not found");
+        "Could not find any tasks belonging to this requirement");
   }
 
   @Override public TeamMemberList getAllTeam(Project project,
@@ -224,7 +212,8 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     {
       return task.getAllTeamMembers();
     }
-    throw new IllegalArgumentException("The specified task was not found");
+    throw new IllegalArgumentException(
+        "Could not find any team members belonging to this task");
   }
 
   @Override public ProjectList getAllProjects()
@@ -375,13 +364,10 @@ public class ProjectManagementModelManager implements ProjectManagementModel
   @Override public void addHours(int projectID, int requirementID, int taskID,
       int teamMemberID, double hours)
   {
-    //        projectList.getProjectById(projectID).getAllTeamMembers()
-    //            .getTeamMemberById(teamMemberID).registerTime(hours,
-    //            projectList.getProjectById(projectID).getAllRequirements()
-    //                .getByID(requirementID).getAllTasks().getTaskByID(taskID));
     projectList.getProjectById(projectID).getAllRequirements()
         .getByID(requirementID).getAllTasks().getTaskByID(taskID)
-        .getAllTeamMembers().getTeamMemberById(teamMemberID)
-        .registerTime(hours, projectList.getProjectById(projectID).getAllRequirements().getByID(requirementID).getAllTasks().getTaskByID(taskID));
+        .getAllTeamMembers().getTeamMemberById(teamMemberID).registerTime(hours,
+        projectList.getProjectById(projectID).getAllRequirements()
+            .getByID(requirementID).getAllTasks().getTaskByID(taskID));
   }
 }

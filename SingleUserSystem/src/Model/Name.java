@@ -10,8 +10,9 @@ public class Name
 
   /**
    * Constructor for the name of a team member
+   *
    * @param firstName the first name of team member
-   * @param lastName the last name of team member
+   * @param lastName  the last name of team member
    */
   public Name(String firstName, String lastName)
   {
@@ -20,6 +21,7 @@ public class Name
 
   /**
    * Getter for the first name of a team member
+   *
    * @return the first name
    */
   public String getFirstName()
@@ -29,6 +31,7 @@ public class Name
 
   /**
    * Getter for the last name of a team member
+   *
    * @return the last name
    */
   public String getLastName()
@@ -38,6 +41,7 @@ public class Name
 
   /**
    * Getter for the full name of a team member
+   *
    * @return the full name
    */
   public String getFullName()
@@ -47,6 +51,7 @@ public class Name
 
   /**
    * Getter for the formal name of a team member
+   *
    * @return the formal name
    */
   public String getFormalName()
@@ -56,8 +61,9 @@ public class Name
 
   /**
    * Setter for the name of a team member
+   *
    * @param firstName the first name
-   * @param lastName the last time
+   * @param lastName  the last time
    */
   public void setName(String firstName, String lastName)
   {
@@ -67,6 +73,7 @@ public class Name
 
   /**
    * Checking if two names are the same
+   *
    * @param obj object to be compared to
    * @return a boolean indicating if two instances are similar
    */
@@ -82,6 +89,7 @@ public class Name
 
   /**
    * Getting the team member's name
+   *
    * @return a string returning the full name of a team member
    */
   @Override public String toString()

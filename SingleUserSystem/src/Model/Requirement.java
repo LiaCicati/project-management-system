@@ -127,8 +127,9 @@ public class Requirement
           Requirement.ENDED)) // checks if the status of the requirement is in Started or Ended state
       {
         boolean check = true;
-        for (int i = 0; i < tasks.getSize(); i++) // loop throw all tasks
-          if (!tasks.getTask(i).isEnded()) // if none is Ended go to next statement
+        for (int i = 0; i < tasks.getSize(); i++) // loop through all tasks
+          if (!tasks.getTask(i)
+              .isEnded()) // if none is Ended go to next statement
           {
             check = false;
             break;
@@ -146,7 +147,7 @@ public class Requirement
           Requirement.STARTED)) // checks if Requirement status is Not Started or Started
       {
         boolean check = true;
-        for (int i = 0; i < tasks.getSize(); i++) // loop throw all tasks
+        for (int i = 0; i < tasks.getSize(); i++) // loop through all tasks
           if (!tasks.getTask(i).getStatus().equals(
               Task.NOT_STARTED)) // if none has Not Started status go to next statement
           {
@@ -169,39 +170,6 @@ public class Requirement
     }
     return status;
   }
-
-//Previous
-//  public String getStatus()
-//  {
-//    TaskList taskListCheck = new TaskList();
-//
-//    if (!(status.equals(APPROVED) || status.equals(REJECTED)))
-//    {
-//      for (Task task : tasks.getAllTasks())
-//      {
-//        if (!(task.getStatus().equals(NOT_STARTED)))
-//        {
-//          status = STARTED;
-//        }
-//        if (task.isEnded())
-//        {
-//          taskListCheck.addTask(task);
-//        }
-//      }
-//      if (tasks.getAllTasks().containsAll(taskListCheck.getAllTasks())
-//          && tasks.getSize() != 0)
-//      {
-//        status = ENDED;
-//      }
-//    }
-//    return status;
-//  }
-
-
-  /**
-   * Abstract method for getting the requirement's type
-   */
-  //  public abstract String getType();
 
   /**
    * Getter for the requirement deadline
@@ -297,6 +265,16 @@ public class Requirement
     this.status = status;
   }
 
+  /**
+   * Edits the requirement
+   *
+   * @param ID                    the id
+   * @param userStory             the user story
+   * @param type                  the type
+   * @param estimatedTime         the estimated time
+   * @param responsibleTeamMember the responsible team member
+   * @param deadline              the deadline
+   */
   public void editRequirement(int ID, String userStory, Type type,
       double estimatedTime, TeamMember responsibleTeamMember, MyDate deadline)
   {
@@ -315,6 +293,12 @@ public class Requirement
    */
   public void addTask(Task task)
   {
+    for (int i = 0; i < tasks.getSize(); i++)
+      if (tasks.getTask(i).getID() == task.getID())
+      {
+        throw new IllegalArgumentException(
+            "A task with this ID already exists");
+      }
     tasks.addTask(task);
   }
 
