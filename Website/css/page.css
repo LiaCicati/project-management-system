@@ -51,9 +51,6 @@ corrects bugs and common browser inconsistencies.*/
     color: #FFFFFF;
 }
 
-a:hover {
-    color: none !important;
-}
 
 /*Repetitive styles for the main title, subtitle and buttons on all pages were classified
 in the following classes */
