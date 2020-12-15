@@ -47,13 +47,11 @@ public class RegisterHoursController
             .getProjectById(viewState.getSelectedProject());
         Requirement requirement = model.getAllRequirements(project)
             .getByID(viewState.getSelectedRequirement());
-        Task task = model.getAllTasks(model.getAllProjects()
-            .getProjectById(viewState.getSelectedProject()), requirement)
-            .getTaskByID(viewState.getSelectedTask());
+//        Task task = model.getAllTasks(model.getAllProjects()
+//            .getProjectById(viewState.getSelectedProject()), requirement)
+//            .getTaskByID(viewState.getSelectedTask());
         // should try to fix this part, so when register button is pressed the name of the team member will appear in the text field
 
-        //  TeamMember teamMember = model.getAllTeam(project, requirement, task).getTeamMemberById(viewState.getSelectedTeamMember());
-        //    this.teamMemberInput.setText(teamMember.getName() + "");
         teamMemberListViewModel.update();
 
     }
@@ -81,11 +79,17 @@ public class RegisterHoursController
                     "Estimated time should be a number, indicating the hours, ex : 25.5");
             }
             // here should be a method from the model that will edit the data from the table
-            System.out.println(viewState.getSelectedTeamMember());
-
+            System.out.println("Team member id: " + viewState.getSelectedTeamMember());
+            System.out.println("Task id: " + viewState.getSelectedTask());
+            System.out.println("Project id: " + viewState.getSelectedProject());
+            System.out.println("Requirement id: " + viewState.getSelectedRequirement());
+            Project project = model.getAllProjects().getProjectById(viewState.getSelectedProject());
+            Requirement requirement = model.getAllRequirements(project).getByID(viewState.getSelectedRequirement());
+Task task = model.getAllTasks(project,requirement).getTaskByID(viewState.getSelectedTask());
             model.addHours(viewState.getSelectedProject(),
                 viewState.getSelectedRequirement(), viewState.getSelectedTask(),
-                viewState.getSelectedTeamMember(), hours);
+                viewState.getSelectedTask(), hours);
+
 
             errorLabel.setText("");
             reset();

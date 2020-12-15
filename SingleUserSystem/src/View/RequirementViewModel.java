@@ -13,11 +13,13 @@ public class RequirementViewModel
   private StringProperty deadlineProperty;
   private StringProperty responsibleTeamMemberProperty;
   private StringProperty statusProperty;
+  private IntegerProperty hoursWorkedProperty;
 
   public RequirementViewModel(Requirement requirement)
   {
 
     double estimatedTime = requirement.getEstimatedTime();
+    double hoursWorked = requirement.getTimeSpent();
 
     requirementIDProperty = new SimpleIntegerProperty(requirement.getID());
     userStoryProperty = new SimpleStringProperty(requirement.getUserStory());
@@ -28,6 +30,7 @@ public class RequirementViewModel
     responsibleTeamMemberProperty = new SimpleStringProperty(
         String.valueOf(requirement.getResponsibleTeamMember().getName()));
     statusProperty = new SimpleStringProperty(requirement.getStatus());
+    hoursWorkedProperty = new SimpleIntegerProperty(((int) hoursWorked));
 
   }
 
@@ -63,5 +66,9 @@ public class RequirementViewModel
 
   public StringProperty getStatusProperty() {
     return statusProperty;
+  }
+  public IntegerProperty getHoursWorkedProperty()
+  {
+    return hoursWorkedProperty;
   }
 }

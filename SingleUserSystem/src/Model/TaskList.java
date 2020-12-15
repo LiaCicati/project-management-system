@@ -51,7 +51,7 @@ public class TaskList
       if (tasks.get(i).getID() == ID)
         return tasks.get(i);
     }
-    return null;
+    throw new IllegalArgumentException("The task with this id could not be found");
   }
 
   /**

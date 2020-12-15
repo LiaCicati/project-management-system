@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ManageProjectDataController">
+<VBox prefHeight="700.0" userData="Project Data"  prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ManageProjectDataController">
     <children>
         <TabPane prefHeight="610.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
             <Tab text="Team">
@@ -91,7 +91,7 @@
                                   <children>
                                       <ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="346.0" prefWidth="658.0">
                                           <content>
-                                              <TableView fx:id="requirementListTable" prefHeight="346.0" prefWidth="714.0">
+                                              <TableView fx:id="requirementListTable" prefHeight="346.0" prefWidth="770.0">
                                                   <columns>
                                                       <TableColumn fx:id="requirementIDColumn" prefWidth="85.60003471374512" text="ID" />
                                                       <TableColumn fx:id="userStoryColumn" prefWidth="128.00006866455078" text="User Story" />
@@ -100,6 +100,7 @@
                                           <TableColumn fx:id="responsibleMemberColumn" prefWidth="107.99990844726562" text="Responsible" />
                                           <TableColumn fx:id="requirementDeadlineColumn" prefWidth="66.4000244140625" text="Deadline" />
                                           <TableColumn fx:id="statusColumn" prefWidth="75.0" text="Status" />
+                                          <TableColumn fx:id="hoursWorkedColumn" prefWidth="98.39990234375" text="Hours worked" />
                                                   </columns>
                                               </TableView>
                                           </content>

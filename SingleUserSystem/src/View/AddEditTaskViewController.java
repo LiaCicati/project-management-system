@@ -58,6 +58,7 @@ public class AddEditTaskViewController
     if (viewState.getSelectedTask() > -1)
     {
       requirementIDInput.setText(task.getRequirementID() + "");
+      taskIDInput.setEditable(false);
       taskIDInput.setText(task.getID() + "");
       taskTitleInput.setText(task.getTitle());
       taskDescriptionInput.setText(task.getDescription());
@@ -70,6 +71,7 @@ public class AddEditTaskViewController
     else
     {
       this.taskErrorLabel.setText("");
+      this.taskIDInput.setEditable(true);
       this.taskIDInput.setText("");
       this.requirementIDInput.setText(requirement.getID() + "");
       this.taskTitleInput.setText("");
@@ -159,7 +161,7 @@ public class AddEditTaskViewController
           estimatedTime, responsibleTeamMember, deadline);
       if (viewState.getSelectedTask() > -1)
       {
-
+        System.out.println(viewState.getSelectedTask());
         model.editTask(task, taskID, viewState.getSelectedProject(),
             viewState.getSelectedRequirement(), status);
       }

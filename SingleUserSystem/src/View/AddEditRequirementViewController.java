@@ -56,12 +56,12 @@ public class AddEditRequirementViewController
           model.getAllProjects().getProjectById(viewState.getSelectedProject()))
           .getByID(viewState.getSelectedRequirement());
       requirementIdInput.setText(requirement.getID() + "");
+      requirementIdInput.setEditable(false);
       typeInput.setAccessibleText(requirement.getType() + "");
       userStoryInput.setText(requirement.getUserStory());
       responsibleMemberInput
           .setAccessibleText(requirement.getResponsibleTeamMember() + "");
       estimatedTimeInput.setText(requirement.getEstimatedTime() + "");
-      workedHoursInput.setText(requirement.getTimeSpent() + "");
       statusInput.setAccessibleText(requirement.getStatus());
       deadlineInput.setAccessibleText(requirement.getDeadline() + "");
     }
@@ -72,8 +72,7 @@ public class AddEditRequirementViewController
       this.typeInput.getSelectionModel().clearAndSelect(0);
       this.userStoryInput.setText("");
       this.responsibleMemberInput.getSelectionModel().clearAndSelect(0);
-      this.estimatedTimeInput.setText("");
-      this.workedHoursInput.setText("");
+
       this.statusInput.getSelectionModel().clearAndSelect(0);
       this.deadlineInput.getEditor().setText("");
     }
@@ -120,7 +119,7 @@ public class AddEditRequirementViewController
 
       TeamMember responsibleTeamMember = new TeamMember(
           new Name("Bob", "Turquoise"), 2);
-      responsibleMemberInput.setItems(teamMemberListViewModel.getList());
+//      responsibleMemberInput.setItems(teamMemberListViewModel.getList());
       double estimatedTime;
       if (estimatedTimeInput.getText().equals(""))
         throw new IllegalArgumentException("Estimated time can not be empty");

@@ -53,7 +53,6 @@ public class TeamMember
   }
 
 
-
   /**
    * Sets the id of a team member
    *

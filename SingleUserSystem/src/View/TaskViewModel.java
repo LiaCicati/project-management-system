@@ -16,10 +16,12 @@ public class TaskViewModel
   private StringProperty taskResponsibleMemberProperty;
   private StringProperty taskDeadlineProperty;
   private StringProperty taskStatusProperty;
+  private IntegerProperty hoursWorkedProperty;
 
   public TaskViewModel(Task task)
   {
     double estimatedTime = task.getEstimatedTime();
+    double hoursWorked = task.getTimeSpent();
     requirementIDProperty = new SimpleIntegerProperty(task.getRequirementID());
     taskIDProperty = new SimpleIntegerProperty(task.getID());
     taskTitleProperty = new SimpleStringProperty(task.getTitle());
@@ -31,6 +33,8 @@ public class TaskViewModel
     taskDeadlineProperty = new SimpleStringProperty(
         task.getDeadline().toString());
     taskStatusProperty = new SimpleStringProperty(task.getStatus());
+    hoursWorkedProperty = new SimpleIntegerProperty(
+        ((int) hoursWorked));
 
   }
 
@@ -72,5 +76,10 @@ public class TaskViewModel
   public StringProperty getTaskStatusProperty()
   {
     return taskStatusProperty;
+  }
+
+  public IntegerProperty getHoursWorkedProperty()
+  {
+    return hoursWorkedProperty;
   }
 }

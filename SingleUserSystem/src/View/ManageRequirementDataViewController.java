@@ -26,6 +26,7 @@ public class ManageRequirementDataViewController
   @FXML private TableColumn<TaskViewModel, String> taskResponsibleMemberColumn;
   @FXML private TableColumn<TaskViewModel, String> taskDeadlineColumn;
   @FXML private TableColumn<TaskViewModel, String> taskStatusColumn;
+  @FXML private TableColumn<TaskViewModel, Number> hoursWorkedColumn;
 
   @FXML private TableView<TeamMemberViewModel> teamListTable;
   @FXML private TableColumn<TeamMemberViewModel, String> teamNameColumn;
@@ -72,6 +73,8 @@ public class ManageRequirementDataViewController
         cellData -> cellData.getValue().getTaskDeadlineProperty());
     taskStatusColumn.setCellValueFactory(
         cellData -> cellData.getValue().getTaskStatusProperty());
+    hoursWorkedColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getHoursWorkedProperty());
     taskListTable.setItems(taskListViewModel.getList());
 
     teamNameColumn

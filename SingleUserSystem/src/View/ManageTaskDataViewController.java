@@ -41,7 +41,7 @@ public class ManageTaskDataViewController
     teamMemberNameColumn
         .setCellValueFactory(cellData -> cellData.getValue().getNameProperty());
 //    hoursWorkedColumn.setCellValueFactory(
-//        cellData -> cellData.getValue().getHoursWorkedProperty());
+//        cellData -> cellData.getValue().);
     teamTable.setItems(teamMemberListViewModel.getList());
   }
 

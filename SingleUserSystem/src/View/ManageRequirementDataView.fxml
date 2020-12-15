@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ManageRequirementDataViewController">
+<VBox prefHeight="700.0" userData="Requirement data"  prefWidth="700.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.ManageRequirementDataViewController">
     <children>
         <TabPane prefHeight="610.0" prefWidth="700.0" tabClosingPolicy="UNAVAILABLE">
             <Tab text="Tasks">
@@ -27,16 +27,17 @@
                                   <children>
                                       <ScrollPane prefHeight="394.0" prefWidth="639.0">
                                           <content>
-                                              <TableView fx:id="taskListTable" prefHeight="380.0" prefWidth="686.0">
+                                              <TableView fx:id="taskListTable" prefHeight="380.0" prefWidth="784.0">
                                                   <columns>
-                                                      <TableColumn fx:id="requirementIDColumn" prefWidth="104.0000057220459" text="Requirement ID" />
-                                          <TableColumn fx:id="taskIDColumn" prefWidth="64.79998779296875" text="ID" />
-                                          <TableColumn fx:id="taskTitleColumn" prefWidth="92.800048828125" text="Title" />
-                                          <TableColumn fx:id="taskDescriptionColumn" prefWidth="84.7999267578125" text="Description" />
-                                          <TableColumn fx:id="taskEstimatedTimeColumn" prefWidth="80.79995727539062" text="Estimated" />
+                                                      <TableColumn fx:id="requirementIDColumn" prefWidth="83.99999809265137" text="Req ID" />
+                                          <TableColumn fx:id="taskIDColumn" prefWidth="67.20001983642578" text="ID" />
+                                          <TableColumn fx:id="taskTitleColumn" prefWidth="95.20001220703125" text="Title" />
+                                          <TableColumn fx:id="taskDescriptionColumn" prefWidth="95.99993896484375" text="Description" />
+                                          <TableColumn fx:id="taskEstimatedTimeColumn" prefWidth="86.4000244140625" text="Estimated" />
                                           <TableColumn fx:id="taskResponsibleMemberColumn" prefWidth="77.5999755859375" text="Responsible" />
-                                          <TableColumn fx:id="taskDeadlineColumn" prefWidth="75.0" text="Deadline" />
-                                          <TableColumn fx:id="taskStatusColumn" prefWidth="86.39990234375" text="Status" />
+                                          <TableColumn fx:id="taskDeadlineColumn" prefWidth="69.5999755859375" text="Deadline" />
+                                          <TableColumn fx:id="taskStatusColumn" prefWidth="92.0" text="Status" />
+                                          <TableColumn fx:id="hoursWorkedColumn" prefWidth="107.2000732421875" text="Hours worked" />
                                                   </columns>
                                               </TableView>
                                           </content>

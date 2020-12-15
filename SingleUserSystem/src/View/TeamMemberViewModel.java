@@ -11,7 +11,6 @@ public class TeamMemberViewModel
   private StringProperty nameProperty;
   private IntegerProperty idProperty;
   private StringProperty roleProperty;
-  private DoubleProperty hoursWorkedProperty;
 
   public TeamMemberViewModel(TeamMember teamMember)
   {

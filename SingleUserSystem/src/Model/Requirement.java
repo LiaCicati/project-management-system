@@ -169,7 +169,7 @@ public class Requirement
     }
     return status;
   }
-  
+
 //Previous
 //  public String getStatus()
 //  {

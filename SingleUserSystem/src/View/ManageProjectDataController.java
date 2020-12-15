@@ -29,6 +29,7 @@ public class ManageProjectDataController
   @FXML private TableColumn<RequirementViewModel, String> responsibleMemberColumn;
   @FXML private TableColumn<RequirementViewModel, String> requirementDeadlineColumn;
   @FXML private TableColumn<RequirementViewModel, String> statusColumn;
+  @FXML private TableColumn<RequirementViewModel, Number> hoursWorkedColumn;
 
   private Region root;
   private ProjectManagementModel model;
@@ -78,6 +79,8 @@ public class ManageProjectDataController
         cellData -> cellData.getValue().getDeadlineProperty());
     statusColumn.setCellValueFactory(
         cellData -> cellData.getValue().getStatusProperty());
+    hoursWorkedColumn.setCellValueFactory(
+        cellData -> cellData.getValue().getHoursWorkedProperty());
 
     requirementListTable.setItems(requirementListViewModel.getList());
   }

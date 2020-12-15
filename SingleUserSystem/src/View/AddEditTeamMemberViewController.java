@@ -49,6 +49,7 @@ public class AddEditTeamMemberViewController
                 .getTeamMemberByID(viewState.getSelectedTeamMember());
             firstNameInput.setText(teamMember.getName().getFirstName());
             lastNameInput.setText(teamMember.getName().getLastName());
+            teamMemberIDInput.setEditable(false);
             teamMemberIDInput.setText(String.valueOf(teamMember.getId()));
             rolesInput.setAccessibleText(teamMember.getRole());
         }

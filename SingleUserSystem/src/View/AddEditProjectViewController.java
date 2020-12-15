@@ -53,6 +53,7 @@ public class AddEditProjectViewController
       Project project = model.getAllProjects()
           .getProjectById(viewState.getSelectedProject());
       projectTitleInput.setText(project.getTitle());
+      projectCustomerIDInput.setEditable(false);
       projectCustomerIDInput.setText(project.getCustomerID() + "");
       projectDescriptionInput.setText(project.getDescription());
       deadlineInput.getEditor().setText(project.getDeadline() + "");
