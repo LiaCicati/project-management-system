@@ -83,8 +83,13 @@ public interface ProjectManagementModel
   //  Requirement getRequirementByID(int index);
 
   public TeamMemberList getTeamMembers();
+
   public RequirementList getAllRequirements();
 
   public TeamMemberList getTeamMemberList(Project project);
+
   public Requirement getRequirementByID(int id);
+
+  void addHours(int projectID, int requirementID, int taskID,
+        int teamMemberID, double hours);
 }

@@ -44,13 +44,12 @@ public class AddEditTeamMemberViewController
     {
         if (viewState.getSelectedTeamMember() > -1)
         {
-            TeamMember teamMember = model.getTeamMemberList(
-                model.getAllProjects()
-                    .getProjectById(viewState.getSelectedProject()))
-                .getTeamMemberById(viewState.getSelectedTeamMember());
+            TeamMember teamMember = model.getAllProjects()
+                .getProjectById(viewState.getSelectedProject())
+                .getTeamMemberByID(viewState.getSelectedTeamMember());
             firstNameInput.setText(teamMember.getName().getFirstName());
             lastNameInput.setText(teamMember.getName().getLastName());
-            teamMemberIDInput.setText(teamMember.getId() + "");
+            teamMemberIDInput.setText(String.valueOf(teamMember.getId()));
             rolesInput.setAccessibleText(teamMember.getRole());
         }
         else
@@ -114,8 +113,7 @@ public class AddEditTeamMemberViewController
             if (viewState.getSelectedTeamMember() > -1)
             {
                 model.editTeamMember(viewState.getSelectedProject(),
-                    viewState.getSelectedTeamMember(),
-                    new TeamMember(name, teamMemberID), role);
+                    teamMemberID, teamMember, role);
             }
             else
             {
