@@ -12,6 +12,7 @@ corrects bugs and common browser inconsistencies.*/
     font-family: Inter, Arial, Helvetica, sans-serif;
 }
 
+
 /*Header section*/
 .header__nav {
     background: rgba(49, 196, 233, 0.93);
@@ -50,6 +51,9 @@ corrects bugs and common browser inconsistencies.*/
     color: #FFFFFF;
 }
 
+a:hover {
+    color: none !important;
+}
 
 /*Repetitive styles for the main title, subtitle and buttons on all pages were classified
 in the following classes */
