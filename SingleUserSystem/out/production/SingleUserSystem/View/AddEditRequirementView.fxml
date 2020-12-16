@@ -53,7 +53,7 @@
                                         <Font size="20.0" />
                                     </font>
                                 </Label>
-                                <ChoiceBox fx:id="typeInput" prefWidth="150.0">
+                                <ChoiceBox fx:id="typeInput" prefWidth="150.0" value="Functional">
                                     <items>
                                         <FXCollections fx:factory="observableArrayList">
                                             <String fx:value="Functional" />
@@ -121,14 +121,6 @@
                             </VBox.margin>
                         </HBox>
                         <HBox prefHeight="100.0" prefWidth="200.0" spacing="8.0">
-                            <children>
-                                <Label text="Hours worked">
-                                    <font>
-                                        <Font size="20.0" />
-                                    </font>
-                                </Label>
-                                <TextField fx:id="workedHoursInput" editable="false" text="0" />
-                            </children>
                             <VBox.margin>
                                 <Insets />
                             </VBox.margin>

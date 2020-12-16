@@ -8,7 +8,9 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
+import parser.XmlJsonParser;
 
+import java.io.File;
 import java.time.LocalDate;
 
 public class RegisterHoursController
@@ -90,6 +92,7 @@ public class RegisterHoursController
       //            model.addHours(viewState.getSelectedProject(),
       //                viewState.getSelectedRequirement(), viewState.getSelectedTask(),
       //                viewState.getSelectedTask(), hours);
+      model.getProjectByID(viewState.getSelectedProject()).saveToDisk();
 
       errorLabel.setText("");
       reset();

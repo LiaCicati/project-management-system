@@ -3,6 +3,7 @@ package Model;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
+import parser.ParserException;
 
 public class Tests
 {
@@ -29,6 +30,10 @@ public class Tests
       30.5, teamMember1, new MyDate(14, 3, 2021));
   Task task3 = new Task(requirement1, 93, "Some title", "Some description",
       40.5, teamMember2, new MyDate(19, 3, 2022));
+
+  public Tests() throws ParserException
+  {
+  }
 
   @Test void addProject()
   {
@@ -163,7 +168,7 @@ public class Tests
     assertEquals(2, project1.getAllTeamMembers().getSize());
   }
 
-  @Test void editProject()
+  @Test void editProject() throws ParserException
   {
     // A project with same data as project 1 is created
     Project projectCheck = new Project("Rental Company",

@@ -1,5 +1,9 @@
 package Model;
 
+import parser.ParserException;
+import parser.XmlJsonParser;
+
+import java.io.File;
 import java.util.Collections;
 import java.util.InputMismatchException;
 
@@ -42,6 +46,19 @@ public class Project
 
     this.teamMemberList = new TeamMemberList();
     this.requirementList = new RequirementList();
+  }
+
+  public void saveToDisk()
+  {
+    try
+    {
+      XmlJsonParser parser = new XmlJsonParser();
+      File file = parser.toXml(this, "projectData_" + this.getTitle() + ".xml");
+    }
+    catch (ParserException e)
+    {
+      System.out.println(e.getMessage());
+    }
   }
 
   /**

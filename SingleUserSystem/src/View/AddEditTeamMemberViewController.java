@@ -6,7 +6,9 @@ import javafx.beans.property.ObjectProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
+import parser.XmlJsonParser;
 
+import java.io.File;
 import java.time.LocalDate;
 
 public class AddEditTeamMemberViewController
@@ -113,10 +115,14 @@ public class AddEditTeamMemberViewController
       {
         model.editTeamMember(viewState.getSelectedProject(), teamMemberID,
             teamMember, role);
+
+        model.getProjectByID(viewState.getSelectedProject()).saveToDisk();
       }
       else
       {
         model.addTeamMember(viewState.getSelectedProject(), teamMember);
+
+        model.getProjectByID(viewState.getSelectedProject()).saveToDisk();
       }
       errorLabel.setText("");
       reset();

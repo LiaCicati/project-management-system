@@ -6,9 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="e910f242-0b45-40fa-b14f-73fb820c668b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SingleUserSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SingleUserSystem.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/AddEditRequirementView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/AddEditRequirementView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/AddEditTeamMemberView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/AddEditTeamMemberView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageProjectDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageProjectDataView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageRequirementDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageRequirementDataView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageTaskDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageTaskDataView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Mediator/ProjectManagementModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mediator/ProjectManagementModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Mediator/ProjectManagementModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mediator/ProjectManagementModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AddEditProjectViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditProjectViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AddEditRequirementViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditRequirementViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AddEditTaskViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditTaskViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/AddEditTeamMemberViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditTeamMemberViewController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/RegisterHoursController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/RegisterHoursController.java" afterDir="false" />
     </list>
@@ -28,25 +37,25 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1keRPvj5cMSbMUnpzflptO2ziOT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IdeaProjects/SDJ1" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/XmlJsonParser-1.4.jar" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\niels\ProjectManagementSystem\SingleUserSystem\src\Mediator" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -56,7 +65,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Tests.getInformationAboutTeamMember" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SingleUserSystem" />
       <extension name="coverage">
         <pattern>
@@ -66,8 +75,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="Model" />
       <option name="MAIN_CLASS_NAME" value="Model.Tests" />
-      <option name="METHOD_NAME" value="getInformationAboutTeamMember" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -123,10 +131,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.Tests" />
         <item itemvalue="JUnit.Tests.getStatusOfProjectCase2" />
         <item itemvalue="JUnit.Tests.getStatusOfRequirementWhenAllTasksAreEnded" />
         <item itemvalue="JUnit.Tests.getStatusOfProjectIfAllRequirementsAreApproved" />
-        <item itemvalue="JUnit.Tests.getInformationAboutTeamMember" />
       </list>
     </recent_temporary>
   </component>
@@ -141,13 +149,24 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/View/RegisterHoursController.java</url>
-          <line>85</line>
-          <option name="timeStamp" value="13" />
+          <url>file://$PROJECT_DIR$/src/Model/Tests.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

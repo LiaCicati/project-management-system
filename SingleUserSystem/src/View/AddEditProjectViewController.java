@@ -8,7 +8,9 @@ import javafx.beans.property.ObjectProperty;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
+import parser.XmlJsonParser;
 
+import java.io.File;
 import java.time.LocalDate;
 
 public class AddEditProjectViewController
@@ -129,12 +131,15 @@ public class AddEditProjectViewController
       {
         model.editProject(viewState.getSelectedProject(), title, customerID,
             description, deadline, status);
-      }
 
+        project.saveToDisk();
+      }
       else
       {
         model.changeStatus(project, status);
         model.addProject(project, title, customerID);
+
+        project.saveToDisk();
       }
       errorLabel.setText("");
       reset();

@@ -9,7 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Region;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import parser.XmlJsonParser;
 
+import java.io.File;
 import java.time.LocalDate;
 
 public class AddEditTaskViewController
@@ -159,17 +161,20 @@ public class AddEditTaskViewController
           .getByID(viewState.getSelectedRequirement());
       Task task = new Task(requirementID, taskID, taskTitle, taskDescription,
           estimatedTime, responsibleTeamMember, deadline);
+
       if (viewState.getSelectedTask() > -1)
       {
         model.editTask(task, taskID, viewState.getSelectedProject(),
             viewState.getSelectedRequirement(), status);
-      }
 
+        model.getProjectByID(viewState.getSelectedProject()).saveToDisk();
+      }
       else
       {
-
         model.addTask(viewState.getSelectedRequirement(),
             viewState.getSelectedProject(), task);
+
+        model.getProjectByID(viewState.getSelectedProject()).saveToDisk();
       }
 
       taskErrorLabel.setText("");

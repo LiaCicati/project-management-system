@@ -7,7 +7,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
+import parser.XmlJsonParser;
 
+import java.io.File;
 import java.time.LocalDate;
 
 public class AddEditRequirementViewController
@@ -166,18 +168,21 @@ public class AddEditRequirementViewController
 
       Requirement requirement = new Requirement(requirementID, userStory, type,
           estimatedTime, responsibleTeamMember, deadline);
+
       if (viewState.getSelectedRequirement() > -1)
       {
-
         model.editRequirement(viewState.getSelectedProject(),
             viewState.getSelectedRequirement(),
             new Requirement(requirementID, userStory, type, estimatedTime,
                 responsibleTeamMember, deadline), status);
-      }
 
+        model.getProjectByID(viewState.getSelectedProject()).saveToDisk();
+      }
       else
       {
         model.addRequirement(viewState.getSelectedProject(), requirement);
+
+        model.getProjectByID(viewState.getSelectedProject()).saveToDisk();
       }
 
       errorLabel.setText("");
