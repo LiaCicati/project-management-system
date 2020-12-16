@@ -19,10 +19,10 @@ public class ProjectManagementModelManager implements ProjectManagementModel
 
   private void createDummyData()
   {
-    Project project1 = new Project("Rental Company", new MyDate(18, 12, 2020),
-        35, "some description");
-    Project project2 = new Project("VIA University", new MyDate(23, 12, 2020),
-        38, "some description");
+    Project project1 = new Project("Goldcar Rental Company", new MyDate(18, 12, 2020),
+        35, "Needs a reservation system to handle customers, vehicles and reservations.");
+    Project project2 = new Project("IT Minds", new MyDate(23, 12, 2020),
+        38, "Needs a project management system to handle tasks and time for their IT projects in order to increase the company’s productivity and not waste time on little tasks");
     projectList.addProject(project1);
     projectList.addProject(project2);
 
@@ -48,7 +48,10 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     requirement1.addTeamMember(teamMember1);
     requirement1.addTeamMember(teamMember2);
     teamMember1.registerTime(25, task1);
-    //        teamMember2.registerTime(30, task1);
+    project2.addRequirement(requirement1);
+    project2.addRequirement(requirement2);
+    project2.addTeamMember(teamMember1);
+
 
   }
 

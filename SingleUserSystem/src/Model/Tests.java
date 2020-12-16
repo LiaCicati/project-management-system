@@ -35,10 +35,9 @@ public class Tests
     // Two array lists are initialised
     ProjectList projectListCheck = new ProjectList();
     ProjectList actualProjectList = new ProjectList();
-    // Add 3 projects to the actual project list while the check project list remains empty
+    // Add 2 projects to the actual project list while the check project list remains empty
     actualProjectList.addProject(project1);
     actualProjectList.addProject(project2);
-    actualProjectList.addProject(project3);
 
     System.out.println(
         "Number of projects in the actual project list: " + actualProjectList
@@ -103,8 +102,7 @@ public class Tests
         "Are all the tasks in the list in ended state: " + taskList
             .areInEndedState()); // false
     requirement1.addTask(task1);
-    requirement1.addTask(task2);
-    System.out.println(requirement1.countTasks()); // 2
+    System.out.println(requirement1.countTasks()); // 1
     System.out.println("Status of the requirement: " + requirement1
         .getStatus()); // Should be Started
     assertEquals("Started", requirement1.getStatus());
@@ -123,8 +121,7 @@ public class Tests
         "Are all the tasks in the list in ended state: " + taskList
             .areInEndedState());
     requirement1.addTask(task1);
-    requirement1.addTask(task2);
-    System.out.println(requirement1.countTasks()); // 2
+    System.out.println(requirement1.countTasks()); // 1
     System.out.println("Status of the requirement: " + requirement1
         .getStatus()); // Should be Started
     assertEquals("Started", requirement1.getStatus());
@@ -270,12 +267,11 @@ public class Tests
         "Number of tasks assigned to a requirement: " + requirement1
             .getAllTasks().getSize()); // 0
     requirement1.addTask(task1);
-    requirement1.addTask(task2);
     requirement1.addTask(task3);
     System.out.println(
         "Number of tasks assigned to a requirement after changes: "
-            + requirement1.getAllTasks().getSize()); // 3
-    assertEquals(3, requirement1.getAllTasks().getSize());
+            + requirement1.getAllTasks().getSize()); // 2
+    assertEquals(2, requirement1.getAllTasks().getSize());
   }
 
   @Test void removeTaskFromARequirement()
@@ -363,10 +359,9 @@ public class Tests
   @Test void getTimeSpentOnARequirement()
   {
 
-    teamMember1.registerTime(30, task2);
+    teamMember1.registerTime(30, task1);
     teamMember2.registerTime(40, task1);
     requirement2.addTask(task1);
-    requirement2.addTask(task2);
     System.out.println(
         "Time spent on requirement 2: " + requirement2.getTimeSpent()); // 70
     System.out.println(requirement2.getTimeSpent());
@@ -423,8 +418,7 @@ public class Tests
         "Are all the tasks in the list in ended state: " + taskList
             .areInEndedState());
     requirement1.addTask(task1);
-    requirement1.addTask(task2);
-    System.out.println(requirement1.countTasks());
+    System.out.println(requirement1.countTasks()); // 1
     System.out.println(
         "Considering that all tasks belonging to the requirement are in ended state, is the requirement ended also? "
             + requirement1.isEnded());
