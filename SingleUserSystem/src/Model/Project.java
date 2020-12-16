@@ -48,6 +48,7 @@ public class Project
     this.requirementList = new RequirementList();
   }
 
+  //method that saves to .xml file with xmlParser
   public void saveToDisk()
   {
     try
@@ -512,5 +513,10 @@ public class Project
     return "Title: " + title + "\n" + "Description: " + description + "\n"
         + "Customer ID: " + customerID + "\n" + "Deadline: " + deadline + "\n"
         + "Status: " + status;
+  }
+
+  public void setTeamMemberList(TeamMemberList teamMemberList)
+  {
+    this.teamMemberList = teamMemberList;
   }
 }

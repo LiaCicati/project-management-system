@@ -6,20 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e910f242-0b45-40fa-b14f-73fb820c668b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SingleUserSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SingleUserSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/AddEditRequirementView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/AddEditRequirementView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/AddEditTeamMemberView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/AddEditTeamMemberView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageProjectDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageProjectDataView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageRequirementDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageRequirementDataView.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageTaskDataView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SingleUserSystem/View/ManageTaskDataView.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Mediator/ProjectManagementModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mediator/ProjectManagementModelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddEditProjectViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditProjectViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddEditRequirementViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditRequirementViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddEditTaskViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditTaskViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/AddEditTeamMemberViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditTeamMemberViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/View/RegisterHoursController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/RegisterHoursController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,9 +34,9 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/XmlJsonParser-1.4.jar" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Graph.java" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>

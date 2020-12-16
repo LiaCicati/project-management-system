@@ -1,10 +1,23 @@
 package Mediator;
 
 import Model.*;
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 import parser.ParserException;
 import parser.XmlJsonParser;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerFactory;
 import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class ProjectManagementModelManager implements ProjectManagementModel
 {
@@ -18,22 +31,180 @@ public class ProjectManagementModelManager implements ProjectManagementModel
     {
         this.projectList = new ProjectList();
         this.teamMemberList = new TeamMemberList();
-        try
-        {
-            populateProjects();
-        }
-        catch (ParserException e)
-        {
-            System.out.println(e.getMessage());
-        }
+        initProjectsFromFiles();//calls the method to load the .xml files
         //    createDummyData();
     }
 
-    private void populateProjects() throws ParserException
+    //method that finds and displays .xml files
+    private void initProjectsFromFiles()
     {
-        XmlJsonParser parser = new XmlJsonParser();
-        Project p = parser.fromXml("projectData_fbdhfbwdi.xml", Project.class);
-        System.out.println("bla");
+        ArrayList<String> xmlFileNames = new ArrayList<>();
+
+        File folder = new File("./");
+        File[] listOfFiles = folder.listFiles();
+        for (int i = 0; i < listOfFiles.length; i++)
+        {
+            String filename = listOfFiles[i].getName();
+            if (filename.endsWith(".xml") || filename.endsWith(".XML"))
+            {
+                try
+                {
+                    projectList.addProject(getSingleProject(filename));
+                }
+                catch (ParserConfigurationException e)//TODO proper error messages
+                {
+                    e.printStackTrace();
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
+                }
+                catch (SAXException e)
+                {
+                    e.printStackTrace();
+                }
+                catch (TransformerConfigurationException e)
+                {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    //using DOM parser to read from .xml files
+    private Project getSingleProject(String fileName)
+        throws ParserConfigurationException, IOException, SAXException,
+        TransformerConfigurationException
+    {
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        Document doc = builder.parse(fileName);
+        Transformer transformer = TransformerFactory.newInstance()
+            .newTransformer();
+        transformer.setOutputProperty(OutputKeys.INDENT, "no");
+
+        NodeList subNodes = doc.getElementsByTagName("Project").item(0)
+            .getChildNodes();
+
+        String nodeName = "";
+        String nodeContent = "";
+        String projectTitle = "";
+        String projectDescription = "";
+        int customerID = 0;
+        MyDate projectDeadline = null;
+        TeamMemberList teamMemberList = null;
+
+        //runs through all subNodes in a .xml file
+        for (int i = 0; i < subNodes.getLength(); i++)
+        {
+            Node child = subNodes.item(i);
+            nodeName = child.getNodeName();//nodeName is the names we look for in the .xml file
+            nodeContent = child.getTextContent();//nodeContent is the data we want to extract from t.xml files
+
+            switch (nodeName)
+            {
+                case "customerID":
+                    customerID = Integer.parseInt(nodeContent);
+                    break;
+                case "description":
+                    projectDescription = nodeContent;
+                    break;
+                case "title":
+                    projectTitle = nodeContent;
+                    break;
+                case "deadline":
+                    NodeList deadlineSubNodes = child.getChildNodes();
+                    int deadlineDay = 0,
+                        deadlineMonth = 0,
+                        deadlineYear = 0;
+                    for (int j = 0; j < deadlineSubNodes.getLength(); j++)//new loop to run though all subNodes since deadline is from diff class
+                    {
+                        //have to set new nodeName and nodeContent when going into another subNode
+                        nodeContent = deadlineSubNodes.item(j).getTextContent();
+                        nodeName = deadlineSubNodes.item(j).getNodeName();
+                        switch (nodeName)
+                        {
+                            case "day":
+                                deadlineDay = Integer.parseInt(nodeContent);
+                                break;
+                            case "month":
+                                deadlineMonth = Integer.parseInt(nodeContent);
+                                break;
+                            case "year":
+                                deadlineYear = Integer.parseInt(nodeContent);
+                                break;
+                        }
+                    }//TODO add validation!
+                    projectDeadline = new MyDate(deadlineDay, deadlineMonth,
+                        deadlineYear);
+                    break;
+                case "teamMemberList":
+                    NodeList teamMembersSubNodes = child.getChildNodes();
+                    teamMemberList = new TeamMemberList();
+                    Name teamMemberName = null;
+                    int teamMemberID = 0;
+                    String teamMemberRole = "";
+                    for (int j = 0; j < teamMembersSubNodes.getLength(); j++)//new loop to run though next set of subNodes
+                    {
+                        Node teamMemberNode = teamMembersSubNodes.item(j);
+                        if (!teamMemberNode.getNodeName().equals("teamMembers"))//breaks without this because of subNode hierarchy
+                            continue;
+
+                        for (int k = 0; k < teamMemberNode.getChildNodes()//new loop to run though next set of subNodes
+                            .getLength(); k++)
+                        {
+                            Node teamMemberDataNode = teamMemberNode
+                                .getChildNodes().item(k);
+                            nodeContent = teamMemberDataNode.getTextContent();
+                            nodeName = teamMemberDataNode.getNodeName();
+
+                            switch (nodeName)
+                            {
+                                case "name":
+                                    NodeList nameSubNodes = teamMemberDataNode
+                                        .getChildNodes();
+                                    String firstName = "";
+                                    String lastName = "";
+                                    for (int g = 0;
+                                         g < nameSubNodes.getLength(); g++)//new loop to run though next set of subNodes
+                                    {
+                                        Node nameNode = nameSubNodes.item(g);
+                                        nodeContent = nameNode.getTextContent();
+                                        nodeName = nameNode.getNodeName();
+                                        switch (nodeName)
+                                        {
+                                            case "firstName":
+                                                firstName = nodeContent;
+                                                break;
+                                            case "lastName":
+                                                lastName = nodeContent;
+                                                break;
+                                        }
+                                    }//TODO add validation!
+                                    teamMemberName = new Name(firstName,
+                                        lastName);
+                                    break;
+                                case "id":
+                                    teamMemberID = Integer
+                                        .parseInt(nodeContent);
+                                    break;
+                                case "role":
+                                    teamMemberRole = nodeContent;
+                                    break;
+                            }
+                        }//TODO ask about team member types!
+                        teamMemberList.addTeamMember(
+                            new TeamMember(teamMemberName, teamMemberID));
+                        teamMemberList.getTeamMemberById(teamMemberID).changeRole(teamMemberRole);
+                    }
+                    break;
+                    //TODO implement cases for the remaining subNodes!
+            }
+        }
+        Project p = new Project(projectTitle, projectDeadline, customerID,
+            projectDescription);
+        p.setTeamMemberList(teamMemberList);
+        return p;
     }
 
     //  private void createDummyData()
