@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project>
+  <customerID>35</customerID>
+  <description>some description</description>
+  <teamMemberList>
+    <teamMembers>
+      <role>Scrum Master</role>
+      <name>
+        <firstName>Santa</firstName>
+        <lastName>Clause</lastName>
+      </name>
+      <id>69</id>
+    </teamMembers>
+    <teamMembers>
+      <role>Product Owner</role>
+      <name>
+        <firstName>Bruce</firstName>
+        <lastName>Lee</lastName>
+      </name>
+      <id>87</id>
+    </teamMembers>
+    <teamMembers>
+      <role>Team member</role>
+      <name>
+        <firstName>Bob</firstName>
+        <lastName>Dylan</lastName>
+      </name>
+      <id>44</id>
+    </teamMembers>
+  </teamMemberList>
+  <title>Rental Company</title>
+  <deadline>
+    <month>1</month>
+    <year>2021</year>
+    <day>8</day>
+  </deadline>
+  <requirementList>
+    <requirements>
+      <estimatedTime>35.0</estimatedTime>
+      <responsibleTeamMember>
+        <role>Team member</role>
+        <name>
+          <firstName>Bob</firstName>
+          <lastName>Turquoise</lastName>
+        </name>
+        <id>2</id>
+      </responsibleTeamMember>
+      <timeSpent>0.0</timeSpent>
+      <userStory>user story</userStory>
+      <ID>23</ID>
+      <type>FUNCTIONAL</type>
+      <deadline>
+        <month>1</month>
+        <year>2021</year>
+        <day>4</day>
+      </deadline>
+      <tasks>
+        <tasks>
+          <estimatedTime>19.0</estimatedTime>
+          <responsibleTeamMember>
+            <role>Team member</role>
+            <name>
+              <firstName>Bob</firstName>
+              <lastName>Turquoise</lastName>
+            </name>
+            <id>2</id>
+          </responsibleTeamMember>
+          <timeSpent>0.0</timeSpent>
+          <description>some description</description>
+          <ID>26</ID>
+          <title>Task 1</title>
+          <requirementID>23</requirementID>
+          <deadline>
+            <month>12</month>
+            <year>2020</year>
+            <day>31</day>
+          </deadline>
+          <status>Not Started</status>
+        </tasks>
+        <tasks>
+          <estimatedTime>14.0</estimatedTime>
+          <responsibleTeamMember>
+            <role>Team member</role>
+            <name>
+              <firstName>Bob</firstName>
+              <lastName>Turquoise</lastName>
+            </name>
+            <id>2</id>
+          </responsibleTeamMember>
+          <timeSpent>0.0</timeSpent>
+          <description>some description</description>
+          <ID>27</ID>
+          <title>Task 2</title>
+          <requirementID>23</requirementID>
+          <deadline>
+            <month>12</month>
+            <year>2020</year>
+            <day>30</day>
+          </deadline>
+          <status>Not Started</status>
+        </tasks>
+      </tasks>
+      <status>Not Started</status>
+    </requirements>
+    <requirements>
+      <estimatedTime>30.0</estimatedTime>
+      <responsibleTeamMember>
+        <role>Team member</role>
+        <name>
+          <firstName>Bob</firstName>
+          <lastName>Turquoise</lastName>
+        </name>
+        <id>2</id>
+      </responsibleTeamMember>
+      <timeSpent>0.0</timeSpent>
+      <userStory>user story</userStory>
+      <ID>29</ID>
+      <type>FUNCTIONAL</type>
+      <deadline>
+        <month>1</month>
+        <year>2021</year>
+        <day>31</day>
+      </deadline>
+      <tasks>
+        <tasks>
+          <estimatedTime>16.0</estimatedTime>
+          <responsibleTeamMember>
+            <role>Team member</role>
+            <name>
+              <firstName>Bob</firstName>
+              <lastName>Turquoise</lastName>
+            </name>
+            <id>2</id>
+          </responsibleTeamMember>
+          <timeSpent>0.0</timeSpent>
+          <description>some description</description>
+          <ID>93</ID>
+          <title>Task 1</title>
+          <requirementID>29</requirementID>
+          <deadline>
+            <month>12</month>
+            <year>2020</year>
+            <day>31</day>
+          </deadline>
+          <status>Not Started</status>
+        </tasks>
+        <tasks>
+          <estimatedTime>13.0</estimatedTime>
+          <responsibleTeamMember>
+            <role>Team member</role>
+            <name>
+              <firstName>Bob</firstName>
+              <lastName>Turquoise</lastName>
+            </name>
+            <id>2</id>
+          </responsibleTeamMember>
+          <timeSpent>0.0</timeSpent>
+          <description>some description</description>
+          <ID>32</ID>
+          <title>Task 2</title>
+          <requirementID>29</requirementID>
+          <deadline>
+            <month>12</month>
+            <year>2020</year>
+            <day>30</day>
+          </deadline>
+          <status>Not Started</status>
+        </tasks>
+      </tasks>
+      <status>Not Started</status>
+    </requirements>
+  </requirementList>
+  <status>Not started</status>
+</Project>

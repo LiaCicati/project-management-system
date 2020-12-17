@@ -20,21 +20,25 @@ public class TaskViewModel
 
   public TaskViewModel(Task task)
   {
-    double estimatedTime = task.getEstimatedTime();
-    double hoursWorked = task.getTimeSpent();
-    requirementIDProperty = new SimpleIntegerProperty(task.getRequirementID());
-    taskIDProperty = new SimpleIntegerProperty(task.getID());
-    taskTitleProperty = new SimpleStringProperty(task.getTitle());
-    taskDescriptionProperty = new SimpleStringProperty(task.getDescription());
-    taskEstimatedTimeProperty = new SimpleIntegerProperty(
-        ((int) estimatedTime));
-    taskResponsibleMemberProperty = new SimpleStringProperty(
-        String.valueOf(task.getResponsibleTeamMember().getName()));
-    taskDeadlineProperty = new SimpleStringProperty(
-        task.getDeadline().toString());
-    taskStatusProperty = new SimpleStringProperty(task.getStatus());
-    hoursWorkedProperty = new SimpleIntegerProperty(((int) hoursWorked));
-
+    try
+    {
+      double estimatedTime = task.getEstimatedTime();
+      double hoursWorked = task.getTimeSpent();
+      requirementIDProperty = new SimpleIntegerProperty(task.getRequirementID());
+      taskIDProperty = new SimpleIntegerProperty(task.getID());
+      taskTitleProperty = new SimpleStringProperty(task.getTitle());
+      taskDescriptionProperty = new SimpleStringProperty(task.getDescription());
+      taskEstimatedTimeProperty = new SimpleIntegerProperty(((int) estimatedTime));
+      taskResponsibleMemberProperty = new SimpleStringProperty(String.valueOf(task.getResponsibleTeamMember().getName()));
+      taskDeadlineProperty = new SimpleStringProperty(
+          task.getDeadline().toString());
+      taskStatusProperty = new SimpleStringProperty(task.getStatus());
+      hoursWorkedProperty = new SimpleIntegerProperty(((int) hoursWorked));
+    }
+    catch (NullPointerException e)
+    {
+      System.out.println(e.getMessage());
+    }
   }
 
   public IntegerProperty getRequirementIDProperty()

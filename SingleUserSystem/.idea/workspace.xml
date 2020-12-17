@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="e910f242-0b45-40fa-b14f-73fb820c668b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectData_njdbwjk.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectData_test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mediator/ProjectManagementFile.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Mediator/ProjectManagementModelManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mediator/ProjectManagementModelManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mediator/ProjectManagementPersistence.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Project.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/Requirement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Requirement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/TaskViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/TaskViewModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +154,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
