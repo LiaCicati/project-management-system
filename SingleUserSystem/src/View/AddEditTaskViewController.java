@@ -162,14 +162,14 @@ public class AddEditTaskViewController
       Task task = new Task(requirementID, taskID, taskTitle, taskDescription,
           estimatedTime, responsibleTeamMember, deadline);
 
-      if (viewState.getSelectedTask() > -1)
+      if (viewState.getSelectedTask() > -1) // edit
       {
         model.editTask(task, taskID, viewState.getSelectedProject(),
             viewState.getSelectedRequirement(), status);
 
         model.getProjectByID(viewState.getSelectedProject()).saveToDisk();
       }
-      else
+      else // add
       {
         model.addTask(viewState.getSelectedRequirement(),
             viewState.getSelectedProject(), task);
