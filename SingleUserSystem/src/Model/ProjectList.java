@@ -130,7 +130,7 @@ public class ProjectList
    * Gets a project by its id from the list
    *
    * @param id the id
-   * @return
+   * @return the project by its id or null if not found
    */
   public Project getProjectById(int id)
   {

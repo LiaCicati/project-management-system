@@ -26,12 +26,13 @@ public class Requirement
     private MyDate deadline;
 
     /**
-     * Contructor for the requirement
-     *
-     * @param ID                    the id of the requirement
-     * @param estimatedTime         the estimated time per completion of a requirement
-     * @param responsibleTeamMember the responsible team member for a requirement
-     * @param deadline              the deadline for the requirement
+     * Constructor for the requirement
+     * @param ID the id
+     * @param userStory the user story text
+     * @param type the type
+     * @param estimatedTime the estimated time
+     * @param responsibleTeamMember the responsible team member
+     * @param deadline the deadline
      */
     public Requirement(int ID, String userStory, Type type,
         double estimatedTime, TeamMember responsibleTeamMember, MyDate deadline)
@@ -441,7 +442,7 @@ public class Requirement
 
     /**
      * setter for taskList
-     * @param taskList
+     * @param taskList the list
      */
     public void setTaskList(TaskList taskList)
     {

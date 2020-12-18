@@ -3,7 +3,7 @@ package Model;
 import java.util.ArrayList;
 
 /**
- * @author
+ * @author Loredana Cicati
  * @version v.1 2d December 2020
  */
 public class TaskList

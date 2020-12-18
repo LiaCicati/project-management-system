@@ -522,7 +522,7 @@ public class Project
     /**
      * Setter for teamMemberList
      *
-     * @param teamMemberList
+     * @param teamMemberList the team list
      */
     public void setTeamMemberList(TeamMemberList teamMemberList)
     {
@@ -532,7 +532,7 @@ public class Project
     /**
      * Setter for requirementList
      *
-     * @param requirementList
+     * @param requirementList the requirement list
      */
     public void setRequirementList(RequirementList requirementList)
     {
