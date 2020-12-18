@@ -23,66 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e910f242-0b45-40fa-b14f-73fb820c668b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../Documents/Group Notes.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documents/Group-Contract_Signed.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Documents/Project-Description.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Main.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Mediator/ProjectManagementModel.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Mediator/ProjectManagementModel.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Mediator/ProjectManagementModelManager.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Mediator/ProjectManagementModelManager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Mediator/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Mediator/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Mediator/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Mediator/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/MyDate.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/MyDate.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/Name.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/Name.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/ProductOwner.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/ProductOwner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/Project.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/Project.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/ProjectList.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/ProjectList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/Requirement.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/Requirement.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/RequirementList.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/RequirementList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/ScrumMaster.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/ScrumMaster.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/Task.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/Task.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/TaskList.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/TaskList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/TeamMember.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/TeamMember.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/TeamMemberList.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/TeamMemberList.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/Tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/Tests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/Type.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/Type.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Model/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Model/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/MyApplication.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/MyApplication.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/View/ViewHandler.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/View/ViewHandler.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/View/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/View/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/View/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/View/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allclasses-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allclasses.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allclasses.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/allpackages-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/allpackages-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/constant-values.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/constant-values.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/deprecated-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/deprecated-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/element-list" beforeDir="false" afterPath="$PROJECT_DIR$/docs/element-list" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/help-doc.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/help-doc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-10.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-10.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-11.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-11.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-12.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-12.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-13.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-13.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-14.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-14.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-15.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-15.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-3.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-3.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-4.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-5.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-5.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-6.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-6.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-7.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-7.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-8.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-8.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index-files/index-9.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index-files/index-9.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/member-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/member-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/overview-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/overview-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package-summary.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-summary.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/package-tree.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/package-tree.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/type-search-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/docs/type-search-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Project.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/ProjectList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/ProjectList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Requirement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Requirement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/TaskList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TaskList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projectData_Rental Company.xml" beforeDir="false" afterPath="$PROJECT_DIR$/projectData_Rental Company.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -225,26 +170,26 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="515" y="131" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1608262233986">
+    <state x="515" y="131" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1608262456370">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="515" y="131" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1608262233986" />
-    <state width="1493" height="241" key="GridCell.Tab.0.bottom" timestamp="1608262234006">
+    <state x="515" y="131" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1608262456370" />
+    <state width="1493" height="241" key="GridCell.Tab.0.bottom" timestamp="1608264947929">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608262234006" />
-    <state width="1493" height="241" key="GridCell.Tab.0.center" timestamp="1608262234006">
+    <state width="1493" height="241" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608264947929" />
+    <state width="1493" height="241" key="GridCell.Tab.0.center" timestamp="1608264947929">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608262234006" />
-    <state width="1493" height="241" key="GridCell.Tab.0.left" timestamp="1608262234006">
+    <state width="1493" height="241" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608264947929" />
+    <state width="1493" height="241" key="GridCell.Tab.0.left" timestamp="1608264947929">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608262234006" />
-    <state width="1493" height="241" key="GridCell.Tab.0.right" timestamp="1608262234006">
+    <state width="1493" height="241" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608264947929" />
+    <state width="1493" height="241" key="GridCell.Tab.0.right" timestamp="1608264947929">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608262234006" />
+    <state width="1493" height="241" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608264947929" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1608252371788">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -50,9 +50,9 @@
       <ID>23</ID>
       <type>FUNCTIONAL</type>
       <deadline>
-        <month>1</month>
-        <year>2021</year>
-        <day>4</day>
+        <month>12</month>
+        <year>2020</year>
+        <day>23</day>
       </deadline>
       <tasks>
         <tasks>
@@ -73,9 +73,9 @@
           <deadline>
             <month>12</month>
             <year>2020</year>
-            <day>31</day>
+            <day>18</day>
           </deadline>
-          <status>Not Started</status>
+          <status>Ended</status>
         </tasks>
         <tasks>
           <estimatedTime>14.0</estimatedTime>
@@ -95,12 +95,12 @@
           <deadline>
             <month>12</month>
             <year>2020</year>
-            <day>30</day>
+            <day>18</day>
           </deadline>
-          <status>Not Started</status>
+          <status>Ended</status>
         </tasks>
       </tasks>
-      <status>Not Started</status>
+      <status>Approved</status>
     </requirements>
     <requirements>
       <estimatedTime>30.0</estimatedTime>
@@ -117,9 +117,9 @@
       <ID>29</ID>
       <type>FUNCTIONAL</type>
       <deadline>
-        <month>1</month>
-        <year>2021</year>
-        <day>31</day>
+        <month>12</month>
+        <year>2020</year>
+        <day>23</day>
       </deadline>
       <tasks>
         <tasks>
@@ -140,9 +140,9 @@
           <deadline>
             <month>12</month>
             <year>2020</year>
-            <day>31</day>
+            <day>25</day>
           </deadline>
-          <status>Not Started</status>
+          <status>Ended</status>
         </tasks>
         <tasks>
           <estimatedTime>13.0</estimatedTime>
@@ -162,13 +162,13 @@
           <deadline>
             <month>12</month>
             <year>2020</year>
-            <day>30</day>
+            <day>25</day>
           </deadline>
-          <status>Not Started</status>
+          <status>Ended</status>
         </tasks>
       </tasks>
-      <status>Not Started</status>
+      <status>Approved</status>
     </requirements>
   </requirementList>
-  <status>Not started</status>
+  <status>Started</status>
 </Project>
