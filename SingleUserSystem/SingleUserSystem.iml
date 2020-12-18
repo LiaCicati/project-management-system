@@ -45,5 +45,6 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="library" name="XmlJsonParser-1.4" level="application" />
   </component>
 </module>
