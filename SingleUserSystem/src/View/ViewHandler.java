@@ -28,13 +28,16 @@ public class ViewHandler
   public ViewHandler(ProjectManagementModel model)
   {
     this.model = model;
+    // Instantiating the Scene class by passing the root object to the constructor of the scene class
     currentScene = new Scene(new Region());
     this.viewState = new ViewState();
   }
 
   public void start(Stage primaryStage)
   {
+    // Setting the stage
     this.primaryStage = primaryStage;
+    // Opening the first window
     openView("projectList");
   }
 
@@ -76,6 +79,7 @@ public class ViewHandler
         break;
 
     }
+    // Adding the Scene Graph
     currentScene.setRoot(root);
     String title = "";
     assert root != null;
@@ -83,13 +87,15 @@ public class ViewHandler
     {
       title += root.getUserData();
     }
+    // Preparing the Stage
     primaryStage.setTitle(title);
     primaryStage.setScene(currentScene);
+    // Setting the dimensions of the Stage
     primaryStage.setMinWidth(root.getPrefWidth());
     primaryStage.setMinHeight(root.getPrefHeight());
-    primaryStage.show();
+    primaryStage.show(); // displaying the contents of the Stage
   }
-
+  
   public void closeView()
   {
     primaryStage.close();

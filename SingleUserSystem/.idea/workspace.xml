@@ -23,11 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e910f242-0b45-40fa-b14f-73fb820c668b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../Documents/Group Notes.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Documents/Group-Contract_Signed.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Documents/Project-Description.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projectData_Rental Company.xml" beforeDir="false" afterPath="$PROJECT_DIR$/projectData_Rental Company.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Mediator/ProjectManagementModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Mediator/ProjectManagementModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/AddEditRequirementViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/AddEditRequirementViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/RegisterHoursView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/RegisterHoursView.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/View/ViewHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/ViewHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,7 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Graph.java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -174,36 +174,33 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="515" y="131" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1608262456370" />
-    <state width="1493" height="241" key="GridCell.Tab.0.bottom" timestamp="1608264947929">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1609928479940">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1608264947929" />
-    <state width="1493" height="241" key="GridCell.Tab.0.center" timestamp="1608264947929">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1609928479940" />
+    <state width="1493" height="62" key="GridCell.Tab.0.bottom" timestamp="1610231078433">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1608264947929" />
-    <state width="1493" height="241" key="GridCell.Tab.0.left" timestamp="1608264947929">
+    <state width="1493" height="62" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1610231078433" />
+    <state width="1493" height="62" key="GridCell.Tab.0.center" timestamp="1610231078433">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1608264947929" />
-    <state width="1493" height="241" key="GridCell.Tab.0.right" timestamp="1608264947929">
+    <state width="1493" height="62" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1610231078433" />
+    <state width="1493" height="62" key="GridCell.Tab.0.left" timestamp="1610231078433">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="241" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1608264947929" />
+    <state width="1493" height="62" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1610231078433" />
+    <state width="1493" height="62" key="GridCell.Tab.0.right" timestamp="1610231078433">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="62" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1610231078433" />
     <state x="249" y="0" key="SettingsEditor" timestamp="1608252371788">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1608252371788" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Model/Tests.java</url>
-          <line>99</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="563" y="159" key="refactoring.ChangeSignatureDialog" timestamp="1609681874519">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="563" y="159" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1609681874519" />
   </component>
 </project>

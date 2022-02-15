@@ -54,6 +54,7 @@ public class AddEditRequirementViewController
       Requirement requirement = model.getAllRequirements(
           model.getAllProjects().getProjectById(viewState.getSelectedProject()))
           .getByID(viewState.getSelectedRequirement());
+//      Requirement requirement1 = model.getAllRequirements(model.getAllProjects().getProjectById(viewState.getSelectedProject())).
       requirementIdInput.setText(requirement.getID() + "");
       requirementIdInput.setEditable(false);
       typeInput.setAccessibleText(requirement.getType() + "");

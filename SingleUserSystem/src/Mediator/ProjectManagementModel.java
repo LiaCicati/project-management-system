@@ -72,13 +72,13 @@ public interface ProjectManagementModel
 
   TeamMember getTeamMemberAtIndex(int projectID, int index);
 
-  public TeamMemberList getTeamMembers();
+  TeamMemberList getTeamMembers();
 
-  public RequirementList getAllRequirements();
+  RequirementList getAllRequirements();
 
-  public TeamMemberList getTeamMemberList(Project project);
+  TeamMemberList getTeamMemberList(Project project);
 
-  public Requirement getRequirementByID(int id);
+  Requirement getRequirementByID(int id);
 
   void addHours(int projectID, int requirementID, int taskID, int teamMemberID,
       double hours);
